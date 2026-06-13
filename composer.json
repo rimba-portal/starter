@@ -1,0 +1,118 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "rimba/starter",
+    "type": "project",
+    "description": "The skeleton application for the Laravel framework 13, Filament 5 Spatie Laravel Permission 7 and Laravel Modules.",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "filament/filament": "^5.0",
+        "laravel/framework": "^13.0",
+        "laravel/tinker": "^3.0",
+        "spatie/laravel-permission": "^7.3"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^2.3",
+        "fakerphp/faker": "^1.23",
+        "laravel-shift/blueprint": "^2.13",
+        "laravel/pail": "^1.2.5",
+        "laravel/pint": "^1.27",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^12.5.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "sync:git-fetch": [
+            "git fetch origin",
+            "git reset --hard origin/main",
+            "chown -R nginx:rootnginx .",
+            "find . -type d -exec chmod 755 {} \\;",
+            "find . -type f -exec chmod 644 {} \\;"
+        ],
+        "sync:git-push": [
+            "bash -lc 'set -e; cd /srv/rimba; if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then echo \"[upload] Not a git repo.\"; exit 1; fi; if ! git diff --quiet || ! git diff --cached --quiet || [ -n \"$(git ls-files --others --exclude-standard)\" ]; then git add .; git commit -m \"chore: auto upload via composer ($(date -u +%Y-%m-%dT%H:%M:%SZ))\" || echo \"[upload] Nothing to commit (commit skipped)\"; git push; echo \"[upload] Pushed to origin\"; else echo \"[upload] No changes\"; fi'"
+        ],
+        "test:fresh": [
+            "@php artisan migrate:fresh --seed",
+            "@php artisan bites:fetch 6",
+            "@php artisan bites:fetch 5",
+            "@php artisan bites:fetch 4",
+            "@php artisan bites:fetch 3"
+        ],
+        "fix-perm": [
+            "echo 'Setting ownership to nginx:rootnginx...'",
+            "chown -R nginx:rootnginx .",
+            "echo 'Setting directory permissions (775)...'",
+            "find . -type d -exec chmod 775 {} \\;",
+            "echo 'Setting file permissions (664)...'",
+            "find . -type f -exec chmod 664 {} \\;"
+        ],
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force --seed",
+            "npm install --ignore-scripts",
+            "npm run build"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+            "@php artisan test"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+        ],
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
