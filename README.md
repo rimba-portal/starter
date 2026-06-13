@@ -1,4 +1,4 @@
-# Rimba ERP
+# Rimba Portal
 
 ## Resource Integration for Manufacturing & Business Alignment
 
