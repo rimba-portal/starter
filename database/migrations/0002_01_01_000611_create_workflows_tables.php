@@ -15,78 +15,45 @@ return new class extends Migration
 
         Schema::create('workflows', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('org_team_id')->constrained();
-            $table->foreignId('start_step_id')->nullable()->constrained('workflow_steps');
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->boolean('is_active')->default(true);
-            $table->json('attributes')->nullable();
+            $table->string('key')->unique();
             $table->timestamps();
         });
-        Schema::create('workflow_steps', function (Blueprint $table) {
+        Schema::create('workflow_nodes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_id')->constrained();
-            $table->enum('type', ["start", "process", "decision", "end"])->default('process');
+            $table->foreignId('workflow_id')->constrained('workflows')->cascadeOnDelete();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->boolean('requires_tasks')->default(false);
-            $table->boolean('requires_decision')->default(false);
-            $table->boolean('is_automatic')->default(false);
-            $table->json('attributes')->nullable();
+            $table->string('type'); // start, process, decision, end
+            $table->string('role_name')->nullable(); // ✅ Spatie role support
+            $table->json('config')->nullable(); // ✅ dynamic config (forms, UI, rules, etc.)
             $table->timestamps();
         });
-        Schema::create('workflow_transitions', function (Blueprint $table) {
+        Schema::create('workflow_edges', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_id')->constrained();
-            $table->foreignId('from_step_id')->constrained('workflow_steps');
-            $table->foreignId('to_step_id')->constrained('workflow_steps');
-            $table->string('name')->nullable();
-            $table->json('conditions')->nullable();
-            $table->boolean('requires_approval')->default(false);
-            $table->json('attributes')->nullable();
+            $table->foreignId('workflow_id')->constrained('workflows')->cascadeOnDelete();
+            $table->foreignId('from_node_id') ->constrained('workflow_nodes') ->cascadeOnDelete();
+            $table->foreignId('to_node_id') ->constrained('workflow_nodes') ->cascadeOnDelete();
+            $table->string('label')->nullable(); // Yes / No etc.
+            $table->json('condition')->nullable(); // ✅ condition engine input
             $table->timestamps();
         });
-        Schema::create('workflow_step_tasks', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workflow_step_id')->constrained();
-            $table->foreignId('task_template_id')->nullable()->constrained();
-            $table->foreignId('task_list_template_id')->nullable()->constrained();
-            $table->boolean('is_required')->default(true);
-            $table->json('attributes')->nullable();
-            $table->timestamps();
-        });
+
         Schema::create('workflow_instances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_id')->constrained();
-            $table->foreignId('current_step_id')->nullable()->constrained('workflow_steps');
-            $table->enum('status', ["active", "completed", "cancelled"])->default('active');
-            $table->timestamp('started_at')->nullable();
-            $table->timestamp('completed_at')->nullable();
-            $table->json('attributes')->nullable();
-            $table->morphs('ref');
+            $table->foreignId('workflow_id') ->constrained('workflows');
+            $table->string('status'); // running, completed, cancelled
+            $table->morphs('subject'); // ✅ polymorphic (fits your architecture)
             $table->timestamps();
         });
-        Schema::create('workflow_instance_steps', function (Blueprint $table) {
+        Schema::create('workflow_node_instances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_instance_id')->constrained();
-            $table->foreignId('workflow_step_id')->constrained();
-            $table->enum('status', ["pending", "active", "completed", "skipped"])->default('pending');
-            $table->timestamp('started_at')->nullable();
-            $table->timestamp('completed_at')->nullable();
-            $table->json('attributes')->nullable();
+            $table->foreignId('workflow_instance_id') ->constrained('workflow_instances') ->cascadeOnDelete();
+            $table->foreignId('workflow_node_id') ->constrained('workflow_nodes');
+            $table->string('status'); // pending, active, completed, skipped
+            $table->json('data')->nullable();
             $table->timestamps();
         });
-        Schema::create('workflow_decisions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('workflow_instance_id')->constrained();
-            $table->foreignId('workflow_step_id')->constrained();
-            $table->foreignId('user_id')->constrained('staff');
-            $table->enum('decision', ["approve", "reject", "request_changes"]);
-            $table->text('comment')->nullable();
-            $table->timestamp('decided_at');
-            $table->json('attributes')->nullable();
-            $table->timestamps();
-        });
+
 
         Schema::enableForeignKeyConstraints();
     }
@@ -96,12 +63,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('workflow_decisions');
-        Schema::dropIfExists('workflow_instance_steps');
+        Schema::dropIfExists('workflow_node_instances');
         Schema::dropIfExists('workflow_instances');
-        Schema::dropIfExists('workflow_step_tasks');
-        Schema::dropIfExists('workflow_transitions');
-        Schema::dropIfExists('workflow_steps');
+        Schema::dropIfExists('workflow_edges');
+        Schema::dropIfExists('workflow_nodes');
         Schema::dropIfExists('workflows');
     }
 };

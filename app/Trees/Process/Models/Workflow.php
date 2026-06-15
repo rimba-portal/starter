@@ -2,62 +2,33 @@
 
 namespace App\Trees\Process\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Trees\Process\Builders\WorkflowBuilder;
 
 class Workflow extends Model
 {
-    use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'org_team_id',
-        'start_step_id',
         'name',
-        'description',
-        'is_active',
-        'attributes',
+        'key',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    public function nodes()
     {
-        return [
-            'id' => 'integer',
-            'org_team_id' => 'integer',
-            'start_step_id' => 'integer',
-            'is_active' => 'boolean',
-            'attributes' => 'array',
-        ];
+        return $this->hasMany(WorkflowNode::class);
     }
 
-    public function workflowSteps(): HasMany
+    public function edges()
     {
-        return $this->hasMany(WorkflowStep::class);
+        return $this->hasMany(WorkflowEdge::class);
     }
 
-    public function workflowInstances(): HasMany
+    public function instances()
     {
         return $this->hasMany(WorkflowInstance::class);
     }
 
-    public function orgTeam(): BelongsTo
+    public function newEloquentBuilder($query)
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgTeam::class);
-    }
-
-    public function startStep(): BelongsTo
-    {
-        return $this->belongsTo(WorkflowStep::class);
+        return new WorkflowBuilder($query);
     }
 }
