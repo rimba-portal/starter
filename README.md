@@ -33,7 +33,7 @@ Rimba is designed specifically for manufacturers seeking to standardize operatio
 
 ## Open Core Platform
 
-The Rimba Foundation is freely available and provides the core building blocks required to digitize organizational operations.
+This Rimba Starter Kit is freely available and provides the core building blocks required to digitize organizational operations.
 
 Organizations can extend the platform through premium modules, industry templates, content packs, and integrations.
 

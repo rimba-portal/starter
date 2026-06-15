@@ -1,0 +1,338 @@
+models:
+
+  # =========================
+  # ORGANIZATION (FOUNDATION)
+  # =========================
+
+  Tree/Organization/OrgCorp:
+    name: string
+    type: string
+    relationships:
+      hasMany: Tree/Organization/OrgUnit
+
+  Tree/Organization/OrgUnit:
+    name: string
+    org_corp_id: id nullable
+    parent_id: id nullable
+    relationships:
+      belongsTo: Tree/Organization/OrgCorp
+      hasMany:
+        - Tree/Organization/OrgTeam
+        - Tree/Organization/Staff
+
+  Tree/Organization/JobPosition:
+    title: string
+    relationships:
+      hasMany: Tree/Organization/Staff
+
+  Tree/Organization/OrgTeam:
+    name: string
+    org_unit_id: id nullable
+    relationships:
+      belongsTo: Tree/Organization/OrgUnit
+
+  Tree/Organization/Staff:
+    name: string
+    user_id: id nullable
+    org_unit_id: id nullable
+    job_position_id: id nullable
+    relationships:
+      belongsTo:
+        - Tree/Identity/User
+        - Tree/Organization/OrgUnit
+        - Tree/Organization/JobPosition
+  # =========================
+  # IDENTITY
+  # =========================
+
+  Tree/Identity/User:
+    name: string
+    email: string unique
+    password: string nullable
+    relationships:
+      hasOne: Tree/Organization/Staff
+
+  Tree/Identity/AuthProvider:
+    name: string
+    type: string
+    config: json nullable
+
+
+  # =========================
+  # AUTHORIZATION
+  # =========================
+
+  Tree/Authorization/Attribute:
+    key: string
+    value: string nullable
+
+  Tree/Authorization/Policy:
+    name: string
+
+
+  # =========================
+  # CONTRACT
+  # =========================
+
+  Tree/Contract/Agreement:
+    name: string
+    start_date: date nullable
+    end_date: date nullable
+    relationships:
+      hasMany: Tree/Contract/Party
+
+  Tree/Contract/Party:
+    agreement_id: id
+    partyable_type: string
+    partyable_id: id
+    relationships:
+      morphTo: partyable
+      belongsTo:
+        - Tree/Contract/Agreement
+        - Tree/Organization/OrgCorp
+
+  Tree/Contract/Subject:
+    agreement_id: id
+    subjectable_type: string
+    subjectable_id: id
+    relationships:
+      morphTo: subjectable
+      belongsTo:
+        - Tree/Contract/Agreement
+
+
+  # =========================
+  # VERSIONING (POLYMORPHIC OWNER)
+  # =========================
+
+  Tree/Versioning/Version:
+    number: string
+    versionable_type: string
+    versionable_id: id
+    published_at: timestamp nullable
+    relationships:
+      morphTo: versionable
+      hasOne: Tree/Versioning/Content
+
+  Tree/Versioning/Content:
+    url: string
+    version_id: id
+    relationships:
+      belongsTo: Tree/Versioning/Version
+
+
+  # =========================
+  # DOCUMENT
+  # =========================
+
+  Tree/Document/DocumentType:
+    name: string
+    relationships:
+      hasMany: Tree/Document/Document
+
+  Tree/Document/Document:
+    title: string
+    document_type_id: id nullable
+    relationships:
+      belongsTo: Tree/Document/DocumentType
+      morphMany: Tree/Versioning/Version
+
+
+  # =========================
+  # WORKFLOW (POLYMORPHIC ENGINE)
+  # =========================
+
+  Tree/Workflow/Workflow:
+    name: string
+    relationships:
+      hasMany:
+        - Tree/Workflow/WorkPackage
+        - Tree/Workflow/Transition
+        - Tree/Workflow/Fulfilment
+
+  Tree/Workflow/Fulfilment:
+    workflow_id: id
+    requestable_type: string
+    requestable_id: id
+    relationships:
+      belongsTo: Tree/Workflow/Workflow
+      morphTo: requestable
+      hasMany: Tree/Task/Task
+
+  Tree/Workflow/WorkPackage:
+    name: string
+    workflow_id: id
+    relationships:
+      belongsTo: Tree/Workflow/Workflow
+
+  Tree/Workflow/Transition:
+    name: string
+    workflow_id: id
+    relationships:
+      belongsTo: Tree/Workflow/Workflow
+
+
+  # =========================
+  # TASK (ASSIGNABLE POLYMORPHIC)
+  # =========================
+
+  Tree/Task/Task:
+    name: string
+    status: string
+    request_fulfilment_id: id nullable
+    relationships:
+      belongsTo: Tree/Workflow/Fulfilment
+      hasMany:
+        - Tree/Task/ChecklistItem
+        - Tree/Task/Assignment
+        - Tree/Task/Comment
+
+  Tree/Task/ChecklistItem:
+    task_id: id
+    name: string
+    relationships:
+      belongsTo: Tree/Task/Task
+
+  Tree/Task/Assignment:
+    task_id: id
+    assignable_type: string
+    assignable_id: id
+    relationships:
+      belongsTo: Tree/Task/Task
+      morphTo: assignable
+
+  Tree/Task/Comment:
+    task_id: id
+    content: text
+    relationships:
+      belongsTo: Tree/Task/Task
+
+
+  # =========================
+  # SERVICE CATALOG
+  # =========================
+
+  Tree/Catalog/Service:
+    name: string
+    relationships:
+      hasMany:
+        - Tree/Catalog/ServiceRequest
+        - Tree/Catalog/ServiceForm
+
+  Tree/Catalog/ServiceForm:
+    service_id: id
+    schema: json nullable
+    relationships:
+      belongsTo: Tree/Catalog/Service
+
+  Tree/Catalog/ServiceRequest:
+    service_id: id
+    requester_id: id nullable
+    relationships:
+      belongsTo:
+        - Tree/Catalog/Service
+        - Tree/Organization/Staff
+      morphOne: Tree/Workflow/Fulfilment
+
+
+  # =========================
+  # ENTITLEMENT
+  # =========================
+
+  Tree/Entitlement/Entitlement:
+    name: string
+    relationships:
+      hasMany:
+        - Tree/Entitlement/EligibilityRule
+        - Tree/Entitlement/ApprovalRule
+
+  Tree/Entitlement/EligibilityRule:
+    entitlement_id: id
+    relationships:
+      belongsTo: Tree/Entitlement/Entitlement
+
+  Tree/Entitlement/ApprovalRule:
+    entitlement_id: id
+    relationships:
+      belongsTo: Tree/Entitlement/Entitlement
+
+
+  # =========================
+  # ASSET
+  # =========================
+
+  Tree/Asset/AssetCategory:
+    name: string
+    relationships:
+      hasMany: Tree/Asset/Asset
+
+  Tree/Asset/AssetModel:
+    name: string
+    manufacturer: string nullable
+    relationships:
+      hasMany: Tree/Asset/Asset
+
+  Tree/Asset/Asset:
+    name: string
+    asset_category_id: id nullable
+    asset_model_id: id nullable
+    org_unit_id: id nullable
+    contract_id: id nullable
+    relationships:
+      belongsTo:
+        - Tree/Asset/AssetCategory
+        - Tree/Asset/AssetModel
+        - Tree/Organization/OrgUnit
+        - Tree/Contract/Agreement
+      morphMany:
+        - Tree/Risk/Incident
+
+
+  # =========================
+  # CALENDAR
+  # =========================
+
+  Tree/Calendar/Calendar:
+    name: string
+
+  Tree/Calendar/Holiday:
+    name: string
+    date: date
+
+  Tree/Calendar/Shift:
+    name: string
+
+  Tree/Calendar/Roster:
+    name: string
+
+  Tree/Calendar/Event:
+    name: string
+    starts_at: timestamp nullable
+    ends_at: timestamp nullable
+
+
+  # =========================
+  # RISK (FULLY POLYMORPHIC)
+  # =========================
+
+  Tree/Risk/IncidentType:
+    name: string
+    relationships:
+      hasMany: Tree/Risk/Incident
+
+  Tree/Risk/Incident:
+    title: string
+    incident_type_id: id nullable
+    subject_type: string
+    subject_id: id
+    relationships:
+      belongsTo: Tree/Risk/IncidentType
+      morphTo: subject
+      hasMany:
+        - Tree/Risk/Resolution
+
+  Tree/Risk/Resolution:
+    incident_id: id
+    description: text nullable
+    relationships:
+      belongsTo: Tree/Risk/Incident

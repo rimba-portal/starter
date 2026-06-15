@@ -1,10 +1,10 @@
-# Rimba Foundation Starter Kit
+# Rimba Starter Kit
 
-The Rimba Foundation Starter Kit provides the minimum set of capabilities required for an organization to operate on the platform.
+The Rimba Starter Kit provides the minimum set of capabilities required for an organization to operate on the platform.
 
 These capabilities are intentionally designed to be useful on their own while also serving as the foundation upon which optional Business Modules, Platform Modules, and Content Packs can be installed.
 
-The Foundation Starter Kit focuses on:
+The Starter Kit focuses on:
 
 - People and organizational structure
 - Access control
@@ -27,7 +27,7 @@ Identity manages who can access the system.
 
 It provides the link between an authenticated user account and the staff member performing work within the organization.
 
-## Core Records
+## Core Models
 
 - User
 - Staff
@@ -61,7 +61,7 @@ Authorization manages what users are allowed to see and do.
 
 It combines Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC).
 
-## Core Records
+## Core Models
 
 - Role
 - Permission
@@ -94,7 +94,7 @@ It combines Role-Based Access Control (RBAC) and Attribute-Based Access Control 
 
 Organization represents all entities and organizational structures involved in business operations.
 
-## Core Records
+## Core Models
 
 ### OrgCorp
 
@@ -170,7 +170,7 @@ It does not store files directly.
 
 Instead, it stores metadata and URLs pointing to the actual content.
 
-## Core Records
+## Core Models
 
 - Version
 - VersionContent
@@ -198,27 +198,27 @@ Instead, it stores metadata and URLs pointing to the actual content.
 ## Used By
 
 - Document
-- Service Catalog
+- Catalog
 - Future Business Modules
 
 ---
 
-# Base Contract
+# Agreement
 
 ## Purpose
 
-Base Contract stores the minimum information required to represent an agreement between parties.
+Agreement stores the minimum information required to represent an agreement between parties.
 
 It is intentionally lightweight.
 
 Full contract lifecycle management is provided by the Contract Management Module.
 
-## Core Records
+## Core Models
 
-- BaseContract
-- ContractParty
+- Agreement
+- Party
 
-## Contract Parties
+## Parties
 
 May include:
 
@@ -228,7 +228,7 @@ May include:
 - Contractor
 - Government Agency
 
-## Contract Subjects
+## Subjects
 
 Contracts may be linked to:
 
@@ -259,7 +259,7 @@ Document represents digital business assets.
 
 Documents store metadata while Versioning manages the actual content references.
 
-## Core Records
+## Core Models
 
 - Document
 - DocumentType
@@ -295,10 +295,10 @@ Workflow manages business processes and approvals.
 
 It defines how work moves through an organization.
 
-## Core Records
+## Core Models
 
 - Workflow
-- RequestFulfilment
+- Fulfilment
 - TaskTemplate
 - Transition
 
@@ -316,7 +316,7 @@ It defines how work moves through an organization.
 
 ## Used By
 
-- Service Catalog
+- Catalog
 - Asset Management
 - Risk Management
 - Quality Management
@@ -331,7 +331,7 @@ Task represents a unit of work assigned to a person or team.
 
 Tasks are typically generated from workflows.
 
-## Core Records
+## Core Models
 
 - Task
 - ChecklistItem
@@ -358,15 +358,15 @@ Tasks are typically generated from workflows.
 
 ---
 
-# Service Catalog
+# Catalog
 
 ## Purpose
 
-Service Catalog defines services and requestable offerings available to users.
+Catalog defines services and requestable offerings available to users.
 
 It replaces the earlier concept known as TOS (Team Offering Service).
 
-## Core Records
+## Core Models
 
 - Service
 - ServiceRequest
@@ -399,7 +399,7 @@ It replaces the earlier concept known as TOS (Team Offering Service).
 
 Entitlement determines who is allowed to request which services or assets.
 
-## Core Records
+## Core Models
 
 - Entitlement
 - EligibilityRule
@@ -433,11 +433,11 @@ Entitlement determines who is allowed to request which services or assets.
 
 Asset provides a registry of company-owned assets.
 
-This foundation capability focuses on asset registration only.
+This capability focuses on asset registration only.
 
 Advanced maintenance and lifecycle management are provided separately.
 
-## Core Records
+## Core Models
 
 - Asset
 - AssetCategory
@@ -485,7 +485,7 @@ Assets may be linked to:
 
 Calendar manages organizational time and scheduling information.
 
-## Core Records
+## Core Models
 
 - Calendar
 - Holiday
@@ -522,7 +522,7 @@ Risk provides incident reporting and resolution tracking.
 
 It is intentionally focused on operational incidents rather than formal risk management methodologies.
 
-## Core Records
+## Core Models
 
 - Incident
 - IncidentType
@@ -564,22 +564,23 @@ Incidents may be assigned to:
 
 ---
 
-# Foundation Summary
+# Starter Kit Summary
 
-The Foundation Starter Kit includes:
+The Starter Kit includes:
 
 - Identity
 - Authorization
 - Organization
 - Versioning
-- Base Contract
+- Agreement
 - Document
 - Workflow
 - Task
-- Service Catalog
+- Catalog
 - Entitlement
 - Asset
 - Calendar
 - Risk
+- Audit Trail
 
 These capabilities provide a complete operational foundation for most organizations while allowing advanced business functionality to be added through optional modules.
