@@ -1,338 +1,955 @@
 models:
-
-  # =========================
-  # ORGANIZATION (FOUNDATION)
-  # =========================
-
-  Tree/Organization/OrgCorp:
-    name: string
-    type: string
+# ==================================================================
+# API Configuration and Data
+  Trees\Sync\Models\ApiConfig:                      # Configuration for external API source
+    name: string unique index                  # Unique identifier for the API config
+    source_type: string                        # Type of source (e.g. rest, graphql, file)
+    source_config: json                        # Connection details (URL, headers, auth, etc.)
+    data_path: string nullable                 # JSON path to extract relevant data
+    depends_on: json nullable                  # Dependencies on other API configs
+    mapping: json                              # Field mapping definition for transformation
+    active: boolean default:true index         # Enable/disable config (indexed for quick filtering)
     relationships:
-      hasMany: Tree/Organization/OrgUnit
-
-  Tree/Organization/OrgUnit:
-    name: string
-    org_corp_id: id nullable
-    parent_id: id nullable
+      hasMany: ApiData                         # One config produces many data records
+  Trees\Sync\Models\ApiData:                        # Stores fetched API data instances
+    api_config_id: id foreign:api_configs cascadeOnDelete   # Link to ApiConfig, cascade delete
+    fingerprint: string nullable index         # Hash/unique key to prevent duplicate records
+    payload: json                              # Raw API response data
+    status: string default:pending index       # Processing state (pending | processed | failed)
+    processed_at: timestamp nullable           # Timestamp when processing completed
+    error: text nullable                       # Error message if processing failed
+# ==================================================================
+# AUDIT
+  Trees\AuditTrail\Models\AuditLog:
+  # Centralized audit table for ALL modules (Authorization, Version, Workflow, etc.)
+  # This should be the ONLY audit table in the system
+  # Stores who did what, to which model, and the outcome
+    user_id: id nullable foreign:users
+    staff_id: id nullable foreign:staff
+    result: string nullable
+    actor: string # Stores who the person is "staff.staff_no[staff.name|job position.title]" this is for easy reference in logs without needing to join staff table
+    action: string
+  # Example:
+  # - version.approved
+  # - document.created
+  # - task.deleted
+    reason: string nullable
+    metadata: json nullable
     relationships:
-      belongsTo: Tree/Organization/OrgCorp
-      hasMany:
-        - Tree/Organization/OrgTeam
-        - Tree/Organization/Staff
-
-  Tree/Organization/JobPosition:
-    title: string
+      morphTo: ref
+# ==================================================================
+# VERSION
+  Trees\Copies\Models\Versionable:
+  # Represents the identity of an entity that supports versioning
+  # Example:
+  # - Document
+  # - Workflow configuration
+  # - Service catalog item
+  #
+  # Stores ONLY identity and metadata (no actual content)
+  # Content is stored in Version table
+    type: enum:document,workflow,template,service,config,other # Classification of versionable entity
+    name: string
+    current_version_id: id nullable foreign:versions # Points to the currently published version
+    attributes: json nullable
     relationships:
-      hasMany: Tree/Organization/Staff
-
-  Tree/Organization/OrgTeam:
-    name: string
-    org_unit_id: id nullable
+      morphTo: ref
+      hasMany: Version
+  Trees\Copies\Models\Version:
+    versionable_id: id foreign:versionables
+    created_by: id nullable foreign:staff
+    approved_by: id nullable foreign:staff
+    published_by: id nullable foreign:staff
+    status: enum:draft,approved,published,archived,rejected
+    content_type: enum:file,url,inline,json nullable
+    content_path: string nullable
+    major: integer
+    minor: integer
+    patch: integer
+    version: string # Optional combined version string (e.g. "1.2.0")
+    change_summary: string nullable
+    change_notes: text nullable
+    is_menu: boolean
+    approved_at: timestamp nullable
+    published_at: timestamp nullable
+    effective_from: timestamp nullable
+    effective_to: timestamp nullable
+    attributes: json nullable
     relationships:
-      belongsTo: Tree/Organization/OrgUnit
-
-  Tree/Organization/Staff:
+      hasMany: VersionApproval, VersionRelation:relations, VersionRelation:relatedRelations
+  Trees\Copies\Models\VersionApproval:
+    version_id: id foreign:versions
+    user_id: id foreign:staff
+  Trees\Copies\Models\VersionRelation:
+    version_id: id foreign:versions
+    related_version_id: id foreign:versions
+  Trees\Copies\Models\VersionLock:
+    version_id: id foreign:versions
+    locked_by: id foreign:staff
+# ==================================================================
+# LOCATION
+  Trees\FloorPlan\Models\Location:
+    parent_id: id nullable foreign:locations
+    org_corp_id: id nullable foreign:org_corps
+    type: enum:site,building,area,section,room,zone,other nullable
     name: string
-    user_id: id nullable
-    org_unit_id: id nullable
-    job_position_id: id nullable
+    attributes: json nullable
     relationships:
-      belongsTo:
-        - Tree/Identity/User
-        - Tree/Organization/OrgUnit
-        - Tree/Organization/JobPosition
-  # =========================
-  # IDENTITY
-  # =========================
-
-  Tree/Identity/User:
-    name: string
-    email: string unique
-    password: string nullable
-    relationships:
-      hasOne: Tree/Organization/Staff
-
-  Tree/Identity/AuthProvider:
-    name: string
-    type: string
-    config: json nullable
-
-
-  # =========================
-  # AUTHORIZATION
-  # =========================
-
-  Tree/Authorization/Attribute:
-    key: string
-    value: string nullable
-
-  Tree/Authorization/Policy:
-    name: string
-
-
-  # =========================
-  # CONTRACT
-  # =========================
-
-  Tree/Contract/Agreement:
-    name: string
+      hasMany: Location:children, LocationAssignment
+  Trees\FloorPlan\Models\LocationAssignment:
+    location_id: id foreign:locations
+    type: enum:primary,secondary,temporary nullable
     start_date: date nullable
     end_date: date nullable
+    attributes: json nullable
     relationships:
-      hasMany: Tree/Contract/Party
-
-  Tree/Contract/Party:
-    agreement_id: id
-    partyable_type: string
-    partyable_id: id
-    relationships:
-      morphTo: partyable
-      belongsTo:
-        - Tree/Contract/Agreement
-        - Tree/Organization/OrgCorp
-
-  Tree/Contract/Subject:
-    agreement_id: id
-    subjectable_type: string
-    subjectable_id: id
-    relationships:
-      morphTo: subjectable
-      belongsTo:
-        - Tree/Contract/Agreement
-
-
-  # =========================
-  # VERSIONING (POLYMORPHIC OWNER)
-  # =========================
-
-  Tree/Versioning/Version:
-    number: string
-    versionable_type: string
-    versionable_id: id
-    published_at: timestamp nullable
-    relationships:
-      morphTo: versionable
-      hasOne: Tree/Versioning/Content
-
-  Tree/Versioning/Content:
-    url: string
-    version_id: id
-    relationships:
-      belongsTo: Tree/Versioning/Version
-
-
-  # =========================
-  # DOCUMENT
-  # =========================
-
-  Tree/Document/DocumentType:
-    name: string
-    relationships:
-      hasMany: Tree/Document/Document
-
-  Tree/Document/Document:
-    title: string
-    document_type_id: id nullable
-    relationships:
-      belongsTo: Tree/Document/DocumentType
-      morphMany: Tree/Versioning/Version
-
-
-  # =========================
-  # WORKFLOW (POLYMORPHIC ENGINE)
-  # =========================
-
-  Tree/Workflow/Workflow:
-    name: string
-    relationships:
-      hasMany:
-        - Tree/Workflow/WorkPackage
-        - Tree/Workflow/Transition
-        - Tree/Workflow/Fulfilment
-
-  Tree/Workflow/Fulfilment:
-    workflow_id: id
-    requestable_type: string
-    requestable_id: id
-    relationships:
-      belongsTo: Tree/Workflow/Workflow
-      morphTo: requestable
-      hasMany: Tree/Task/Task
-
-  Tree/Workflow/WorkPackage:
-    name: string
-    workflow_id: id
-    relationships:
-      belongsTo: Tree/Workflow/Workflow
-
-  Tree/Workflow/Transition:
-    name: string
-    workflow_id: id
-    relationships:
-      belongsTo: Tree/Workflow/Workflow
-
-
-  # =========================
-  # TASK (ASSIGNABLE POLYMORPHIC)
-  # =========================
-
-  Tree/Task/Task:
-    name: string
-    status: string
-    request_fulfilment_id: id nullable
-    relationships:
-      belongsTo: Tree/Workflow/Fulfilment
-      hasMany:
-        - Tree/Task/ChecklistItem
-        - Tree/Task/Assignment
-        - Tree/Task/Comment
-
-  Tree/Task/ChecklistItem:
-    task_id: id
-    name: string
-    relationships:
-      belongsTo: Tree/Task/Task
-
-  Tree/Task/Assignment:
-    task_id: id
-    assignable_type: string
-    assignable_id: id
-    relationships:
-      belongsTo: Tree/Task/Task
       morphTo: assignable
-
-  Tree/Task/Comment:
-    task_id: id
-    content: text
+# ==========================================================================
+# CONTRACT TYPE
+#
+# Dynamic contract behavior definition.
+#
+# Defines:
+# - template
+# - public fields
+# - confidential fields
+# - notification rules
+# - workflow rules
+  Trees\Agreement\Models\ContractType:
+    uuid: uuid unique
+    name: string # Human readable name
+    code: string unique # employment, nda, asset_lease
+    description: text nullable # Markdown/html template
+    template: longtext nullable
+    public_schema: json nullable # PUBLIC NON-CONFIDENTIAL SCHEMA
+    confidential_schema: json nullable # CONFIDENTIAL SCHEMA
+    notify: json nullable # WHO TO NOTIFY ON EXPIRY
+    expiry_notify_days: integer default:30
+    requires_approval: boolean default:false
+    requires_signature: boolean default:false
+    workflow_id: id nullable foreign:workflows
+    meta: json nullable
     relationships:
-      belongsTo: Tree/Task/Task
-
-
-  # =========================
-  # SERVICE CATALOG
-  # =========================
-
-  Tree/Catalog/Service:
-    name: string
-    relationships:
-      hasMany:
-        - Tree/Catalog/ServiceRequest
-        - Tree/Catalog/ServiceForm
-
-  Tree/Catalog/ServiceForm:
-    service_id: id
-    schema: json nullable
-    relationships:
-      belongsTo: Tree/Catalog/Service
-
-  Tree/Catalog/ServiceRequest:
-    service_id: id
-    requester_id: id nullable
-    relationships:
-      belongsTo:
-        - Tree/Catalog/Service
-        - Tree/Organization/Staff
-      morphOne: Tree/Workflow/Fulfilment
-
-
-  # =========================
-  # ENTITLEMENT
-  # =========================
-
-  Tree/Entitlement/Entitlement:
-    name: string
-    relationships:
-      hasMany:
-        - Tree/Entitlement/EligibilityRule
-        - Tree/Entitlement/ApprovalRule
-
-  Tree/Entitlement/EligibilityRule:
-    entitlement_id: id
-    relationships:
-      belongsTo: Tree/Entitlement/Entitlement
-
-  Tree/Entitlement/ApprovalRule:
-    entitlement_id: id
-    relationships:
-      belongsTo: Tree/Entitlement/Entitlement
-
-
-  # =========================
-  # ASSET
-  # =========================
-
-  Tree/Asset/AssetCategory:
-    name: string
-    relationships:
-      hasMany: Tree/Asset/Asset
-
-  Tree/Asset/AssetModel:
-    name: string
-    manufacturer: string nullable
-    relationships:
-      hasMany: Tree/Asset/Asset
-
-  Tree/Asset/Asset:
-    name: string
-    asset_category_id: id nullable
-    asset_model_id: id nullable
-    org_unit_id: id nullable
-    contract_id: id nullable
-    relationships:
-      belongsTo:
-        - Tree/Asset/AssetCategory
-        - Tree/Asset/AssetModel
-        - Tree/Organization/OrgUnit
-        - Tree/Contract/Agreement
-      morphMany:
-        - Tree/Risk/Incident
-
-
-  # =========================
-  # CALENDAR
-  # =========================
-
-  Tree/Calendar/Calendar:
-    name: string
-
-  Tree/Calendar/Holiday:
-    name: string
-    date: date
-
-  Tree/Calendar/Shift:
-    name: string
-
-  Tree/Calendar/Roster:
-    name: string
-
-  Tree/Calendar/Event:
-    name: string
-    starts_at: timestamp nullable
-    ends_at: timestamp nullable
-
-
-  # =========================
-  # RISK (FULLY POLYMORPHIC)
-  # =========================
-
-  Tree/Risk/IncidentType:
-    name: string
-    relationships:
-      hasMany: Tree/Risk/Incident
-
-  Tree/Risk/Incident:
+      hasMany: Contract
+# ==========================================================================
+# CONTRACT
+#
+# PUBLIC/NON-CONFIDENTIAL CONTRACT DATA ONLY
+#
+# SAFE FOR:
+# - reporting
+# - dashboards
+# - analytics
+# - management
+#
+# NEVER STORE:
+# - salary
+# - legal clauses
+# - approvals
+# - signatures
+# - attachments
+# - workflow internals
+  Trees\Agreement\Models\Contract:
+    uuid: uuid unique
+    contract_type_id: id foreign:contract_types
+    org_corp_id: id nullable foreign:org_corps
+  # ------------------------------------------------------------------------
+  # PRIMARY LINKED ENTITY
+  # ------------------------------------------------------------------------
+  #
+  # Employee
+  # Asset
+  # JobPosition
+  # License
+  #
+  # ------------------------------------------------------------------------
+    contract_no: string nullable
     title: string
-    incident_type_id: id nullable
-    subject_type: string
-    subject_id: id
+    summary: text nullable
+    start_date: date nullable
+    end_date: date nullable
+    renewal_date: date nullable
+    status: enum:draft,pending,active,expired,terminated,archived default:draft
+  # ------------------------------------------------------------------------
+  # PUBLIC TERMS ONLY
+  # ------------------------------------------------------------------------
+  #
+  # Example:
+  #
+  # {
+  #"working_hours": "9am-6pm",
+  #"notice_days": 30
+  # }
+  #
+  # ------------------------------------------------------------------------
+    terms: json nullable
+    meta: json nullable
     relationships:
-      belongsTo: Tree/Risk/IncidentType
-      morphTo: subject
-      hasMany:
-        - Tree/Risk/Resolution
+      morphTo: contractable
+      hasOne: ContractConfidentiality
+      hasMany: ContractParty
+# ==========================================================================
+# CONTRACT PARTY
+# ==========================================================================
+#
+# POLYMORPHIC CONTRACT PARTICIPANTS
+#
+# Supports:
+# - Staff
+# - Employee
+# - Organization
+# - Vendor
+# - Department
+# - Asset Owner
+# - Legal Team
+#
+# IMPORTANT:
+# Permissions and notifications rely on this table.
+#
+# ==========================================================================
+  Trees\Agreement\Models\ContractParty:
+    contract_id: id foreign:contracts
+  # ------------------------------------------------------------------------
+  # ROLE IN CONTRACT
+  # ------------------------------------------------------------------------
+  #
+  # employee
+  # employer
+  # vendor
+  # approver
+  # legal
+  # witness
+  #
+  # ------------------------------------------------------------------------
+    role: string nullable
+    is_signatory: boolean default:false
+    notify_on_expiry: boolean default:true
+    meta: json nullable
+    relationships:
+      morphTo: Party
+# ==========================================================================
+# CONTRACT CONFIDENTIALITY
+# ==========================================================================
+#
+# Stores ALL CONFIDENTIAL/SENSITIVE DATA.
+#
+# ENCRYPT THIS PAYLOAD.
+#
+# ACCESSIBLE ONLY TO:
+# - HR
+# - Legal
+# - Authorized Users
+# - Contract Parties
+#
+# ==========================================================================
+  Business\Lcs\Models\ContractConfidentiality:
+    contract_id: id foreign:contracts unique
 
-  Tree/Risk/Resolution:
-    incident_id: id
+  # ------------------------------------------------------------------------
+  # ENCRYPTED CONFIDENTIAL PAYLOAD
+  # ------------------------------------------------------------------------
+  #
+  # SHOULD CONTAIN:
+  #
+  # salary
+  # bank account
+  # compensation
+  # approvals
+  # signatures
+  # attachments
+  # comments
+  # audit
+  # workflow state
+  # internal notes
+  #
+  # ------------------------------------------------------------------------
+    payload: hashed # Encrypted JSON payload
+  # ------------------------------------------------------------------------
+  # ACCESS OVERRIDE
+  # ------------------------------------------------------------------------
+    allowed_roles: json nullable
+    meta: json nullable
+# ============================================================================
+# SAMPLE CONTRACT PARTY
+# ============================================================================
+#
+# Contract:
+# Senior Engineer Employment Contract
+#
+# Parties:
+#
+# 1. Employee
+#role = employee
+#
+# 2. Organization
+#role = employer
+#
+# 3. HR Department
+#role = hr
+#
+# ============================================================================
+# ============================================================================
+# SAMPLE PUBLIC TERMS
+# ============================================================================
+#
+# {
+#"working_hours": "9am-6pm",
+#"notice_days": 30
+# }
+#
+# ============================================================================
+# ============================================================================
+# SAMPLE CONFIDENTIAL PAYLOAD
+# ============================================================================
+#
+# {
+#
+#"salary": 12000,
+#
+#"bank_account": "xxxx",
+#
+#"bonus_formula": "confidential",
+#
+#"approvals": {
+#"hr": "approved",
+#"legal": "approved"
+#},
+#
+#"attachments": [
+#{
+#"document_id": 10,
+#"type": "signed_pdf"
+#}
+#],
+#
+#"signatures": {
+#"employee_signed_at": "...",
+#"hr_signed_at": "..."
+#},
+#
+#"workflow": {
+#"state": "approved"
+#}
+# }
+#
+# ============================================================================
+# ============================================================================
+# ENCRYPTION EXAMPLE
+# ============================================================================
+#
+# Crypt::encryptString(json_encode($payload))
+#
+# ============================================================================
+# ============================================================================
+# RECOMMENDED ACCESS POLICY
+# ============================================================================
+#
+# Contract confidentiality visible only if:
+#
+# - user is HR
+# - user is Legal
+# - user is party to contract
+# - explicit permission granted
+#
+# ============================================================================
+# ============================================================================
+# FUTURE OPTIONAL TABLES
+# ============================================================================
+#
+# Only normalize later IF NECESSARY:
+#
+# - contract_versions
+# - contract_events
+# - contract_comments
+# - contract_signatures
+#
+# Keep them inside confidential payload initially.
+# ==================================================================
+# TASK
+  Trees\Todo\Models\Task:
+    role_id: id nullable foreign:roles
+    staff_id: id nullable foreign:staff
+    task_list_id: id nullable foreign:task_lists
+    title: string
     description: text nullable
     relationships:
-      belongsTo: Tree/Risk/Incident
+      morphTo: ref
+      hasMany: TaskAssignment
+      belongsTo: \Spatie\Permission\Models\Role
+  Trees\Todo\Models\TaskList:
+    name: string
+    relationships:
+      hasMany: Task
+      morphTo: ref
+  Trees\Todo\Models\TaskTemplate:
+    role_id: id nullable foreign:roles
+    name: string
+    relationships:
+      hasMany: TaskListTemplateItem
+      belongsTo: \Spatie\Permission\Models\Role
+  Trees\Todo\Models\TaskListTemplate:
+    name: string
+    relationships:
+      hasMany: TaskListTemplateItem
+  Trees\Todo\Models\TaskListTemplateItem:
+    task_list_template_id: id foreign:task_list_templates
+    task_template_id: id foreign:task_templates
+    depends_on_id: id nullable foreign:task_list_template_items # Previous item (Finish-to-Start logic)
+    relationships:
+      hasMany: TaskListTemplateItem:dependents # Reverse dependency (who depends on me)
+  Trees\Todo\Models\TaskAssignment:
+    task_id: id foreign:tasks
+    role_id: id nullable foreign:roles
+    staff_id: id nullable foreign:staff
+    assigned_by: id nullable foreign:staff
+    relationships:
+      belongsTo: \Spatie\Permission\Models\Role
+# ==================================================================
+# Event Calendar
+  Trees\Calendar\Models\Event:
+    org_corp_id: id nullable foreign:org_corps
+    org_unit_id: id nullable foreign:org_units
+    org_team_id: id nullable foreign:org_teams
+    type: enum:holiday,company,operational,training,maintenance,other
+    name: string
+    description: text nullable
+    start_at: timestamp
+    end_at: timestamp nullable
+    is_blocking: boolean default:false
+    attributes: json nullable
+# ==================================================================
+# ORGANIZATION
+  Trees\Organization\Models\OrgCorp:
+    name: string
+    code: string nullable
+    uuid: string unique
+    type: enum:company,government,vendor,institution nullable
+    attributes: json nullable
+    relationships:
+      hasMany: OrgUnit
+  Trees\Organization\Models\OrgUnit:
+    org_corp_id: id nullable foreign:org_corps
+    parent_id: id nullable foreign:org_units
+    name: string
+    code: string nullable
+    uuid: string unique
+    description: string nullable
+    attributes: json nullable
+    relationships:
+      hasMany: OrgUnit:children, OrgTeam
+  Trees\Organization\Models\OrgTeam:
+    org_unit_id: id foreign:org_units
+    name: string
+    code: string nullable
+    is_active: boolean default:true
+    attributes: json nullable
+    relationships:
+      hasMany: Workflow, JobContract
+# ==================================================================
+# JOB
+  Trees\Organization\Models\JobContract:
+    uuid: string unique
+    job_position_id: id nullable foreign:job_positions
+    staff_id: id nullable foreign:staff
+    issuing_org_corp_id: id foreign:org_corps
+    contract_type: enum:FTE,FTC,TPC,INTERN nullable
+    start_date: date nullable
+    end_date: date nullable
+    # compensation_id: id nullable foreign:job_compensations
+    # name: string
+    # org_unit_id: id nullable foreign:org_units
+    # org_team_id: id nullable foreign:org_teams
+    # type: enum:permanent,contract,temporary,outsource nullable
+    # status: enum:draft,active,on_hold,closed default:active
+    # position_limit: integer nullable
+    # start_date: date nullable
+    # end_date: date nullable
+    # attributes: json nullable
+    relationships:
+      hasOne: OrgCorp
+      hasMany: JobPosition
+  Trees\Organization\Models\JobPosition:
+    job_contract_id: id foreign:job_contracts
+    org_unit_id: id nullable foreign:org_units
+    level: enum:junior,mid,senior,lead,manager nullable
+    status: enum:open,filled,closed default:open
+    title: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: StaffPosition
+  Trees\Organization\Models\JobRole:
+    type: enum:approval,operation,admin,reporting nullable # optional: classify behavior
+    name: string
+    description: text nullable
+    attributes: json nullable
+  Trees\Organization\Models\JobPositionRole:
+    job_position_id: id foreign:job_positions
+    job_role_id: id foreign:job_roles
+# ==================================================================
+# PERSON
+  Trees\Organization\Models\Staff:
+    user_id: id nullable foreign:users
+    org_corp_id: id nullable foreign:org_corps
+    org_unit_id: id nullable foreign:org_units
+    job_contract_id: id nullable foreign:job_contracts
+    type: enum:FTE,FTC,TPC,Intern default:FTE
+    status: enum:active,inactive,suspended default:active
+    name: string nullable
+    staff_no: string nullable
+    attributes: json nullable
+    relationships:
+      hasMany: StaffPosition, Request
+      morphMany: AuditLog:model
+  Trees\Organization\Models\StaffPosition:
+    staff_id: id foreign:staff
+    job_position_id: id foreign:job_positions
+    assignment_type: enum:primary,secondary,acting default:primary
+    status: enum:active,ended,pending default:active
+    start_date: date
+    end_date: date nullable
+    attributes: json nullable
+  Trees\Organization\Models\Movement:
+    type: enum:transfer,promotion,demotion,assignment,end_of_assignment
+    effective_date: date
+    from: json nullable
+    to: json nullable
+    relationships:
+      morphTo: movable
+# ==================================================================
+# AUTH (SPATIE)
+  # Trees\Authorization\Models\Role:
+  #   name: string
+  # Trees\Authorization\Models\Permission:
+  #   name: string
+  # Trees\Authorization\Models\RoleHasPermission:
+  # # Pivot: defines which roles can access which permissions (gates)
+  #   permission_id: id foreign:permissions
+  #   role_id: id foreign:roles
+  #   timestamps: false
+  #   relationships:
+  #     belongsTo: \Spatie\Permission\Models\Role
+  # Trees\Authorization\Models\ModelHasRole:
+  #   role_id: id foreign:roles
+  #   timestamps: false
+  #   relationships:
+  #     belongsTo: \Spatie\Permission\Models\Role
+  #     morphTo: model
+  # Trees\Authorization\Models\ModelHasPermission:
+  #   permission_id: id foreign:permissions
+  #   timestamps: false
+  #   relationships:
+  #     morphTo: model
+  Trees\Authorization\Models\StaffRole:
+  # CORE BUSINESS TABLE
+  # Represents resolved/active roles per Staff WITH context
+  #
+  # This is NOT just a pivot — this is a DOMAIN ENTITY
+  # It connects:
+  # Staff → Role → Context (Org + Job)
+    staff_id: id foreign:staff
+    role_id: id foreign:roles
+    org_corp_id: id nullable foreign:org_corps
+    org_unit_id: id nullable foreign:org_units
+    org_team_id: id nullable foreign:org_teams
+    job_position_id: id nullable foreign:job_positions
+    job_role_id: id nullable foreign:job_roles
+    job_contract_id: id nullable foreign:job_contracts
+    source: enum:auto,manual default:auto
+    status: enum:active,inactive default:active
+    start_date: date nullable
+    end_date: date nullable
+    attributes: json nullable
+    relationships:
+      belongsTo: \Spatie\Permission\Models\Role
+  Trees\Authorization\Models\RoleAssignment:
+  # Represents manual assignment BEFORE resolution
+  #
+  # Think of this as "input"
+  # while StaffRole is "computed result"
+  #
+  # DO NOT mix responsibilities:
+  # RoleAssignment = intent
+  # StaffRole = effective state
+    role_id: id foreign:roles
+    staff_id: id foreign:staff
+    assigned_by: id nullable foreign:staff
+    org_unit_id: id nullable foreign:org_units
+    org_team_id: id nullable foreign:org_teams
+    start_date: date nullable
+    end_date: date nullable
+    attributes: json nullable
+    relationships:
+      belongsTo: \Spatie\Permission\Models\Role
+
+# ==================================================================
+# Shift Calendar
+  Trees\Calendar\Models\Shift:
+    org_unit_id: id nullable foreign:org_units
+    org_team_id: id nullable foreign:org_teams
+    staff_id: id nullable foreign:staff
+    type: enum:fixed,rotational nullable
+    name: string
+    description: text nullable
+    start_time: time
+    end_time: time
+    start_date: date nullable
+    end_date: date nullable
+    attributes: json nullable
+# ==================================================================
+# WORKFLOW
+  Trees\Process\Models\Workflow:
+  # Represents a complete business process
+  # MUST be owned by exactly one OrgTeam
+  # Defines control logic only (NOT execution, NOT data state)
+    org_team_id: id foreign:org_teams
+    start_step_id: id nullable foreign:workflow_steps
+    name: string
+    description: text nullable
+    is_active: boolean default:true
+    attributes: json nullable
+    relationships:
+      hasMany: WorkflowStep, WorkflowInstance
+  Trees\Process\Models\WorkflowStep:
+    workflow_id: id foreign:workflows
+    type: enum:start,process,decision,end default:process
+    name: string
+    description: text nullable
+    requires_tasks: boolean default:false
+    requires_decision: boolean default:false
+    is_automatic: boolean default:false
+    attributes: json nullable
+    relationships:
+      hasMany: WorkflowTransition:from_transitions, WorkflowTransition:to_transitions, WorkflowStepTask, WorkflowInstanceStep, WorkflowDecision
+  Trees\Process\Models\WorkflowTransition:
+    workflow_id: id foreign:workflows
+    from_step_id: id foreign:workflow_steps
+    to_step_id: id foreign:workflow_steps
+    name: string nullable
+    conditions: json nullable
+    requires_approval: boolean default:false
+    attributes: json nullable
+  Trees\Process\Models\WorkflowStepTask:
+    workflow_step_id: id foreign:workflow_steps
+    task_template_id: id nullable foreign:task_templates
+    task_list_template_id: id nullable foreign:task_list_templates
+    is_required: boolean default:true
+    attributes: json nullable
+  Trees\Process\Models\WorkflowInstance:
+    workflow_id: id foreign:workflows
+    current_step_id: id nullable foreign:workflow_steps
+    status: enum:active,completed,cancelled default:active
+    started_at: timestamp nullable
+    completed_at: timestamp nullable
+    attributes: json nullable
+    relationships:
+      morphTo: ref
+      hasMany: WorkflowInstanceStep, WorkflowDecision
+  Trees\Process\Models\WorkflowInstanceStep:
+    workflow_instance_id: id foreign:workflow_instances
+    workflow_step_id: id foreign:workflow_steps
+    status: enum:pending,active,completed,skipped default:pending
+    started_at: timestamp nullable
+    completed_at: timestamp nullable
+    attributes: json nullable
+  Trees\Process\Models\WorkflowDecision:
+    workflow_instance_id: id foreign:workflow_instances
+    workflow_step_id: id foreign:workflow_steps
+    user_id: id foreign:staff
+    decision: enum:approve,reject,request_changes
+    comment: text nullable
+    decided_at: timestamp
+    attributes: json nullable
+# ==================================================================
+# Human Resource Management
+  Business\Hrm\Models\Employee:
+    staff_id: id foreign:staff
+    org_corp_id: id foreign:org_corps
+    status: enum:active,resigned,terminated,retired default:active
+    employee_no: string nullable
+    hire_date: date nullable
+    termination_date: date nullable
+    attributes: json nullable
+  Business\Hrm\Models\JobTitle:
+    title: string
+    jobgrade: string nullable
+    uuid: uuid unique
+    description: text nullable
+    attributes: json nullable
+    masco_code: string nullable
+# ==================================================================
+# REQUEST
+  Business\Tos\Models\Request:
+    requester_id: id foreign:staff
+    workflow_instance_id: id nullable foreign:workflow_instances
+    status: enum:submitted,in_review,approved,rejected,in_progress,completed,closed default:submitted
+    name: string nullable
+    description: text nullable
+    request_type: string nullable
+    attributes: json nullable
+    relationships:
+      morphTo: ref
+  Business\Tos\Models\RequestType:
+  # Defines category of request
+  # Maps to workflow + business rules
+  #
+  # Example:
+  # - Maintenance Request
+  # - IT Support
+  # - HR Request
+    workflow_id: id nullable foreign:workflows
+    name: string
+    attributes: json nullable
+# ==================================================================
+# SERVICE CATALOG
+  Business\Tos\Models\Offer:
+  # Represents the identity of a service offered internally
+  # IMPORTANT: Definition comes from Version module
+    org_team_id: id foreign:org_teams
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      morphOne: Versionable
+      hasMany: OfferCategoryAssignment
+  Business\Tos\Models\OfferCategory:
+    parent_id: id nullable foreign:Offer_categories
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: OfferCategory:children, OfferCategoryAssignment
+  Business\Tos\Models\OfferCategoryAssignment:
+  # Links Offer → Category
+  # Categories group OFFER identity only (NOT versions)
+    offer_id: id foreign:offers
+    offer_category_id: id foreign:offer_categories
+    attributes: json nullable
+# ==================================================================
+# DOCUMENT
+  Business\Dms\Models\Document:
+  # Represents the identity of a controlled document
+  # Example:
+  # - SOP (Standard Operating Procedure)
+  # - Work Instruction
+  # - Policy
+  # - Technical Drawing
+  # - Contract
+  # - Learning Materials
+  #
+  # IMPORTANT:
+  # - Document DOES NOT store content
+  # - Content is stored in Version
+  # - Document is stable identity
+  #
+  # Version module handles:
+  # - content
+  # - lifecycle (draft, approved, published, archived)
+  # - change history
+    org_team_id: id foreign:org_teams
+    org_unit_id: id nullable foreign:org_units
+    location_id: id nullable foreign:locations
+    type: enum:sop,work_instruction,policy,drawing,contract,other nullable
+    title: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      morphOne: Versionable
+      hasMany: DocumentCategoryAssignment
+  Business\Dms\Models\DocumentCategory:
+  # Optional grouping for documents
+  # Example:
+  # - Quality Documents
+  # - Safety Procedures
+  # - Technical Manuals
+    parent_id: id nullable foreign:document_categories
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: DocumentCategory:children, DocumentCategoryAssignment
+  Business\Dms\Models\DocumentCategoryAssignment:
+  # Links Document to categories
+  # Keeps classification flexible and non-restrictive
+    document_id: id foreign:documents
+    document_category_id: id foreign:document_categories
+    attributes: json nullable
+# ==================================================================
+# Learning
+  Business\Lms\Models\Course:
+  # Represents a high-level learning program (identity only)
+  # DOES NOT store content (content is in Version via Materials)
+    org_team_id: id foreign:org_teams
+    code: string unique
+    title: string
+    description: text nullable
+    is_active: boolean default:true
+    attributes: json nullable
+    relationships:
+      hasMany: CourseModule, CourseGroupAssignment
+  Business\Lms\Models\CourseGroup:
+    parent_id: id nullable foreign:course_groups
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: CourseGroup:children, CourseGroupAssignment
+  Business\Lms\Models\CourseGroupAssignment:
+    course_id: id foreign:courses
+    course_group_id: id foreign:course_groups
+    attributes: json nullable
+  Business\Lms\Models\Module:
+  # Represents a reusable learning unit inside courses
+  # NO content stored here (content via Material → Version)
+    name: string
+    description: text nullable
+    duration_minutes: integer nullable
+    validity_days: integer nullable
+    attributes: json nullable
+    relationships:
+      hasMany: CourseModule, MaterialModule, Quiz, Certificate
+  Business\Lms\Models\CourseModule:
+    course_id: id foreign:courses
+    module_id: id foreign:modules
+    sequence: integer nullable
+    attributes: json nullable
+  Business\Lms\Models\Material:
+  # Represents learning material identity
+  # Content is stored in Version (Versionable)
+  #
+  # IMPORTANT:
+  # ONLY Published Versions should be used in learning
+    org_team_id: id nullable foreign:org_teams
+    type: enum:document,video,link,other nullable
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: MaterialModule
+      morphOne: Versionable
+  Business\Lms\Models\MaterialModule:
+    material_id: id foreign:materials
+    module_id: id foreign:modules
+    sequence: integer nullable
+    attributes: json nullable
+  Business\Lms\Models\Quiz:
+    module_id: id foreign:modules
+    name: string
+    description: text nullable
+    pass_score: integer nullable
+    attributes: json nullable
+    relationships:
+      hasMany: QuizAttempt
+  Business\Lms\Models\QuizAttempt:
+    quiz_id: id foreign:quizzes
+    staff_id: id foreign:staff
+    result: enum:pass,fail nullable
+    score: integer nullable
+    attempted_at: timestamp nullable
+    attributes: json nullable
+    relationships:
+      hasMany: Certificate:certificates
+  Business\Lms\Models\Evaluation:
+    module_id: id nullable foreign:modules
+    staff_id: id foreign:staff
+    evaluator_id: id nullable foreign:users
+    result: enum:pass,fail nullable
+    evaluated_at: timestamp nullable
+    attributes: json nullable
+    relationships:
+      hasMany: Certificate:certificates
+# ==================================================================
+# Certificate Management
+  Business\Lms\Models\Certificate:
+  # Proof of successful learning
+  # MUST be based on approved (published) material
+    module_id: id foreign:modules
+    staff_id: id foreign:staff
+    quiz_attempt_id: id nullable foreign:quiz_attempts
+    evaluation_id: id nullable foreign:evaluations
+    issued_by: id nullable foreign:users
+    status: enum:valid,expired,revoked default:valid
+    issued_at: timestamp nullable
+    expires_at: timestamp nullable
+    attributes: json nullable
+# ==================================================================
+# ASSET
+  Business\Eam\Models\Asset:
+  # Represents a physical or operational asset (IDENTITY ONLY)
+  #
+  # Examples:
+  # - Machine / Equipment
+  # - Tools
+  # - Vehicles / Movers
+  # - Storage / Rack / Space
+  #
+  # IMPORTANT:
+  # - This model stores CURRENT STATE only
+  # - Historical changes must go to AuditLog / Movement
+  # - Maintenance execution is handled by Task + Workflow
+  #
+  # DO NOT:
+  # - create asset_history table ❌
+  # - create maintenance tables ❌
+  # - store work orders here ❌
+    org_team_id: id foreign:org_teams
+    location_id: id nullable foreign:locations
+    code: string unique
+    name: string
+    description: text nullable
+    type: enum:machine,tool,vehicle,storage,facility,other nullable
+    brand: string nullable
+    model: string nullable
+    serial_number: string nullable
+    status: enum:setup,active,maintenance,out_of_service,disposed default:setup
+    attributes: json nullable
+    relationships:
+      hasMany: AssetAssignment
+    # ------------------------------------------------------------------
+    # REQUEST / WORKFLOW INTEGRATION
+    # ------------------------------------------------------------------
+    # Asset is operated THROUGH Request + Workflow
+    # e.g. maintenance request, relocation request, disposal request
+      morphMany: Request:ref
+    # ------------------------------------------------------------------
+    # LOCATION ENGINE (INDIRECT)
+    # ------------------------------------------------------------------
+    # LocationAssignment will also reference Asset polymorphically
+    # DO NOT duplicate location logic here
+    # ------------------------------------------------------------------
+  Business\Eam\Models\AssetType:
+  # Optional classification of assets
+  # Used for grouping, filtering, and applying rules
+    name: string
+    description: text nullable
+    attributes: json nullable
+    relationships:
+      hasMany: AssetTypeAssignment
+    # ------------------------------------------------------------------
+  Business\Eam\Models\AssetTypeAssignment:
+  # Links Asset to one or more types
+  # Allows flexible classification without modifying Asset structure
+    asset_id: id foreign:assets
+    asset_type_id: id foreign:asset_types
+    attributes: json nullable
+    # ------------------------------------------------------------------
+  Business\Eam\Models\AssetAssignment:
+  # Tracks responsibility / usage of asset
+  #
+  # Examples:
+  # - Assigned to staff
+  # - Assigned to team
+  # - Assigned to job position
+  #
+  # This is NOT ownership (ownership = org_team_id in Asset)
+  # This is RESPONSIBILITY / usage history
+    asset_id: id foreign:assets
+    type: enum:primary,secondary,temporary nullable
+    start_date: date nullable
+    end_date: date nullable
+    attributes: json nullable
+    relationships:
+      morphTo: assignable
+
+# ============================================================================
+

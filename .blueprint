@@ -1,0 +1,201 @@
+created:
+    - database/migrations/2026_06_15_032826_create_api_configs_table.php
+    - database/migrations/2026_06_15_032827_create_api_data_table.php
+    - database/migrations/2026_06_15_032828_create_audit_logs_table.php
+    - database/migrations/2026_06_15_032829_create_versionables_table.php
+    - database/migrations/2026_06_15_032830_create_versions_table.php
+    - database/migrations/2026_06_15_032831_create_version_approvals_table.php
+    - database/migrations/2026_06_15_032832_create_version_relations_table.php
+    - database/migrations/2026_06_15_032833_create_version_locks_table.php
+    - database/migrations/2026_06_15_032834_create_locations_table.php
+    - database/migrations/2026_06_15_032835_create_location_assignments_table.php
+    - database/migrations/2026_06_15_032836_create_contract_types_table.php
+    - database/migrations/2026_06_15_032837_create_contracts_table.php
+    - database/migrations/2026_06_15_032838_create_contract_parties_table.php
+    - database/migrations/2026_06_15_032839_create_contract_confidentialities_table.php
+    - database/migrations/2026_06_15_032840_create_tasks_table.php
+    - database/migrations/2026_06_15_032841_create_task_lists_table.php
+    - database/migrations/2026_06_15_032842_create_task_templates_table.php
+    - database/migrations/2026_06_15_032843_create_task_list_templates_table.php
+    - database/migrations/2026_06_15_032844_create_task_list_template_items_table.php
+    - database/migrations/2026_06_15_032845_create_task_assignments_table.php
+    - database/migrations/2026_06_15_032846_create_events_table.php
+    - database/migrations/2026_06_15_032847_create_org_corps_table.php
+    - database/migrations/2026_06_15_032848_create_org_units_table.php
+    - database/migrations/2026_06_15_032849_create_org_teams_table.php
+    - database/migrations/2026_06_15_032850_create_job_contracts_table.php
+    - database/migrations/2026_06_15_032851_create_job_positions_table.php
+    - database/migrations/2026_06_15_032852_create_job_roles_table.php
+    - database/migrations/2026_06_15_032853_create_job_position_roles_table.php
+    - database/migrations/2026_06_15_032854_create_staff_table.php
+    - database/migrations/2026_06_15_032855_create_staff_positions_table.php
+    - database/migrations/2026_06_15_032856_create_movements_table.php
+    - database/migrations/2026_06_15_032857_create_staff_roles_table.php
+    - database/migrations/2026_06_15_032858_create_role_assignments_table.php
+    - database/migrations/2026_06_15_032859_create_shifts_table.php
+    - database/migrations/2026_06_15_032900_create_workflows_table.php
+    - database/migrations/2026_06_15_032901_create_workflow_steps_table.php
+    - database/migrations/2026_06_15_032902_create_workflow_transitions_table.php
+    - database/migrations/2026_06_15_032903_create_workflow_step_tasks_table.php
+    - database/migrations/2026_06_15_032904_create_workflow_instances_table.php
+    - database/migrations/2026_06_15_032905_create_workflow_instance_steps_table.php
+    - database/migrations/2026_06_15_032906_create_workflow_decisions_table.php
+    - database/migrations/2026_06_15_032907_create_employees_table.php
+    - database/migrations/2026_06_15_032908_create_job_titles_table.php
+    - database/migrations/2026_06_15_032909_create_requests_table.php
+    - database/migrations/2026_06_15_032910_create_request_types_table.php
+    - database/migrations/2026_06_15_032911_create_offers_table.php
+    - database/migrations/2026_06_15_032912_create_offer_categories_table.php
+    - database/migrations/2026_06_15_032913_create_offer_category_assignments_table.php
+    - database/migrations/2026_06_15_032914_create_documents_table.php
+    - database/migrations/2026_06_15_032915_create_document_categories_table.php
+    - database/migrations/2026_06_15_032916_create_document_category_assignments_table.php
+    - database/migrations/2026_06_15_032917_create_courses_table.php
+    - database/migrations/2026_06_15_032918_create_course_groups_table.php
+    - database/migrations/2026_06_15_032919_create_course_group_assignments_table.php
+    - database/migrations/2026_06_15_032920_create_modules_table.php
+    - database/migrations/2026_06_15_032921_create_course_modules_table.php
+    - database/migrations/2026_06_15_032922_create_materials_table.php
+    - database/migrations/2026_06_15_032923_create_material_modules_table.php
+    - database/migrations/2026_06_15_032924_create_quizzes_table.php
+    - database/migrations/2026_06_15_032925_create_quiz_attempts_table.php
+    - database/migrations/2026_06_15_032926_create_evaluations_table.php
+    - database/migrations/2026_06_15_032927_create_certificates_table.php
+    - database/migrations/2026_06_15_032928_create_assets_table.php
+    - database/migrations/2026_06_15_032929_create_asset_types_table.php
+    - database/migrations/2026_06_15_032930_create_asset_type_assignments_table.php
+    - database/migrations/2026_06_15_032931_create_asset_assignments_table.php
+    - app/Trees/Sync/Models/ApiConfig.php
+    - app/Trees/Sync/Models/ApiData.php
+    - app/Trees/AuditTrail/Models/AuditLog.php
+    - app/Trees/Copies/Models/Versionable.php
+    - app/Trees/Copies/Models/Version.php
+    - app/Trees/Copies/Models/VersionApproval.php
+    - app/Trees/Copies/Models/VersionRelation.php
+    - app/Trees/Copies/Models/VersionLock.php
+    - app/Trees/FloorPlan/Models/Location.php
+    - app/Trees/FloorPlan/Models/LocationAssignment.php
+    - app/Trees/Agreement/Models/ContractType.php
+    - app/Trees/Agreement/Models/Contract.php
+    - app/Trees/Agreement/Models/ContractParty.php
+    - app/Business/Lcs/Models/ContractConfidentiality.php
+    - app/Trees/Todo/Models/Task.php
+    - app/Trees/Todo/Models/TaskList.php
+    - app/Trees/Todo/Models/TaskTemplate.php
+    - app/Trees/Todo/Models/TaskListTemplate.php
+    - app/Trees/Todo/Models/TaskListTemplateItem.php
+    - app/Trees/Todo/Models/TaskAssignment.php
+    - app/Trees/Calendar/Models/Event.php
+    - app/Trees/Organization/Models/OrgCorp.php
+    - app/Trees/Organization/Models/OrgUnit.php
+    - app/Trees/Organization/Models/OrgTeam.php
+    - app/Trees/Organization/Models/JobContract.php
+    - app/Trees/Organization/Models/JobPosition.php
+    - app/Trees/Organization/Models/JobRole.php
+    - app/Trees/Organization/Models/JobPositionRole.php
+    - app/Trees/Organization/Models/Staff.php
+    - app/Trees/Organization/Models/StaffPosition.php
+    - app/Trees/Organization/Models/Movement.php
+    - app/Trees/Authorization/Models/StaffRole.php
+    - app/Trees/Authorization/Models/RoleAssignment.php
+    - app/Trees/Calendar/Models/Shift.php
+    - app/Trees/Process/Models/Workflow.php
+    - app/Trees/Process/Models/WorkflowStep.php
+    - app/Trees/Process/Models/WorkflowTransition.php
+    - app/Trees/Process/Models/WorkflowStepTask.php
+    - app/Trees/Process/Models/WorkflowInstance.php
+    - app/Trees/Process/Models/WorkflowInstanceStep.php
+    - app/Trees/Process/Models/WorkflowDecision.php
+    - app/Business/Hrm/Models/Employee.php
+    - app/Business/Hrm/Models/JobTitle.php
+    - app/Business/Tos/Models/Request.php
+    - app/Business/Tos/Models/RequestType.php
+    - app/Business/Tos/Models/Offer.php
+    - app/Business/Tos/Models/OfferCategory.php
+    - app/Business/Tos/Models/OfferCategoryAssignment.php
+    - app/Business/Dms/Models/Document.php
+    - app/Business/Dms/Models/DocumentCategory.php
+    - app/Business/Dms/Models/DocumentCategoryAssignment.php
+    - app/Business/Lms/Models/Course.php
+    - app/Business/Lms/Models/CourseGroup.php
+    - app/Business/Lms/Models/CourseGroupAssignment.php
+    - app/Business/Lms/Models/Module.php
+    - app/Business/Lms/Models/CourseModule.php
+    - app/Business/Lms/Models/Material.php
+    - app/Business/Lms/Models/MaterialModule.php
+    - app/Business/Lms/Models/Quiz.php
+    - app/Business/Lms/Models/QuizAttempt.php
+    - app/Business/Lms/Models/Evaluation.php
+    - app/Business/Lms/Models/Certificate.php
+    - app/Business/Eam/Models/Asset.php
+    - app/Business/Eam/Models/AssetType.php
+    - app/Business/Eam/Models/AssetTypeAssignment.php
+    - app/Business/Eam/Models/AssetAssignment.php
+models:
+    Models\User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string nullable' }
+    Trees\Sync\Models\ApiConfig: { name: 'string unique index', source_type: string, source_config: json, data_path: 'string nullable', depends_on: 'json nullable', mapping: json, active: 'boolean default:true index', relationships: { hasMany: ApiData } }
+    Trees\Sync\Models\ApiData: { api_config_id: 'id foreign:api_configs cascadeOnDelete', fingerprint: 'string nullable index', payload: json, status: 'string default:pending index', processed_at: 'timestamp nullable', error: 'text nullable' }
+    Trees\AuditTrail\Models\AuditLog: { user_id: 'id nullable foreign:users', staff_id: 'id nullable foreign:staff', result: 'string nullable', actor: string, action: string, reason: 'string nullable', metadata: 'json nullable', relationships: { morphTo: ref } }
+    Trees\Copies\Models\Versionable: { type: 'enum:document,workflow,template,service,config,other', name: string, current_version_id: 'id nullable foreign:versions', attributes: 'json nullable', relationships: { morphTo: ref, hasMany: Version } }
+    Trees\Copies\Models\Version: { versionable_id: 'id foreign:versionables', created_by: 'id nullable foreign:staff', approved_by: 'id nullable foreign:staff', published_by: 'id nullable foreign:staff', status: 'enum:draft,approved,published,archived,rejected', content_type: 'enum:file,url,inline,json nullable', content_path: 'string nullable', major: integer, minor: integer, patch: integer, version: string, change_summary: 'string nullable', change_notes: 'text nullable', is_menu: boolean, approved_at: 'timestamp nullable', published_at: 'timestamp nullable', effective_from: 'timestamp nullable', effective_to: 'timestamp nullable', attributes: 'json nullable', relationships: { hasMany: 'VersionApproval, VersionRelation:relations, VersionRelation:relatedRelations' } }
+    Trees\Copies\Models\VersionApproval: { version_id: 'id foreign:versions', user_id: 'id foreign:staff' }
+    Trees\Copies\Models\VersionRelation: { version_id: 'id foreign:versions', related_version_id: 'id foreign:versions' }
+    Trees\Copies\Models\VersionLock: { version_id: 'id foreign:versions', locked_by: 'id foreign:staff' }
+    Trees\FloorPlan\Models\Location: { parent_id: 'id nullable foreign:locations', org_corp_id: 'id nullable foreign:org_corps', type: 'enum:site,building,area,section,room,zone,other nullable', name: string, attributes: 'json nullable', relationships: { hasMany: 'Location:children, LocationAssignment' } }
+    Trees\FloorPlan\Models\LocationAssignment: { location_id: 'id foreign:locations', type: 'enum:primary,secondary,temporary nullable', start_date: 'date nullable', end_date: 'date nullable', attributes: 'json nullable', relationships: { morphTo: assignable } }
+    Trees\Agreement\Models\ContractType: { uuid: 'uuid unique', name: string, code: 'string unique', description: 'text nullable', template: 'longtext nullable', public_schema: 'json nullable', confidential_schema: 'json nullable', notify: 'json nullable', expiry_notify_days: 'integer default:30', requires_approval: 'boolean default:false', requires_signature: 'boolean default:false', workflow_id: 'id nullable foreign:workflows', meta: 'json nullable', relationships: { hasMany: Contract } }
+    Trees\Agreement\Models\Contract: { uuid: 'uuid unique', contract_type_id: 'id foreign:contract_types', org_corp_id: 'id nullable foreign:org_corps', contract_no: 'string nullable', title: string, summary: 'text nullable', start_date: 'date nullable', end_date: 'date nullable', renewal_date: 'date nullable', status: 'enum:draft,pending,active,expired,terminated,archived default:draft', terms: 'json nullable', meta: 'json nullable', relationships: { morphTo: contractable, hasOne: ContractConfidentiality, hasMany: ContractParty } }
+    Trees\Agreement\Models\ContractParty: { contract_id: 'id foreign:contracts', role: 'string nullable', is_signatory: 'boolean default:false', notify_on_expiry: 'boolean default:true', meta: 'json nullable', relationships: { morphTo: Party } }
+    Business\Lcs\Models\ContractConfidentiality: { contract_id: 'id foreign:contracts unique', payload: hashed, allowed_roles: 'json nullable', meta: 'json nullable' }
+    Trees\Todo\Models\Task: { role_id: 'id nullable foreign:roles', staff_id: 'id nullable foreign:staff', task_list_id: 'id nullable foreign:task_lists', title: string, description: 'text nullable', relationships: { morphTo: ref, hasMany: TaskAssignment, belongsTo: \Spatie\Permission\Models\Role } }
+    Trees\Todo\Models\TaskList: { name: string, relationships: { hasMany: Task, morphTo: ref } }
+    Trees\Todo\Models\TaskTemplate: { role_id: 'id nullable foreign:roles', name: string, relationships: { hasMany: TaskListTemplateItem, belongsTo: \Spatie\Permission\Models\Role } }
+    Trees\Todo\Models\TaskListTemplate: { name: string, relationships: { hasMany: TaskListTemplateItem } }
+    Trees\Todo\Models\TaskListTemplateItem: { task_list_template_id: 'id foreign:task_list_templates', task_template_id: 'id foreign:task_templates', depends_on_id: 'id nullable foreign:task_list_template_items', relationships: { hasMany: 'TaskListTemplateItem:dependents' } }
+    Trees\Todo\Models\TaskAssignment: { task_id: 'id foreign:tasks', role_id: 'id nullable foreign:roles', staff_id: 'id nullable foreign:staff', assigned_by: 'id nullable foreign:staff', relationships: { belongsTo: \Spatie\Permission\Models\Role } }
+    Trees\Calendar\Models\Event: { org_corp_id: 'id nullable foreign:org_corps', org_unit_id: 'id nullable foreign:org_units', org_team_id: 'id nullable foreign:org_teams', type: 'enum:holiday,company,operational,training,maintenance,other', name: string, description: 'text nullable', start_at: timestamp, end_at: 'timestamp nullable', is_blocking: 'boolean default:false', attributes: 'json nullable' }
+    Trees\Organization\Models\OrgCorp: { name: string, code: 'string nullable', uuid: 'string unique', type: 'enum:company,government,vendor,institution nullable', attributes: 'json nullable', relationships: { hasMany: OrgUnit } }
+    Trees\Organization\Models\OrgUnit: { org_corp_id: 'id nullable foreign:org_corps', parent_id: 'id nullable foreign:org_units', name: string, code: 'string nullable', uuid: 'string unique', description: 'string nullable', attributes: 'json nullable', relationships: { hasMany: 'OrgUnit:children, OrgTeam' } }
+    Trees\Organization\Models\OrgTeam: { org_unit_id: 'id foreign:org_units', name: string, code: 'string nullable', is_active: 'boolean default:true', attributes: 'json nullable', relationships: { hasMany: 'Workflow, JobContract' } }
+    Trees\Organization\Models\JobContract: { uuid: 'string unique', job_position_id: 'id nullable foreign:job_positions', staff_id: 'id nullable foreign:staff', issuing_org_corp_id: 'id foreign:org_corps', contract_type: 'enum:FTE,FTC,TPC,INTERN nullable', start_date: 'date nullable', end_date: 'date nullable', relationships: { hasOne: OrgCorp, hasMany: JobPosition } }
+    Trees\Organization\Models\JobPosition: { job_contract_id: 'id foreign:job_contracts', org_unit_id: 'id nullable foreign:org_units', level: 'enum:junior,mid,senior,lead,manager nullable', status: 'enum:open,filled,closed default:open', title: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: StaffPosition } }
+    Trees\Organization\Models\JobRole: { type: 'enum:approval,operation,admin,reporting nullable', name: string, description: 'text nullable', attributes: 'json nullable' }
+    Trees\Organization\Models\JobPositionRole: { job_position_id: 'id foreign:job_positions', job_role_id: 'id foreign:job_roles' }
+    Trees\Organization\Models\Staff: { user_id: 'id nullable foreign:users', org_corp_id: 'id nullable foreign:org_corps', org_unit_id: 'id nullable foreign:org_units', job_contract_id: 'id nullable foreign:job_contracts', type: 'enum:FTE,FTC,TPC,Intern default:FTE', status: 'enum:active,inactive,suspended default:active', name: 'string nullable', staff_no: 'string nullable', attributes: 'json nullable', relationships: { hasMany: 'StaffPosition, Request', morphMany: 'AuditLog:model' } }
+    Trees\Organization\Models\StaffPosition: { staff_id: 'id foreign:staff', job_position_id: 'id foreign:job_positions', assignment_type: 'enum:primary,secondary,acting default:primary', status: 'enum:active,ended,pending default:active', start_date: date, end_date: 'date nullable', attributes: 'json nullable' }
+    Trees\Organization\Models\Movement: { type: 'enum:transfer,promotion,demotion,assignment,end_of_assignment', effective_date: date, from: 'json nullable', to: 'json nullable', relationships: { morphTo: movable } }
+    Trees\Authorization\Models\StaffRole: { staff_id: 'id foreign:staff', role_id: 'id foreign:roles', org_corp_id: 'id nullable foreign:org_corps', org_unit_id: 'id nullable foreign:org_units', org_team_id: 'id nullable foreign:org_teams', job_position_id: 'id nullable foreign:job_positions', job_role_id: 'id nullable foreign:job_roles', job_contract_id: 'id nullable foreign:job_contracts', source: 'enum:auto,manual default:auto', status: 'enum:active,inactive default:active', start_date: 'date nullable', end_date: 'date nullable', attributes: 'json nullable', relationships: { belongsTo: \Spatie\Permission\Models\Role } }
+    Trees\Authorization\Models\RoleAssignment: { role_id: 'id foreign:roles', staff_id: 'id foreign:staff', assigned_by: 'id nullable foreign:staff', org_unit_id: 'id nullable foreign:org_units', org_team_id: 'id nullable foreign:org_teams', start_date: 'date nullable', end_date: 'date nullable', attributes: 'json nullable', relationships: { belongsTo: \Spatie\Permission\Models\Role } }
+    Trees\Calendar\Models\Shift: { org_unit_id: 'id nullable foreign:org_units', org_team_id: 'id nullable foreign:org_teams', staff_id: 'id nullable foreign:staff', type: 'enum:fixed,rotational nullable', name: string, description: 'text nullable', start_time: time, end_time: time, start_date: 'date nullable', end_date: 'date nullable', attributes: 'json nullable' }
+    Trees\Process\Models\Workflow: { org_team_id: 'id foreign:org_teams', start_step_id: 'id nullable foreign:workflow_steps', name: string, description: 'text nullable', is_active: 'boolean default:true', attributes: 'json nullable', relationships: { hasMany: 'WorkflowStep, WorkflowInstance' } }
+    Trees\Process\Models\WorkflowStep: { workflow_id: 'id foreign:workflows', type: 'enum:start,process,decision,end default:process', name: string, description: 'text nullable', requires_tasks: 'boolean default:false', requires_decision: 'boolean default:false', is_automatic: 'boolean default:false', attributes: 'json nullable', relationships: { hasMany: 'WorkflowTransition:from_transitions, WorkflowTransition:to_transitions, WorkflowStepTask, WorkflowInstanceStep, WorkflowDecision' } }
+    Trees\Process\Models\WorkflowTransition: { workflow_id: 'id foreign:workflows', from_step_id: 'id foreign:workflow_steps', to_step_id: 'id foreign:workflow_steps', name: 'string nullable', conditions: 'json nullable', requires_approval: 'boolean default:false', attributes: 'json nullable' }
+    Trees\Process\Models\WorkflowStepTask: { workflow_step_id: 'id foreign:workflow_steps', task_template_id: 'id nullable foreign:task_templates', task_list_template_id: 'id nullable foreign:task_list_templates', is_required: 'boolean default:true', attributes: 'json nullable' }
+    Trees\Process\Models\WorkflowInstance: { workflow_id: 'id foreign:workflows', current_step_id: 'id nullable foreign:workflow_steps', status: 'enum:active,completed,cancelled default:active', started_at: 'timestamp nullable', completed_at: 'timestamp nullable', attributes: 'json nullable', relationships: { morphTo: ref, hasMany: 'WorkflowInstanceStep, WorkflowDecision' } }
+    Trees\Process\Models\WorkflowInstanceStep: { workflow_instance_id: 'id foreign:workflow_instances', workflow_step_id: 'id foreign:workflow_steps', status: 'enum:pending,active,completed,skipped default:pending', started_at: 'timestamp nullable', completed_at: 'timestamp nullable', attributes: 'json nullable' }
+    Trees\Process\Models\WorkflowDecision: { workflow_instance_id: 'id foreign:workflow_instances', workflow_step_id: 'id foreign:workflow_steps', user_id: 'id foreign:staff', decision: 'enum:approve,reject,request_changes', comment: 'text nullable', decided_at: timestamp, attributes: 'json nullable' }
+    Business\Hrm\Models\Employee: { staff_id: 'id foreign:staff', org_corp_id: 'id foreign:org_corps', status: 'enum:active,resigned,terminated,retired default:active', employee_no: 'string nullable', hire_date: 'date nullable', termination_date: 'date nullable', attributes: 'json nullable' }
+    Business\Hrm\Models\JobTitle: { title: string, jobgrade: 'string nullable', uuid: 'uuid unique', description: 'text nullable', attributes: 'json nullable', masco_code: 'string nullable' }
+    Business\Tos\Models\Request: { requester_id: 'id foreign:staff', workflow_instance_id: 'id nullable foreign:workflow_instances', status: 'enum:submitted,in_review,approved,rejected,in_progress,completed,closed default:submitted', name: 'string nullable', description: 'text nullable', request_type: 'string nullable', attributes: 'json nullable', relationships: { morphTo: ref } }
+    Business\Tos\Models\RequestType: { workflow_id: 'id nullable foreign:workflows', name: string, attributes: 'json nullable' }
+    Business\Tos\Models\Offer: { org_team_id: 'id foreign:org_teams', name: string, description: 'text nullable', attributes: 'json nullable', relationships: { morphOne: Versionable, hasMany: OfferCategoryAssignment } }
+    Business\Tos\Models\OfferCategory: { parent_id: 'id nullable foreign:Offer_categories', name: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: 'OfferCategory:children, OfferCategoryAssignment' } }
+    Business\Tos\Models\OfferCategoryAssignment: { offer_id: 'id foreign:offers', offer_category_id: 'id foreign:offer_categories', attributes: 'json nullable' }
+    Business\Dms\Models\Document: { org_team_id: 'id foreign:org_teams', org_unit_id: 'id nullable foreign:org_units', location_id: 'id nullable foreign:locations', type: 'enum:sop,work_instruction,policy,drawing,contract,other nullable', title: string, description: 'text nullable', attributes: 'json nullable', relationships: { morphOne: Versionable, hasMany: DocumentCategoryAssignment } }
+    Business\Dms\Models\DocumentCategory: { parent_id: 'id nullable foreign:document_categories', name: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: 'DocumentCategory:children, DocumentCategoryAssignment' } }
+    Business\Dms\Models\DocumentCategoryAssignment: { document_id: 'id foreign:documents', document_category_id: 'id foreign:document_categories', attributes: 'json nullable' }
+    Business\Lms\Models\Course: { org_team_id: 'id foreign:org_teams', code: 'string unique', title: string, description: 'text nullable', is_active: 'boolean default:true', attributes: 'json nullable', relationships: { hasMany: 'CourseModule, CourseGroupAssignment' } }
+    Business\Lms\Models\CourseGroup: { parent_id: 'id nullable foreign:course_groups', name: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: 'CourseGroup:children, CourseGroupAssignment' } }
+    Business\Lms\Models\CourseGroupAssignment: { course_id: 'id foreign:courses', course_group_id: 'id foreign:course_groups', attributes: 'json nullable' }
+    Business\Lms\Models\Module: { name: string, description: 'text nullable', duration_minutes: 'integer nullable', validity_days: 'integer nullable', attributes: 'json nullable', relationships: { hasMany: 'CourseModule, MaterialModule, Quiz, Certificate' } }
+    Business\Lms\Models\CourseModule: { course_id: 'id foreign:courses', module_id: 'id foreign:modules', sequence: 'integer nullable', attributes: 'json nullable' }
+    Business\Lms\Models\Material: { org_team_id: 'id nullable foreign:org_teams', type: 'enum:document,video,link,other nullable', name: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: MaterialModule, morphOne: Versionable } }
+    Business\Lms\Models\MaterialModule: { material_id: 'id foreign:materials', module_id: 'id foreign:modules', sequence: 'integer nullable', attributes: 'json nullable' }
+    Business\Lms\Models\Quiz: { module_id: 'id foreign:modules', name: string, description: 'text nullable', pass_score: 'integer nullable', attributes: 'json nullable', relationships: { hasMany: QuizAttempt } }
+    Business\Lms\Models\QuizAttempt: { quiz_id: 'id foreign:quizzes', staff_id: 'id foreign:staff', result: 'enum:pass,fail nullable', score: 'integer nullable', attempted_at: 'timestamp nullable', attributes: 'json nullable', relationships: { hasMany: 'Certificate:certificates' } }
+    Business\Lms\Models\Evaluation: { module_id: 'id nullable foreign:modules', staff_id: 'id foreign:staff', evaluator_id: 'id nullable foreign:users', result: 'enum:pass,fail nullable', evaluated_at: 'timestamp nullable', attributes: 'json nullable', relationships: { hasMany: 'Certificate:certificates' } }
+    Business\Lms\Models\Certificate: { module_id: 'id foreign:modules', staff_id: 'id foreign:staff', quiz_attempt_id: 'id nullable foreign:quiz_attempts', evaluation_id: 'id nullable foreign:evaluations', issued_by: 'id nullable foreign:users', status: 'enum:valid,expired,revoked default:valid', issued_at: 'timestamp nullable', expires_at: 'timestamp nullable', attributes: 'json nullable' }
+    Business\Eam\Models\Asset: { org_team_id: 'id foreign:org_teams', location_id: 'id nullable foreign:locations', code: 'string unique', name: string, description: 'text nullable', type: 'enum:machine,tool,vehicle,storage,facility,other nullable', brand: 'string nullable', model: 'string nullable', serial_number: 'string nullable', status: 'enum:setup,active,maintenance,out_of_service,disposed default:setup', attributes: 'json nullable', relationships: { hasMany: AssetAssignment, morphMany: 'Request:ref' } }
+    Business\Eam\Models\AssetType: { name: string, description: 'text nullable', attributes: 'json nullable', relationships: { hasMany: AssetTypeAssignment } }
+    Business\Eam\Models\AssetTypeAssignment: { asset_id: 'id foreign:assets', asset_type_id: 'id foreign:asset_types', attributes: 'json nullable' }
+    Business\Eam\Models\AssetAssignment: { asset_id: 'id foreign:assets', type: 'enum:primary,secondary,temporary nullable', start_date: 'date nullable', end_date: 'date nullable', attributes: 'json nullable', relationships: { morphTo: assignable } }
