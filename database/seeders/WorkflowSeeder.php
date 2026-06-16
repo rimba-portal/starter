@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Trees\Process\Models\Workflow;
-use App\Trees\Process\Models\Node;
-use App\Trees\Process\Models\Edge;
+use App\Trees\Process\Models\WorkflowNode;
+use App\Trees\Process\Models\WorkflowEdge;
 
 class WorkflowSeeder extends Seeder
 {
@@ -23,13 +23,13 @@ class WorkflowSeeder extends Seeder
         |--------------------------------------------------------------------------
         */
 
-        $start = Node::create([
+        $start = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Start',
             'type' => 'start',
         ]);
 
-        $submit = Node::create([
+        $submit = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Form Submission',
             'type' => 'process',
@@ -41,13 +41,13 @@ class WorkflowSeeder extends Seeder
             ],
         ]);
 
-        $costDecision = Node::create([
+        $costDecision = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Chargeable to Cost Center?',
             'type' => 'decision',
         ]);
 
-        $costApproval = Node::create([
+        $costApproval = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Cost Center Approval',
             'type' => 'process',
@@ -59,7 +59,7 @@ class WorkflowSeeder extends Seeder
             ],
         ]);
 
-        $serviceApproval = Node::create([
+        $serviceApproval = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Service Provider Approval',
             'type' => 'process',
@@ -71,43 +71,43 @@ class WorkflowSeeder extends Seeder
             ],
         ]);
 
-        $sourcing = Node::create([
+        $sourcing = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Sourcing',
             'type' => 'process',
         ]);
 
-        $stockDecision = Node::create([
+        $stockDecision = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'In Stock?',
             'type' => 'decision',
         ]);
 
-        $inventory = Node::create([
+        $inventory = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Inventorizing',
             'type' => 'process',
         ]);
 
-        $preparing = Node::create([
+        $preparing = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Preparing',
             'type' => 'process',
         ]);
 
-        $fulfillment = Node::create([
+        $fulfillment = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Fulfillment',
             'type' => 'process',
         ]);
 
-        $delivery = Node::create([
+        $delivery = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'Delivering',
             'type' => 'process',
         ]);
 
-        $end = Node::create([
+        $end = WorkflowNode::create([
             'workflow_id' => $workflow->id,
             'name' => 'End',
             'type' => 'end',
@@ -119,121 +119,126 @@ class WorkflowSeeder extends Seeder
         |--------------------------------------------------------------------------
         */
 
-        Edge::insert([
+        WorkflowEdge::insert([
 
-            // Start → Submit
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $start->id,
                 'to_node_id' => $submit->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Submit → Cost Decision
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $submit->id,
                 'to_node_id' => $costDecision->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Cost Decision → Cost Approval (YES)
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $costDecision->id,
                 'to_node_id' => $costApproval->id,
                 'label' => 'Yes',
-                'condition' => [
+                'condition' => json_encode([
                     'field' => 'chargeable',
                     'operator' => '=',
                     'value' => true,
-                ],
+                ]),
             ],
 
-            // Cost Decision → Service Approval (NO)
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $costDecision->id,
                 'to_node_id' => $serviceApproval->id,
                 'label' => 'No',
-                'condition' => [
+                'condition' => json_encode([
                     'field' => 'chargeable',
                     'operator' => '=',
                     'value' => false,
-                ],
+                ]),
             ],
 
-            // Cost Approval → Service Approval
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $costApproval->id,
                 'to_node_id' => $serviceApproval->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Service Approval → Sourcing
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $serviceApproval->id,
                 'to_node_id' => $sourcing->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Sourcing → Stock Decision
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $sourcing->id,
                 'to_node_id' => $stockDecision->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Stock Decision → Fulfillment (YES)
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $stockDecision->id,
                 'to_node_id' => $fulfillment->id,
                 'label' => 'Yes',
-                'condition' => [
+                'condition' => json_encode([
                     'field' => 'in_stock',
                     'operator' => '=',
                     'value' => true,
-                ],
+                ]),
             ],
 
-            // Stock Decision → Inventory (NO)
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $stockDecision->id,
                 'to_node_id' => $inventory->id,
                 'label' => 'No',
-                'condition' => [
+                'condition' => json_encode([
                     'field' => 'in_stock',
                     'operator' => '=',
                     'value' => false,
-                ],
+                ]),
             ],
 
-            // Inventory → Preparing
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $inventory->id,
                 'to_node_id' => $preparing->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Preparing → Delivery
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $preparing->id,
                 'to_node_id' => $delivery->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Fulfillment → Delivery
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $fulfillment->id,
                 'to_node_id' => $delivery->id,
+                'label' => null,
+                'condition' => null,
             ],
 
-            // Delivery → End
             [
                 'workflow_id' => $workflow->id,
                 'from_node_id' => $delivery->id,
                 'to_node_id' => $end->id,
+                'label' => null,
+                'condition' => null,
             ],
         ]);
     }

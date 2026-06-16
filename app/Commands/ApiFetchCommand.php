@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Console\Commands;
 
-use App\Models\Support\Sync\ApiConfig;
+use App\Trees\Sync\Models\ApiConfig; 
 use App\Services\FetchService;
 use Illuminate\Console\Command;
 

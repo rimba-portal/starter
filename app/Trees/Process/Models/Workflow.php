@@ -12,6 +12,11 @@ class Workflow extends Model
         'key',
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'key'; // or 'uuid'
+    }
+
     public function nodes()
     {
         return $this->hasMany(WorkflowNode::class);

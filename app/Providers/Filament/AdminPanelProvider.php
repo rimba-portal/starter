@@ -8,7 +8,9 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
 use Filament\PanelProvider;
+use Filament\Support\Facades\FilamentIcon;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
@@ -18,6 +20,12 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\Facades\Blade;
+use Filament\View\PanelsIconAlias;
+use Filament\View\PanelsRenderHook;
+use Filament\Facades\Filament;
+use Filament\Pages\Page; // Import the Base Page class
+use Filament\Actions\Action; // Import the Action class
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -55,5 +63,21 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+    public function boot(Panel $panel): void
+    {
+        // FilamentView::registerRenderHook(
+        //     PanelsRenderHook::USER_MENU_AFTER,
+        //     fn(): string => Blade::render('<livewire:language-switcher />'),
+        // );
+
+        // Filament::registerRenderHook(
+        //     PanelsRenderHook::PAGE_HEADER_ACTIONS_BEFORE,
+        //     fn() => view('filament.help.hook')
+        // );
+        // Register custom icons
+        FilamentIcon::register([
+            PanelsIconAlias::PAGES_DASHBOARD_NAVIGATION_ITEM => 'bites-dashboard',
+        ]);
     }
 }

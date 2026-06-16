@@ -2,59 +2,34 @@
 
 namespace App\Trees\Process\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class WorkflowTransition extends Model
+class WorkflowEdge extends Model
 {
-    use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'workflow_id',
-        'from_step_id',
-        'to_step_id',
-        'name',
-        'conditions',
-        'requires_approval',
-        'attributes',
+        'from_node_id',
+        'to_node_id',
+        'label',
+        'condition',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'id' => 'integer',
-            'workflow_id' => 'integer',
-            'from_step_id' => 'integer',
-            'to_step_id' => 'integer',
-            'conditions' => 'array',
-            'requires_approval' => 'boolean',
-            'attributes' => 'array',
-        ];
-    }
+    protected $casts = [
+        'condition' => 'array',
+    ];
 
-    public function workflow(): BelongsTo
+    public function workflow()
     {
         return $this->belongsTo(Workflow::class);
     }
 
-    public function fromStep(): BelongsTo
+    public function fromNode()
     {
-        return $this->belongsTo(WorkflowStep::class);
+        return $this->belongsTo(WorkflowNode::class, 'from_node_id');
     }
 
-    public function toStep(): BelongsTo
+    public function toNode()
     {
-        return $this->belongsTo(WorkflowStep::class);
+        return $this->belongsTo(WorkflowNode::class, 'to_node_id');
     }
 }

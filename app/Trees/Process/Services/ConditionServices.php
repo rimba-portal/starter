@@ -2,41 +2,25 @@
 
 namespace App\Trees\Process\Services;
 
-use App\Trees\Process\Models\Workflow;
-use App\Trees\Process\Models\WorkflowInstance;
-use App\Trees\Process\Models\Node;
-use Illuminate\Support\Collection;
-
-class WorkflowService
+class ConditionService
 {
-    public function startWorkflow(Workflow $workflow, $subject): WorkflowInstance
+    public function evaluate(array $condition, array $data): bool
     {
-        $instance = app(\App\Trees\Process\Actions\CreateWorkflowInstance::class)
-            ->execute($workflow->id, $subject);
+        $field = $condition['field'] ?? null;
+        $operator = $condition['operator'] ?? '=';
+        $value = $condition['value'] ?? null;
 
-        event(new \App\Trees\Process\Events\WorkflowStarted($instance));
+        $actual = data_get($data, $field);
 
-        return $instance;
-    }
-
-    public function processWorkflow(WorkflowInstance $instance): void
-    {
-        app(\App\Trees\Process\Actions\ProcessWorkflow::class)
-            ->execute($instance);
-    }
-
-    public function getStartNodesForRoles(array $roles): Collection
-    {
-        return Node::query()
-            ->where('type', 'start')
-            ->whereIn('role_name', $roles)
-            ->get();
-    }
-
-    public function completeWorkflow(WorkflowInstance $instance): void
-    {
-        $instance->update(['status' => 'completed']);
-
-        event(new \App\Trees\Process\Events\WorkflowCompleted($instance));
+        return match ($operator) {
+            '='  => $actual == $value,
+            '!=' => $actual != $value,
+            '>'  => $actual > $value,
+            '<'  => $actual < $value,
+            '>=' => $actual >= $value,
+            '<=' => $actual <= $value,
+            'in' => in_array($actual, (array) $value),
+            default => false,
+        };
     }
 }
