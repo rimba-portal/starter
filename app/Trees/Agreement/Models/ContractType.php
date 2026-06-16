@@ -1,36 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Agreement\Models;
 
+use App\Trees\Process\Models\Workflow;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable([
+    'uuid',
+    'name',
+    'code',
+    'description',
+    'template',
+    'public_schema',
+    'confidential_schema',
+    'notify',
+    'expiry_notify_days',
+    'requires_approval',
+    'requires_signature',
+    'workflow_id',
+    'meta',
+])]
 class ContractType extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'uuid',
-        'name',
-        'code',
-        'description',
-        'template',
-        'public_schema',
-        'confidential_schema',
-        'notify',
-        'expiry_notify_days',
-        'requires_approval',
-        'requires_signature',
-        'workflow_id',
-        'meta',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -58,6 +56,6 @@ class ContractType extends Model
 
     public function workflow(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Process\Models\Workflow::class);
+        return $this->belongsTo(Workflow::class);
     }
 }

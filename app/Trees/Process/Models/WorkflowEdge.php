@@ -1,23 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
+#[Fillable([
+    'workflow_id',
+    'from_node_id',
+    'to_node_id',
+    'label',
+    'condition',
+])]
 class WorkflowEdge extends Model
 {
-    protected $fillable = [
-        'workflow_id',
-        'from_node_id',
-        'to_node_id',
-        'label',
-        'condition',
-    ];
-
-    protected $casts = [
-        'condition' => 'array',
-    ];
-
     public function workflow()
     {
         return $this->belongsTo(Workflow::class);
@@ -31,5 +29,12 @@ class WorkflowEdge extends Model
     public function toNode()
     {
         return $this->belongsTo(WorkflowNode::class, 'to_node_id');
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'condition' => 'array',
+        ];
     }
 }

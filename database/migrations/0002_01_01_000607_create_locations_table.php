@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('locations');
             $table->foreignId('org_corp_id')->nullable()->constrained();
-            $table->enum('type', ["site", "building", "area", "section", "room", "zone", "other"])->nullable();
+            $table->enum('type', ['site', 'building', 'area', 'section', 'room', 'zone', 'other'])->nullable();
             $table->string('name');
             $table->json('attributes')->nullable();
             $table->timestamps();
@@ -25,7 +25,7 @@ return new class extends Migration
         Schema::create('location_assignments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('location_id')->constrained();
-            $table->enum('type', ["primary", "secondary", "temporary"])->nullable();
+            $table->enum('type', ['primary', 'secondary', 'temporary'])->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->json('attributes')->nullable();

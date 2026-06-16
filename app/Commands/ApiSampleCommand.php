@@ -5,21 +5,21 @@ declare(strict_types=1);
 namespace App\Console\Commands;
 
 use App\Models\Support\Sync\ApiConfig;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Arr;
 use Symfony\Component\Yaml\Yaml;
 
-class ApiSampleCommand extends Command
-{
-    protected $signature = 'bites:sample 
+#[Description('Sample top 10 raw rows from API config (JSON/YAML)')]
+#[Signature('bites:sample 
                             {identifier? : ID or name of the config}
                             {--json : Output as JSON}
-                            {--yaml : Output as YAML}';
-
-    protected $description = 'Sample top 10 raw rows from API config (JSON/YAML)';
-
+                            {--yaml : Output as YAML}')]
+class ApiSampleCommand extends Command
+{
     public function handle(): int
     {
         $identifier = $this->argument('identifier');
@@ -32,21 +32,23 @@ class ApiSampleCommand extends Command
 
         if ($configs->isEmpty()) {
             $this->error('No API config found.');
+
             return self::FAILURE;
         }
 
         foreach ($configs as $config) {
-            $this->info("=== Sampling: {$config->name} (ID: {$config->id}) ===");
+            $this->info(sprintf('=== Sampling: %s (ID: %s) ===', $config->name, $config->id));
 
             try {
                 $rows = match ($config->source_type) {
                     'rest' => $this->handleRest($config),
                     'database' => $this->handleDatabase($config),
-                    default => throw new \Exception("Unsupported source type: {$config->source_type}"),
+                    default => throw new \Exception('Unsupported source type: '.$config->source_type),
                 };
 
-                if (empty($rows)) {
+                if ($rows === []) {
                     $this->warn('No data returned.');
+
                     continue;
                 }
 
@@ -75,8 +77,8 @@ class ApiSampleCommand extends Command
         $response = Http::withHeaders($cfg['headers'] ?? [])
             ->get($cfg['url']);
 
-        if (!$response->successful()) {
-            throw new \Exception("HTTP error: {$response->status()}");
+        if (! $response->successful()) {
+            throw new \Exception('HTTP error: '.$response->status());
         }
 
         $data = $response->json();
@@ -97,7 +99,7 @@ class ApiSampleCommand extends Command
 
         return collect($rows)
             ->take(10)
-            ->map(fn ($row) => (array) $row)
+            ->map(fn ($row): array => (array) $row)
             ->toArray();
     }
 }

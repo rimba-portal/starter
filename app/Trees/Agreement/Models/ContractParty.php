@@ -1,28 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Agreement\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+#[Fillable([
+    'contract_id',
+    'role',
+    'is_signatory',
+    'notify_on_expiry',
+    'meta',
+])]
 class ContractParty extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'contract_id',
-        'role',
-        'is_signatory',
-        'notify_on_expiry',
-        'meta',
-    ];
 
     /**
      * Get the attributes that should be cast.

@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Branding\Actions;
 
 use Filament\Actions\Action;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -16,27 +20,28 @@ class GetHelpAction extends Action
             ->tooltip('See Guide')
             ->color('info')
             ->modalWidth('4xl')
-            ->modalContent(fn($livewire) => static::getHelpView($livewire))
+            ->modalContent(fn ($livewire) => static::getHelpView($livewire))
             ->slideOver();
     }
 
     protected static function getHelpView($livewire)
     {
 
-    [$panel, $resourceName, $pageSegment, $recordId] = static::resolveContext($livewire);
+        [$panel, $resourceName, $pageSegment, $recordId] = static::resolveContext($livewire);
 
         $segments = array_filter([$resourceName, $pageSegment, $recordId]);
         $cleanPath = implode('/', $segments);
 
         $paths = static::buildPaths($cleanPath, $resourceName, $panel);
 
-        foreach ($paths as $file) {
-            if (File::exists($file)) {
+        foreach ($paths as $path) {
+            if (File::exists($path)) {
                 return view('filament.help.markdown', [
-                    'markdown' => Str::markdown(File::get($file)),
+                    'markdown' => Str::markdown(File::get($path)),
                 ]);
             }
         }
+
         // dd($cleanPath, $paths);
         return static::fallbackView($cleanPath, $paths);
     }
@@ -79,22 +84,22 @@ class GetHelpAction extends Action
         string $panel
     ): array {
         return [
-            public_path("helpfiles/{$cleanPath}/{$panel}.md"),
-            public_path("helpfiles/{$resourceName}/{$panel}.md"),
-            public_path("helpfiles/{$panel}.md"),
+            public_path(sprintf('helpfiles/%s/%s.md', $cleanPath, $panel)),
+            public_path(sprintf('helpfiles/%s/%s.md', $resourceName, $panel)),
+            public_path(sprintf('helpfiles/%s.md', $panel)),
         ];
     }
 
-    protected static function fallbackView(string $cleanPath, array $paths)
+    protected static function fallbackView(string $cleanPath, array $paths): Factory|View
     {
         return view('filament.help.markdown', [
             'markdown' => Str::markdown(
-                "# No help available\n\n" .
-                    "**Resolved path:** `{$cleanPath}`\n\n" .
-                    "### Expected files:\n\n" .
+                "# No help available\n\n".
+                    "**Resolved path:** `{$cleanPath}`\n\n".
+                    "### Expected files:\n\n".
                     collect($paths)
-                    ->map(fn($p) => "- `{$p}`")
-                    ->implode("\n")
+                        ->map(fn (string $p): string => sprintf('- `%s`', $p))
+                        ->implode("\n")
             ),
         ]);
     }

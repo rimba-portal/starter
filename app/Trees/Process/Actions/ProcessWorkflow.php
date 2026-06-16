@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\WorkflowInstance;
@@ -12,8 +14,8 @@ class ProcessWorkflow
             ->where('status', 'active')
             ->get();
 
-        foreach ($activeNodes as $nodeInstance) {
-            app(ProcessNode::class)->execute($nodeInstance);
+        foreach ($activeNodes as $activeNode) {
+            app(ProcessNode::class)->execute($activeNode);
         }
     }
 }

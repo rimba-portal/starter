@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('code')->nullable();
             $table->string('uuid')->unique();
-            $table->enum('type', ["company", "government", "vendor", "institution"])->nullable();
+            $table->enum('type', ['company', 'government', 'vendor', 'institution'])->nullable();
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
@@ -45,8 +45,8 @@ return new class extends Migration
         Schema::create('job_positions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('org_unit_id')->nullable()->constrained();
-            $table->enum('level', ["junior", "mid", "senior", "lead", "manager"])->nullable();
-            $table->enum('status', ["open", "filled", "closed"])->default('open');
+            $table->enum('level', ['junior', 'mid', 'senior', 'lead', 'manager'])->nullable();
+            $table->enum('status', ['open', 'filled', 'closed'])->default('open');
             $table->string('title');
             $table->text('description')->nullable();
             $table->json('attributes')->nullable();
@@ -54,7 +54,7 @@ return new class extends Migration
         });
         Schema::create('job_roles', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ["approval", "operation", "admin", "reporting"])->nullable();
+            $table->enum('type', ['approval', 'operation', 'admin', 'reporting'])->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->json('attributes')->nullable();
@@ -71,8 +71,8 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained();
             $table->foreignId('org_corp_id')->nullable()->constrained();
             $table->foreignId('org_unit_id')->nullable()->constrained();
-            $table->enum('type', ["FTE", "FTC", "TPC", "Intern"])->default('FTE');
-            $table->enum('status', ["active", "inactive", "suspended"])->default('active');
+            $table->enum('type', ['FTE', 'FTC', 'TPC', 'Intern'])->default('FTE');
+            $table->enum('status', ['active', 'inactive', 'suspended'])->default('active');
             $table->string('name')->nullable();
             $table->string('staff_no')->nullable();
             $table->json('attributes')->nullable();
@@ -82,8 +82,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('staff_id')->constrained();
             $table->foreignId('job_position_id')->constrained();
-            $table->enum('assignment_type', ["primary", "secondary", "acting"])->default('primary');
-            $table->enum('status', ["active", "ended", "pending"])->default('active');
+            $table->enum('assignment_type', ['primary', 'secondary', 'acting'])->default('primary');
+            $table->enum('status', ['active', 'ended', 'pending'])->default('active');
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->json('attributes')->nullable();
@@ -91,7 +91,7 @@ return new class extends Migration
         });
         Schema::create('movements', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ["transfer", "promotion", "demotion", "assignment", "end_of_assignment"]);
+            $table->enum('type', ['transfer', 'promotion', 'demotion', 'assignment', 'end_of_assignment']);
             $table->date('effective_date');
             $table->json('from')->nullable();
             $table->json('to')->nullable();

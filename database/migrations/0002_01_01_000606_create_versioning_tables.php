@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('versionables', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ["document","workflow","template","service","config","other"]);
+            $table->enum('type', ['document', 'workflow', 'template', 'service', 'config', 'other']);
             $table->string('name');
             $table->foreignId('current_version_id')->nullable()->constrained('versions');
             $table->json('attributes')->nullable();
@@ -28,8 +28,8 @@ return new class extends Migration
             $table->foreignId('created_by')->nullable()->constrained('staff');
             $table->foreignId('approved_by')->nullable()->constrained('staff');
             $table->foreignId('published_by')->nullable()->constrained('staff');
-            $table->enum('status', ["draft","approved","published","archived","rejected"]);
-            $table->enum('content_type', ["file","url","inline","json"])->nullable();
+            $table->enum('status', ['draft', 'approved', 'published', 'archived', 'rejected']);
+            $table->enum('content_type', ['file', 'url', 'inline', 'json'])->nullable();
             $table->string('content_path')->nullable();
             $table->integer('major');
             $table->integer('minor');

@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Workflows;
 
 use App\Filament\Resources\Workflows\Pages\CreateWorkflow;
 use App\Filament\Resources\Workflows\Pages\EditWorkflow;
 use App\Filament\Resources\Workflows\Pages\ListWorkflows;
 use App\Filament\Resources\Workflows\Pages\ViewWorkflow;
+use App\Filament\Resources\Workflows\RelationManagers\EdgesRelationManager;
+use App\Filament\Resources\Workflows\RelationManagers\NodesRelationManager;
 use App\Filament\Resources\Workflows\Schemas\WorkflowForm;
 use App\Filament\Resources\Workflows\Schemas\WorkflowInfolist;
 use App\Filament\Resources\Workflows\Tables\WorkflowsTable;
@@ -15,8 +19,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use App\Filament\Resources\Workflows\RelationManagers\EdgesRelationManager;
-use App\Filament\Resources\Workflows\RelationManagers\NodesRelationManager;
 
 class WorkflowResource extends Resource
 {

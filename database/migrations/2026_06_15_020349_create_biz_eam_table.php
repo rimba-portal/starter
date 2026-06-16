@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->enum('type', ["machine", "tool", "vehicle", "storage", "facility", "other"])->nullable();
+            $table->enum('type', ['machine', 'tool', 'vehicle', 'storage', 'facility', 'other'])->nullable();
             $table->string('brand')->nullable();
             $table->string('model')->nullable();
             $table->string('serial_number')->nullable();
-            $table->enum('status', ["setup", "active", "maintenance", "out_of_service", "disposed"])->default('setup');
+            $table->enum('status', ['setup', 'active', 'maintenance', 'out_of_service', 'disposed'])->default('setup');
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
@@ -45,7 +45,7 @@ return new class extends Migration
         Schema::create('asset_assignments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('asset_id')->constrained();
-            $table->enum('type', ["primary", "secondary", "temporary"])->nullable();
+            $table->enum('type', ['primary', 'secondary', 'temporary'])->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->json('attributes')->nullable();

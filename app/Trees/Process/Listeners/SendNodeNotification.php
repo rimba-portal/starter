@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Listeners;
 
 use App\Trees\Process\Events\NodeActivated;
@@ -18,6 +20,6 @@ class SendNodeNotification
         }
 
         // Replace with your NotificationService later
-        Log::info('Notify user: ' . $userId . ' for node ' . $nodeInstance->id);
+        Log::info('Notify user: '.$userId.' for node '.$nodeInstance->id);
     }
 }

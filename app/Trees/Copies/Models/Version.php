@@ -1,42 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Copies\Models;
 
+use App\Trees\Organization\Models\Staff;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable([
+    'versionable_id',
+    'created_by',
+    'approved_by',
+    'published_by',
+    'status',
+    'content_type',
+    'content_path',
+    'major',
+    'minor',
+    'patch',
+    'version',
+    'change_summary',
+    'change_notes',
+    'is_menu',
+    'approved_at',
+    'published_at',
+    'effective_from',
+    'effective_to',
+    'attributes',
+])]
 class Version extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'versionable_id',
-        'created_by',
-        'approved_by',
-        'published_by',
-        'status',
-        'content_type',
-        'content_path',
-        'major',
-        'minor',
-        'patch',
-        'version',
-        'change_summary',
-        'change_notes',
-        'is_menu',
-        'approved_at',
-        'published_at',
-        'effective_from',
-        'effective_to',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -82,16 +80,16 @@ class Version extends Model
 
     public function createdBy(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 
     public function approvedBy(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 
     public function publishedBy(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 }

@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Support;
 
-use App\Trees\Process\Models\WorkflowNode;
 use App\Trees\Organization\Models\Staff;
+use App\Trees\Process\Models\WorkflowNode;
 
 class NodeResolver
 {
@@ -18,7 +20,7 @@ class NodeResolver
 
         return match ($assignment['type']) {
 
-            'job_position' => Staff::whereHas('jobPosition', function ($q) use ($assignment) {
+            'job_position' => Staff::whereHas('jobPosition', function ($q) use ($assignment): void {
                 $q->where('code', $assignment['value']);
             })->get(),
 
@@ -26,7 +28,7 @@ class NodeResolver
 
             // ✅ dynamic (powerful)
             'manager_of_requester' => collect([
-                optional($subject?->staff?->manager)
+                optional($subject?->staff?->manager),
             ])->filter(),
 
             default => collect(),

@@ -58,7 +58,7 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
             $table->foreignId('org_team_id')->nullable()->constrained();
-            $table->enum('type', ["document", "video", "link", "other"])->nullable();
+            $table->enum('type', ['document', 'video', 'link', 'other'])->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->json('attributes')->nullable();
@@ -85,7 +85,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('quiz_id')->constrained();
             $table->foreignId('staff_id')->constrained();
-            $table->enum('result', ["pass", "fail"])->nullable();
+            $table->enum('result', ['pass', 'fail'])->nullable();
             $table->integer('score')->nullable();
             $table->timestamp('attempted_at')->nullable();
             $table->json('attributes')->nullable();
@@ -96,7 +96,7 @@ return new class extends Migration
             $table->foreignId('module_id')->nullable()->constrained();
             $table->foreignId('staff_id')->constrained();
             $table->foreignId('evaluator_id')->nullable()->constrained('users');
-            $table->enum('result', ["pass", "fail"])->nullable();
+            $table->enum('result', ['pass', 'fail'])->nullable();
             $table->timestamp('evaluated_at')->nullable();
             $table->json('attributes')->nullable();
             $table->timestamps();
@@ -108,7 +108,7 @@ return new class extends Migration
             $table->foreignId('quiz_attempt_id')->nullable()->constrained();
             $table->foreignId('evaluation_id')->nullable()->constrained();
             $table->foreignId('issued_by')->nullable()->constrained('users');
-            $table->enum('status', ["valid", "expired", "revoked"])->default('valid');
+            $table->enum('status', ['valid', 'expired', 'revoked'])->default('valid');
             $table->timestamp('issued_at')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->json('attributes')->nullable();

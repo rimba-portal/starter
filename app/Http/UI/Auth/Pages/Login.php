@@ -33,8 +33,8 @@ class Login extends BaseLogin
     {
         try {
             $this->rateLimit(5);
-        } catch (TooManyRequestsException $e) {
-            $this->getRateLimitedNotification($e)?->send();
+        } catch (TooManyRequestsException $tooManyRequestsException) {
+            $this->getRateLimitedNotification($tooManyRequestsException)?->send();
 
             return null;
         }
@@ -80,7 +80,7 @@ class Login extends BaseLogin
     protected function redirectToRegister(): null
     {
         $panelId = filament()->getCurrentPanel()->getId();
-        $route = "filament.{$panelId}.auth.register";
+        $route = sprintf('filament.%s.auth.register', $panelId);
 
         session()->flash(
             'auth.notice',

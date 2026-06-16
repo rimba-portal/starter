@@ -1,23 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Workflows\Pages;
 
-use App\Filament\Actions\HelpAction;
 use App\Filament\Resources\Workflows\WorkflowResource;
+use App\Trees\Branding\Actions\GetHelpAction;
+use App\Trees\Branding\Concerns\HasHelpAction;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Support\Enums\VerticalAlignment;
 
 class ListWorkflows extends ListRecords
 {
-    use \App\Trees\Branding\Concerns\HasHelpAction;
-    
+    use HasHelpAction;
+
     protected static string $resource = WorkflowResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            \App\Trees\Branding\Actions\GetHelpAction::make(),
+            GetHelpAction::make(),
             CreateAction::make(),
         ];
     }

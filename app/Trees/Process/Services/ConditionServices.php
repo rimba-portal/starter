@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Services;
 
 class ConditionService
@@ -13,10 +15,10 @@ class ConditionService
         $actual = data_get($data, $field);
 
         return match ($operator) {
-            '='  => $actual == $value,
+            '=' => $actual == $value,
             '!=' => $actual != $value,
-            '>'  => $actual > $value,
-            '<'  => $actual < $value,
+            '>' => $actual > $value,
+            '<' => $actual < $value,
             '>=' => $actual >= $value,
             '<=' => $actual <= $value,
             'in' => in_array($actual, (array) $value),

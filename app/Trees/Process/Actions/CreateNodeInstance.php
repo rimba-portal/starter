@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\WorkflowNodeInstance;
@@ -12,7 +14,7 @@ class CreateNodeInstance
             'workflow_instance_id' => $data['workflow_instance_id'],
             'node_id' => $data['node_id'],
             'status' => $data['status'] ?? 'pending',
-            'data'   => $data['data'] ?? null,
+            'data' => $data['data'] ?? null,
         ]);
     }
 }

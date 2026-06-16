@@ -1,17 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Workflows\Tables;
 
+use App\Trees\Process\Actions\CreateWorkflowFromExisting;
+use App\Trees\Process\Models\Workflow;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Actions\Action;
-use App\Trees\Process\Actions\CreateWorkflowFromExisting;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 
 class WorkflowsTable
 {
@@ -33,7 +34,7 @@ class WorkflowsTable
                 Action::make('copy')
                     ->label('Copy')
                     ->icon('heroicon-o-document-duplicate')
-                    ->action(fn($record) => app(
+                    ->action(fn (Workflow $record) => app(
                         CreateWorkflowFromExisting::class
                     )->execute($record)),
             ])

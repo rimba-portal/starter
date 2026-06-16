@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\WorkflowNodeInstance;

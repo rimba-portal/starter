@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Listeners;
 
+use App\Trees\Process\Actions\AssignNodeStaff;
 use App\Trees\Process\Events\NodeActivated;
-use App\Models\User;
+use App\Trees\Process\Support\NodeResolver;
 
 class AssignUsersToNode
 {
@@ -13,7 +16,7 @@ class AssignUsersToNode
         $node = $nodeInstance->node;
         $subject = $nodeInstance->workflowInstance->subject;
 
-        $staffCollection = app(\App\Trees\Process\Support\NodeResolver::class)
+        $staffCollection = app(NodeResolver::class)
             ->resolveStaff($node, $subject);
 
         $staff = $staffCollection->first();
@@ -22,7 +25,7 @@ class AssignUsersToNode
             return;
         }
 
-        app(\App\Trees\Process\Actions\AssignNodeStaff::class)
+        app(AssignNodeStaff::class)
             ->execute($nodeInstance, $staff->id);
     }
 }

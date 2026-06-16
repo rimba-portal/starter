@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\OrgCorps;
 
 use App\Http\UI\Admin\Resources\OrgCorps\Pages\CreateOrgCorp;

@@ -1,26 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Todo\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable([
+    'task_list_template_id',
+    'task_template_id',
+    'depends_on_id',
+])]
 class TaskListTemplateItem extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'task_list_template_id',
-        'task_template_id',
-        'depends_on_id',
-    ];
 
     /**
      * Get the attributes that should be cast.

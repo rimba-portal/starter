@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Actions;
 
 class GeneratePdf
@@ -10,7 +12,7 @@ class GeneratePdf
         $pdf = app('dompdf.wrapper')
             ->loadView($view, $data);
 
-        $fileName = storage_path('app/tmp/' . uniqid() . '.pdf');
+        $fileName = storage_path('app/tmp/'.uniqid().'.pdf');
 
         $pdf->save($fileName);
 

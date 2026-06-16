@@ -1,28 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Sync\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable([
+    'api_config_id',
+    'fingerprint',
+    'payload',
+    'status',
+    'processed_at',
+    'error',
+])]
 class ApiData extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'api_config_id',
-        'fingerprint',
-        'payload',
-        'status',
-        'processed_at',
-        'error',
-    ];
 
     /**
      * Get the attributes that should be cast.

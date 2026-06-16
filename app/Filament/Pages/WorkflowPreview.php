@@ -1,27 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Pages;
 
-use Filament\Pages\Page;
+use App\Trees\Branding\Actions\GetHelpAction;
 use App\Trees\Process\Models\Workflow;
 use App\Trees\Process\Support\WorkflowGraph;
 use BackedEnum;
+use Filament\Pages\Page;
 use Filament\Support\Icons\Heroicon;
-use App\Filament\Actions\GetHelpAction;
 
 class WorkflowPreview extends Page
 {
-
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Share;
+
     protected string $view = 'filament.pages.workflow-preview';
 
     public ?string $mermaid = null;
+
     protected function getHeaderActions(): array
     {
         return [
-           \App\Trees\Branding\Actions\GetHelpAction::make(),
+            GetHelpAction::make(),
         ];
     }
+
     public function mount(): void
     {
         // ✅ Load your workflow

@@ -1,7 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Agreement\Models;
 
+use App\Business\Lcs\Models\ContractConfidentiality;
+use App\Trees\Organization\Models\OrgCorp;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,29 +14,23 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+#[Fillable([
+    'uuid',
+    'contract_type_id',
+    'org_corp_id',
+    'contract_no',
+    'title',
+    'summary',
+    'start_date',
+    'end_date',
+    'renewal_date',
+    'status',
+    'terms',
+    'meta',
+])]
 class Contract extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'uuid',
-        'contract_type_id',
-        'org_corp_id',
-        'contract_no',
-        'title',
-        'summary',
-        'start_date',
-        'end_date',
-        'renewal_date',
-        'status',
-        'terms',
-        'meta',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -59,7 +58,7 @@ class Contract extends Model
 
     public function contractConfidentiality(): HasOne
     {
-        return $this->hasOne(\App\Business\Lcs\Models\ContractConfidentiality::class);
+        return $this->hasOne(ContractConfidentiality::class);
     }
 
     public function contractParties(): HasMany
@@ -74,6 +73,6 @@ class Contract extends Model
 
     public function orgCorp(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgCorp::class);
+        return $this->belongsTo(OrgCorp::class);
     }
 }

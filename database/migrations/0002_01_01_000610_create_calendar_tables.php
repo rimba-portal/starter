@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('org_unit_id')->nullable()->constrained();
             $table->foreignId('org_team_id')->nullable()->constrained();
             $table->foreignId('staff_id')->nullable()->constrained();
-            $table->enum('type', ["fixed","rotational"])->nullable();
+            $table->enum('type', ['fixed', 'rotational'])->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->time('start_time');
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->foreignId('org_corp_id')->nullable()->constrained();
             $table->foreignId('org_unit_id')->nullable()->constrained();
             $table->foreignId('org_team_id')->nullable()->constrained();
-            $table->enum('type', ["holiday","company","operational","training","maintenance","other"]);
+            $table->enum('type', ['holiday', 'company', 'operational', 'training', 'maintenance', 'other']);
             $table->string('name');
             $table->text('description')->nullable();
             $table->timestamp('start_at');

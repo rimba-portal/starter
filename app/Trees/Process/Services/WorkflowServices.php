@@ -1,7 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Services;
 
+use App\Trees\Process\Actions\CreateWorkflowInstance;
+use App\Trees\Process\Actions\ProcessWorkflow;
+use App\Trees\Process\Events\WorkflowCompleted;
+use App\Trees\Process\Events\WorkflowStarted;
 use App\Trees\Process\Models\Workflow;
 use App\Trees\Process\Models\WorkflowInstance;
 use App\Trees\Process\Models\WorkflowNode;
@@ -11,17 +17,17 @@ class WorkflowService
 {
     public function startWorkflow(Workflow $workflow, $subject): WorkflowInstance
     {
-        $instance = app(\App\Trees\Process\Actions\CreateWorkflowInstance::class)
+        $workflowInstance = app(CreateWorkflowInstance::class)
             ->execute($workflow->id, $subject);
 
-        event(new \App\Trees\Process\Events\WorkflowStarted($instance));
+        event(new WorkflowStarted($workflowInstance));
 
-        return $instance;
+        return $workflowInstance;
     }
 
     public function processWorkflow(WorkflowInstance $instance): void
     {
-        app(\App\Trees\Process\Actions\ProcessWorkflow::class)
+        app(ProcessWorkflow::class)
             ->execute($instance);
     }
 
@@ -37,6 +43,6 @@ class WorkflowService
     {
         $instance->update(['status' => 'completed']);
 
-        event(new \App\Trees\Process\Events\WorkflowCompleted($instance));
+        event(new WorkflowCompleted($instance));
     }
 }

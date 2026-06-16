@@ -1,30 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Authorization\Models;
 
+use App\Trees\Organization\Models\OrgTeam;
+use App\Trees\Organization\Models\OrgUnit;
+use App\Trees\Organization\Models\Staff;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Permission\Models\Role;
 
+#[Fillable([
+    'role_id',
+    'staff_id',
+    'assigned_by',
+    'org_unit_id',
+    'org_team_id',
+    'start_date',
+    'end_date',
+    'attributes',
+])]
 class RoleAssignment extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'role_id',
-        'staff_id',
-        'assigned_by',
-        'org_unit_id',
-        'org_team_id',
-        'start_date',
-        'end_date',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -48,26 +49,26 @@ class RoleAssignment extends Model
 
     public function role(): BelongsTo
     {
-        return $this->belongsTo(\Spatie\Permission\Models\Role::class);
+        return $this->belongsTo(Role::class);
     }
 
     public function staff(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 
     public function assignedBy(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 
     public function orgUnit(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgUnit::class);
+        return $this->belongsTo(OrgUnit::class);
     }
 
     public function orgTeam(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgTeam::class);
+        return $this->belongsTo(OrgTeam::class);
     }
 }

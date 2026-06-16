@@ -1,25 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Models;
 
+use App\Trees\Process\Builders\NodeBuilder;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Models\Role;
-use App\Trees\Process\Builders\NodeBuilder;
 
+#[Fillable([
+    'workflow_id',
+    'name',
+    'type',
+    'role_name',
+    'config',
+])]
 class WorkflowNode extends Model
 {
-    protected $fillable = [
-        'workflow_id',
-        'name',
-        'type',
-        'role_name',
-        'config',
-    ];
-
-    protected $casts = [
-        'config' => 'array',
-    ];
-
     // 🔗 Relationships
 
     public function workflow()
@@ -42,11 +40,10 @@ class WorkflowNode extends Model
         return $this->belongsTo(Role::class, 'role_name', 'name');
     }
 
-
-public function newEloquentBuilder($query)
-{
-    return new NodeBuilder($query);
-}
+    public function newEloquentBuilder($query)
+    {
+        return new NodeBuilder($query);
+    }
 
     // ✅ Helpers (IMPORTANT)
 
@@ -68,5 +65,12 @@ public function newEloquentBuilder($query)
     public function isLast(): bool
     {
         return $this->outgoingEdges()->count() === 0;
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'config' => 'array',
+        ];
     }
 }

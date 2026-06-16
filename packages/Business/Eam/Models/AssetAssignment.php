@@ -1,28 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Eam\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+#[Fillable([
+    'asset_id',
+    'type',
+    'start_date',
+    'end_date',
+    'attributes',
+])]
 class AssetAssignment extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'asset_id',
-        'type',
-        'start_date',
-        'end_date',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\WorkflowEdge;
@@ -23,10 +25,10 @@ class ApplyEdgeCondition
         $actual = data_get($data, $field);
 
         return match ($operator) {
-            '='  => $actual == $value,
+            '=' => $actual == $value,
             '!=' => $actual != $value,
-            '>'  => $actual > $value,
-            '<'  => $actual < $value,
+            '>' => $actual > $value,
+            '<' => $actual < $value,
             default => false,
         };
     }

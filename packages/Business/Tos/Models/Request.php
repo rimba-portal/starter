@@ -1,30 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Tos\Models;
 
+use App\Trees\Organization\Models\Staff;
+use App\Trees\Process\Models\WorkflowInstance;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+#[Fillable([
+    'requester_id',
+    'workflow_instance_id',
+    'status',
+    'name',
+    'description',
+    'request_type',
+    'attributes',
+])]
 class Request extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'requester_id',
-        'workflow_instance_id',
-        'status',
-        'name',
-        'description',
-        'request_type',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -48,11 +47,11 @@ class Request extends Model
 
     public function requester(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 
     public function workflowInstance(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Process\Models\WorkflowInstance::class);
+        return $this->belongsTo(WorkflowInstance::class);
     }
 }

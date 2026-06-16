@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('org_team_id')->constrained();
             $table->foreignId('org_unit_id')->nullable()->constrained();
             $table->foreignId('location_id')->nullable()->constrained();
-            $table->enum('type', ["sop", "work_instruction", "policy", "drawing", "contract", "other"])->nullable();
+            $table->enum('type', ['sop', 'work_instruction', 'policy', 'drawing', 'contract', 'other'])->nullable();
             $table->string('title');
             $table->text('description')->nullable();
             $table->json('attributes')->nullable();

@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Listeners;
 
+use App\Trees\Process\Actions\ProcessNodeTransition;
 use App\Trees\Process\Events\NodeCompleted;
 
 class ProcessNextNode
@@ -10,7 +13,7 @@ class ProcessNextNode
     {
         $nodeInstance = $event->nodeInstance;
 
-        app(\App\Trees\Process\Actions\ProcessNodeTransition::class)
+        app(ProcessNodeTransition::class)
             ->execute($nodeInstance);
     }
 }

@@ -1,31 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Dms\Models;
 
+use App\Trees\Copies\Models\Versionable;
+use App\Trees\FloorPlan\Models\Location;
+use App\Trees\Organization\Models\OrgTeam;
+use App\Trees\Organization\Models\OrgUnit;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
+#[Fillable([
+    'org_team_id',
+    'org_unit_id',
+    'location_id',
+    'type',
+    'title',
+    'description',
+    'attributes',
+])]
 class Document extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'org_team_id',
-        'org_unit_id',
-        'location_id',
-        'type',
-        'title',
-        'description',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -45,7 +46,7 @@ class Document extends Model
 
     public function versionable(): MorphOne
     {
-        return $this->morphOne(\App\Trees\Copies\Models\Versionable::class, 'versionableable');
+        return $this->morphOne(Versionable::class, 'versionableable');
     }
 
     public function documentCategoryAssignments(): HasMany
@@ -55,16 +56,16 @@ class Document extends Model
 
     public function orgTeam(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgTeam::class);
+        return $this->belongsTo(OrgTeam::class);
     }
 
     public function orgUnit(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgUnit::class);
+        return $this->belongsTo(OrgUnit::class);
     }
 
     public function location(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\FloorPlan\Models\Location::class);
+        return $this->belongsTo(Location::class);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\Workflow;
@@ -10,7 +12,7 @@ class CreateWorkflow
     {
         return Workflow::create([
             'name' => $data['name'],
-            'key'  => $data['key'],
+            'key' => $data['key'],
         ]);
     }
 }

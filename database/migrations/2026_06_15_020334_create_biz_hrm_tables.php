@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('staff_id')->constrained();
             $table->foreignId('org_corp_id')->constrained();
-            $table->enum('status', ["active", "resigned", "terminated", "retired"])->default('active');
+            $table->enum('status', ['active', 'resigned', 'terminated', 'retired'])->default('active');
             $table->string('employee_no')->nullable();
             $table->date('hire_date')->nullable();
             $table->date('termination_date')->nullable();

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\JobPositions\Schemas;
 
 use Filament\Infolists\Components\TextEntry;

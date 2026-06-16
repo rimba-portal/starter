@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Actions;
 
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -52,15 +56,15 @@ class HelpAction extends ActionGroup
         $cleanPath = implode('/', $segments);
 
         $fileName = $type === 'help'
-            ? "{$panel}-{$pageSegment}"
+            ? sprintf('%s-%s', $panel, $pageSegment)
             : $type;
 
         $paths = static::buildPaths($cleanPath, $resourceName, $fileName);
 
-        foreach ($paths as $file) {
-            if (File::exists($file)) {
+        foreach ($paths as $path) {
+            if (File::exists($path)) {
                 return view('filament.help.markdown', [
-                    'markdown' => Str::markdown(File::get($file)),
+                    'markdown' => Str::markdown(File::get($path)),
                 ]);
             }
         }
@@ -106,21 +110,21 @@ class HelpAction extends ActionGroup
         string $fileName
     ): array {
         return [
-            public_path("helpfiles/{$cleanPath}/{$fileName}.md"),
-            public_path("helpfiles/{$resourceName}/{$fileName}.md"),
-            public_path("helpfiles/{$fileName}.md"),
+            public_path(sprintf('helpfiles/%s/%s.md', $cleanPath, $fileName)),
+            public_path(sprintf('helpfiles/%s/%s.md', $resourceName, $fileName)),
+            public_path(sprintf('helpfiles/%s.md', $fileName)),
         ];
     }
 
-    protected static function fallbackView(string $cleanPath, array $paths)
+    protected static function fallbackView(string $cleanPath, array $paths): Factory|View
     {
         return view('filament.help.markdown', [
             'markdown' => Str::markdown(
-                "# No help available\n\n" .
-                "**Resolved path:** `{$cleanPath}`\n\n" .
-                "### Expected files:\n\n" .
+                "# No help available\n\n".
+                "**Resolved path:** `{$cleanPath}`\n\n".
+                "### Expected files:\n\n".
                 collect($paths)
-                    ->map(fn ($p) => "- `{$p}`")
+                    ->map(fn (string $p): string => sprintf('- `%s`', $p))
                     ->implode("\n")
             ),
         ]);

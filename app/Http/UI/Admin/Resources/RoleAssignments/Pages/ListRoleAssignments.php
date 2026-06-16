@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\RoleAssignments\Pages;
 
 use App\Http\UI\Admin\Resources\RoleAssignments\RoleAssignmentResource;

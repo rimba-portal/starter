@@ -31,8 +31,8 @@ return new class extends Migration
         Schema::create('workflow_edges', function (Blueprint $table) {
             $table->id();
             $table->foreignId('workflow_id')->constrained('workflows')->cascadeOnDelete();
-            $table->foreignId('from_node_id') ->constrained('workflow_nodes') ->cascadeOnDelete();
-            $table->foreignId('to_node_id') ->constrained('workflow_nodes') ->cascadeOnDelete();
+            $table->foreignId('from_node_id')->constrained('workflow_nodes')->cascadeOnDelete();
+            $table->foreignId('to_node_id')->constrained('workflow_nodes')->cascadeOnDelete();
             $table->string('label')->nullable(); // Yes / No etc.
             $table->json('condition')->nullable(); // ✅ condition engine input
             $table->timestamps();
@@ -40,20 +40,19 @@ return new class extends Migration
 
         Schema::create('workflow_instances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_id') ->constrained('workflows');
+            $table->foreignId('workflow_id')->constrained('workflows');
             $table->string('status'); // running, completed, cancelled
             $table->morphs('subject'); // ✅ polymorphic (fits your architecture)
             $table->timestamps();
         });
         Schema::create('workflow_node_instances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('workflow_instance_id') ->constrained('workflow_instances') ->cascadeOnDelete();
-            $table->foreignId('workflow_node_id') ->constrained('workflow_nodes');
+            $table->foreignId('workflow_instance_id')->constrained('workflow_instances')->cascadeOnDelete();
+            $table->foreignId('workflow_node_id')->constrained('workflow_nodes');
             $table->string('status'); // pending, active, completed, skipped
             $table->json('data')->nullable();
             $table->timestamps();
         });
-
 
         Schema::enableForeignKeyConstraints();
     }

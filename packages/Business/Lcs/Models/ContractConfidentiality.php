@@ -1,26 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Lcs\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable([
+    'contract_id',
+    'payload',
+    'allowed_roles',
+    'meta',
+])]
 class ContractConfidentiality extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'contract_id',
-        'payload',
-        'allowed_roles',
-        'meta',
-    ];
 
     /**
      * Get the attributes that should be cast.

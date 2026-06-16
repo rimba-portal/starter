@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace App\Console\Commands;
 
-use App\Trees\Sync\Models\ApiConfig; 
 use App\Services\FetchService;
+use App\Trees\Sync\Models\ApiConfig;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Description('Fetch data using API pipeline configs')]
+#[Signature('bites:fetch {identifier? : ID or name of the config}')]
 class ApiFetchCommand extends Command
 {
-    protected $signature = 'bites:fetch {identifier? : ID or name of the config}';
-
-    protected $description = 'Fetch data using API pipeline configs';
-
     public function handle(): int
     {
         $identifier = $this->argument('identifier');

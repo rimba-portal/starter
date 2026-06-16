@@ -1,29 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Lms\Models;
 
+use App\Trees\Organization\Models\Staff;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable([
+    'quiz_id',
+    'staff_id',
+    'result',
+    'score',
+    'attempted_at',
+    'attributes',
+])]
 class QuizAttempt extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'quiz_id',
-        'staff_id',
-        'result',
-        'score',
-        'attempted_at',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -53,6 +51,6 @@ class QuizAttempt extends Model
 
     public function staff(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\Staff::class);
+        return $this->belongsTo(Staff::class);
     }
 }

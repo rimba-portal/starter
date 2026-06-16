@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Trees\Process\Models\Workflow;
-use App\Trees\Process\Models\WorkflowNode;
 use App\Trees\Process\Models\WorkflowEdge;
+use App\Trees\Process\Models\WorkflowNode;
+use Illuminate\Database\Seeder;
 
 class WorkflowSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class WorkflowSeeder extends Seeder
         // ✅ Create workflow
         $workflow = Workflow::create([
             'name' => 'Asset Request Workflow',
-            'key'  => 'asset_request',
+            'key' => 'asset_request',
         ]);
 
         /*

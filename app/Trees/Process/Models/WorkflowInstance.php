@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
+#[Fillable([
+    'workflow_id',
+    'status',
+    'subject_type',
+    'subject_id',
+])]
 class WorkflowInstance extends Model
 {
-    protected $fillable = [
-        'workflow_id',
-        'status',
-        'subject_type',
-        'subject_id',
-    ];
-
     public function workflow()
     {
         return $this->belongsTo(Workflow::class);

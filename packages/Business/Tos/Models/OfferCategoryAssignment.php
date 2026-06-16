@@ -1,25 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Business\Tos\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable([
+    'offer_id',
+    'offer_category_id',
+    'attributes',
+])]
 class OfferCategoryAssignment extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'offer_id',
-        'offer_category_id',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.

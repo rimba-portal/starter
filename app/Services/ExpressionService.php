@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 class ExpressionService
@@ -13,10 +15,10 @@ class ExpressionService
         $actual = data_get($data, $field);
 
         return match ($operator) {
-            '='  => $actual == $value,
+            '=' => $actual == $value,
             '!=' => $actual != $value,
-            '>'  => $actual > $value,
-            '<'  => $actual < $value,
+            '>' => $actual > $value,
+            '<' => $actual < $value,
             '>=' => $actual >= $value,
             '<=' => $actual <= $value,
             'in' => in_array($actual, (array) $value),
@@ -27,8 +29,7 @@ class ExpressionService
     // 🚀 future-ready: AND/OR groups
     public function evaluateGroup(array $conditions, array $data, string $logic = 'AND'): bool
     {
-        $results = array_map(fn ($condition) =>
-            $this->evaluate($condition, $data),
+        $results = array_map(fn (array $condition): bool => $this->evaluate($condition, $data),
             $conditions
         );
 

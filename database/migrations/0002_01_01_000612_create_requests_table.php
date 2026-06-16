@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('requester_id')->constrained('staff');
             $table->foreignId('workflow_instance_id')->nullable()->constrained();
-            $table->enum('status', ["submitted", "in_review", "approved", "rejected", "in_progress", "completed", "closed"])->default('submitted');
+            $table->enum('status', ['submitted', 'in_review', 'approved', 'rejected', 'in_progress', 'completed', 'closed'])->default('submitted');
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('request_type')->nullable();

@@ -40,7 +40,7 @@ return new class extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->date('renewal_date')->nullable();
-            $table->enum('status', ["draft", "pending", "active", "expired", "terminated", "archived"])->default('draft');
+            $table->enum('status', ['draft', 'pending', 'active', 'expired', 'terminated', 'archived'])->default('draft');
             $table->json('terms')->nullable();
             $table->json('meta')->nullable();
             $table->morphs('contractable');

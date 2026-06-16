@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Services;
 
+use App\Trees\Process\Events\NodeActivated;
+use App\Trees\Process\Events\NodeCompleted;
 use App\Trees\Process\Models\WorkflowNode;
 use App\Trees\Process\Models\WorkflowNodeInstance;
 use Illuminate\Support\Collection;
@@ -20,7 +24,7 @@ class NodeService
 
     public function getNextNodes(WorkflowNode $node): Collection
     {
-        return WorkflowNode::whereIn('id', function ($query) use ($node) {
+        return WorkflowNode::whereIn('id', function ($query) use ($node): void {
             $query->select('to_node_id')
                 ->from('edges')
                 ->where('from_node_id', $node->id);
@@ -31,13 +35,13 @@ class NodeService
     {
         $nodeInstance->update(['status' => 'active']);
 
-        event(new \App\Trees\Process\Events\NodeActivated($nodeInstance));
+        event(new NodeActivated($nodeInstance));
     }
 
     public function completeNode(WorkflowNodeInstance $nodeInstance): void
     {
         $nodeInstance->update(['status' => 'completed']);
 
-        event(new \App\Trees\Process\Events\NodeCompleted($nodeInstance));
+        event(new NodeCompleted($nodeInstance));
     }
 }

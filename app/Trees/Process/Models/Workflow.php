@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Trees\Process\Builders\WorkflowBuilder;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
 
+#[Fillable([
+    'name',
+    'key',
+])]
 class Workflow extends Model
 {
-    protected $fillable = [
-        'name',
-        'key',
-    ];
-
     public function getRouteKeyName(): string
     {
         return 'key'; // or 'uuid'

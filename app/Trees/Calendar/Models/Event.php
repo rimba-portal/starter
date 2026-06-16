@@ -1,32 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Calendar\Models;
 
+use App\Trees\Organization\Models\OrgCorp;
+use App\Trees\Organization\Models\OrgTeam;
+use App\Trees\Organization\Models\OrgUnit;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable([
+    'org_corp_id',
+    'org_unit_id',
+    'org_team_id',
+    'type',
+    'name',
+    'description',
+    'start_at',
+    'end_at',
+    'is_blocking',
+    'attributes',
+])]
 class Event extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'org_corp_id',
-        'org_unit_id',
-        'org_team_id',
-        'type',
-        'name',
-        'description',
-        'start_at',
-        'end_at',
-        'is_blocking',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -49,16 +49,16 @@ class Event extends Model
 
     public function orgCorp(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgCorp::class);
+        return $this->belongsTo(OrgCorp::class);
     }
 
     public function orgUnit(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgUnit::class);
+        return $this->belongsTo(OrgUnit::class);
     }
 
     public function orgTeam(): BelongsTo
     {
-        return $this->belongsTo(\App\Trees\Organization\Models\OrgTeam::class);
+        return $this->belongsTo(OrgTeam::class);
     }
 }

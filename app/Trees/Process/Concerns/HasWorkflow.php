@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Concerns;
 
+use App\Trees\Process\Actions\CreateWorkflowInstance;
 use App\Trees\Process\Models\WorkflowInstance;
 
 trait HasWorkflow
@@ -23,9 +26,9 @@ trait HasWorkflow
             ->where('status', 'completed');
     }
 
-    public function startWorkflow(int $workflowId, array $attributes = [])
+    public function startWorkflow(int $workflowId, array $attributes = []): WorkflowInstance
     {
-        return app(\App\Trees\Process\Actions\CreateWorkflowInstance::class)
+        return app(CreateWorkflowInstance::class)
             ->execute($workflowId, $this, $attributes);
     }
 }

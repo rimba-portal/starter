@@ -1,29 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Organization\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[Fillable([
+    'staff_id',
+    'job_position_id',
+    'assignment_type',
+    'status',
+    'start_date',
+    'end_date',
+    'attributes',
+])]
 class StaffPosition extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'staff_id',
-        'job_position_id',
-        'assignment_type',
-        'status',
-        'start_date',
-        'end_date',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.

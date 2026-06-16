@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Process\Actions;
 
 use App\Trees\Process\Models\Workflow;
@@ -9,8 +11,8 @@ class CreateWorkflowFromExisting
     public function execute(Workflow $source): Workflow
     {
         $new = Workflow::create([
-            'name' => $source->name . ' (Copy)',
-            'key'  => $source->key . '_' . now()->timestamp,
+            'name' => $source->name.' (Copy)',
+            'key' => $source->key.'_'.now()->timestamp,
         ]);
 
         $nodeMap = [];
@@ -26,9 +28,9 @@ class CreateWorkflowFromExisting
         foreach ($source->edges as $edge) {
             $new->edges()->create([
                 'from_node_id' => $nodeMap[$edge->from_node_id],
-                'to_node_id'   => $nodeMap[$edge->to_node_id],
-                'label'        => $edge->label,
-                'condition'    => $edge->condition,
+                'to_node_id' => $nodeMap[$edge->to_node_id],
+                'label' => $edge->label,
+                'condition' => $edge->condition,
             ]);
         }
 

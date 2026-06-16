@@ -1,28 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Trees\Organization\Models;
 
+use App\Trees\Process\Models\Workflow;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Fillable([
+    'org_unit_id',
+    'name',
+    'code',
+    'is_active',
+    'attributes',
+])]
 class OrgTeam extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'org_unit_id',
-        'name',
-        'code',
-        'is_active',
-        'attributes',
-    ];
 
     /**
      * Get the attributes that should be cast.
@@ -41,7 +39,7 @@ class OrgTeam extends Model
 
     public function workflows(): HasMany
     {
-        return $this->hasMany(\App\Trees\Process\Models\Workflow::class);
+        return $this->hasMany(Workflow::class);
     }
 
     public function jobContracts(): HasMany
