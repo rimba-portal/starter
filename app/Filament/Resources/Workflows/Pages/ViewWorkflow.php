@@ -6,13 +6,11 @@ namespace App\Filament\Resources\Workflows\Pages;
 
 use App\Filament\Resources\Workflows\WorkflowResource;
 use App\Trees\Branding\Actions\GetHelpAction;
-use App\Trees\Branding\Concerns\HasHelpAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewWorkflow extends ViewRecord
 {
-    use HasHelpAction;
 
     protected static string $resource = WorkflowResource::class;
 

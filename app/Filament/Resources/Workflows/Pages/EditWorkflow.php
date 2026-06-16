@@ -6,14 +6,12 @@ namespace App\Filament\Resources\Workflows\Pages;
 
 use App\Filament\Resources\Workflows\WorkflowResource;
 use App\Trees\Branding\Actions\GetHelpAction;
-use App\Trees\Branding\Concerns\HasHelpAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditWorkflow extends EditRecord
 {
-    use HasHelpAction;
 
     protected static string $resource = WorkflowResource::class;
 

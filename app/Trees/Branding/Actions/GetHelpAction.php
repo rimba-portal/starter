@@ -57,7 +57,8 @@ class GetHelpAction extends Action
             $resourceName = str($resourceClass)
                 ->before('Resource')
                 ->plural()
-                ->kebab();
+                ->kebab()
+                ->toString();
         }
 
         $pageClass = class_basename($livewire);
