@@ -24,7 +24,7 @@ class GetHelpAction extends Action
             ->slideOver();
     }
 
-    protected static function getHelpView($livewire)
+    protected static function getHelpView($livewire): Factory|View
     {
 
         [$panel, $resourceName, $pageSegment, $recordId] = static::resolveContext($livewire);
