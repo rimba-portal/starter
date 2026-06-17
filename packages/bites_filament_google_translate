@@ -10,6 +10,7 @@ packages/
         └── composer.json
 ```
 
+```code
 <?php
 
 namespace YourName\FilamentGoogleTranslate\Enums;
@@ -53,6 +54,9 @@ enum Language: string
         };
     }
 }
+```
+
+```code
 <?php
 
 namespace YourName\FilamentGoogleTranslate\Traits;
@@ -121,3 +125,4 @@ trait HasGoogleTranslate
         );
     }
 }
+```
