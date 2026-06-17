@@ -242,7 +242,8 @@ class AuthorizationContext
 ```code
 <?php
 
-namespace
+namespace App\Trees\Authorization\DTO;
+
 class AccessDecision
 {
     public function __construct(
@@ -293,7 +294,7 @@ abstract class BasePolicy
 ```code
 <?php
 
-namespace
+namespace App\Trees\Authorization\Policies;
 
 class TaskPolicy extends BasePolicy
 {
@@ -323,7 +324,8 @@ class TaskPolicy extends BasePolicy
 ```code
 <?php
 
-namespace
+namespace App\Trees\Authorization\Services;
+
 class RoleSyncService
 {
     public function syncFromJobPosition($staff)
