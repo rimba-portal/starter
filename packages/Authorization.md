@@ -1,3 +1,40 @@
+```text
+app/Trees/Authorization/Filament/
+├── Providers/
+│   ├── AuthorizationPanelProvider.php
+│   ├── AdminPanelProvider.php
+│   └── StaffPanelProvider.php
+│
+├── Gates/
+│   ├── FilamentGate.php
+│   ├── ResourceGateResolver.php
+│   └── PageGateResolver.php
+│
+├── Middleware/
+│   ├── EnsureStaffLinked.php
+│   ├── ResolveAuthorizationContext.php
+│   └── EnforcePanelAccess.php
+│
+├── Resources/
+│   ├── BaseResource.php
+│   └── Concerns/
+│       ├── HasAuthorization.php
+│       ├── HasAbacVisibility.php
+│       └── HasRbacChecks.php
+│
+├── Pages/
+│   ├── BasePage.php
+│   └── Concerns/
+│       ├── AuthorizesPageAccess.php
+│       └── ResolvesStaffContext.php
+│
+├── Widgets/
+│   ├── BaseWidget.php
+│   └── AuthorizationAwareWidget.php
+│
+└── Helpers/
+    ├── FilamentAuth.php
+    └── StaffContext.php
 ```
 
 ```code
@@ -264,45 +301,6 @@ class AccessDenied
         public string $reason
     ) {}
 }
-
-```text
-app/Trees/Authorization/Filament/
-├── Providers/
-│   ├── AuthorizationPanelProvider.php
-│   ├── AdminPanelProvider.php
-│   └── StaffPanelProvider.php
-│
-├── Gates/
-│   ├── FilamentGate.php
-│   ├── ResourceGateResolver.php
-│   └── PageGateResolver.php
-│
-├── Middleware/
-│   ├── EnsureStaffLinked.php
-│   ├── ResolveAuthorizationContext.php
-│   └── EnforcePanelAccess.php
-│
-├── Resources/
-│   ├── BaseResource.php
-│   └── Concerns/
-│       ├── HasAuthorization.php
-│       ├── HasAbacVisibility.php
-│       └── HasRbacChecks.php
-│
-├── Pages/
-│   ├── BasePage.php
-│   └── Concerns/
-│       ├── AuthorizesPageAccess.php
-│       └── ResolvesStaffContext.php
-│
-├── Widgets/
-│   ├── BaseWidget.php
-│   └── AuthorizationAwareWidget.php
-│
-└── Helpers/
-    ├── FilamentAuth.php
-    └── StaffContext.php
-```
 ```
 
 ```code
