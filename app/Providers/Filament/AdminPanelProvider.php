@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Providers\Filament;
 
 use Filament\Actions\Action;
-use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -16,9 +15,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentIcon;
-use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsIconAlias;
-use Filament\View\PanelsRenderHook;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -26,11 +23,11 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
-use Illuminate\Support\Facades\Blade; // Import the Base Page class
+// Import the Base Page class
 use Illuminate\View\Middleware\ShareErrorsFromSession; // Import the Action class
 
 class AdminPanelProvider extends PanelProvider
-{   
+{
     public function panel(Panel $panel): Panel
     {
         return $panel

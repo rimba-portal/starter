@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2198401ba4997f6b421cd674e2d5069",
+    "content-hash": "34c5cb11da9c47d4a2c40f66770c4c5d",
     "packages": [
         {
             "name": "bit-es/google-translate",
@@ -54,6 +54,47 @@
                 "source": "https://github.com/bit-es/google-translate/tree/v1.0.0"
             },
             "time": "2026-06-18T07:13:11+00:00"
+        },
+        {
+            "name": "bit-es/versioning",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/bit-es/versioning",
+                "reference": "9ba18c646b17975b719cecbb7fc28e1619da9a2b"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\Versioning\\VersioningServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bites\\Versioning\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Versioning package for use by any model records in Laravel Filament.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -10731,7 +10772,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "bit-es/versioning": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

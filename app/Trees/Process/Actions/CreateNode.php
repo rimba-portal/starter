@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace App\Trees\Process\Actions;
 
-use App\Trees\Process\Models\Workflow;
+use App\Trees\Process\Models\WorkflowNode;
 
-class CreateWorkflow
+class CreateNode
 {
-    public function execute(array $data): Workflow
+    public function execute(array $data): WorkflowNode
     {
-        return Workflow::create([
+        return WorkflowNode::create([
+            'workflow_id' => $data['workflow_id'],
             'name' => $data['name'],
-            'key' => $data['key'],
+            'type' => $data['type'],
+            'role_name' => $data['role_name'] ?? null,
+            'config' => $data['config'] ?? [],
         ]);
     }
 }

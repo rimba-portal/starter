@@ -20,7 +20,7 @@ class GetHelpAction extends Action
             ->tooltip('See Guide')
             ->color('info')
             ->modalWidth('4xl')
-            ->modalContent(fn ($livewire) => static::getHelpView($livewire))
+            ->modalContent(fn ($livewire): Factory|\Illuminate\Contracts\View\View => static::getHelpView($livewire))
             ->slideOver();
     }
 
