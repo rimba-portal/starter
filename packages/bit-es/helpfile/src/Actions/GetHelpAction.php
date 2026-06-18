@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Trees\Branding\Actions;
+namespace Bites\HelpFile\Actions;
 
 use Filament\Actions\Action;
 use Illuminate\Contracts\View\Factory;
