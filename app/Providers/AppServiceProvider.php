@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->callAfterResolving(Factory::class, function (Factory $factory): void {
-            $factory->add('bites', [
+            $factory->add('rimba', [
                 'path' => resource_path('svg'),
                 'prefix' => 'bites',
             ]);

@@ -32,14 +32,23 @@ enum Language: string
     public function getIcon(): string
     {
         return match ($this) {
-            self::English => 'heroicon-o-globe-alt',
-            self::Korean => 'heroicon-o-sparkles',
-            self::Malay => 'heroicon-o-moon',
-            self::Japanese => 'heroicon-o-sun',
-            self::Portuguese => 'heroicon-o-shield-check',
-            self::Chinese => 'heroicon-o-star',
-            self::Vietnamese => 'heroicon-o-fire',
-            self::Tagalog => 'heroicon-o-heart',
+            self::English => 'flag-en',
+            self::Korean => 'flag-ko',
+            self::Malay => 'flag-ms',
+            self::Japanese => 'flag-jp',
+            self::Portuguese => 'flag-pt',
+            self::Chinese => 'flag-zh-CN',
+            self::Vietnamese => 'flag-vi',
+            self::Tagalog => 'flag-tl',
         };
     }
+
+    public static function googleTranslateLanguages(): string
+    {
+        return implode(
+            ',',
+            array_column(self::cases(), 'value')
+        );
+    }
+
 }

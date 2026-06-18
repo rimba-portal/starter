@@ -29,7 +29,7 @@
         "repositories": [
         {
             "type": "path",
-            "url": "packages/filament-google-translate",
+            "url": "packages/bit-es/filament-google-translate",
             "options": {
                 "symlink": true,
                 "canonical": false

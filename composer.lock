@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b38f89df4b2d17d34a2aa79d3eed83c0",
+    "content-hash": "713cfc396a783904dbeefdc6acf53254",
     "packages": [
         {
             "name": "bit-es/google-translate",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "packages/filament-google-translate",
-                "reference": "97f303652ad5413d6e9b553bb4c485907d72f101"
+                "url": "packages/bit-es/filament-google-translate",
+                "reference": "ed4637806d3174a1bad5c785bee28da54afa3ad4"
             },
             "require": {
                 "filament/filament": "^5.0",
@@ -20,6 +20,13 @@
                 "php": "^8.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\GoogleTranslate\\GoogleTranslateServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Bites\\GoogleTranslate\\": "src/"

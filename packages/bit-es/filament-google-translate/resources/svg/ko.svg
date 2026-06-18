@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g id="South_Korea">
+	<circle id="circle50_187_" fill="#FFFFFF" cx="24.999" cy="25" r="24.495"/>
+	<rect x="3.326" y="13.433" transform="matrix(0.5548 -0.832 0.832 0.5548 -8.2085 13.1442)" width="9.702" height="1.618"/>
+	<rect x="5.345" y="14.78" transform="matrix(0.5547 -0.832 0.832 0.5547 -8.4297 15.4265)" width="9.706" height="1.618"/>
+	<rect x="7.365" y="16.124" transform="matrix(0.5547 -0.8321 0.8321 0.5547 -8.6485 17.7059)" width="9.704" height="1.617"/>
+	<rect x="35.51" y="33.962" transform="matrix(0.8322 0.5544 -0.5544 0.8322 26.1495 -14.0667)" width="1.617" height="4.428"/>
+	<rect x="38.438" y="29.576" transform="matrix(-0.8314 -0.5557 0.5557 -0.8314 54.2077 80.0305)" width="1.615" height="4.431"/>
+	<rect x="40.45" y="30.914" transform="matrix(-0.8326 -0.5539 0.5539 -0.8326 57.264 83.5646)" width="1.619" height="4.429"/>
+	<rect x="37.527" y="35.301" transform="matrix(0.8321 0.5547 -0.5547 0.8321 27.2497 -14.9644)" width="1.62" height="4.432"/>
+	<rect x="42.478" y="32.261" transform="matrix(-0.8328 -0.5536 0.5536 -0.8328 60.2514 87.1518)" width="1.619" height="4.431"/>
+	<rect x="39.552" y="36.656" transform="matrix(0.8322 0.5544 -0.5544 0.8322 28.322 -15.8555)" width="1.617" height="4.431"/>
+	<path fill="#CD2E3A" d="M16.925,20.075c2.974-4.459,9-5.664,13.459-2.691c4.458,2.974,5.664,8.997,2.689,13.458L16.925,20.075z"/>
+	<path fill="#0047A0" d="M16.925,20.075c-2.974,4.459-1.769,10.485,2.691,13.46c4.458,2.973,10.483,1.767,13.457-2.692
+		c1.487-2.229,0.884-5.241-1.345-6.729c-2.229-1.486-5.244-0.885-6.729,1.346L16.925,20.075z"/>
+	<circle fill="#CD2E3A" cx="20.962" cy="22.767" r="4.852"/>
+	<rect x="7.367" y="31.822" transform="matrix(-0.8322 0.5544 -0.5544 -0.8322 35.3113 62.6608)" width="1.617" height="9.702"/>
+	<rect x="7.925" y="30.918" transform="matrix(-0.8327 0.5537 -0.5537 -0.8327 34.3542 55.8869)" width="1.619" height="4.431"/>
+	<rect x="9.438" y="36.712" transform="matrix(-0.5545 -0.8322 0.8322 -0.5545 -13.1083 68.0214)" width="4.432" height="1.616"/>
+	<rect x="11.406" y="29.125" transform="matrix(-0.8317 0.5553 -0.5553 -0.8317 41.2392 55.4528)" width="1.618" height="9.705"/>
+	<rect x="37.029" y="18.322" transform="matrix(-0.5543 -0.8323 0.8323 -0.5543 45.0747 62.3972)" width="4.431" height="1.616"/>
+	<rect x="35.513" y="12.526" transform="matrix(-0.8322 0.5545 -0.5545 -0.8322 74.7215 6.8693)" width="1.616" height="4.432"/>
+	<rect x="38.993" y="10.738" transform="matrix(-0.8325 0.554 -0.554 -0.8325 81.5728 6.5173)" width="1.616" height="9.703"/>
+	<rect x="39.548" y="9.836" transform="matrix(-0.8322 0.5544 -0.5544 -0.8322 80.624 -0.2937)" width="1.617" height="4.431"/>
+	<rect x="41.067" y="15.626" transform="matrix(-0.555 -0.8319 0.8319 -0.555 53.6289 61.5633)" width="4.431" height="1.62"/>
+</g>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<circle id="SVGID_1_" cx="25" cy="25" r="24.5"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				
+					<radialGradient id="circle50_2_" cx="750.7598" cy="1657.9609" r="27.4688" gradientTransform="matrix(1 0 0 1 -725.7598 -1632.9609)" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+					<stop  offset="0.7576" style="stop-color:#000000;stop-opacity:0"/>
+					<stop  offset="1" style="stop-color:#000000"/>
+				</radialGradient>
+				
+					<circle id="circle50_1_" opacity="0.4" clip-path="url(#SVGID_2_)" fill="url(#circle50_2_)" enable-background="new    " cx="25" cy="25" r="27.469"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<circle id="SVGID_3_" cx="25" cy="25" r="24.5"/>
+				</defs>
+				<clipPath id="SVGID_4_">
+					<use xlink:href="#SVGID_3_"  overflow="visible"/>
+				</clipPath>
+				
+					<radialGradient id="circle50_3_" cx="750.7598" cy="1657.9609" r="31.6777" gradientTransform="matrix(1 0 0 1 -725.7598 -1632.9609)" gradientUnits="userSpaceOnUse">
+					<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+					<stop  offset="0.5758" style="stop-color:#000000;stop-opacity:0"/>
+					<stop  offset="1" style="stop-color:#000000"/>
+				</radialGradient>
+				
+					<circle id="circle50_7_" opacity="0.6" clip-path="url(#SVGID_4_)" fill="url(#circle50_3_)" enable-background="new    " cx="25" cy="25" r="31.678"/>
+			</g>
+		</g>
+	</g>
+</g>
+<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="750.4824" y1="1663.666" x2="750.4824" y2="1635.6641" gradientTransform="matrix(1 0 0 1 -725.7598 -1632.9609)">
+	<stop  offset="0.0727" style="stop-color:#FFFFFF;stop-opacity:0.05"/>
+	<stop  offset="0.897" style="stop-color:#FFFFFF;stop-opacity:0.75"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.75"/>
+</linearGradient>
+<ellipse fill="url(#SVGID_5_)" cx="24.723" cy="16.704" rx="17.306" ry="14.001"/>
+</svg>

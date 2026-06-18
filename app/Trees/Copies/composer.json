@@ -1,0 +1,11 @@
+{
+    "name": "rimba/ver",
+    "autoload": {
+        "psr-4": {
+            "Rimba\\VER\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    }
+}

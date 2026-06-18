@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Blade; // Import the Base Page class
 use Illuminate\View\Middleware\ShareErrorsFromSession; // Import the Action class
 
 class AdminPanelProvider extends PanelProvider
-{
+{   
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -69,15 +69,6 @@ class AdminPanelProvider extends PanelProvider
 
     public function boot(Panel $panel): void
     {
-        // FilamentView::registerRenderHook(
-        //     PanelsRenderHook::USER_MENU_AFTER,
-        //     fn(): string => Blade::render('<livewire:language-switcher />'),
-        // );
-
-        // Filament::registerRenderHook(
-        //     PanelsRenderHook::PAGE_HEADER_ACTIONS_BEFORE,
-        //     fn() => view('filament.help.hook')
-        // );
         // Register custom icons
         FilamentIcon::register([
             PanelsIconAlias::PAGES_DASHBOARD_NAVIGATION_ITEM => 'bites-dashboard',
