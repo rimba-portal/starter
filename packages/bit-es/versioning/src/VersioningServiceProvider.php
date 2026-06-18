@@ -6,7 +6,7 @@ namespace Bites\Versioning;
 
 use Illuminate\Support\ServiceProvider;
 
-class GoogleTranslateServiceProvider extends ServiceProvider
+class VersioningServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {

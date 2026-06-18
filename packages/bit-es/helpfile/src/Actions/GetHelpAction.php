@@ -36,7 +36,7 @@ class GetHelpAction extends Action
 
         foreach ($paths as $path) {
             if (File::exists($path)) {
-                return view('filament.help.markdown', [
+                return view('bites::markdown', [
                     'markdown' => Str::markdown(File::get($path)),
                 ]);
             }
@@ -93,7 +93,7 @@ class GetHelpAction extends Action
 
     protected static function fallbackView(string $cleanPath, array $paths): Factory|View
     {
-        return view('filament.help.markdown', [
+        return view('bites::markdown', [
             'markdown' => Str::markdown(
                 "# No help available\n\n".
                     "**Resolved path:** `{$cleanPath}`\n\n".
