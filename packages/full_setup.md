@@ -203,11 +203,11 @@ Instead, it stores metadata and URLs pointing to the actual content.
 
 ---
 
-# Base Contract
+# Agreement
 
 ## Purpose
 
-Base Contract stores the minimum information required to represent an agreement between parties.
+Agreement stores the minimum information required to represent an agreement between parties.
 
 It is intentionally lightweight.
 
@@ -215,7 +215,7 @@ Full contract lifecycle management is provided by the Contract Management Module
 
 ## Core Records
 
-- BaseContract
+- Contract
 - ContractParty
 
 ## Contract Parties
@@ -457,7 +457,7 @@ Assets may be linked to:
 
 - OrgTeam
 - OrgUnit
-- BaseContract
+- BaseAgreement
 
 ## Examples
 
@@ -572,7 +572,7 @@ The Foundation Starter Kit includes:
 - Authorization
 - Organization
 - Versioning
-- Base Contract
+- Agreement
 - Document
 - Workflow
 - Task
@@ -583,3 +583,39 @@ The Foundation Starter Kit includes:
 - Risk
 
 These capabilities provide a complete operational foundation for most organizations while allowing advanced business functionality to be added through optional modules.
+
+# Next Phases 
+
+Further extensions are of 
+
+## Platform Modules
+- LDAP Integration Module
+- Face Recognition Login Module
+- Identity Provider (IdP) Module
+
+## Business Modules
+
+### Management segment
+* Workforce Planning Module (WFP)
+
+### Human Capital segment
+* Human Resource Management (HRM)
+* Learning Management System (LMS)
+
+### Operations segment
+* Enterprise Asset Management (EAM)
+* Maintenance Management System (MMS)
+* Vendor Management System (VMS)
+* Contract Lifecycle Management (LCM)
+
+### Governance
+* Risk Management System (RMS)
+* Quality Management Module (QMS)
+
+### Enterprise Planning
+* Program/Project Management (EPM)
+
+## Content Marketplace
+
+Get seeds of data/content of like templates, schema, samples etc. that can be fed into the modules
+
