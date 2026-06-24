@@ -26,6 +26,60 @@ The package should be named:
 
 ```text
 rimba/identity
+
+packages/
+└── rimba/
+    └── face-auth/
+        ├── src/
+        │   ├── FaceAuthServiceProvider.php
+        │   ├── Contracts/
+        │   │   └── FaceVerifier.php
+        │   ├── Services/
+        │   │   ├── FaceApiVerifier.php
+        │   │   ├── NullVerifier.php
+        │   │   └── LoginPipeline.php
+        │   ├── Http/
+        │   │   ├── Controllers/
+        │   │   │   ├── StartLoginController.php
+        │   │   │   ├── VerifyFaceController.php
+        │   │   │   ├── VerifyPinController.php
+        │   │   │   └── CompleteLoginController.php
+        │   │   ├── Middleware/
+        │   │   │   └── FaceAuthSessionMiddleware.php
+        │   │   └── Requests/
+        │   ├── Models/
+        │   │   ├── FaceProfile.php
+        │   │   └── LoginAttempt.php
+        │   ├── Filament/
+        │   │   ├── Pages/
+        │   │   │   └── FaceLogin.php
+        │   │   ├── Widgets/
+        │   │   └── Components/
+        │   ├── Events/
+        │   ├── Listeners/
+        │   ├── Actions/
+        │   └── Facades/
+        │
+        ├── database/
+        │   └── migrations/
+        │
+        ├── resources/
+        │   ├── js/
+        │   │   ├── face-auth.js
+        │   │   └── face-api.min.js
+        │   ├── views/
+        │   └── models/
+        │       ├── tiny_face_detector_model
+        │       ├── face_landmark_68_model
+        │       └── face_recognition_model
+        │
+        ├── routes/
+        │   └── web.php
+        │
+        ├── config/
+        │   └── face-auth.php
+        │
+        └── composer.json
 ```
 
 ---
