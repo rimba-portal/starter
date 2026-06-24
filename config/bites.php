@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+    'slogan' => 'Commitment & Quality Beyond Customer Expectations',
     'sync' => ['queue' => false],
     'ui' => [
         'packages' => [

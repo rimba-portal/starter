@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'faros@example.com',
         ]);
         $this->call([WorkflowSeeder::class]);
+        $this->call([JsonSeeder::class]);
     }
 }

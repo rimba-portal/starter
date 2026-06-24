@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
                 $app->make(BuiltInAuthService::class),
             ]);
         });
+        app(\App\Actions\DiscoverBranding::class)->execute();
     }
 
     /**

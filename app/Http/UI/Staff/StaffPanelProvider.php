@@ -37,9 +37,6 @@ class StaffPanelProvider extends PanelProvider
             ->brandName(config('bites.ui.panels.staff.3', 'ATM Staff Intranet'))
             ->homeUrl(fn(): string => route(config('bites.ui.panels.staff.4', 'filament.staff.pages.dashboard')))
 
-            // Custom render hooks for UI
-            ->renderHook('panels::auth.login.form.after', fn(): View => view('panel.extra'))
-            ->renderHook('panels::auth.register.form.after', fn(): View => view('panel.extra'))
 
             ->discoverResources(in: app_path('Http/UI/Staff/Resources'), for: 'App\Http\UI\Staff\Resources')
             ->discoverPages(in: app_path('Http/UI/Staff/Pages'), for: 'App\Http\UI\Staff\Pages')
@@ -96,7 +93,7 @@ class StaffPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
-        public function boot(Panel $panel): void
+    public function boot(Panel $panel): void
     {
         // Register custom icons
         FilamentIcon::register([
