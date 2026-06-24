@@ -7,6 +7,7 @@ namespace App\Trees\Process\Models;
 use App\Trees\Process\Builders\WorkflowBuilder;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Bites\Versioning\Traits\HasVersions;
 
 #[Fillable([
     'name',
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
 ])]
 class Workflow extends Model
 {
+    use HasVersions;
+    
     public function getRouteKeyName(): string
     {
         return 'key'; // or 'uuid'

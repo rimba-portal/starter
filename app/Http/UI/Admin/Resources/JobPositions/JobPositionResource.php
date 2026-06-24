@@ -11,7 +11,7 @@ use App\Http\UI\Admin\Resources\JobPositions\Pages\ViewJobPosition;
 use App\Http\UI\Admin\Resources\JobPositions\Schemas\JobPositionForm;
 use App\Http\UI\Admin\Resources\JobPositions\Schemas\JobPositionInfolist;
 use App\Http\UI\Admin\Resources\JobPositions\Tables\JobPositionsTable;
-use App\Models\Job\JobPosition;
+use App\Trees\Organization\Models\JobPosition;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

@@ -11,7 +11,7 @@ use App\Http\UI\Admin\Resources\OrgCorps\Pages\ViewOrgCorp;
 use App\Http\UI\Admin\Resources\OrgCorps\Schemas\OrgCorpForm;
 use App\Http\UI\Admin\Resources\OrgCorps\Schemas\OrgCorpInfolist;
 use App\Http\UI\Admin\Resources\OrgCorps\Tables\OrgCorpsTable;
-use App\Models\Org\OrgCorp;
+use App\Trees\Organization\Models\OrgCorp;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\Resources\Workflows\Pages;
 
 use App\Filament\Resources\Workflows\WorkflowResource;
-use App\Trees\Branding\Actions\GetHelpAction;
+use Bites\GoogleTranslate\Actions\dumpbe;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -16,7 +16,7 @@ class ListWorkflows extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            GetHelpAction::make(),
+            // dumpbe::make(),
             CreateAction::make(),
         ];
     }

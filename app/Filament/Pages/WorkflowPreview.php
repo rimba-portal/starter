@@ -19,12 +19,12 @@ class WorkflowPreview extends Page
 
     public ?string $mermaid = null;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            GetHelpAction::make(),
-        ];
-    }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         GetHelpAction::make(),
+    //     ];
+    // }
 
     public function mount(): void
     {

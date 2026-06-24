@@ -21,6 +21,8 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use App\Http\UI\Auth\Pages\Login;
 use App\Http\UI\Auth\Pages\ResetPassword;
 use Illuminate\View\View;
+use Filament\Support\Facades\FilamentIcon;
+use Filament\View\PanelsIconAlias;
 
 class StaffPanelProvider extends PanelProvider
 {
@@ -37,7 +39,11 @@ class StaffPanelProvider extends PanelProvider
 
             // Custom render hooks for UI
             ->renderHook('panels::auth.login.form.after', fn(): View => view('panel.extra'))
-            ->renderHook('panels::auth.register.form.after', fn(): View => view('panel.extra'));
+            ->renderHook('panels::auth.register.form.after', fn(): View => view('panel.extra'))
+
+            ->discoverResources(in: app_path('Http/UI/Staff/Resources'), for: 'App\Http\UI\Staff\Resources')
+            ->discoverPages(in: app_path('Http/UI/Staff/Pages'), for: 'App\Http\UI\Staff\Pages')
+            ->discoverWidgets(in: app_path('Http/UI/Staff/Widgets'), for: 'App\Http\UI\Staff\Widgets');
 
         $packages = config('bites.ui.packages', []);
         foreach ($packages as $package => $namespace) {
@@ -89,5 +95,12 @@ class StaffPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+        public function boot(Panel $panel): void
+    {
+        // Register custom icons
+        FilamentIcon::register([
+            PanelsIconAlias::PAGES_DASHBOARD_NAVIGATION_ITEM => 'rimba-dashboard',
+        ]);
     }
 }

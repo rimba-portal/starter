@@ -11,7 +11,7 @@ use App\Http\UI\Admin\Resources\OrgUnits\Pages\ViewOrgUnit;
 use App\Http\UI\Admin\Resources\OrgUnits\Schemas\OrgUnitForm;
 use App\Http\UI\Admin\Resources\OrgUnits\Schemas\OrgUnitInfolist;
 use App\Http\UI\Admin\Resources\OrgUnits\Tables\OrgUnitsTable;
-use App\Models\Org\OrgUnit;
+use App\Trees\Organization\Models\OrgUnit;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

@@ -11,7 +11,7 @@ use App\Http\UI\Admin\Resources\RoleAssignments\Pages\ViewRoleAssignment;
 use App\Http\UI\Admin\Resources\RoleAssignments\Schemas\RoleAssignmentForm;
 use App\Http\UI\Admin\Resources\RoleAssignments\Schemas\RoleAssignmentInfolist;
 use App\Http\UI\Admin\Resources\RoleAssignments\Tables\RoleAssignmentsTable;
-use App\Models\AuthZ\RoleAssignment;
+use App\Trees\Authorization\Models\RoleAssignment;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

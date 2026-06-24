@@ -17,7 +17,7 @@ class EditWorkflow extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            GetHelpAction::make(),
+            // GetHelpAction::make(),
             ViewAction::make(),
             DeleteAction::make(),
         ];

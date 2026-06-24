@@ -6,12 +6,12 @@ return [
     'sync' => ['queue' => false],
     'ui' => [
         'packages' => [
-            'platform/src' => 'Rimba\Platform',
+            'app/Filament' => 'App\Filament',
         ],
         'panels' => [
             // panel_id, path, color, brandName, homeUrl
             'admin' => ['admin', 'admin', '#7f174b', 'Administrator Portal', 'filament.staff.pages.dashboard'],
-            'staff' => ['staff', 'staff', '#09829f', 'ATM Staff Intranet', 'welcome'],
+            'staff' => ['staff', 'staff', '#09829f', 'ATM Staff Intranet', 'filament.staff.pages.dashboard'],
         ],
         'navigation_groups' => [
             'staff' => [

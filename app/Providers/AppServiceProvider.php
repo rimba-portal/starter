@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->callAfterResolving(Factory::class, function (Factory $factory): void {
             $factory->add('rimba', [
                 'path' => resource_path('svg'),
-                'prefix' => 'bites',
+                'prefix' => 'rimba',
             ]);
         });
     }

@@ -11,7 +11,7 @@ use App\Http\UI\Admin\Resources\Staff\Pages\ViewStaff;
 use App\Http\UI\Admin\Resources\Staff\Schemas\StaffForm;
 use App\Http\UI\Admin\Resources\Staff\Schemas\StaffInfolist;
 use App\Http\UI\Admin\Resources\Staff\Tables\StaffTable;
-use App\Models\Ppl\Staff;
+use App\Trees\Organization\Models\Staff;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

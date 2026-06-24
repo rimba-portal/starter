@@ -9,7 +9,7 @@ use App\Http\UI\Admin\Resources\ApiData\Pages\EditApiData;
 use App\Http\UI\Admin\Resources\ApiData\Pages\ListApiData;
 use App\Http\UI\Admin\Resources\ApiData\Schemas\ApiDataForm;
 use App\Http\UI\Admin\Resources\ApiData\Tables\ApiDataTable;
-use App\Models\Support\Sync\ApiData;
+use App\Trees\Sync\Models\ApiData;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

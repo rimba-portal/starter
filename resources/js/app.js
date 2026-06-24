@@ -1,1 +1,22 @@
-//
+import { Calendar } from "@fullcalendar/core";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from "@fullcalendar/list";
+
+// import "flyonui/dist/fullcalendar.css";
+
+import './zoomable-image.js';
+
+
+function initCalendar(el) {
+    if (!el) return;
+    const calendarDefault = new FullCalendar.Calendar(
+        document.getElementById("calendar-container"),
+        {
+            initialView: "dayGridMonth",
+            events: "/calendar/events",
+        },
+    );
+    calendarDefault.render();
+}
+

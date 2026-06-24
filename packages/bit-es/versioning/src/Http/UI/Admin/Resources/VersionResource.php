@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Bites\Versioning\Http\UI\Admin\Resources;
+namespace Bites\Versioning\Http\UI\Admin\Resources\Versions;
 
 use Bites\Versioning\Models\Version;
 use Filament\Forms\Form;

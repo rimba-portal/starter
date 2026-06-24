@@ -4,17 +4,34 @@ declare(strict_types=1);
 
 namespace Bites\Versioning;
 
-use Illuminate\Support\ServiceProvider;
+use App\Services\BitesServiceProvider;
+use Filament\Facades\Flament;
+use Filament\Facades\Filament as FacadesFilament;
+use Bites\Versioning\Http\UI\Admin\Resources\Versions\RelationManagers\VersionsRelationManager;
+use Bites\Versioning\Traits\HasVersions;
 
-class VersioningServiceProvider extends ServiceProvider
+class VersioningServiceProvider extends BitesServiceProvider
 {
     public function boot(): void
     {
-        // $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bites');
-    }
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        
+        // Intercept the Filament execution pipeline safely before panels render
+        FacadesFilament::serving(function () {
+            foreach (FacadesFilament::getPanels() as $panel) {
+                foreach ($panel->getResources() as $resourceClass) {
+                    $model = $resourceClass::getModel();
 
-    public function register(): void
-    {
-        //
+                    // Check if the underlying Eloquent model uses your Rimba Tree / Bites trait
+                    if (in_array(HasVersions::class, class_uses_recursive($model))) {
+                        // dd($resourceClass::getRelations()); 
+                        // Safely inject your relation manager using Filament's internal pipeline hook
+                        // $resourceClass::appendRelationManagers([
+                        // VersionsRelationManager::class,
+                        // ]);
+                    }
+                }
+            }
+        });
     }
 }
