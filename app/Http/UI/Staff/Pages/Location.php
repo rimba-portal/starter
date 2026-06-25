@@ -28,29 +28,13 @@ class Location extends Page implements HasActions, HasForms, HasTable
     use InteractsWithForms;
     use InteractsWithTable;
 
+    protected static string | UnitEnum | null $navigationGroup = 'Location';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-location';
-
+    protected static ?string $navigationLabel = 'Floor Plan';
     protected static ?int $navigationSort = 51;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Floor Plan');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Floor Plan');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('Location');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Links to floor plans and maps of the organization buildings and campuses. Ideally includes registered storage locations.');
-    }
+    protected static ?string $title = 'Floor Plan';
+    protected ?string $subheading = 'Links to floor plans and maps of the organization buildings and campuses. Ideally includes registered storage locations.';
 
     protected string $view = 'staff.pages.location';
 

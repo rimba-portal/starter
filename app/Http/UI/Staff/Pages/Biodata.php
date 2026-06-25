@@ -28,29 +28,13 @@ class Biodata extends Page implements HasActions, HasSchemas
     use InteractsWithActions;
     use InteractsWithSchemas;
 
+    protected static string | UnitEnum | null $navigationGroup = 'Accountables';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-id-staff';
-
+    protected static ?string $navigationLabel = 'Profile';
     protected static ?int $navigationSort = 21;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Profile');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Profile');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('Artifact');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Your profile, roles and qualifications.');
-    }
+    protected static ?string $title = 'Profile';
+    protected ?string $subheading = 'Your profile, roles and qualifications.';
 
     protected string $view = 'staff.pages.biodata';
 
@@ -74,18 +58,18 @@ class Biodata extends Page implements HasActions, HasSchemas
         $auth = Auth::user()->id;
         $user = User::find($auth);
         // Load existing attributes into the form
-        $attributes = $user->personAttributes()->pluck('value', 'key')->toArray();
+        // $attributes = $user->personAttributes()->pluck('value', 'key')->toArray();
 
-        // Decode the JSON string back into an array for the Repeater
-        if (isset($attributes['family_members'])) {
-            $attributes['family_members'] = json_decode($attributes['family_members'], true);
-        }
+        // // Decode the JSON string back into an array for the Repeater
+        // if (isset($attributes['family_members'])) {
+        //     $attributes['family_members'] = json_decode($attributes['family_members'], true);
+        // }
 
-        if (isset($attributes['reminders'])) {
-            $attributes['reminders'] = json_decode($attributes['reminders'], true);
-        }
+        // if (isset($attributes['reminders'])) {
+        //     $attributes['reminders'] = json_decode($attributes['reminders'], true);
+        // }
 
-        $this->form->fill($attributes);
+        // $this->form->fill($attributes);
 
         // ✅ Jump to step if query param exists
 
@@ -162,7 +146,7 @@ class Biodata extends Page implements HasActions, HasSchemas
                                 ->addActionLabel('Add Family Member') // Customize the button label
                                 ->columns(1) // Repeater itself occupies one column in the parent grid
                                 ->collapsible() // Optional: allows collapsing items
-                                ->itemLabel(fn (array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
+                                ->itemLabel(fn(array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
                             Action::make('save')
                                 ->label('Save Family Info')
                                 ->action('save'),
@@ -202,7 +186,7 @@ class Biodata extends Page implements HasActions, HasSchemas
                                         ->addActionLabel('Add Reminder') // Customize the button label
                                         ->columns(1) // Repeater itself occupies one column in the parent grid
                                         ->collapsible() // Optional: allows collapsing items
-                                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
+                                        ->itemLabel(fn(array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
                                 ])->hiddenLabel(),
                             Action::make('save')
                                 ->label('Save Reminder Info')

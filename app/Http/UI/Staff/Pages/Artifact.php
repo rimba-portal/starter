@@ -11,30 +11,13 @@ use UnitEnum;
 
 class Artifact extends Page
 {
-
+    protected static string | UnitEnum | null $navigationGroup = 'Accountables';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-asset-own';
-
+    protected static ?string $navigationLabel = 'Assigned Assets';
     protected static ?int $navigationSort = 22;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Assigned Assets');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Assigned Assets');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('Artifact');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Asset/Equipment/Items issued to you or your support group.');
-    }
+    protected static ?string $title = 'Assigned Assets';
+    protected ?string $subheading = 'Asset/Equipment/Items issued to you or your support group.';
 
     protected string $view = 'staff.pages.artifact';
 

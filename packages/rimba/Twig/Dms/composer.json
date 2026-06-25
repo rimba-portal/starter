@@ -1,0 +1,16 @@
+{
+    "name": "rimba/twig-dms",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Rimba\\Twig\\Dms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rimba\\Twig\\Dms\\DmsServiceProvider"
+            ]
+        }
+    }
+}

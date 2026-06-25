@@ -12,30 +12,13 @@ use UnitEnum;
 
 class Workflow extends Page
 {
-
+    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-w-request';
-
+    protected static ?string $navigationLabel = 'Request for something';
     protected static ?int $navigationSort = 32;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Request for something');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Request for something');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('Catalog');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Request for support, service, item, asset, equipment, etc. through workflow system.');
-    }
+    protected static ?string $title = 'Request for something';
+    protected ?string $subheading = 'Request for support, service, item, asset, equipment, etc. through workflow system.';
 
     protected string $view = 'staff.pages.workflow';
 

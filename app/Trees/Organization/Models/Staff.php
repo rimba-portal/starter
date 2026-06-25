@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Trees\Organization\Models;
 
-use App\Business\Tos\Models\Request;
+use Rimba\Twig\Tos\Models\Request;
 use App\Models\User;
 use App\Trees\AuditTrail\Models\AuditLog;
 use Illuminate\Database\Eloquent\Attributes\Fillable;

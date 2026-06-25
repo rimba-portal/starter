@@ -19,27 +19,12 @@ class Call extends Page implements HasSchemas
 {
     use InteractsWithSchemas;
 
+    protected static string | UnitEnum | null $navigationGroup = 'Emergency';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-phone-call';
-
+    protected static ?string $navigationLabel = 'Contact someone';
     protected static ?int $navigationSort = 62;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Contact someone');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Contact someone');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('Emergency');
-    }
-
-    // public function getSubheading(): ?string
-    // { return __('Asset/Equipment/Items issued to you or your support group.'); }
+    protected static ?string $title = 'Contact someone';
 
     protected string $view = 'staff.pages.call';
 

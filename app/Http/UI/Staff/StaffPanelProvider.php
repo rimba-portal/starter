@@ -63,13 +63,12 @@ class StaffPanelProvider extends PanelProvider
         return $panel
             ->navigationGroups([
                 'ToDo',
-                'Help',
-                'Explore',
-                'Requests',
-                'Improve',
-                'Manufacture',
-                'Broadcast',
                 'Accountables',
+                'Catalog',
+                'Knowledge',
+                'Location',
+                'Emergency',
+
             ])
             ->pages([
                 Dashboard::class,

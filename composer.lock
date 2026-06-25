@@ -4,20 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a769edfaf51121a6ccb6a0195fd39f3",
+    "content-hash": "ed9d73567938c2ee82612b1cb2b6a60c",
     "packages": [
         {
+            "name": "bit-es/attributing",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/bit-es/attributing",
+                "reference": "5b0744a5196e781e1186d45dfff8fe3891a6cb8e"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\Attributing\\AttributingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bites\\Attributing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Attributing package for use by any model records to create ABAC in Laravel Filament.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "bit-es/google-translate",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bit-es/google-translate.git",
-                "reference": "7f4f7cf0ec78a498d767481a76c60b82d1a4f01d"
+                "reference": "887f031c05ca1c1e4bce7ae6c63ccc62b82c4f12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bit-es/google-translate/zipball/7f4f7cf0ec78a498d767481a76c60b82d1a4f01d",
-                "reference": "7f4f7cf0ec78a498d767481a76c60b82d1a4f01d",
+                "url": "https://api.github.com/repos/bit-es/google-translate/zipball/887f031c05ca1c1e4bce7ae6c63ccc62b82c4f12",
+                "reference": "887f031c05ca1c1e4bce7ae6c63ccc62b82c4f12",
                 "shasum": ""
             },
             "require": {
@@ -51,22 +92,22 @@
             "description": "Google Translate package for use in Laravel Filament.",
             "support": {
                 "issues": "https://github.com/bit-es/google-translate/issues",
-                "source": "https://github.com/bit-es/google-translate/tree/v1.1.1"
+                "source": "https://github.com/bit-es/google-translate/tree/v1.2.0"
             },
-            "time": "2026-06-24T03:05:46+00:00"
+            "time": "2026-06-25T04:57:15+00:00"
         },
         {
             "name": "bit-es/helpfile",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bit-es/helpfile.git",
-                "reference": "cd9d409cbbbae58a60544b78e4c1542ec153cf52"
+                "reference": "b9728f009ffe60b2c0be10d45f8e6278ef369ff5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bit-es/helpfile/zipball/cd9d409cbbbae58a60544b78e4c1542ec153cf52",
-                "reference": "cd9d409cbbbae58a60544b78e4c1542ec153cf52",
+                "url": "https://api.github.com/repos/bit-es/helpfile/zipball/b9728f009ffe60b2c0be10d45f8e6278ef369ff5",
+                "reference": "b9728f009ffe60b2c0be10d45f8e6278ef369ff5",
                 "shasum": ""
             },
             "require": {
@@ -100,9 +141,9 @@
             "description": "Help file package for creating user guides and admin guides in Laravel Filament.",
             "support": {
                 "issues": "https://github.com/bit-es/helpfile/issues",
-                "source": "https://github.com/bit-es/helpfile/tree/v1.1.0"
+                "source": "https://github.com/bit-es/helpfile/tree/v1.2.0"
             },
-            "time": "2026-06-24T01:23:02+00:00"
+            "time": "2026-06-25T04:59:33+00:00"
         },
         {
             "name": "bit-es/versioning",
@@ -2388,16 +2429,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.18",
+            "version": "v0.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "a19af51bb144bf87f08397921fa619f85c7d4e72"
+                "reference": "6d53c826dfd33ec5f4ac91f816ff327727c7988b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/a19af51bb144bf87f08397921fa619f85c7d4e72",
-                "reference": "a19af51bb144bf87f08397921fa619f85c7d4e72",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/6d53c826dfd33ec5f4ac91f816ff327727c7988b",
+                "reference": "6d53c826dfd33ec5f4ac91f816ff327727c7988b",
                 "shasum": ""
             },
             "require": {
@@ -2441,9 +2482,9 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.18"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.20"
             },
-            "time": "2026-05-19T00:47:18+00:00"
+            "time": "2026-06-24T19:16:38+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -10822,6 +10863,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "bit-es/attributing": 20,
         "bit-es/versioning": 20
     },
     "prefer-stable": true,

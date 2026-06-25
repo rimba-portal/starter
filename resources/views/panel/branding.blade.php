@@ -2,14 +2,26 @@
     <h2>{{ config('bites.slogan') }}</h2>
 </div>
 
-<div class="fixed top-6 right-6 z-50">
-  
-</div>
-
 <style>
     body {
         background: url('{{ asset('images/atm.jpg') }}') no-repeat center center fixed;
         background-size: cover;
+    }
+
+    main {
+        position: relative;
+    }
+
+    #helpers-translate {
+        position: absolute;
+        right: 45px;
+        top: 20px;
+    }
+
+    #helpers-guide {
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
     @media screen and (min-height: 878px) and (min-width: 1024px) {
@@ -32,6 +44,7 @@
             white-space: normal;
             text-align: center;
         }
+
     }
 </style>
 

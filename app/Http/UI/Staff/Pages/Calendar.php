@@ -38,29 +38,13 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
     use InteractsWithForms;
     use InteractsWithTable;
 
+    protected static string | UnitEnum | null $navigationGroup = 'ToDo';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-calendar';
-
+    protected static ?string $navigationLabel = 'Calendar';
     protected static ?int $navigationSort = 12;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Calendar');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Calendar');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('To Do');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Calendar view of workdays, holidays and events.');
-    }
+    protected static ?string $title = 'Calendar';
+    protected ?string $subheading = 'Calendar view of workdays, holidays and events.';
 
     protected string $view = 'staff.pages.calendar';
 
@@ -76,22 +60,28 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
             ->columns([
                 TextColumn::make('title')->label('Title'),
                 TextColumn::make('description')->label('Description'),
-                ColorColumn::make('color')->label('Event Color')->sortable(),
+                // ColorColumn::make('color')->label('Event Color')->sortable(),
+
+                ColorColumn::make('event_type_color')
+                    ->label('Event Color')
+                    ->state(function (Event $record): ?string {
+                        return EventType::tryFrom($record->type)?->getColor()[300] ?? null;
+                    }),
                 TextColumn::make('starts_at')->date('D M j, Y')->label('Date')->sortable(),
             ])
             ->groups([
                 // Group by Month/Year from starts_at
                 Group::make('starts_at')
                     ->label('Month')
-                    ->getTitleFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->isoFormat('MMMM • YYYY') ?? 'No Date')
-                    ->getKeyFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
+                    ->getTitleFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->isoFormat('MMMM • YYYY') ?? 'No Date')
+                    ->getKeyFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
                     ->collapsible(),
 
                 Group::make('iso_week')
                     ->label('Week')
-                    ->getTitleFromRecordUsing(fn (Event $record): string => $record->starts_at ? sprintf('%s • %s', $record->starts_at->format('W'), $record->starts_at->format('o')) : 'No Date')
-                    ->getKeyFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
-                    ->orderQueryUsing(fn (Builder $query, string $direction) => $query->orderBy('starts_at', $direction))
+                    ->getTitleFromRecordUsing(fn(Event $record): string => $record->starts_at ? sprintf('%s • %s', $record->starts_at->format('W'), $record->starts_at->format('o')) : 'No Date')
+                    ->getKeyFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
+                    ->orderQueryUsing(fn(Builder $query, string $direction) => $query->orderBy('starts_at', $direction))
                     ->collapsible(),
 
             ])

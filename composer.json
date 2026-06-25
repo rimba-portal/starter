@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "bit-es/attributing": "dev-main",
         "bit-es/google-translate": "^1.0",
         "bit-es/helpfile": "^1.0",
         "bit-es/versioning": "dev-main",
@@ -29,6 +30,14 @@
         "phpunit/phpunit": "^12.5.12"
     },
     "repositories": [
+        {
+            "type": "path",
+            "url": "packages/bit-es/attributing",
+            "options": {
+                "symlink": true,
+                "canonical": false
+            }
+        },
         {
             "type": "path",
             "url": "packages/bit-es/versioning",

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Trees\Agreement\Models;
 
-use App\Business\Lcs\Models\ContractConfidentiality;
+use Rimba\Twig\Lcs\Models\ContractConfidentiality;
 use App\Trees\Organization\Models\OrgCorp;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

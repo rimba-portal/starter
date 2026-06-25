@@ -8,10 +8,10 @@ The panel is organized into the following sections:
 
 - T oDo
 - H elp
-- E xplore
+- E xplore 
 - R equests
 - I mprove
-- M anufacture
+- M odels
 - B roadcast
 - A ccountables
 

@@ -13,30 +13,13 @@ use UnitEnum;
 
 class Dashboard extends BaseDashboard
 {
-
+    protected static string | UnitEnum | null $navigationGroup = 'ToDo';
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-target';
-
+    protected static ?string $navigationLabel = 'Target';
     protected static ?int $navigationSort = 13;
 
-    public function getTitle(): string|Htmlable
-    {
-        return __('Target');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('Target');
-    }
-
-    public static function getNavigationGroup(): string|UnitEnum|null
-    {
-        return __('To Do');
-    }
-
-    public function getSubheading(): ?string
-    {
-        return __('Target settings and progress overview for your work.');
-    }
+    protected static ?string $title = 'Target';
+    protected ?string $subheading = 'Target settings and progress overview for your work.';
 
     public function getColumns(): int|array
     {
