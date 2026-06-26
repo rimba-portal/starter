@@ -38,4 +38,50 @@ class SemanticVersionService
             0,
         ];
     }
+
+    public function format(
+        int $major,
+        int $minor,
+        int $patch,
+    ): string {
+        return "{$major}.{$minor}.{$patch}";
+    }
+
+    public function parse(
+        string $version
+    ): array {
+        [$major, $minor, $patch] =
+            explode('.', $version);
+
+        return [
+            (int) $major,
+            (int) $minor,
+            (int) $patch,
+        ];
+    }
+    public function major(
+        int $major
+    ): static {
+        return $this->where('major', $major);
+    }
+
+    public function minor(
+        int $major,
+        int $minor
+    ): static {
+        return $this
+            ->where('major', $major)
+            ->where('minor', $minor);
+    }
+
+    public function patch(
+        int $major,
+        int $minor,
+        int $patch
+    ): static {
+        return $this
+            ->where('major', $major)
+            ->where('minor', $minor)
+            ->where('patch', $patch);
+    }
 }

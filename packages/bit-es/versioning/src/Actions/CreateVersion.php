@@ -6,15 +6,65 @@ namespace Bites\Versioning\Actions;
 
 use Bites\Versioning\Models\Version;
 use Illuminate\Database\Eloquent\Model;
+use Bites\Versioning\Services\SemanticVersionService;
+use Bites\Versioning\Enums\VersionIncrementType;
+
 
 class CreateVersion
 {
+    public function __construct(
+        protected SemanticVersionService $semanticVersionService,
+    ) {}
+
     public function execute(
         Model $model,
-        array $attributes
+        VersionIncrementType $increment = VersionIncrementType::Major,
+        array $attributes = [],
     ): Version {
-        return $model
-            ->versions()
-            ->create($attributes);
+
+        $latest = $model->latestVersion();
+
+        if (! $latest) {
+
+            return $model->versions()->create([
+                'version' => '0.0.0',
+                'major' => 0,
+                'minor' => 0,
+                'patch' => 0,
+                ...$attributes,
+            ]);
+        }
+
+        [$major, $minor, $patch] =
+            match ($increment) {
+                VersionIncrementType::Patch => $this
+                    ->semanticVersionService
+                    ->incrementPatch(
+                        $latest->major,
+                        $latest->minor,
+                        $latest->patch
+                    ),
+
+                VersionIncrementType::Minor => $this
+                    ->semanticVersionService
+                    ->incrementMinor(
+                        $latest->major,
+                        $latest->minor
+                    ),
+
+                VersionIncrementType::Major => $this
+                    ->semanticVersionService
+                    ->incrementMajor(
+                        $latest->major
+                    ),
+            };
+
+        return $model->versions()->create([
+            'version' => "{$major}.{$minor}.{$patch}",
+            'major' => $major,
+            'minor' => $minor,
+            'patch' => $patch,
+            ...$attributes,
+        ]);
     }
 }

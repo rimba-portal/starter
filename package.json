@@ -12,6 +12,7 @@
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
+        "esbuild": "^0.28.1",
         "fullcalendar": "^6.1.21",
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.0.0",
@@ -23,7 +24,7 @@
         "@fullcalendar/list": "^6.1.21",
         "@fullcalendar/timegrid": "^6.1.21",
         "@tailwindcss/typography": "^0.5.20",
-        "esbuild": "^0.27.2",
+        "face-api.js": "^0.22.2",
         "flyonui": "^2.4.1"
     }
 }
