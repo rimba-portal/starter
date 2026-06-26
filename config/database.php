@@ -45,7 +45,18 @@ return [
             'synchronous' => null,
             'transaction_mode' => 'DEFERRED',
         ],
-
+        'external_hr' => [
+            'driver' => env('HRDB_CONNECTION', 'sqlsrv'),
+            'host' => env('HRDB_HOST'),
+            'port' => env('HRDB_PORT', 1433),
+            'database' => env('HRDB_DATABASE'),
+            'username' => env('HRDB_USERNAME'),
+            'password' => env('HRDB_PASSWORD'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'encrypt' => env('HRDB_ENCRYPT', 'yes'), // use 'yes' or 'no'
+            'trust_server_certificate' => env('HRDB_TRUST_SERVER_CERT', false),
+        ],
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
@@ -151,7 +162,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-database-'),
+            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')) . '-database-'),
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

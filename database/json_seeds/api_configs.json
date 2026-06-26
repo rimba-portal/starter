@@ -1,0 +1,262 @@
+{
+  "api_configs": [
+    {
+      "name": "HRDB(Weaver) Employees",
+      "source_type": "database",
+      "source_config": {
+        "connection": "external_hr",
+        "query": "SELECT r.*, d.uuid AS department_uuid, j.uuid AS job_title_uuid, l.uuid AS location_uuid, m.uuid AS manager_uuid, c.* FROM HrmResource r LEFT JOIN HrmDepartment d ON r.departmentid = d.id LEFT JOIN HrmJobTitles j ON r.jobtitle = j.id LEFT JOIN HrmLocations l ON r.locationid = l.id LEFT JOIN HrmResource m ON r.managerid = m.id LEFT JOIN cus_fielddata c ON r.id = c.id WHERE r.workcode IS NOT NULL ORDER BY r.uuid"
+      },
+      "data_path": null,
+      "mapping": [
+        {
+          "table": "staff",
+          "model": "App\\Trees\\Organization\\Models\\JobContract",
+          "path": "",
+          "many": true,
+          "unique_by": "uuid",
+          "add_abac": true,
+          "fields": [
+            {
+              "from": "uuid",
+              "to": "uuid"
+            },
+            {
+              "from": "companystartdate",
+              "to": "start_date"
+            },
+            {
+              "from": "workenddate",
+              "to": "end_date"
+            },
+            {
+              "from": "workcode",
+              "to": "employee_no"
+            },
+            {
+              "from": "manager_uuid",
+              "to": "manager_uuid"
+            },
+            {
+              "from": "job_title_uuid",
+              "to": "job_title_id",
+              "do": {
+                "query": "SELECT id FROM job_titles WHERE uuid = ?",
+                "bindings": [
+                  "$value"
+                ],
+                "column": "id"
+              }
+            },
+            {
+              "from": "location_uuid",
+              "to": "issuing_org_corp_id",
+              "do": {
+                "query": "SELECT id FROM org_corps WHERE uuid = ?",
+                "bindings": [
+                  "$value"
+                ],
+                "column": "id"
+              }
+            }
+          ],
+          "children": [
+            {
+              "model": "App\\Trees\\Organization\\Models\\Staff",
+              "unique_by": "full_name",
+              "add_abac": true,
+              "fields": [
+                {
+                  "from": "lastname",
+                  "to": "name"
+                },
+                {
+                  "from": "workcode",
+                  "to": "staff_no"
+                },
+                {
+                  "value": "Staff-FTE",
+                  "to": "contract_type"
+                },
+                {
+                  "from": "field8",
+                  "to": "shift_code"
+                },
+                {
+                  "from": "field3",
+                  "to": "paygrade"
+                },
+                {
+                  "from": "loginid",
+                  "to": "staff_old_number"
+                },
+                {
+                  "from": "sex",
+                  "to": "gender",
+                  "do": "@(in_array(strtoupper((string)$from), [\"1\", \"F\"], true) ? \"F\" : \"M\")"
+                },
+                {
+                  "from": "location_uuid",
+                  "to": "org_corp_id",
+                  "do": {
+                    "query": "SELECT id FROM org_corps WHERE uuid = ?",
+                    "bindings": [
+                      "$value"
+                    ],
+                    "column": "id"
+                  }
+                }
+              ],
+              "parent_key": "staff_id",
+              "foreign_key": "job_contract_id"
+            },
+            {
+              "model": "App\\Trees\\Organization\\Models\\JobPosition",
+              "unique_by": "title",
+              "add_abac": true,
+              "fields": [
+                {
+                  "from": "field4",
+                  "to": "cost_center"
+                },
+                {
+                  "value": "Job-Permanent",
+                  "to": "contract_type"
+                },
+                {
+                  "from": "job_title_uuid",
+                  "to": "title",
+                  "do": {
+                    "query": "SELECT title FROM job_titles WHERE uuid = ?",
+                    "bindings": [
+                      "$value"
+                    ],
+                    "column": "title"
+                  }
+                },
+                {
+                  "from": "department_uuid",
+                  "to": "org_unit_id",
+                  "do": {
+                    "query": "SELECT id FROM org_units WHERE uuid = ?",
+                    "bindings": [
+                      "$value"
+                    ],
+                    "column": "id"
+                  }
+                }
+              ],
+              "foreign_key": "job_contract_id"
+            }
+          ]
+        }
+      ],
+      "active": true
+    },
+    {
+      "name": "HRDB(Weaver) Departments",
+      "source_type": "database",
+      "source_config": {
+        "connection": "external_hr",
+        "query": "SELECT * FROM HrmDepartment ORDER BY uuid"
+      },
+      "data_path": null,
+      "mapping": [
+        {
+          "table": "org_units",
+          "model": "App\\Trees\\Organization\\Models\\OrgUnit",
+          "path": "",
+          "many": true,
+          "unique_by": "uuid",
+          "fields": [
+            {
+              "from": "uuid",
+              "to": "uuid"
+            },
+            {
+              "from": "departmentname",
+              "to": "name"
+            }
+          ]
+        }
+      ],
+      "active": true
+    },
+    {
+      "name": "HRDB(Weaver) Organizations",
+      "source_type": "database",
+      "source_config": {
+        "connection": "external_hr",
+        "query": "SELECT * FROM HrmLocations ORDER BY uuid"
+      },
+      "data_path": null,
+      "mapping": [
+        {
+          "table": "locations",
+          "model": "App\\Trees\\Organization\\Models\\OrgCorp",
+          "path": "",
+          "many": true,
+          "unique_by": "uuid",
+          "fields": [
+            {
+              "from": "uuid",
+              "to": "uuid"
+            },
+            {
+              "from": "locationname",
+              "to": "name"
+            },
+            {
+              "from": "locationdesc",
+              "to": "description"
+            }
+          ]
+        }
+      ],
+      "active": true
+    },
+    {
+      "name": "HRDB(Weaver) Job Titles",
+      "source_type": "database",
+      "source_config": {
+        "connection": "external_hr",
+        "query": "SELECT * FROM HrmJobTitles ORDER BY uuid"
+      },
+      "data_path": null,
+      "mapping": [
+        {
+          "table": "job_titles",
+          "model": "Rimba\\Twig\\Hrm\\Models\\JobTitle",
+          "path": "",
+          "many": true,
+          "unique_by": "uuid",
+          "fields": [
+            {
+              "from": "uuid",
+              "to": "uuid"
+            },
+            {
+              "from": "jobtitlename",
+              "to": "title",
+              "regex": "/^.*-/"
+            },
+            {
+              "from": "jobtitlename",
+              "to": "jobgrade",
+              "regex": "/^[^-]+-(.*)-[^-]+$/"
+            },
+            {
+              "from": "jobtitlemark",
+              "to": "description"
+            }
+          ],
+          "skip_if": {
+            "field": "title",
+            "min_length": 3
+          }
+        }
+      ],
+      "active": true
+    }
+  ]
+}

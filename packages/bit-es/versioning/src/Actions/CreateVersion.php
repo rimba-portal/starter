@@ -16,6 +16,11 @@ class CreateVersion
         protected SemanticVersionService $semanticVersionService,
     ) {}
 
+    public static function make(Model $model): CreateVersionBuilder
+    {
+        return new CreateVersionBuilder($model);
+    }
+
     public function execute(
         Model $model,
         VersionIncrementType $increment = VersionIncrementType::Major,

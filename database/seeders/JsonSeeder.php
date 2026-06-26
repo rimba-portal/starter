@@ -64,6 +64,17 @@ class JsonSeeder extends Seeder
             }
 
             // Insert data into the table safely
+            foreach ($data as &$row) {
+                foreach ($row as $key => $value) {
+                    if (is_array($value)) {
+                        $row[$key] = json_encode(
+                            $value,
+                            JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+                        );
+                    }
+                }
+            }
+
             DB::table($tableName)->insert($data);
         }
 
