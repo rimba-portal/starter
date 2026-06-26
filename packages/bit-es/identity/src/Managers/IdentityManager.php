@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Managers;
 
 use InvalidArgumentException;
@@ -22,7 +24,7 @@ class IdentityManager
 
         if (! isset($this->drivers[$name])) {
             throw new InvalidArgumentException(
-                "Driver [$name] not registered."
+                sprintf('Driver [%s] not registered.', $name)
             );
         }
 

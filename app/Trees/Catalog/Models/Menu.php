@@ -6,8 +6,19 @@ namespace App\Trees\Catalog\Models;
 
 use Bites\Service\Concerns\HasAttachableExtLink;
 use Bites\Versioning\Traits\HasVersions;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
+#[Fillable([
+    'category',
+    'title',
+    'icon',
+    'icon_type',
+    'description',
+    'internal_link',
+    // 'external_link',
+    'is_active',
+])]
 class Menu extends Model
 {
     // use HasAttachableExtLink;
@@ -15,19 +26,7 @@ class Menu extends Model
 
     protected $guard_name = 'web';
 
-    protected $fillable = [
-        'category',
-        'title',
-        'icon',
-        'icon_type',
-        'description',
-        'internal_link',
-        // 'external_link',
-        'is_active',
-    ];
-
     protected $attributes = [
         'is_active' => false,
     ];
-
 }

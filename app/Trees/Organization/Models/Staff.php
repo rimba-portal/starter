@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Trees\Organization\Models;
 
-use Rimba\Twig\Tos\Models\Request;
 use App\Models\User;
 use App\Trees\AuditTrail\Models\AuditLog;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Rimba\Twig\Tos\Models\Request;
 
 #[Fillable([
     'user_id',

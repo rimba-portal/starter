@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Rimba\Identity\Factors\FaceFactor;
 use Rimba\Identity\Factors\PinFactor;
 

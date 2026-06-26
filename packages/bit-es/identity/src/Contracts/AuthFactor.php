@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Contracts;
 
 use Rimba\Identity\Models\IdentityProfile;

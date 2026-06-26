@@ -1,17 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Services;
 
 use Illuminate\Support\Facades\Auth;
-use Rimba\Identity\Models\IdentityProfile;
 use Rimba\Identity\Managers\PipelineManager;
+use Rimba\Identity\Models\IdentityProfile;
 
 class LoginPipeline
 {
     public function __construct(
         protected PipelineManager $pipeline
-    ) {
-    }
+    ) {}
 
     public function login(
         IdentityProfile $profile,

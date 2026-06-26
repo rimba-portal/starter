@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Managers;
 
 use Rimba\Identity\Models\IdentityProfile;
@@ -8,8 +10,7 @@ class PipelineManager
 {
     public function __construct(
         protected IdentityManager $identity
-    ) {
-    }
+    ) {}
 
     public function verify(
         IdentityProfile $profile,
@@ -17,8 +18,7 @@ class PipelineManager
     ): bool {
 
         foreach (
-            config('identity.pipeline', [])
-            as $factor
+            config('identity.pipeline', []) as $factor
         ) {
 
             $driver = $this->identity->driver(

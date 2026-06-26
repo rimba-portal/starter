@@ -1,21 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+#[Fillable([
+    'is_enabled',
+])]
 class IdentityProfile extends Model
 {
-    protected $fillable = [
-        'is_enabled',
-    ];
-
-    protected $casts = [
-        'is_enabled' => 'boolean',
-    ];
-
     public function personable(): MorphTo
     {
         return $this->morphTo();
@@ -26,5 +24,12 @@ class IdentityProfile extends Model
         return $this->hasMany(
             IdentityCredential::class
         );
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'is_enabled' => 'boolean',
+        ];
     }
 }

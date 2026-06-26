@@ -44,7 +44,7 @@ class SemanticVersionService
         int $minor,
         int $patch,
     ): string {
-        return "{$major}.{$minor}.{$patch}";
+        return sprintf('%d.%d.%d', $major, $minor, $patch);
     }
 
     public function parse(
@@ -59,5 +59,4 @@ class SemanticVersionService
             (int) $patch,
         ];
     }
-    
 }

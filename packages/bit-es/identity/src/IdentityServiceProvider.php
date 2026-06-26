@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity;
 
 use Illuminate\Support\ServiceProvider;
@@ -15,23 +17,21 @@ class IdentityServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton(
-            IdentityManager::class,
-            function () {
+            function (): IdentityManager {
 
-                $manager = new IdentityManager();
+                $identityManager = new IdentityManager;
 
                 foreach (
-                    config('identity.drivers')
-                    as $name => $driver
+                    config('identity.drivers') as $name => $driver
                 ) {
 
-                    $manager->extend(
+                    $identityManager->extend(
                         $name,
                         $driver
                     );
                 }
 
-                return $manager;
+                return $identityManager;
             }
         );
     }
@@ -39,8 +39,7 @@ class IdentityServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/identity.php'
-                => config_path('identity.php'),
+            __DIR__.'/../config/identity.php' => config_path('identity.php'),
         ], 'identity-config');
 
         $this->loadMigrationsFrom(

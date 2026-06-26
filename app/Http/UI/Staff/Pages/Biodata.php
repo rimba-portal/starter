@@ -19,7 +19,6 @@ use Filament\Schemas\Components\Wizard;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Schemas\Schema;
-use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Facades\Auth;
 use UnitEnum;
 
@@ -28,12 +27,16 @@ class Biodata extends Page implements HasActions, HasSchemas
     use InteractsWithActions;
     use InteractsWithSchemas;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Accountables';
+    protected static string|UnitEnum|null $navigationGroup = 'Accountables';
+
     protected static string|BackedEnum|null $navigationIcon = 'rimba-id-staff';
+
     protected static ?string $navigationLabel = 'Profile';
+
     protected static ?int $navigationSort = 21;
 
     protected static ?string $title = 'Profile';
+
     protected ?string $subheading = 'Your profile, roles and qualifications.';
 
     protected string $view = 'staff.pages.biodata';
@@ -56,7 +59,7 @@ class Biodata extends Page implements HasActions, HasSchemas
     public function mount(): void
     {
         $auth = Auth::user()->id;
-        $user = User::find($auth);
+        User::find($auth);
         // Load existing attributes into the form
         // $attributes = $user->personAttributes()->pluck('value', 'key')->toArray();
 
@@ -146,7 +149,7 @@ class Biodata extends Page implements HasActions, HasSchemas
                                 ->addActionLabel('Add Family Member') // Customize the button label
                                 ->columns(1) // Repeater itself occupies one column in the parent grid
                                 ->collapsible() // Optional: allows collapsing items
-                                ->itemLabel(fn(array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
+                                ->itemLabel(fn (array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
                             Action::make('save')
                                 ->label('Save Family Info')
                                 ->action('save'),
@@ -186,7 +189,7 @@ class Biodata extends Page implements HasActions, HasSchemas
                                         ->addActionLabel('Add Reminder') // Customize the button label
                                         ->columns(1) // Repeater itself occupies one column in the parent grid
                                         ->collapsible() // Optional: allows collapsing items
-                                        ->itemLabel(fn(array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
+                                        ->itemLabel(fn (array $state): ?string => $state['name'] ?? null), // Shows name as label when collapsed
                                 ])->hiddenLabel(),
                             Action::make('save')
                                 ->label('Save Reminder Info')

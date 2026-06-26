@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Bites\Versioning\Actions;
 
-use Bites\Versioning\Models\Version;
-use Illuminate\Database\Eloquent\Model;
-use Bites\Versioning\Services\SemanticVersionService;
 use Bites\Versioning\Enums\VersionIncrementType;
-
+use Bites\Versioning\Models\Version;
+use Bites\Versioning\Services\SemanticVersionService;
+use Illuminate\Database\Eloquent\Model;
 
 class CreateVersion
 {
@@ -65,7 +64,7 @@ class CreateVersion
             };
 
         return $model->versions()->create([
-            'version' => "{$major}.{$minor}.{$patch}",
+            'version' => sprintf('%s.%s.%s', $major, $minor, $patch),
             'major' => $major,
             'minor' => $minor,
             'patch' => $patch,

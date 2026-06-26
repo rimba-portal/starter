@@ -12,16 +12,18 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Schemas\Schema;
-use Illuminate\Contracts\Support\Htmlable;
 use UnitEnum;
 
 class Call extends Page implements HasSchemas
 {
     use InteractsWithSchemas;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Emergency';
+    protected static string|UnitEnum|null $navigationGroup = 'Emergency';
+
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-phone-call';
+
     protected static ?string $navigationLabel = 'Contact someone';
+
     protected static ?int $navigationSort = 62;
 
     protected static ?string $title = 'Contact someone';

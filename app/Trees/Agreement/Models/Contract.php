@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Trees\Agreement\Models;
 
-use Rimba\Twig\Lcs\Models\ContractConfidentiality;
 use App\Trees\Organization\Models\OrgCorp;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Rimba\Twig\Lcs\Models\ContractConfidentiality;
 
 #[Fillable([
     'uuid',

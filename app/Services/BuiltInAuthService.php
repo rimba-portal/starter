@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\AuthContract;
 use App\Models\User;
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Hash;
-use App\Contracts\AuthContract;
 
 class BuiltInAuthService implements AuthContract
 {

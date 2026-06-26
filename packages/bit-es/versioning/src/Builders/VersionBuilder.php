@@ -15,6 +15,7 @@ class VersionBuilder extends Builder
             ->orderByDesc('minor')
             ->orderByDesc('patch');
     }
+
     public function major(
         int $major
     ): static {
@@ -40,6 +41,7 @@ class VersionBuilder extends Builder
             ->where('minor', $minor)
             ->where('patch', $patch);
     }
+
     public function released(): static
     {
         return $this->where('status', 'released');
@@ -56,6 +58,7 @@ class VersionBuilder extends Builder
             ->released()
             ->effective();
     }
+
     public function review(): static
     {
         return $this->where('status', 'review');
@@ -75,6 +78,7 @@ class VersionBuilder extends Builder
     {
         return $this->where('status', 'archived');
     }
+
     public function effective(): static
     {
         return $this

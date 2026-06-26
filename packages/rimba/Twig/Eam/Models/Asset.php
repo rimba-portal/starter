@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Eam\Models;
 
-use Rimba\Twig\Tos\Models\Request;
 use App\Trees\FloorPlan\Models\Location;
 use App\Trees\Organization\Models\OrgTeam;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Rimba\Twig\Tos\Models\Request;
 
 #[Fillable([
     'org_team_id',

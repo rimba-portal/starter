@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-               // for consumption of users, staffs (actual), job_posts (defined)
-        Schema::create('person_attributes', function (Blueprint $table) {
+        // for consumption of users, staffs (actual), job_posts (defined)
+        Schema::create('person_attributes', function (Blueprint $table): void {
             $table->id();
             $table->string('key'); // e.g. 'gender', 'dob', 'phone'
             $table->text('value')->nullable();
@@ -22,14 +22,13 @@ return new class extends Migration
             $table->timestamps();
         });
         // for consumption of assets, equipment, (actual,defined)
-        Schema::create('asset_attributes', function (Blueprint $table) {
+        Schema::create('asset_attributes', function (Blueprint $table): void {
             $table->id();
             $table->string('key'); // e.g. 'dimensions', 'type', 'location'
             $table->text('value')->nullable();
             $table->morphs('attributable'); // adds adds attributable_id and attributable_type
             $table->timestamps();
         });
-
 
         Schema::enableForeignKeyConstraints();
     }

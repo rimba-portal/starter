@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Bites\Versioning\Builders;
 
-use Illuminate\Database\Eloquent\Builder;
 use Bites\Versioning\Enums\VersionIncrementType;
 use Bites\Versioning\Models\Version;
 use Illuminate\Database\Eloquent\Model;
-use Bites\Versioning\Services\SemanticVersionService;
 
 class MakeVersionBuilder
 {
+    public $semanticVersionService;
+
     protected VersionIncrementType $increment =
         VersionIncrementType::Major;
 
@@ -61,34 +61,30 @@ class MakeVersionBuilder
         return $this;
     }
 
-public function execute(): Version
-{
-    if (! $latest) {
-        return $this->model->versions()->create([
-            'version' => '0.0.0',
-        ]);
+    public function execute(): Version
+    {
+        if (! $latest) {
+            return $this->model->versions()->create([
+                'version' => '0.0.0',
+            ]);
+        }
+
+        [$major, $minor, $patch] = match ($this->increment) {
+
+            VersionIncrementType::Major => $this->semanticVersionService->incrementMajor(
+                $latest->major
+            ),
+
+            VersionIncrementType::Minor => $this->semanticVersionService->incrementMinor(
+                $latest->major,
+                $latest->minor
+            ),
+
+            VersionIncrementType::Patch => $this->semanticVersionService->incrementPatch(
+                $latest->major,
+                $latest->minor,
+                $latest->patch
+            ),
+        };
     }
-
-[$major, $minor, $patch] = match ($this->increment) {
-
-    VersionIncrementType::Major =>
-        $this->semanticVersionService->incrementMajor(
-            $latest->major
-        ),
-
-    VersionIncrementType::Minor =>
-        $this->semanticVersionService->incrementMinor(
-            $latest->major,
-            $latest->minor
-        ),
-
-    VersionIncrementType::Patch =>
-        $this->semanticVersionService->incrementPatch(
-            $latest->major,
-            $latest->minor,
-            $latest->patch
-        ),
-};
-}
-
 }

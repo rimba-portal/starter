@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Staff;
 
+use App\Http\UI\Auth\Pages\Login;
+use App\Http\UI\Auth\Pages\ResetPassword;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -10,6 +14,8 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentIcon;
+use Filament\View\PanelsIconAlias;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -18,11 +24,6 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use App\Http\UI\Auth\Pages\Login;
-use App\Http\UI\Auth\Pages\ResetPassword;
-use Illuminate\View\View;
-use Filament\Support\Facades\FilamentIcon;
-use Filament\View\PanelsIconAlias;
 
 class StaffPanelProvider extends PanelProvider
 {
@@ -35,8 +36,7 @@ class StaffPanelProvider extends PanelProvider
             ->path(config('bites.ui.panels.staff.1', 'staff'))
             ->colors(['primary' => config('bites.ui.panels.staff.2', Color::Blue)])
             ->brandName(config('bites.ui.panels.staff.3', 'ATM Staff Intranet'))
-            ->homeUrl(fn(): string => route(config('bites.ui.panels.staff.4', 'filament.staff.pages.dashboard')))
-
+            ->homeUrl(fn (): string => route(config('bites.ui.panels.staff.4', 'filament.staff.pages.dashboard')))
 
             ->discoverResources(in: app_path('Http/UI/Staff/Resources'), for: 'App\Http\UI\Staff\Resources')
             ->discoverPages(in: app_path('Http/UI/Staff/Pages'), for: 'App\Http\UI\Staff\Pages')
@@ -48,15 +48,15 @@ class StaffPanelProvider extends PanelProvider
             $panel
                 ->discoverResources(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Staff/Resources', $package)),
-                    for: $namespace . '\Http\UI\Staff\Resources',
+                    for: $namespace.'\Http\UI\Staff\Resources',
                 )
                 ->discoverPages(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Staff/Pages', $package)),
-                    for: $namespace . '\Http\UI\Staff\Pages',
+                    for: $namespace.'\Http\UI\Staff\Pages',
                 )
                 ->discoverWidgets(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Staff/Widgets', $package)),
-                    for: $namespace . '\Http\UI\Staff\Widgets',
+                    for: $namespace.'\Http\UI\Staff\Widgets',
                 );
         }
 
@@ -92,6 +92,7 @@ class StaffPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+
     public function boot(Panel $panel): void
     {
         // Register custom icons

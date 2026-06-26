@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('identity_profiles', function (Blueprint $table) {
+        Schema::create('identity_profiles', function (Blueprint $table): void {
             $table->id();
             $table->morphs('personable');
             $table->boolean('is_enabled')->default(true);
             $table->timestamps();
         });
 
-        Schema::create('identity_credentials', function (Blueprint $table) {
+        Schema::create('identity_credentials', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('identity_profile_id')->constrained()->cascadeOnDelete();
             $table->string('factor_type');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('identity_attempts', function (Blueprint $table) {
+        Schema::create('identity_attempts', function (Blueprint $table): void {
 
             $table->id();
             $table->foreignId('identity_profile_id')->nullable()->constrained()->nullOnDelete();

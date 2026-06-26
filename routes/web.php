@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (): Factory|View {
     return view('welcome');
 });
 
-Route::get('/pic/{filename}', function ($filename) {
+Route::get('/pic/{filename}', function (string $filename) {
 
     $url =
-        "http://10.40.3.41:8080/{$filename}.jpg";
+        sprintf('http://10.40.3.41:8080/%s.jpg', $filename);
 
     $response =
         Http::get($url);

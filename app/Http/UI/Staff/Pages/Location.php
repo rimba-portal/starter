@@ -19,7 +19,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
-use Illuminate\Contracts\Support\Htmlable;
 use UnitEnum;
 
 class Location extends Page implements HasActions, HasForms, HasTable
@@ -28,12 +27,16 @@ class Location extends Page implements HasActions, HasForms, HasTable
     use InteractsWithForms;
     use InteractsWithTable;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Location';
+    protected static string|UnitEnum|null $navigationGroup = 'Location';
+
     protected static string|BackedEnum|null $navigationIcon = 'rimba-s-location';
+
     protected static ?string $navigationLabel = 'Floor Plan';
+
     protected static ?int $navigationSort = 51;
 
     protected static ?string $title = 'Floor Plan';
+
     protected ?string $subheading = 'Links to floor plans and maps of the organization buildings and campuses. Ideally includes registered storage locations.';
 
     protected string $view = 'staff.pages.location';

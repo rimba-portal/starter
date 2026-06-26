@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace Bites\Versioning\Http\UI\Admin\Resources\Versions\RelationManagers;
 
+use Bites\Versioning\Enums\VersionStatus;
+use Filament\Actions;
+use Filament\Forms;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Forms;
-use Filament\Schemas\Schema;
-use Filament\Actions;
 
 class VersionsRelationManager extends RelationManager
 {
     // This matches the relationship name defined in your HasVersions trait
-    protected static string $relationship = 'versions'; 
+    protected static string $relationship = 'versions';
 
     // The field in the versions table that displays the version label (e.g., "1.0.0")
     protected static ?string $recordTitleAttribute = 'version';
@@ -27,7 +28,7 @@ class VersionsRelationManager extends RelationManager
                     ->required()
                     ->placeholder('e.g., 1.0.0'),
                 Forms\Components\Select::make('status')
-                    ->options(\Bites\Versioning\Enums\VersionStatus::class)
+                    ->options(VersionStatus::class)
                     ->required(),
                 Forms\Components\TextInput::make('content_url')
                     ->url()
@@ -60,13 +61,14 @@ class VersionsRelationManager extends RelationManager
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
-                    ->options(\Bites\Versioning\Enums\VersionStatus::class),
+                    ->options(VersionStatus::class),
             ])
             ->headerActions([
                 // Leverages your custom CreateVersion action under the hood
                 Actions\CreateAction::make()
                     ->mutateDataUsing(function (array $data): array {
                         $data['created_by'] = auth()->id();
+
                         return $data;
                     }),
             ])

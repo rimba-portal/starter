@@ -13,7 +13,9 @@ abstract class BitesServiceProvider extends ServiceProvider
      * Relative paths inside the package.
      */
     protected string $configFile = '';
+
     protected string $viewsPath = '';
+
     protected string $iconsPath = '';
 
     public function register(): void

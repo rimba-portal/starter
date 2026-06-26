@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Identity\Factors;
 
 use Rimba\Identity\Contracts\AuthFactor;
