@@ -1,0 +1,24 @@
+package: rimba/physical-assets
+dependencies: [rimba/core]
+
+models:
+  AssetCategory:
+    attributes:
+      id: uuid
+      name: string
+      code: string (unique)
+  AssetModel:
+    attributes:
+      id: uuid
+      asset_category_id: uuid (foreign)
+      make: string
+      model_number: string
+      manufacturer: string
+  Asset:
+    attributes:
+      id: uuid
+      asset_model_id: uuid (foreign)
+      serial_number: string (unique)
+      name: string
+      owner_team_id: uuid (foreign, nullable)
+      location_unit_id: uuid (foreign, nullable)
