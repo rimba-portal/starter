@@ -1,0 +1,118 @@
+package: rimba/core
+description: Foundational system architecture, organizational topology, security engine, and global ledger.
+
+identity:
+  User:
+    attributes:
+      id: uuid
+      email: string (unique)
+      password: string
+      email_verified_at: timestamp (nullable)
+      is_active: boolean (default: true)
+  LoginProvider:
+    attributes:
+      id: uuid
+      user_id: uuid (foreign)
+      provider_name: string (e.g., 'entra_id', 'ldap', 'local')
+      provider_uid: string
+      token_payload: json (nullable)
+
+organization:
+  OrgCorp:
+    attributes:
+      id: uuid
+      name: string
+      type: string (e.g., 'vendor', 'customer', 'contractor', 'internal')
+      tax_identifier: string (nullable)
+  OrgUnit:
+    attributes:
+      id: uuid
+      parent_id: uuid (foreign, nullable, self-referential)
+      name: string
+      type: string (e.g., 'factory', 'department', 'division')
+  OrgTeam:
+    attributes:
+      id: uuid
+      org_unit_id: uuid (foreign)
+      name: string
+      code: string (unique)
+  JobPosition:
+    attributes:
+      id: uuid
+      org_unit_id: uuid (foreign)
+      title: string
+      reports_to_position_id: uuid (foreign, nullable)
+  Staff:
+    attributes:
+      id: uuid
+      user_id: uuid (foreign, nullable)
+      org_corp_id: uuid (foreign) # Tracks original employer context
+      job_position_id: uuid (foreign, nullable)
+      first_name: string
+      last_name: string
+      staff_number: string (unique)
+    relationships:
+      teams: belongsToMany(OrgTeam)
+
+authorization:
+  Role:
+    attributes:
+      id: uuid
+      name: string (unique)
+      guard_name: string
+  Permission:
+    attributes:
+      id: uuid
+      name: string (unique)
+      module: string # e.g., 'core', 'assets', 'workflows'
+  Attribute:
+    attributes:
+      id: uuid
+      key: string (unique) # e.g., 'clearance_level', 'site_access'
+      data_type: string # e.g., 'integer', 'string', 'array'
+  Policy:
+    attributes:
+      id: uuid
+      name: string
+      rule_expression: text # Evaluates boolean math for ABAC access
+
+ledger:
+  AuditTrail:
+    attributes:
+      id: uuid
+      user_id: uuid (foreign, nullable)
+      action: string # e.g., 'create', 'update', 'delete', 'login'
+      auditable_type: string (polymorphic)
+      auditable_id: uuid (polymorphic)
+      old_values: json (nullable)
+      new_values: json (nullable)
+      ip_address: string (nullable)
+
+  Task:
+    attributes:
+      id: uuid
+      title: string
+      description: text
+      status: string # Queued, Active, Done [1]
+      due_at: timestamp (nullable)
+      source_type: string (polymorphic, nullable) # Dynamic tracking source (e.g., 'Workflow', 'Incident', or 'Manual')
+      source_id: uuid (polymorphic, nullable)
+  ChecklistItem:
+    attributes:
+      id: uuid
+      task_id: uuid (foreign)
+      label: string
+      is_completed: boolean (default: false)
+      completed_at: timestamp (nullable)
+  Assignment:
+    attributes:
+      id: uuid
+      task_id: uuid (foreign)
+      assignable_type: string # Polymorphic: 'Staff' or 'OrgTeam' [1]
+      assignable_id: uuid
+  Comment:
+    attributes:
+      id: uuid
+      task_id: uuid (foreign)
+      staff_id: uuid (foreign) [1]
+      body: text
