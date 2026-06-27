@@ -1,0 +1,17 @@
+package: rimba/documents
+dependencies: [rimba/core, rimba/versioning] # Connects seamlessly to the pure Versioning module
+
+models:
+  DocumentType:
+    attributes:
+      id: uuid
+      name: string # SOP, Policy, Work Instruction, Drawing, Photo
+      code: string (unique)
+  Document:
+    attributes:
+      id: uuid
+      document_type_id: uuid (foreign)
+      org_corp_id: uuid (foreign)
+      title: string
+      reference_number: string (unique, nullable)
+      owner_staff_id: uuid (foreign)
