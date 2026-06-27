@@ -1,0 +1,28 @@
+package: rimba/risk-ops
+dependencies: [rimba/core, rimba/operations]
+
+models:
+  IncidentType:
+    attributes:
+      id: uuid
+      name: string # e.g., 'Machine Failure', 'Data Breach', 'Physical Hazard'
+      severity_level: string # e.g., 'low', 'medium', 'high', 'critical'
+  Incident:
+    attributes:
+      id: uuid
+      incident_type_id: uuid (foreign)
+      reported_by_staff_id: uuid (foreign)
+      assigned_team_id: uuid (foreign, nullable)
+      subject_type: string (polymorphic, nullable) # Can point to any Asset, Service, or Document
+      subject_id: uuid (polymorphic, nullable)
+      description: text
+      status: string # e.g., 'logged', 'investigating', 'resolved', 'closed'
+      logged_at: timestamp
+  Resolution:
+    attributes:
+      id: uuid
+      incident_id: uuid (foreign)
+      resolved_by_staff_id: uuid (foreign)
+      root_cause_analysis: text (nullable)
+      remediation_steps: text
+      resolved_at: timestamp
