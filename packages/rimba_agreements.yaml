@@ -1,0 +1,18 @@
+package: rimba/agreements
+dependencies: [rimba/core]
+
+models:
+  Agreement:
+    attributes:
+      id: uuid
+      title: string
+      start_date: date
+      end_date: date (nullable)
+      subject_type: string (polymorphic, nullable) # Can loosely point to Asset, Service, etc.
+      subject_id: uuid (polymorphic, nullable)
+  Party:
+    attributes:
+      id: uuid
+      agreement_id: uuid (foreign)
+      org_corp_id: uuid (foreign)
+      role_context: string # Lessor, Underwriter, Vendor, Customer
