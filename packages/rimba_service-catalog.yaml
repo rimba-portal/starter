@@ -1,0 +1,23 @@
+package: rimba/service-catalog
+dependencies: [rimba/core, rimba/workflows, rimba/versioning]
+
+models:
+  Service:
+    attributes:
+      id: uuid
+      workflow_id: uuid (foreign)
+      name: string
+      description: text
+      is_public: boolean (default: false)
+  ServiceForm:
+    attributes:
+      id: uuid
+      service_id: uuid (foreign)
+      schema_payload: json # Form layout fields
+  ServiceRequest:
+    attributes:
+      id: uuid
+      service_id: uuid (foreign)
+      requested_by_staff_id: uuid (foreign)
+      fulfilment_id: uuid (foreign)
+      form_data: json
