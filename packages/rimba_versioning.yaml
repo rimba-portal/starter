@@ -1,0 +1,20 @@
+package: rimba/versioning
+dependencies: [rimba/core]
+
+models:
+  Version:
+    attributes:
+      id: uuid
+      versionable_type: string # Polymorphic target (allows versioning anything: e.g. Document, ServiceForm)
+      versionable_id: uuid
+      version_number: string # e.g., 'v1.0.0'
+      change_summary: text (nullable)
+      created_by_staff_id: uuid (foreign)
+  VersionContent:
+    attributes:
+      id: uuid
+      version_id: uuid (foreign)
+      storage_driver: string # s3, minio, azure_blob, github, internal
+      file_path: string
+      file_size_bytes: bigint
+      mime_type: string
