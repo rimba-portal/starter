@@ -1,0 +1,38 @@
+package: rimba/time-registry
+dependencies: [rimba/core]
+
+models:
+  Calendar:
+    attributes:
+      id: uuid
+      name: string # e.g., 'HQ Office', 'Factory Line A'
+      timezone: string (default: 'UTC')
+  Holiday:
+    attributes:
+      id: uuid
+      calendar_id: uuid (foreign)
+      name: string
+      observed_date: date
+  Shift:
+    attributes:
+      id: uuid
+      calendar_id: uuid (foreign)
+      name: string # e.g., 'Morning Shift', 'Night Guard'
+      start_time: time
+      end_time: time
+  Roster:
+    attributes:
+      id: uuid
+      shift_id: uuid (foreign)
+      staff_id: uuid (foreign)
+      valid_from: date
+      valid_to: date
+  Event:
+    attributes:
+      id: uuid
+      calendar_id: uuid (foreign)
+      title: string
+      start_at: timestamp
+      end_at: timestamp
+      associated_type: string (polymorphic, nullable) # Link to anything e.g., Task, Incident
+      associated_id: uuid (polymorphic, nullable)
