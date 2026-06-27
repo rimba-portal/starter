@@ -1,0 +1,23 @@
+package: rimba/entitlements
+dependencies: [rimba/core] # Decoupled check-engine that plugs clean rules into the Catalog or Assets
+
+models:
+  Entitlement:
+    attributes:
+      id: uuid
+      target_resource_type: string # Polymorphic rule scope (e.g., 'Service' or 'Asset')
+      target_resource_id: uuid
+      name: string
+  EligibilityRule:
+    attributes:
+      id: uuid
+      entitlement_id: uuid (foreign)
+      target_type: string # JobPosition, OrgTeam, Attribute, Role
+      target_id: uuid (nullable)
+      matching_criteria: json
+  ApprovalRule:
+    attributes:
+      id: uuid
+      entitlement_id: uuid (foreign)
+      sequence: integer
+      approver_type: string # Manager, SpecificTeam, RoleHolder
