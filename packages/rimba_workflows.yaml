@@ -1,0 +1,29 @@
+package: rimba/workflows
+dependencies: [rimba/core] # No longer carries Tasks; spits tasks out into the core engine
+
+models:
+  Workflow:
+    attributes:
+      id: uuid
+      name: string
+      trigger_type: string # manual, catalog_request, incident
+      definition_payload: json
+  Fulfilment:
+    attributes:
+      id: uuid
+      workflow_id: uuid (foreign)
+      status: string # running, completed, failed, aborted
+      context_data: json
+  TaskTemplate:
+    attributes:
+      id: uuid
+      workflow_id: uuid (foreign)
+      step_name: string
+      sequence_order: integer
+  Transition:
+    attributes:
+      id: uuid
+      workflow_id: uuid (foreign)
+      from_state: string
+      to_state: string
+      condition_expression: string (nullable)
