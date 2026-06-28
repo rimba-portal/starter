@@ -1,0 +1,552 @@
+namespace App\Trees\Workflow\Actions;
+
+use App\Trees\Workflow\Models\WorkflowBlueprint;
+use App\Trees\Workflow\Models\WorkflowInstance;
+use App\Trees\Workflow\Events\WorkflowInstanceStarted;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+class StartWorkflowInstance
+{
+    /**
+     * Executes the single business workflow of initializing a live workflow instance loop.
+     */
+    public function execute(WorkflowBlueprint $blueprint, Model $trackable): WorkflowInstance
+    {
+        return DB::transaction(function () use ($blueprint, $trackable) {
+            $instance = WorkflowInstance::create([
+                'workflow_blueprint_id' => $blueprint->id,
+                'trackable_id' => $trackable->id,
+                'trackable_type' => get_class($trackable),
+                'status' => 'active',
+            ]);
+
+            $startNode = $blueprint->workflowNodes()->where('type', 'start')->first();
+
+            if (!$startNode) {
+                throw new \Exception("Workflow blueprint lacks an initial 'start' node.");
+            }
+
+            // Move the instance into its initial node milestone state
+            $instance->workflowNodeInstances()->create([
+                'workflow_node_id' => $startNode->id,
+                'activated_at' => now(),
+            ]);
+
+            // Deep-copy task templates from configuration blueprint into live tracking entries
+            if ($startNode->workpackage) {
+                foreach ($startNode->workpackage->checklists as $checklist) {
+                    foreach ($checklist->tasks as $task) {
+                        $instance->workflowTaskInstances()->create([
+                            'task_id' => $task->id,
+                            'is_completed' => false,
+                        ]);
+                    }
+                }
+            }
+
+            event(new WorkflowInstanceStarted($instance));
+
+            return $instance;
+        });
+    }
+}
+namespace App\Trees\Workflow\Actions;
+
+use App\Trees\Workflow\Models\WorkflowTaskInstance;
+use App\Trees\Workflow\Models\WorkflowNode;
+use App\Trees\Workflow\Models\WorkflowTransition;
+use App\Trees\Workflow\Events\TaskCompleted;
+use App\Trees\Workflow\Events\WorkflowNodeTransitioned;
+use Illuminate\Support\Facades\DB;
+
+class ProcessTaskCompletion
+{
+    /**
+     * Executes evaluation rules when a staff member checks off an execution task.
+     */
+    public function execute(WorkflowTaskInstance $taskInstance): void
+    {
+        DB::transaction(function () use ($taskInstance) {
+            $instance = $taskInstance->workflowInstance;
+            $currentNodeTemplate = $taskInstance->task->checklist->workpackage->workflowNode;
+
+            // Trigger reactive internal state reporting event
+            event(new TaskCompleted($taskInstance));
+
+            // Verify if all structural task items inside this node setup are checked off
+            if ($this->isNodeMilestoneComplete($instance, $currentNodeTemplate)) {
+                
+                // Finalize active node tracker instance entry
+                $instance->workflowNodeInstances()
+                    ->where('workflow_node_id', $currentNodeTemplate->id)
+                    ->whereNull('completed_at')
+                    ->update(['completed_at' => now()]);
+
+                // Query outgoing map routing paths
+                $transitions = WorkflowTransition::where('from_node_id', $currentNodeTemplate->id)->get();
+
+                // Business Rule: Auto-trigger transition forward if it is the ONLY route out
+                if ($transitions->count() === 1) {
+                    $transition = $transitions->first();
+                    $targetNode = WorkflowNode::findOrFail($transition->to_node_id);
+
+                    // Initialize next node tracking segment
+                    $instance->workflowNodeInstances()->create([
+                        'workflow_node_id' => $targetNode->id,
+                        'activated_at' => now(),
+                    ]);
+
+                    // Generate live runtime tracking task copies for the newly entered state node
+                    if ($targetNode->workpackage) {
+                        foreach ($targetNode->workpackage->checklists as $checklist) {
+                            foreach ($checklist->tasks as $task) {
+                                $instance->workflowTaskInstances()->create([
+                                    'task_id' => $task->id,
+                                    'is_completed' => false,
+                                ]);
+                            }
+                        }
+                    }
+
+                    event(new WorkflowNodeTransitioned($instance, $transition));
+                } 
+                // Close workflow runtime entirely if we land on an isolated final exit point
+                elseif ($transitions->isEmpty() && $currentNodeTemplate->type === 'end') {
+                    $instance->update(['status' => 'completed']);
+                }
+            }
+        });
+    }
+
+    protected function isNodeMilestoneComplete($instance, $node): bool
+    {
+        if (!$node->workpackage) return true;
+
+        $taskIds = $node->workpackage->checklists()
+            ->with('tasks')
+            ->get()
+            ->pluck('checklists.*.tasks.*.id')
+            ->flatten();
+
+        return !WorkflowTaskInstance::where('workflow_instance_id', $instance->id)
+            ->whereIn('task_id', $taskIds)
+            ->where('is_completed', false)
+            ->exists();
+    }
+}
+namespace App\Trees\Workflow\Observers;
+
+use App\Trees\Workflow\Models\WorkflowTaskInstance;
+use App\Trees\Workflow\Actions\ProcessTaskCompletion;
+
+class WorkflowTaskInstanceObserver
+{
+    /**
+     * Intercept data layer mutations reactively when a task state saves.
+     */
+    public function updated(WorkflowTaskInstance $taskInstance): void
+    {
+        // Only evaluate workflow logic if the completion status changed from false to true
+        if ($taskInstance->isDirty('is_completed') && $taskInstance->is_completed) {
+            app(ProcessTaskCompletion::class)->execute($taskInstance);
+        }
+    }
+}
+namespace App\Trees\Workflow\Events;
+
+use App\Trees\Workflow\Models\WorkflowInstance;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class WorkflowInstanceStarted
+{
+    use Dispatchable, SerializesModels;
+
+    public function __with(public WorkflowInstance $instance) {}
+}
+namespace App\Trees\Workflow\Events;
+
+use App\Trees\Workflow\Models\WorkflowTaskInstance;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class TaskCompleted
+{
+    use Dispatchable, SerializesModels;
+
+    public function __with(public WorkflowTaskInstance $taskInstance) {}
+}
+namespace App\Trees\Workflow\Events;
+
+use App\Trees\Workflow\Models\WorkflowInstance;
+use App\Trees\Workflow\Models\WorkflowTransition;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class WorkflowNodeTransitioned
+{
+    use Dispatchable, SerializesModels;
+
+    public function __with(
+        public WorkflowInstance $instance,
+        public WorkflowTransition $transition
+    ) {}
+}
+namespace App\Trees\Workflow\Builders;
+
+use Illuminate\Database\Eloquent\Builder;
+
+class WorkflowInstanceBuilder extends Builder
+{
+    public function whereActive(): self
+    {
+        return $this->where('status', 'active');
+    }
+
+    public function whereCompleted(): self
+    {
+        return $this->where('status', 'completed');
+    }
+
+    public function forTrackable(string $type, int $id): self
+    {
+        return $this->where('trackable_type', $type)
+            ->where('trackable_id', $id);
+    }
+}
+namespace App\Trees\Workflow\Listeners;
+
+use App\Trees\Workflow\Events\WorkflowNodeTransitioned;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Log;
+
+class TriggerAutoTransition implements ShouldQueue
+{
+    /**
+     * Reacts when a node moves to handle notifications or external service hooks.
+     */
+    public function handle(WorkflowNodeTransitioned $event): void
+    {
+        $instance = $event->instance;
+        $transition = $event->transition;
+        $trackable = $instance->trackable;
+
+        Log::info("Workflow Instance #{$instance->id} shifted via path '{$transition->name}'.");
+        
+        // Example: If $trackable has a system mail notification method, fire it here
+        // if (method_exists($trackable, 'notifyWorkflowUpdate')) { ... }
+    }
+}
+namespace App\Trees\Workflow\Http\UI\Admin\Resources;
+
+use App\Trees\Workflow\Models\WorkflowBlueprint;
+use Filament\Forms\Form;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Resources\Resource;
+use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
+
+class WorkflowBlueprintResource extends Resource
+{
+    protected static ?string $model = WorkflowBlueprint::class;
+    protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
+    protected static ?string $navigationGroup = 'Workflow Management';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Section::make('Workflow Details')
+                    ->schema([
+                        TextInput::make('name')->required(),
+                        Toggle::make('active')->default(true),
+                    ]),
+
+                Section::make('Workflow Structural Nodes')
+                    ->description('Define the desks, checklists, and parallel tasks making up this configuration.')
+                    ->schema([
+                        Repeater::make('workflowNodes')
+                            ->relationship('workflowNodes')
+                            ->schema([
+                                TextInput::make('name')->required()->columnSpan(2),
+                                Select::make('type')
+                                    ->options([
+                                        'start' => 'Start Milestone Node',
+                                        'standard' => 'Standard Operation Step',
+                                        'end' => 'Terminal End Node',
+                                    ])->default('standard')->required(),
+                                TextInput::make('role_restriction')->nullable(),
+
+                                Section::make('Node Workpackage Assignment')
+                                    ->relationship('workpackage')
+                                    ->schema([
+                                        TextInput::make('name')->required()->label('Workpackage Objective Description'),
+                                        
+                                        Repeater::make('checklists')
+                                            ->relationship('checklists')
+                                            ->orderColumn('sort_order')
+                                            ->label('Sequential Processing Checklists')
+                                            ->schema([
+                                                TextInput::make('name')->required()->label('Checklist Name'),
+                                                
+                                                Repeater::make('tasks')
+                                                    ->relationship('tasks')
+                                                    ->label('Parallel Execution Tasks')
+                                                    ->schema([
+                                                        TextInput::make('description')->required()->label('Task Item Details'),
+                                                    ])->grid(2)
+                                            ])
+                                    ])
+                            ])->columns(4)
+                    ])
+            ])->columns(1);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('name')->searchable()->sortable(),
+                IconColumn::make('active')->boolean(),
+                TextColumn::make('workflow_nodes_count')->counts('workflowNodes')->label('Configured Steps'),
+                TextColumn::make('created_at')->dateTime()->sortable(),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListWorkflowBlueprints::route('/'),
+            'create' => Pages\CreateWorkflowBlueprint::route('/create'),
+            'edit' => Pages\EditWorkflowBlueprint::route('/{record}/edit'),
+        ];
+    }
+}
+namespace App\Trees\Workflow\Http\UI\Staff\Resources;
+
+use Filament\Forms\Form;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\CheckboxList;
+use Filament\Resources\Resource;
+use App\Trees\Workflow\Models\WorkflowTaskInstance;
+
+class ExpenseClaimResource extends Resource
+{
+    // ... basic standard resource configs go here ...
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                // ... standard core fields tracking expense details (Amount, Title) ...
+
+                Section::make('Current Operational Task Milestone Obligations')
+                    ->description('You must complete all visible tasks below to advance this document forward.')
+                    ->visible(fn ($record) => $record && $record->activeWorkflowInstance()->exists())
+                    ->schema([
+                        CheckboxList::make('completed_tasks')
+                            ->label('Active Parallel Tasks')
+                            ->relationship(
+                                name: 'activeWorkflowInstance.workflowTaskInstances',
+                                titleAttribute: 'id'
+                            )
+                            ->options(function ($record) {
+                                if (!$record || !$record->activeWorkflowInstance) return [];
+
+                                // Extract the runtime active node definition ID
+                                $currentNodeInstance = $record->activeWorkflowInstance
+                                    ->workflowNodeInstances()->whereNull('completed_at')->first();
+
+                                if (!$currentNodeInstance) return [];
+
+                                // Fetch execution tasks belonging specifically to the active milestone desk
+                                return WorkflowTaskInstance::where('workflow_instance_id', $record->activeWorkflowInstance->id)
+                                    ->whereHas('task.checklist.workpackage', function ($query) use ($currentNodeInstance) {
+                                        $query->where('workflow_node_id', $currentNodeInstance->workflow_node_id);
+                                    })
+                                    ->get()
+                                    ->pluck('task.description', 'id');
+                            })
+                            /*
+                             |--------------------------------------------------------------------------
+                             | Sequential Enforcement Rules
+                             |--------------------------------------------------------------------------
+                             */
+                            ->itemDisabled(function ($value, $record) {
+                                $taskInstance = WorkflowTaskInstance::find($value);
+                                if (!$taskInstance) return false;
+
+                                $currentChecklist = $taskInstance->task->checklist;
+
+                                // Look for prior sequential checklists in this specific workpackage setup
+                                $priorChecklistTemplateIds = $currentChecklist->workpackage->checklists()
+                                    ->where('sort_order', '<', $currentChecklist->sort_order)
+                                    ->pluck('id');
+
+                                if ($priorChecklistTemplateIds->isEmpty()) return false;
+
+                                // Lock this checkbox if tasks in previous sequential checklists remain incomplete
+                                return WorkflowTaskInstance::where('workflow_instance_id', $record->activeWorkflowInstance->id)
+                                    ->whereHas('task', function ($query) use ($priorChecklistTemplateIds) {
+                                        $query->whereIn('checklist_id', $priorChecklistTemplateIds);
+                                    })
+                                    ->where('is_completed', false)
+                                    ->exists();
+                            })
+                    ])
+            ]);
+    }
+}
+
+namespace App\Trees\Workflow\Traits;
+
+use App\Trees\Workflow\Models\WorkflowInstance;
+use App\Trees\Workflow\Models\WorkflowBlueprint;
+use App\Trees\Workflow\Actions\StartWorkflowInstance;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+
+trait HasWorkflowInstance
+{
+    /**
+     * Get the single active workflow instance running for this record.
+     */
+    public function activeWorkflowInstance(): MorphOne
+    {
+        return $this->morphOne(WorkflowInstance::class, 'trackable')
+            ->where('status', 'active');
+    }
+
+    /**
+     * Get all historical workflow runs tied to this record.
+     */
+    public function workflowHistory(): MorphMany
+    {
+        return $this->morphMany(WorkflowInstance::class, 'trackable')
+            ->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * Helper to verify if the record is currently locked in an active workflow.
+     */
+    public function hasActiveWorkflow(): bool
+    {
+        return $this->activeWorkflowInstance()->exists();
+    }
+
+    /**
+     * Helper to launch a specified blueprint mapping against this record instance.
+     */
+    public function triggerWorkflow(WorkflowBlueprint $blueprint): WorkflowInstance
+    {
+        if ($this->hasActiveWorkflow()) {
+            throw new \Exception("This record is already processing an active workflow loop.");
+        }
+
+        return app(StartWorkflowInstance::class)->execute($blueprint, $this);
+    }
+}
+namespace App\Trees\Workflow\Http\UI\Actions;
+
+use App\Trees\Workflow\Models\WorkflowBlueprint;
+use Filament\Actions\Action;
+use Filament\Forms\Components\Select;
+use Filament\Notifications\Notification;
+
+class StartWorkflowAction extends Action
+{
+    public static function getDefaultName(): ?string
+    {
+        return 'submit_to_workflow';
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->label('Submit to Workflow')
+            ->icon('heroicon-o-paper-airplane')
+            ->color('primary')
+            
+            // Step 1: Hide the action button entirely if the record is already running a workflow
+            ->visible(fn ($record) => $record && !$record->hasActiveWorkflow())
+            
+            // Step 2: Render a modal asking the user which blueprint definition to initialize
+            ->form([
+                Select::make('workflow_blueprint_id')
+                    ->label('Select Process Map')
+                    ->options(fn () => WorkflowBlueprint::where('active', true)->pluck('name', 'id'))
+                    ->required()
+                    ->searchable()
+            ])
+            
+            // Step 3: Run the action pipeline on submit
+            ->action(function ($record, array $data): void {
+                try {
+                    $blueprint = WorkflowBlueprint::findOrFail($data['workflow_blueprint_id']);
+                    
+                    // Fire the engine directly using our polymorphic trait helper method
+                    $record->triggerWorkflow($blueprint);
+
+                    Notification::make()
+                        ->title('Workflow Engaged')
+                        ->body("The record has been routed to the starting milestone node successfully.")
+                        ->success()
+                        ->send();
+
+                } catch (\Exception $e) {
+                    Notification::make()
+                        ->title('Execution Error')
+                        ->body($e->getMessage())
+                        ->danger()
+                        ->send();
+                }
+            });
+    }
+}
+
+
+```text
+Example to implement
+
+namespace App\Models;
+
+use App\Trees\Workflow\Traits\HasWorkflowInstance;
+use Illuminate\Database\Eloquent\Model;
+
+class ExpenseClaim extends Model
+{
+    use HasWorkflowInstance; // Adds activeWorkflowInstance() relationship instantly
+}
+
+namespace App\Filament\Staff\Resources\ExpenseClaimResource\Pages;
+
+use App\Filament\Staff\Resources\ExpenseClaimResource;
+use App\Trees\Workflow\Http\UI\Actions\StartWorkflowAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditExpenseClaim extends EditRecord
+{
+    protected static string $resource = ExpenseClaimResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            // Drop it directly into the header button block!
+            StartWorkflowAction::make(),
+        ];
+    }
+}
+
+```
