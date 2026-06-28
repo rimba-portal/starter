@@ -97,11 +97,18 @@ These models handle the live production state. Every time a new invoice, claim, 
 
 ### 3. The Backend Engine & Frontend Interfaces
 
-The functional code that transitions state machines from blueprints to live tracking interfaces inside your dashboard.
+#### The Single Business Workflow Actions (app/Trees/Workflow/Actions/)Instead of a generic service class, your pattern uses highly focused, single-responsibility Action classes to capture business workflows cleanly.
 
-#### `Services/WorkflowEngineService.php`
-*   **For Developers:** A non-visual, isolated backend service utility class. It features an automated `instantiate()` function to replicate blueprint structures into instance states, along with a `checkCompletionAndTransition()` hook evaluating your automation rules.
-*   **For Business Owners:** The invisible operational logic engine. It is the rulebook that automatically detects when the last task is finished and moves the electronic document to the next person's desk instantly, bypassing human lag.
+📄 app/Trees/Workflow/Actions/StartWorkflowInstance.php
+📄 app/Trees/Workflow/Actions/ProcessTaskCompletion.php
+
+
+#### Low-Level Database Lifecycle Observers (app/Trees/Workflow/Observers/)To ensure the actions fire automatically whenever data changes in the database, bind a model observer.
+
+📄 app/Trees/Workflow/Observers/WorkflowTaskInstanceObserver.php
+
+
+
 
 #### `Filament/Resources/WorkflowBlueprintResource.php`
 *   **For Developers:** A Filament administration Resource utilizing a nested structure of components (`Section` \(\rightarrow\) `Repeater` \(\rightarrow\) `Repeater`) to gracefully parse and save multi-tier data patterns in a clean admin form layout.
