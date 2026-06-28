@@ -43,4 +43,21 @@ class ApiData extends Model
     {
         return $this->belongsTo(ApiConfig::class);
     }
+        public function markProcessed(): void
+    {
+        $this->update([
+            'status' => 'processed',
+            'processed_at' => now(),
+            'error' => null,
+            'payload' => 'committed',
+        ]);
+    }
+
+    public function markFailed(string $message): void
+    {
+        $this->update([
+            'status' => 'failed',
+            'error' => $message,
+        ]);
+    }
 }
