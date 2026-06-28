@@ -7,7 +7,27 @@ This document details the complete architecture of an instance-driven Workflow E
 ## 📂 The Complete Architecture File Map
 
 ```text
-app/
+app/Trees/Workflow/
+├── Actions/
+│   ├── StartWorkflowInstance.php
+│   └── ProcessTaskCompletion.php
+├── Builders/
+│   └── WorkflowInstanceBuilder.php
+├── Events/
+│   ├── WorkflowInstanceStarted.php
+│   ├── TaskCompleted.php
+│   └── WorkflowNodeTransitioned.php
+├── Http/
+│   └── UI/
+│       ├── Admin/
+│       │   └── Resources/
+│       │       └── WorkflowBlueprintResource.php
+│       └── Staff/
+│           └── Resources/
+│               └── [YourOperationalEntity]Resource.php
+├── Listeners/
+│   ├── TriggerAutoTransition.php
+│   └── LogWorkflowHistory.php
 ├── Models/
 │   ├── WorkflowBlueprint.php
 │   ├── WorkflowNode.php
@@ -18,12 +38,9 @@ app/
 │   ├── WorkflowInstance.php
 │   ├── WorkflowNodeInstance.php
 │   └── WorkflowTaskInstance.php
-├── Services/
-│   └── WorkflowEngineService.php
-└── Filament/
-    └── Resources/
-        ├── WorkflowBlueprintResource.php
-        └── [YourOperationalEntity]Resource.php
+└── Observers/
+    └── WorkflowTaskInstanceObserver.php
+
 ```
 
 ---
