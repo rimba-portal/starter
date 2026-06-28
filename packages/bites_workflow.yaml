@@ -1,0 +1,77 @@
+models:
+  # =========================================================================
+  # 1. DESIGN-TIME MODELS (The Structural Configuration Blueprint)
+  # =========================================================================
+
+  WorkflowBlueprint:
+    name: string
+    active: boolean default:true
+    relationships:
+      hasMany: WorkflowNode, WorkflowInstance
+
+  WorkflowNode:
+    workflow_blueprint_id: id foreign
+    name: string
+    type: string default:'standard' # 'start', 'standard', 'end'
+    role_restriction: string nullable
+    relationships:
+      belongsTo: WorkflowBlueprint
+      hasOne: Workpackage
+
+  WorkflowTransition:
+    name: string
+    from_node_id: id foreign:workflow_nodes
+    to_node_id: id foreign:workflow_nodes
+
+  Workpackage:
+    workflow_node_id: id foreign unique
+    name: string
+    relationships:
+      belongsTo: WorkflowNode
+      hasMany: Checklist
+
+  Checklist:
+    workpackage_id: id foreign
+    name: string
+    sort_order: integer default:0
+    relationships:
+      belongsTo: Workpackage
+      hasMany: Task
+
+  Task:
+    checklist_id: id foreign
+    description: string
+    relationships:
+      belongsTo: Checklist
+
+  # =========================================================================
+  # 2. RUNTIME MODELS (The Live Execution Instances)
+  # =========================================================================
+
+  WorkflowInstance:
+    workflow_blueprint_id: id foreign
+    trackable_id: unsignedBigInteger
+    trackable_type: string
+    status: string default:'active' # 'active', 'completed', 'terminated'
+    relationships:
+      belongsTo: WorkflowBlueprint
+      hasMany: WorkflowNodeInstance, WorkflowTaskInstance
+    indexes:
+      - [trackable_type, trackable_id]
+
+  WorkflowNodeInstance:
+    workflow_instance_id: id foreign
+    workflow_node_id: id foreign
+    activated_at: timestamp nullable
+    completed_at: timestamp nullable
+    relationships:
+      belongsTo: WorkflowInstance, WorkflowNode
+
+  WorkflowTaskInstance:
+    workflow_instance_id: id foreign
+    task_id: id foreign
+    is_completed: boolean default:false
+    completed_by_user_id: id foreign:users nullable
+    completed_at: timestamp nullable
+    relationships:
+      belongsTo: WorkflowInstance, Task
