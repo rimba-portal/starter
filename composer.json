@@ -81,10 +81,10 @@
         ],
         "test:fresh": [
             "@php artisan migrate:fresh --seed",
+            "@php artisan bites:fetch 6",
+            "@php artisan bites:fetch 5",
             "@php artisan bites:fetch 4",
-            "@php artisan bites:fetch 3",
-            "@php artisan bites:fetch 2",
-            "@php artisan bites:fetch 1"
+            "@php artisan bites:fetch 3"
         ],
         "fix-perm": [
             "echo 'Setting ownership to nginx:rootnginx...'",

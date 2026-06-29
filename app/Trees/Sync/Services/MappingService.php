@@ -49,9 +49,8 @@ class MappingService
                 }
 
                 // ✅ attribute mapping (no "to", only "into")
-                if (isset($field['into']) && ! isset($field['to'])) {
+                if (isset($field['into']) && !isset($field['to'])) {
                     $row['extra'][$field['into']] = $value;
-
                     continue;
                 }
 
@@ -149,13 +148,14 @@ class MappingService
             return $this->executeArtisanCommand(substr($action, 8), $value);
         }
 
-        throw new \InvalidArgumentException('Mapping action must be a query array, an artisan command string, or a PHP expression starting with @.');
+        throw new \InvalidArgumentException("Mapping action must be a query array, an artisan command string, or a PHP expression starting with @.");
     }
 
     protected function resolveTransform(mixed $transform, mixed $value, array $item, array $field)
     {
         if (is_string($transform) && str_starts_with($transform, '@')) {
-            return $this->executePhpExpression(substr($transform, 1), $value, $item, $field);
+        dd($this);    
+        return $this->executePhpExpression(substr($transform, 1), $value, $item, $field);
         }
 
         if (is_callable($transform)) {
@@ -172,7 +172,7 @@ class MappingService
         }
 
         $modelClass = $query['model'] ?? null;
-        if (! $modelClass || ! class_exists($modelClass)) {
+        if (!$modelClass || !class_exists($modelClass)) {
             throw new \InvalidArgumentException("Query action requires a valid 'model' class.");
         }
 
@@ -194,7 +194,6 @@ class MappingService
 
         if (isset($query['first'])) {
             $record = $queryBuilder->first();
-
             return $record ? $record->{$query['first']} : null;
         }
 
@@ -208,11 +207,11 @@ class MappingService
 
         // Replace $value in SQL and bindings
         $sql = str_replace('$value', '?', $sql);
-        $bindings = array_map(fn ($b) => $b === '$value' ? $value : $b, $bindings);
+        $bindings = array_map(fn($b) => $b === '$value' ? $value : $b, $bindings);
 
         $result = DB::selectOne($sql, $bindings);
 
-        if (! $result) {
+        if (!$result) {
             return null;
         }
 
@@ -226,7 +225,7 @@ class MappingService
     protected function executeArtisanCommand(string $command, mixed $value)
     {
         $command = str_replace('$value', escapeshellarg((string) $value), $command);
-        $shell = PHP_BINARY.' artisan '.$command.' 2>&1';
+        $shell = PHP_BINARY . ' artisan ' . $command . ' 2>&1';
 
         $output = trim(shell_exec($shell));
 
@@ -236,9 +235,9 @@ class MappingService
     protected function executePhpExpression(string $expression, mixed $value, array $item, array $field)
     {
         try {
-            return eval('return '.$expression.';');
+            return eval('return ' . $expression . ';');
         } catch (\Throwable $throwable) {
-            throw new \InvalidArgumentException(sprintf('PHP expression action [%s] failed: ', $expression).$throwable->getMessage(), $throwable->getCode(), $throwable);
+            throw new \InvalidArgumentException(sprintf('PHP expression action [%s] failed: ', $expression) . $throwable->getMessage(), $throwable->getCode(), $throwable);
         }
     }
 }

@@ -17,11 +17,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Faros',
-            'email' => 'faros@example.com',
+
+        User::create([
+            'name' => 'test',
+            'email' => 'test@rimba.com',
+            'password' => bcrypt('password'),
+            'email_verified_at' => now(),
         ]);
+
         $this->call([WorkflowSeeder::class]);
         $this->call([JsonSeeder::class]);
+        $this->call([ApiConfigSeeder::class]);
     }
 }

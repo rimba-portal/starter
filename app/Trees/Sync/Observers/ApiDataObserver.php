@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Trees\Sync\Observers;
 
-use App\Trees\Sync\Jobs\ProcessApiDataJob;
 use App\Trees\Sync\Models\ApiData;
+use App\Trees\Sync\Jobs\ProcessApiDataJob;
 use App\Trees\Sync\Services\ProcessingService;
 
 class ApiDataObserver

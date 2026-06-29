@@ -1,3 +1,5 @@
+<?php
+
 namespace App\Trees\Workflow\Actions;
 
 use App\Trees\Workflow\Models\WorkflowBlueprint;
@@ -51,6 +53,9 @@ class StartWorkflowInstance
         });
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Actions;
 
 use App\Trees\Workflow\Models\WorkflowTaskInstance;
@@ -135,6 +140,9 @@ class ProcessTaskCompletion
             ->exists();
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Observers;
 
 use App\Trees\Workflow\Models\WorkflowTaskInstance;
@@ -153,6 +161,9 @@ class WorkflowTaskInstanceObserver
         }
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Events;
 
 use App\Trees\Workflow\Models\WorkflowInstance;
@@ -165,6 +176,9 @@ class WorkflowInstanceStarted
 
     public function __with(public WorkflowInstance $instance) {}
 }
+
+<?php
+
 namespace App\Trees\Workflow\Events;
 
 use App\Trees\Workflow\Models\WorkflowTaskInstance;
@@ -177,6 +191,9 @@ class TaskCompleted
 
     public function __with(public WorkflowTaskInstance $taskInstance) {}
 }
+
+<?php
+
 namespace App\Trees\Workflow\Events;
 
 use App\Trees\Workflow\Models\WorkflowInstance;
@@ -193,6 +210,9 @@ class WorkflowNodeTransitioned
         public WorkflowTransition $transition
     ) {}
 }
+
+<?php
+
 namespace App\Trees\Workflow\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -215,6 +235,9 @@ class WorkflowInstanceBuilder extends Builder
             ->where('trackable_id', $id);
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Listeners;
 
 use App\Trees\Workflow\Events\WorkflowNodeTransitioned;
@@ -238,6 +261,9 @@ class TriggerAutoTransition implements ShouldQueue
         // if (method_exists($trackable, 'notifyWorkflowUpdate')) { ... }
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Http\UI\Admin\Resources;
 
 use App\Trees\Workflow\Models\WorkflowBlueprint;
@@ -333,6 +359,9 @@ class WorkflowBlueprintResource extends Resource
         ];
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Http\UI\Staff\Resources;
 
 use Filament\Forms\Form;
@@ -409,6 +438,9 @@ class ExpenseClaimResource extends Resource
     }
 }
 
+
+<?php
+
 namespace App\Trees\Workflow\Traits;
 
 use App\Trees\Workflow\Models\WorkflowInstance;
@@ -457,6 +489,9 @@ trait HasWorkflowInstance
         return app(StartWorkflowInstance::class)->execute($blueprint, $this);
     }
 }
+
+<?php
+
 namespace App\Trees\Workflow\Http\UI\Actions;
 
 use App\Trees\Workflow\Models\WorkflowBlueprint;
@@ -517,8 +552,11 @@ class StartWorkflowAction extends Action
 }
 
 
-```text
-Example to implement
+
+// Example to implement
+
+
+<?php
 
 namespace App\Models;
 
@@ -529,6 +567,9 @@ class ExpenseClaim extends Model
 {
     use HasWorkflowInstance; // Adds activeWorkflowInstance() relationship instantly
 }
+
+
+<?php
 
 namespace App\Filament\Staff\Resources\ExpenseClaimResource\Pages;
 
@@ -548,5 +589,3 @@ class EditExpenseClaim extends EditRecord
         ];
     }
 }
-
-```

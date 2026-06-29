@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
     'notify_on_expiry',
     'meta',
 ])]
-class ContractParty extends Model
+class Party extends Model
 {
     use HasFactory;
 
@@ -42,8 +42,8 @@ class ContractParty extends Model
         return $this->morphTo();
     }
 
-    public function contract(): BelongsTo
+    public function agreement(): BelongsTo
     {
-        return $this->belongsTo(Contract::class);
+        return $this->belongsTo(Agreement::class);
     }
 }

@@ -12,11 +12,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Rimba\Twig\Lcs\Models\ContractConfidentiality;
 
 #[Fillable([
     'uuid',
-    'contract_type_id',
+    'agreement_type',
     'org_corp_id',
     'contract_no',
     'title',
@@ -28,7 +27,7 @@ use Rimba\Twig\Lcs\Models\ContractConfidentiality;
     'terms',
     'meta',
 ])]
-class Contract extends Model
+class Agreement extends Model
 {
     use HasFactory;
 
@@ -41,7 +40,6 @@ class Contract extends Model
     {
         return [
             'id' => 'integer',
-            'contract_type_id' => 'integer',
             'org_corp_id' => 'integer',
             'start_date' => 'date',
             'end_date' => 'date',
@@ -51,24 +49,19 @@ class Contract extends Model
         ];
     }
 
-    public function contractable(): MorphTo
+    public function agreementable(): MorphTo
     {
         return $this->morphTo();
     }
 
-    public function contractConfidentiality(): HasOne
+    public function parties(): HasMany
     {
-        return $this->hasOne(ContractConfidentiality::class);
+        return $this->hasMany(Party::class);
     }
 
-    public function contractParties(): HasMany
+    public function agreementType(): BelongsTo
     {
-        return $this->hasMany(ContractParty::class);
-    }
-
-    public function contractType(): BelongsTo
-    {
-        return $this->belongsTo(ContractType::class);
+        return $this->belongsTo(AgreementType::class);
     }
 
     public function orgCorp(): BelongsTo

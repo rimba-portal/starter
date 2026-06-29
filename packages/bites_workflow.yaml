@@ -1,77 +1,129 @@
 models:
-  # =========================================================================
-  # 1. DESIGN-TIME MODELS (The Structural Configuration Blueprint)
-  # =========================================================================
 
-  WorkflowBlueprint:
+  Flow\WorkflowBlueprint:
     name: string
     active: boolean default:true
     relationships:
-      hasMany: WorkflowNode, WorkflowInstance
+      hasMany: WorkflowNode
 
-  WorkflowNode:
-    workflow_blueprint_id: id foreign
+  Flow\WorkflowNode:
+    workflow_blueprint_id: foreign
     name: string
-    type: string default:'standard' # 'start', 'standard', 'end'
-    role_restriction: string nullable
+    type: string index
     relationships:
       belongsTo: WorkflowBlueprint
-      hasOne: Workpackage
+      hasMany: OutgoingTransition:WorkflowTransition
+      hasMany: IncomingTransition:WorkflowTransition
 
-  WorkflowTransition:
-    name: string
-    from_node_id: id foreign:workflow_nodes
-    to_node_id: id foreign:workflow_nodes
-
-  Workpackage:
-    workflow_node_id: id foreign unique
-    name: string
+  Flow\WorkflowTransition:
+    workflow_blueprint_id: foreign
+    from_node_id: foreign
+    to_node_id: foreign
+    name: string nullable
+    condition: text nullable
     relationships:
-      belongsTo: WorkflowNode
+      belongsTo:
+        - WorkflowBlueprint
+        - FromNode:WorkflowNode
+        - ToNode:WorkflowNode
+
+  Flow\WorkflowInstance:
+    workflow_blueprint_id: foreign
+    trackable_id: nullable
+    trackable_type: nullable
+    status: string default:'active'
+    timestamps
+    relationships:
+      belongsTo: WorkflowBlueprint
+      morphTo: trackable
+      hasMany:
+        - WorkflowNodeInstance
+        - WorkflowTransitionInstance
+
+  Flow\WorkflowNodeInstance:
+    workflow_instance_id: foreign
+    workflow_node_id: foreign
+    activated_at: timestamp
+    completed_at: timestamp nullable
+    relationships:
+      belongsTo:
+        - WorkflowInstance
+        - WorkflowNode
+
+  Flow\WorkflowTransitionInstance:
+    workflow_instance_id: foreign
+    workflow_transition_id: foreign
+    executed_at: timestamp
+    executed_by_id: nullable foreign users
+    relationships:
+      belongsTo:
+        - WorkflowInstance
+        - WorkflowTransition
+
+  Work\WorkPackage:
+    name: string
+    description: text nullable
+    active: boolean default:true
+    relationships:
       hasMany: Checklist
 
-  Checklist:
-    workpackage_id: id foreign
+  Work\Checklist:
+    work_package_id: foreign
     name: string
     sort_order: integer default:0
     relationships:
-      belongsTo: Workpackage
+      belongsTo: WorkPackage
       hasMany: Task
 
-  Task:
-    checklist_id: id foreign
+  Work\Task:
+    checklist_id: foreign
     description: string
+    active: boolean default:true
     relationships:
       belongsTo: Checklist
 
-  # =========================================================================
-  # 2. RUNTIME MODELS (The Live Execution Instances)
-  # =========================================================================
-
-  WorkflowInstance:
-    workflow_blueprint_id: id foreign
-    trackable_id: unsignedBigInteger
-    trackable_type: string
-    status: string default:'active' # 'active', 'completed', 'terminated'
+  WorkflowNodeAttachable:
+    workflow_node_id: foreign
+    attachable_id: integer
+    attachable_type: string
     relationships:
-      belongsTo: WorkflowBlueprint
-      hasMany: WorkflowNodeInstance, WorkflowTaskInstance
-    indexes:
-      - [trackable_type, trackable_id]
+      belongsTo: WorkflowNode
 
-  WorkflowNodeInstance:
-    workflow_instance_id: id foreign
-    workflow_node_id: id foreign
+  Work\WorkPackageInstance:
+    workflow_instance_id: foreign
+    work_package_id: foreign
+    status: string default:'active'
+    started_at: timestamp nullable
+    completed_at: timestamp nullable
+    relationships:
+      belongsTo:
+        - WorkflowInstance
+        - WorkPackage
+      hasMany:
+        - ChecklistInstance
+        - TaskInstance
+
+  Work\ChecklistInstance:
+    work_package_instance_id: foreign
+    checklist_id: foreign
+    status: string default:'pending'
     activated_at: timestamp nullable
     completed_at: timestamp nullable
     relationships:
-      belongsTo: WorkflowInstance, WorkflowNode
+      belongsTo:
+        - WorkPackageInstance
+        - Checklist
 
-  WorkflowTaskInstance:
-    workflow_instance_id: id foreign
-    task_id: id foreign
+  Work\TaskInstance:
+    work_package_instance_id: foreign
+    checklist_instance_id: foreign
+    task_id: foreign
+    assigned_to_id: nullable foreign users
+    completed_by_id: nullable foreign users
     is_completed: boolean default:false
-    completed_by_user_id: id foreign:users nullable
     completed_at: timestamp nullable
     relationships:
-      belongsTo: WorkflowInstance, Task
+      belongsTo:
+        - WorkPackageInstance
+        - ChecklistInstance
+        - Task

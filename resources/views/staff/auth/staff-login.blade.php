@@ -1,78 +1,76 @@
 <x-filament-panels::page>
-
     <div class="max-w-lg space-y-4">
-
         <x-filament::section>
-
             <x-slot name="heading">
                 Staff Authentication
             </x-slot>
-
             <div class="space-y-4">
-
                 <div>
                     <label class="block text-sm font-medium mb-1">
                         Staff ID
                     </label>
-
                     <input wire:model="staffId" type="text" class="w-full rounded-lg border-gray-300"
                         placeholder="Enter Staff ID">
                 </div>
-
                 <div>
                     <x-filament::button wire:click="startFaceRecognition" icon="heroicon-o-camera">
                         Face Verification
                     </x-filament::button>
                 </div>
-
             </div>
-
         </x-filament::section>
 
         <x-filament::section>
-
             <x-slot name="heading">
                 Camera
             </x-slot>
-
-            <div class="flex gap-6">
-
+            <div class="flex gap-6 items-start">
                 <div>
-                    <h3 class="font-bold mb-2">
-                        Reference Image
-                    </h3>
+                    <h3 class="font-bold mb-2">Reference Image</h3>
 
-                    <img id="referenceImage" width="300" style="border-radius:12px;">
+   <img
+    id="referenceImage"
+    width="150"
+    height="150"
+    style="width:150px !important; height:150px !important;"
+>
+
+<video
+    id="video"
+    autoplay
+    muted
+    playsinline
+    width="150"
+    height="150"
+    style="width:150px !important; height:150px !important;"
+></video>
                 </div>
 
                 <div>
-                    <h3 class="font-bold mb-2">
-                        Webcam
-                    </h3>
+                    <h3 class="font-bold mb-2">Webcam</h3>
 
-                    <video id="video" width="300" autoplay muted playsinline style="border-radius:12px;"></video>
+                    <video
+                        id="video"
+                        autoplay
+                        muted
+                        playsinline
+                        class="h-[20px] rounded-xl border"></video>
                 </div>
-
             </div>
-
             <div id="result" class="mt-4 text-lg font-bold">
                 Waiting...
             </div>
-
         </x-filament::section>
 
         @if ($faceVerified)
-            <x-filament::section>
-
-                <div class="text-success-600 text-xl font-bold">
-                    ✅ Face Verification Success
-                </div>
-
-            </x-filament::section>
+        <x-filament::section>
+            <div class="text-success-600 text-xl font-bold">
+                ✅ Face Verification Success
+            </div>
+        </x-filament::section>
         @endif
 
     </div>
-
 </x-filament-panels::page>
 
 
@@ -147,6 +145,7 @@
         detectLoop();
         Livewire.on("start-face-recognition", async (event) => {
             console.log(event);
+            console.log("start-face-recognition received", event);
             referenceImage.src = event.photo;
             referenceImage.onload = async () => {
                 const detection = await faceapi

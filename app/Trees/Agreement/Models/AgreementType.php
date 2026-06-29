@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
     'workflow_id',
     'meta',
 ])]
-class ContractType extends Model
+class AgreementType extends Model
 {
     use HasFactory;
 
@@ -49,9 +49,9 @@ class ContractType extends Model
         ];
     }
 
-    public function contracts(): HasMany
+    public function agreements(): HasMany
     {
-        return $this->hasMany(Contract::class);
+        return $this->hasMany(Agreement::class);
     }
 
     public function workflow(): BelongsTo

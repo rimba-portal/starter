@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\File;
 
 class JsonSeeder extends Seeder
 {
@@ -18,9 +18,8 @@ class JsonSeeder extends Seeder
         $directoryPath = database_path('json_seeds');
 
         // Check if the directory exists
-        if (! File::exists($directoryPath)) {
+        if (!File::exists($directoryPath)) {
             $this->command->error("Directory not found at: {$directoryPath}");
-
             return;
         }
 
@@ -37,9 +36,8 @@ class JsonSeeder extends Seeder
             $tableName = $file->getFilenameWithoutExtension();
 
             // Skip if the table does not exist in the database
-            if (! Schema::hasTable($tableName)) {
+            if (!Schema::hasTable($tableName)) {
                 $this->command->warn("Skipping file: '{$file->getFilename()}'. Table '{$tableName}' does not exist.");
-
                 continue;
             }
 
@@ -50,7 +48,6 @@ class JsonSeeder extends Seeder
             // Skip if JSON is empty or invalid
             if (empty($data)) {
                 $this->command->warn("Skipping table '{$tableName}': JSON file is empty or invalid.");
-
                 continue;
             }
 

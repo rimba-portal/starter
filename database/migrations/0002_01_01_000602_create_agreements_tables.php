@@ -33,7 +33,7 @@ return new class extends Migration
         Schema::create('agreements', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->foreignId('agreement_type_id')->constrained('agreement_types');
+            $table->string('agreement_type');
             $table->string('contract_no')->nullable();
             $table->string('title');
             $table->text('summary')->nullable();
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->enum('status', ['draft', 'pending', 'active', 'expired', 'terminated', 'archived'])->default('draft');
             $table->json('terms')->nullable();
             $table->json('meta')->nullable();
-            $table->morphs('contractable');
+            // $table->morphs('contractable');
             $table->timestamps();
         });
         Schema::create('parties', function (Blueprint $table) {
