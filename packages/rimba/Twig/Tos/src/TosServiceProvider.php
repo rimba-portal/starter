@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Rimba\Twig\Tos;
 
 use App\Services\BitesServiceProvider;
-use Bites\Attributing\Macros\LockWhenFilledMacro;
 
 class TosServiceProvider extends BitesServiceProvider
 {

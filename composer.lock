@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "047b0db0a4b0e973cfa2068d53c84636",
+    "content-hash": "d39e5e9721572aab1b696059adc43359",
     "packages": [
+        {
+            "name": "bit-es/agreement",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/bit-es/agreement",
+                "reference": "81669419e656060c19df8f7e2c092780c444bf61"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\Agreement\\AgreementServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bites\\Agreement\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Agreement package for use bind/link model records together as parties and artifacts, on the scope and duration of the pact.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
         {
             "name": "bit-es/attributing",
             "version": "dev-main",
@@ -5058,12 +5099,57 @@
             "time": "2026-06-18T03:57:49+00:00"
         },
         {
+            "name": "rimba/bark",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/rimba/Bark",
+                "reference": "77a3da45fe7514bf62a49b0c464c59acd391c174"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rimba\\Bark\\Who\\WhoServiceProvider",
+                        "Rimba\\Bark\\Can\\CanServiceProvider",
+                        "Rimba\\Bark\\Branding\\BrandingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rimba\\Bark\\Who\\": "Who/src",
+                    "Rimba\\Bark\\Can\\": "Can/src",
+                    "Rimba\\Bark\\Branding\\": "Branding/src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Enhancement and modification add on to the application (Tree)",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "rimba/tree",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/rimba/Tree",
-                "reference": "62711930f2c7ed524f2f4d75862b1dce6ca6daec"
+                "reference": "9ef816855e232664d7a2762cd678e8f98790523d"
             },
             "require": {
                 "filament/filament": "^5.0",
@@ -5077,6 +5163,7 @@
                         "Rimba\\Tree\\Work\\WorkServiceProvider",
                         "Rimba\\Tree\\Flow\\FlowServiceProvider",
                         "Rimba\\Tree\\Time\\TimeServiceProvider",
+                        "Rimba\\Tree\\Link\\LinkServiceProvider",
                         "Rimba\\Tree\\Menu\\MenuServiceProvider"
                     ]
                 }
@@ -5086,6 +5173,7 @@
                     "Rimba\\Tree\\Work\\": "Work/src",
                     "Rimba\\Tree\\Flow\\": "Flow/src",
                     "Rimba\\Tree\\Time\\": "Time/src",
+                    "Rimba\\Tree\\Link\\": "Link/src",
                     "Rimba\\Tree\\Menu\\": "Menu/src"
                 }
             },
@@ -10961,8 +11049,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "bit-es/agreement": 20,
         "bit-es/attributing": 20,
         "bit-es/versioning": 20,
+        "rimba/bark": 20,
         "rimba/tree": 20,
         "rimba/twig": 20
     },

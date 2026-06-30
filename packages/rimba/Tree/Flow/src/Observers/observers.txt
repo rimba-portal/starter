@@ -1,0 +1,125 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Observers;
+
+use Illuminate\Support\Facades\Validator;
+use Rimba\Tree\Flow\Models\WorkflowBlueprint;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransition;
+use Rimba\Tree\Flow\Models\WorkflowTransitionInstance;
+
+/**
+ * ==========================================================================
+ * OBSERVERS
+ * ==========================================================================
+ */
+
+final class WorkflowBlueprintObserver
+{
+    /**
+     * Ensure blueprint names are unique per owner.
+     */
+    public function creating(
+        WorkflowBlueprint $workflowBlueprint,
+    ): void {
+        Validator::validate([
+            'name' => $workflowBlueprint->name,
+        ], [
+            'name' => 'required|string|max:255',
+        ]);
+    }
+
+    /**
+     * Prevent deactivation when active instances exist.
+     */
+    public function updating(
+        WorkflowBlueprint $workflowBlueprint,
+    ): void {
+        if (
+            $workflowBlueprint->isDirty('active')
+            && ! $workflowBlueprint->active
+            && $workflowBlueprint->workflowInstances()
+                ->where('status', 'active')
+                ->exists()
+        ) {
+            throw new \RuntimeException(
+                'Cannot deactivate blueprint with active workflow instances.'
+            );
+        }
+    }
+}
+
+final class WorkflowNodeObserver
+{
+    /**
+     * Ensure node belongs to a blueprint.
+     */
+    public function creating(
+        WorkflowNode $workflowNode,
+    ): void {
+        if (! $workflowNode->workflow_blueprint_id) {
+            throw new \RuntimeException(
+                'Workflow node must belong to a workflow blueprint.'
+            );
+        }
+    }
+}
+
+final class WorkflowTransitionObserver
+{
+    /**
+     * Prevent self-referencing transitions.
+     */
+    public function creating(
+        WorkflowTransition $transition,
+    ): void {
+        if (
+            $transition->from_node_id ===
+            $transition->to_node_id
+        ) {
+            throw new \RuntimeException(
+                'A workflow node cannot transition to itself.'
+            );
+        }
+    }
+}
+
+final class WorkflowInstanceObserver
+{
+    /**
+     * Default workflow status.
+     */
+    public function creating(
+        WorkflowInstance $workflowInstance,
+    ): void {
+        $workflowInstance->status ??= 'active';
+    }
+}
+
+final class WorkflowNodeInstanceObserver
+{
+    /**
+     * Activated timestamp is set automatically.
+     */
+    public function creating(
+        WorkflowNodeInstance $nodeInstance,
+    ): void {
+        $nodeInstance->activated_at ??= now();
+    }
+}
+
+final class WorkflowTransitionInstanceObserver
+{
+    /**
+     * Executed timestamp is set automatically.
+     */
+    public function creating(
+        WorkflowTransitionInstance $transitionInstance,
+    ): void {
+        $transitionInstance->executed_at ??= now();
+    }
+}

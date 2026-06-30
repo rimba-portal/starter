@@ -1,0 +1,233 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Policies;
+
+use App\Models\User;
+use Rimba\Tree\Flow\Models\WorkflowBlueprint;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransition;
+use Rimba\Tree\Flow\Models\WorkflowTransitionInstance;
+
+/**
+ * ==========================================================================
+ * POLICIES
+ * ==========================================================================
+ */
+
+
+final class WorkflowBlueprintPolicy
+{
+    /**
+     * Workflow administrators can manage workflow definitions.
+     */
+    public function viewAny(User $user): bool
+    {
+        return $user->can('workflow-blueprint.view-any');
+    }
+
+    public function view(
+        User $user,
+        WorkflowBlueprint $workflowBlueprint,
+    ): bool {
+        return $user->can('workflow-blueprint.view');
+    }
+
+    public function create(User $user): bool
+    {
+        return $user->can('workflow-blueprint.create');
+    }
+
+    public function update(
+        User $user,
+        WorkflowBlueprint $workflowBlueprint,
+    ): bool {
+        return $user->can('workflow-blueprint.update');
+    }
+
+    public function delete(
+        User $user,
+        WorkflowBlueprint $workflowBlueprint,
+    ): bool {
+        return $user->can('workflow-blueprint.delete');
+    }
+
+    /**
+     * User can start workflow if they have
+     * one of the configured requester roles.
+     */
+    public function start(
+        User $user,
+        WorkflowBlueprint $workflowBlueprint,
+    ): bool {
+
+        $roleIds = $user
+            ->staff
+            ?->roles
+            ->pluck('id')
+            ->all() ?? [];
+
+        return $workflowBlueprint
+            ->requesterRoles()
+            ->whereIn('roles.id', $roleIds)
+            ->exists();
+    }
+}
+
+final class WorkflowNodePolicy
+{
+    public function viewAny(User $user): bool
+    {
+        return $user->can('workflow-node.view-any');
+    }
+
+    public function view(
+        User $user,
+        WorkflowNode $workflowNode,
+    ): bool {
+        return $user->can('workflow-node.view');
+    }
+
+    public function create(User $user): bool
+    {
+        return $user->can('workflow-node.create');
+    }
+
+    public function update(
+        User $user,
+        WorkflowNode $workflowNode,
+    ): bool {
+        return $user->can('workflow-node.update');
+    }
+
+    public function delete(
+        User $user,
+        WorkflowNode $workflowNode,
+    ): bool {
+        return $user->can('workflow-node.delete');
+    }
+}
+
+final class WorkflowTransitionPolicy
+{
+    public function viewAny(User $user): bool
+    {
+        return $user->can('workflow-transition.view-any');
+    }
+
+    public function view(
+        User $user,
+        WorkflowTransition $workflowTransition,
+    ): bool {
+        return $user->can('workflow-transition.view');
+    }
+
+    public function create(User $user): bool
+    {
+        return $user->can('workflow-transition.create');
+    }
+
+    public function update(
+        User $user,
+        WorkflowTransition $workflowTransition,
+    ): bool {
+        return $user->can('workflow-transition.update');
+    }
+
+    public function delete(
+        User $user,
+        WorkflowTransition $workflowTransition,
+    ): bool {
+        return $user->can('workflow-transition.delete');
+    }
+}
+
+final class WorkflowInstancePolicy
+{
+    public function viewAny(User $user): bool
+    {
+        return $user->can('workflow-instance.view-any');
+    }
+
+    public function view(
+        User $user,
+        WorkflowInstance $workflowInstance,
+    ): bool {
+        return $user->can('workflow-instance.view');
+    }
+
+    public function create(User $user): bool
+    {
+        return $user->can('workflow-instance.create');
+    }
+
+    public function cancel(
+        User $user,
+        WorkflowInstance $workflowInstance,
+    ): bool {
+        return $user->can('workflow-instance.cancel');
+    }
+}
+
+final class WorkflowNodeInstancePolicy
+{
+    /**
+     * Node instances are system managed.
+     */
+    public function view(
+        User $user,
+        WorkflowNodeInstance $nodeInstance,
+    ): bool {
+        return $user->can('workflow-node-instance.view');
+    }
+
+    public function update(
+        User $user,
+        WorkflowNodeInstance $nodeInstance,
+    ): bool {
+        return false;
+    }
+
+    public function delete(
+        User $user,
+        WorkflowNodeInstance $nodeInstance,
+    ): bool {
+        return false;
+    }
+}
+
+final class WorkflowTransitionInstancePolicy
+{
+    /**
+     * Transition instances are audit records.
+     */
+    public function view(
+        User $user,
+        WorkflowTransitionInstance $transitionInstance,
+    ): bool {
+        return $user->can('workflow-transition-instance.view');
+    }
+
+    public function create(
+        User $user,
+    ): bool {
+        return false;
+    }
+
+    public function update(
+        User $user,
+        WorkflowTransitionInstance $transitionInstance,
+    ): bool {
+        return false;
+    }
+
+    public function delete(
+        User $user,
+        WorkflowTransitionInstance $transitionInstance,
+    ): bool {
+        return false;
+    }
+}

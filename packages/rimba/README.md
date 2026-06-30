@@ -13,6 +13,8 @@ Apart from the Starter (base application, Laravel with Filament and Spatie Permi
 
 # Bark
 Enhancement and modification add on to the application (Tree)
+> **Trail** - The module on keeping an audit trail on any model record changes.
+>
 > **Branding** - The module on customizing the look and feel of Filament UX.
 >
 > **Who** - The authentication module which customs the standard Filament Auth 

@@ -1,0 +1,219 @@
+<?php
+
+namespace Rimba\Tree\Flow\Listeners;
+
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Rimba\Bark\Trail\Models\AuditLog;
+use Rimba\Tree\Flow\Actions\ActivateNode;
+use Rimba\Tree\Flow\Actions\CompleteWorkflow;
+use Rimba\Tree\Flow\Actions\ExecuteTransition;
+use Rimba\Tree\Flow\Events\WorkflowCompleted;
+use Rimba\Tree\Flow\Events\WorkflowNodeActivated;
+use Rimba\Tree\Flow\Events\WorkflowNodeCompleted;
+use Rimba\Tree\Flow\Events\WorkflowStarted;
+use Rimba\Tree\Flow\Events\WorkflowTransitionExecuted;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Work\Actions\StartWorkPackage;
+use Rimba\Tree\Work\Events\WorkPackageCompleted;
+
+
+/**
+ * ==========================================================================
+ * LISTENERS
+ * ==========================================================================
+ */
+
+
+/**
+ * Creates first node after workflow starts.
+ */
+final class CreateFirstNode
+{
+    public function handle(
+        WorkflowStarted $event,
+    ): void {
+        $workflow = $event->workflowInstance;
+
+        $startNode = $workflow
+            ->workflowBlueprint
+            ->workflowNodes()
+            ->where('type', 'start')
+            ->first();
+
+        if (! $startNode) {
+            return;
+        }
+
+        app(ActivateNode::class)->execute(
+            $workflow,
+            $startNode,
+        );
+    }
+}
+
+/**
+ * Starts WorkPackage when node becomes active.
+ */
+final class CreateWorkPackageInstance
+{
+    public function handle(
+        WorkflowNodeActivated $event,
+    ): void {
+        $node = $event->nodeInstance->workflowNode;
+
+        if (! $node->workpackage_id) {
+            return;
+        }
+
+        app(StartWorkPackage::class)->execute(
+            $node->workPackage
+        );
+    }
+}
+
+/**
+ * Complete Flow node when underlying WorkPackage completes.
+ */
+final class CompleteNodeWhenWorkPackageCompletes
+{
+    public function handle(
+        WorkPackageCompleted $event,
+    ): void {
+        $workPackageInstance = $event->workPackageInstance;
+
+        $nodeInstance = $workPackageInstance
+            ->workflowNodeInstance;
+
+        if (! $nodeInstance) {
+            return;
+        }
+
+        $nodeInstance->update([
+            'completed_at' => now(),
+        ]);
+
+        event(new WorkflowNodeCompleted(
+            $nodeInstance
+        ));
+    }
+}
+
+/**
+ * Determine which transitions are valid.
+ */
+final class EvaluateTransitions
+{
+    public function handle(
+        WorkflowNodeCompleted $event,
+    ): void {
+        $node = $event->nodeInstance->workflowNode;
+
+        foreach ($node->outgoingTransitions as $transition) {
+
+            // Future:
+            // evaluate expression stored in condition.
+
+            event(new WorkflowTransitionExecuted(
+                app(ExecuteTransition::class)->execute(
+                    $event->nodeInstance->workflowInstance,
+                    $transition,
+                )
+            ));
+        }
+    }
+}
+
+/**
+ * Execute matching transitions.
+ */
+final class ExecuteNextTransitions
+{
+    public function handle(
+        WorkflowTransitionExecuted $event,
+    ): void {
+        $transition = $event
+            ->transitionInstance
+            ->workflowTransition;
+
+        $workflow = $event
+            ->transitionInstance
+            ->workflowInstance;
+
+        app(ActivateNode::class)->execute(
+            $workflow,
+            $transition->toNode,
+        );
+    }
+}
+
+/**
+ * Activate destination nodes.
+ */
+final class ActivateNextNodes
+{
+    public function handle(
+        WorkflowTransitionExecuted $event,
+    ): void {
+        // Optional listener.
+        // Useful when supporting parallel branches later.
+    }
+}
+
+/**
+ * Complete workflow if no more active paths exist.
+ */
+final class AutoCompleteWorkflow
+{
+    public function handle(
+        WorkflowNodeCompleted $event,
+    ): void {
+
+        $workflow = $event
+            ->nodeInstance
+            ->workflowInstance;
+
+        $remainingTransitions = $event
+            ->nodeInstance
+            ->workflowNode
+            ->outgoingTransitions()
+            ->count();
+
+        if ($remainingTransitions > 0) {
+            return;
+        }
+
+        app(CompleteWorkflow::class)
+            ->execute($workflow);
+    }
+}
+
+/**
+ * Write all flow events to Trail.
+ */
+final class WriteAuditLog implements ShouldQueue
+{
+    public function handle(
+        object $event,
+    ): void {
+
+        $model =
+            $event->workflowInstance
+            ?? $event->nodeInstance
+            ?? $event->transitionInstance
+            ?? null;
+
+        if (! $model) {
+            return;
+        }
+
+        AuditLog::create([
+            'ref_type' => $model::class,
+            'ref_id' => $model->id,
+            'actor' => 'system',
+            'action' => class_basename($event),
+            'result' => 'success',
+            'reason' => null,
+            'metadata' => [],
+        ]);
+    }
+}

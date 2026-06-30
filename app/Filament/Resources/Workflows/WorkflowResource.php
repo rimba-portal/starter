@@ -13,12 +13,12 @@ use App\Filament\Resources\Workflows\RelationManagers\NodesRelationManager;
 use App\Filament\Resources\Workflows\Schemas\WorkflowForm;
 use App\Filament\Resources\Workflows\Schemas\WorkflowInfolist;
 use App\Filament\Resources\Workflows\Tables\WorkflowsTable;
-use App\Trees\Process\Models\Workflow;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Repo\App\Process\Models\Workflow;
 
 class WorkflowResource extends Resource
 {

@@ -1,0 +1,178 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Actions;
+
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
+use Rimba\Tree\Flow\Events\WorkflowCompleted;
+use Rimba\Tree\Flow\Events\WorkflowNodeActivated;
+use Rimba\Tree\Flow\Events\WorkflowNodeCompleted;
+use Rimba\Tree\Flow\Events\WorkflowStarted;
+use Rimba\Tree\Flow\Events\WorkflowTransitionExecuted;
+use Rimba\Tree\Flow\Models\WorkflowBlueprint;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransition;
+use Rimba\Tree\Flow\Models\WorkflowTransitionInstance;
+
+/**
+ * ==========================================================================
+ * ACTIONS
+ * ==========================================================================
+ */
+
+final class CreateWorkflowBlueprint
+{
+    public function execute(
+        string $name,
+        ?int $ownerId = null,
+        bool $active = true,
+    ): WorkflowBlueprint {
+        return WorkflowBlueprint::create([
+            'name' => $name,
+            'owner_id' => $ownerId,
+            'active' => $active,
+        ]);
+    }
+}
+
+final class AddWorkflowNode
+{
+    public function execute(
+        WorkflowBlueprint $blueprint,
+        int $workPackageId,
+        string $name,
+        string $type,
+    ): WorkflowNode {
+        return $blueprint->workflowNodes()->create([
+            'workpackage_id' => $workPackageId,
+            'name' => $name,
+            'type' => $type,
+        ]);
+    }
+}
+
+final class AddWorkflowTransition
+{
+    public function execute(
+        WorkflowBlueprint $blueprint,
+        WorkflowNode $fromNode,
+        WorkflowNode $toNode,
+        ?string $name = null,
+        ?string $condition = null,
+        ?string $action = null,
+    ): WorkflowTransition {
+        return WorkflowTransition::create([
+            'workflow_blueprint_id' => $blueprint->id,
+            'from_node_id' => $fromNode->id,
+            'to_node_id' => $toNode->id,
+            'name' => $name,
+            'condition' => $condition,
+            'action' => $action,
+        ]);
+    }
+}
+
+final class StartWorkflow
+{
+    public function execute(
+        WorkflowBlueprint $blueprint,
+        ?object $trackable = null,
+    ): WorkflowInstance {
+        $instance = WorkflowInstance::create([
+            'workflow_blueprint_id' => $blueprint->id,
+            'trackable_type' => $trackable?->getMorphClass(),
+            'trackable_id' => $trackable?->getKey(),
+            'status' => 'active',
+        ]);
+
+        event(new WorkflowStarted($instance));
+
+        return $instance;
+    }
+}
+
+final class ActivateNode
+{
+    public function execute(
+        WorkflowInstance $workflowInstance,
+        WorkflowNode $node,
+    ): WorkflowNodeInstance {
+        $instance = WorkflowNodeInstance::create([
+            'workflow_instance_id' => $workflowInstance->id,
+            'workflow_node_id' => $node->id,
+            'activated_at' => now(),
+        ]);
+
+        event(new WorkflowNodeActivated($instance));
+
+        return $instance;
+    }
+}
+
+final class ExecuteTransition
+{
+    public function execute(
+        WorkflowInstance $workflowInstance,
+        WorkflowTransition $transition,
+        ?int $executedById = null,
+    ): WorkflowTransitionInstance {
+        $instance = WorkflowTransitionInstance::create([
+            'workflow_instance_id' => $workflowInstance->id,
+            'workflow_transition_id' => $transition->id,
+            'executed_by_id' => $executedById,
+            'executed_at' => now(),
+        ]);
+
+        event(new WorkflowTransitionExecuted($instance));
+
+        return $instance;
+    }
+}
+
+final class CompleteNode
+{
+    public function execute(
+        WorkflowNodeInstance $nodeInstance,
+    ): WorkflowNodeInstance {
+        $nodeInstance->update([
+            'completed_at' => now(),
+        ]);
+
+        event(new WorkflowNodeCompleted($nodeInstance));
+
+        return $nodeInstance;
+    }
+}
+
+final class CancelWorkflow
+{
+    public function execute(
+        WorkflowInstance $workflowInstance,
+    ): WorkflowInstance {
+        $workflowInstance->update([
+            'status' => 'cancelled',
+        ]);
+
+        return $workflowInstance;
+    }
+}
+
+final class CompleteWorkflow
+{
+    public function execute(
+        WorkflowInstance $workflowInstance,
+    ): WorkflowInstance {
+        $workflowInstance->update([
+            'status' => 'completed',
+        ]);
+
+        event(new WorkflowCompleted($workflowInstance));
+
+        return $workflowInstance;
+    }
+}
+

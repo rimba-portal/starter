@@ -1,0 +1,122 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Actions;
+
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
+use Rimba\Tree\Flow\Events\WorkflowCompleted;
+use Rimba\Tree\Flow\Events\WorkflowNodeActivated;
+use Rimba\Tree\Flow\Events\WorkflowNodeCompleted;
+use Rimba\Tree\Flow\Events\WorkflowStarted;
+use Rimba\Tree\Flow\Events\WorkflowTransitionExecuted;
+use Rimba\Tree\Flow\Models\WorkflowBlueprint;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransition;
+use Rimba\Tree\Flow\Models\WorkflowTransitionInstance;
+
+/**
+ * ==========================================================================
+ * BUILDERS
+ * ==========================================================================
+ */
+
+namespace Rimba\Tree\Flow\Builders;
+
+use Illuminate\Database\Eloquent\Builder;
+
+final class WorkflowBlueprintBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->where('active', true);
+    }
+
+    public function ownedBy(int $orgTeamId): static
+    {
+        return $this->where('owner_id', $orgTeamId);
+    }
+}
+
+final class WorkflowNodeBuilder extends Builder
+{
+    public function starts(): static
+    {
+        return $this->where('type', 'start');
+    }
+
+    public function ends(): static
+    {
+        return $this->where('type', 'end');
+    }
+
+    public function type(string $type): static
+    {
+        return $this->where('type', $type);
+    }
+}
+
+final class WorkflowTransitionBuilder extends Builder
+{
+    public function fromNode(int $nodeId): static
+    {
+        return $this->where('from_node_id', $nodeId);
+    }
+
+    public function toNode(int $nodeId): static
+    {
+        return $this->where('to_node_id', $nodeId);
+    }
+}
+
+final class WorkflowInstanceBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->where('status', 'active');
+    }
+
+    public function completed(): static
+    {
+        return $this->where('status', 'completed');
+    }
+
+    public function cancelled(): static
+    {
+        return $this->where('status', 'cancelled');
+    }
+}
+
+final class WorkflowNodeInstanceBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->whereNull('completed_at');
+    }
+
+    public function completed(): static
+    {
+        return $this->whereNotNull('completed_at');
+    }
+}
+
+final class WorkflowTransitionInstanceBuilder extends Builder
+{
+    public function executedBy(int $userId): static
+    {
+        return $this->where('executed_by_id', $userId);
+    }
+
+    public function executedBetween(
+        Carbon $from,
+        Carbon $to,
+    ): static {
+        return $this->whereBetween('executed_at', [
+            $from,
+            $to,
+        ]);
+    }
+}

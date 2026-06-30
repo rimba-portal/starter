@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Staff\Pages;
 
-use App\Trees\Calendar\Enums\EventType;
-use App\Trees\Calendar\Models\Event;
-use App\Trees\Calendar\Support\ShiftPattern;
 use BackedEnum;
 use Carbon\Carbon;
 use Filament\Actions\Concerns\InteractsWithActions;
@@ -29,6 +26,9 @@ use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use Rimba\Tree\Time\Enums\EventType;
+use Rimba\Tree\Time\Models\Event;
+use Rimba\Tree\Time\Support\ShiftPattern;
 use UnitEnum;
 
 class Calendar extends Page implements HasActions, HasForms, HasTable

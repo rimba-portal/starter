@@ -1,0 +1,271 @@
+<?php
+
+declare(strict_types=1);
+
+
+
+namespace Rimba\Tree\Flow\Services;
+
+use Illuminate\Database\Eloquent\Collection;
+use Rimba\Tree\Flow\Actions\ActivateNode;
+use Rimba\Tree\Flow\Actions\CompleteWorkflow;
+use Rimba\Tree\Flow\Actions\ExecuteTransition;
+use Rimba\Tree\Flow\Models\WorkflowBlueprint;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNode;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransition;
+
+/**
+ * ==========================================================================
+ * SERVICES
+ * ==========================================================================
+ */
+
+/**
+ * Main orchestration service.
+ */
+final class WorkflowEngine
+{
+    public function __construct(
+        protected TransitionEvaluator $transitionEvaluator,
+        protected NodeActivationService $nodeActivationService,
+    ) {}
+
+    public function processNodeCompletion(
+        WorkflowNodeInstance $nodeInstance,
+    ): void {
+
+        $transitions = $nodeInstance
+            ->workflowNode
+            ->outgoingTransitions;
+
+        $matchedTransitions = collect();
+
+        foreach ($transitions as $transition) {
+
+            if (
+                $this->transitionEvaluator->passes(
+                    $transition,
+                    $nodeInstance->workflowInstance,
+                )
+            ) {
+                $matchedTransitions->push($transition);
+            }
+        }
+
+        if ($matchedTransitions->isEmpty()) {
+
+            app(CompleteWorkflow::class)
+                ->execute($nodeInstance->workflowInstance);
+
+            return;
+        }
+
+        foreach ($matchedTransitions as $transition) {
+
+            app(ExecuteTransition::class)
+                ->execute(
+                    $nodeInstance->workflowInstance,
+                    $transition,
+                );
+
+            $this->nodeActivationService
+                ->activate(
+                    $nodeInstance->workflowInstance,
+                    $transition->toNode,
+                );
+        }
+    }
+}
+
+/**
+ * Evaluates transition conditions.
+ */
+final class TransitionEvaluator
+{
+    public function passes(
+        WorkflowTransition $transition,
+        WorkflowInstance $workflowInstance,
+    ): bool {
+
+        if (blank($transition->condition)) {
+            return true;
+        }
+
+        /**
+         * Future implementation:
+         *
+         * Examples:
+         * amount > 1000
+         * priority = urgent
+         * requester.department = finance
+         */
+
+        return true;
+    }
+}
+
+/**
+ * Handles node activation.
+ */
+final class NodeActivationService
+{
+    public function activate(
+        WorkflowInstance $workflowInstance,
+        WorkflowNode $node,
+    ): WorkflowNodeInstance {
+
+        return app(ActivateNode::class)
+            ->execute(
+                $workflowInstance,
+                $node,
+            );
+    }
+}
+
+/**
+ * Graph traversal utilities.
+ */
+final class WorkflowGraphService
+{
+    public function startNode(
+        WorkflowBlueprint $workflowBlueprint,
+    ): ?WorkflowNode {
+
+        return $workflowBlueprint
+            ->workflowNodes()
+            ->where('type', 'start')
+            ->first();
+    }
+
+    public function endNodes(
+        WorkflowBlueprint $workflowBlueprint,
+    ): Collection {
+
+        return $workflowBlueprint
+            ->workflowNodes()
+            ->where('type', 'end')
+            ->get();
+    }
+
+    public function nextNodes(
+        WorkflowNode $node,
+    ): Collection {
+
+        return $node->outgoingTransitions
+            ->map(fn ($transition) => $transition->toNode);
+    }
+
+    public function previousNodes(
+        WorkflowNode $node,
+    ): Collection {
+
+        return $node->incomingTransitions
+            ->map(fn ($transition) => $transition->fromNode);
+    }
+
+    public function hasIncomingTransitions(
+        WorkflowNode $node,
+    ): bool {
+
+        return $node
+            ->incomingTransitions()
+            ->exists();
+    }
+
+    public function hasOutgoingTransitions(
+        WorkflowNode $node,
+    ): bool {
+
+        return $node
+            ->outgoingTransitions()
+            ->exists();
+    }
+
+    public function isStartNode(
+        WorkflowNode $node,
+    ): bool {
+
+        return ! $this->hasIncomingTransitions($node);
+    }
+
+    public function isEndNode(
+        WorkflowNode $node,
+    ): bool {
+
+        return ! $this->hasOutgoingTransitions($node);
+    }
+}
+
+/**
+ * Workflow reporting and analytics.
+ */
+final class WorkflowMetricsService
+{
+    public function totalInstances(
+        WorkflowBlueprint $workflowBlueprint,
+    ): int {
+
+        return $workflowBlueprint
+            ->workflowInstances()
+            ->count();
+    }
+
+    public function activeInstances(
+        WorkflowBlueprint $workflowBlueprint,
+    ): int {
+
+        return $workflowBlueprint
+            ->workflowInstances()
+            ->where('status', 'active')
+            ->count();
+    }
+
+    public function completedInstances(
+        WorkflowBlueprint $workflowBlueprint,
+    ): int {
+
+        return $workflowBlueprint
+            ->workflowInstances()
+            ->where('status', 'completed')
+            ->count();
+    }
+
+    public function cancelledInstances(
+        WorkflowBlueprint $workflowBlueprint,
+    ): int {
+
+        return $workflowBlueprint
+            ->workflowInstances()
+            ->where('status', 'cancelled')
+            ->count();
+    }
+
+    public function averageNodeCount(
+        WorkflowBlueprint $workflowBlueprint,
+    ): float {
+
+        return (float) $workflowBlueprint
+            ->workflowNodes()
+            ->count();
+    }
+
+    public function completionRate(
+        WorkflowBlueprint $workflowBlueprint,
+    ): float {
+
+        $total = $this->totalInstances(
+            $workflowBlueprint,
+        );
+
+        if ($total === 0) {
+            return 0;
+        }
+
+        return round(
+            ($this->completedInstances($workflowBlueprint) / $total) * 100,
+            2,
+        );
+    }
+}

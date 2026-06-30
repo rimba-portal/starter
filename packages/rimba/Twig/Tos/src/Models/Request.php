@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Rimba\Twig\Tos\Models;
 
 use App\Trees\Organization\Models\Staff;
-use App\Trees\Process\Models\WorkflowInstance;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Repo\App\Process\Models\WorkflowInstance;
 
 #[Fillable([
     'requester_id',

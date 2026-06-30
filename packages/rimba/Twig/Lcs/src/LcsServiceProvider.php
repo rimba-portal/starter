@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Rimba\Twig\Lcs;
 
 use App\Services\BitesServiceProvider;
-use Bites\Attributing\Macros\LockWhenFilledMacro;
 
 class LcsServiceProvider extends BitesServiceProvider
 {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Bites\Agreement;
 
 use App\Services\BitesServiceProvider;
-use Bites\Attributing\Macros\LockWhenFilledMacro;
 
 class AgreementServiceProvider extends BitesServiceProvider
 {

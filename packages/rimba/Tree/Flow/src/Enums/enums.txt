@@ -1,0 +1,40 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Enums;
+
+/**
+ * ==========================================================================
+ * ENUMS
+ * ==========================================================================
+ */
+
+enum WorkflowStatus: string
+{
+    case Active = 'active';
+    case Completed = 'completed';
+    case Cancelled = 'cancelled';
+}
+
+enum WorkflowNodeType: string
+{
+    case Start = 'start';
+    case WorkPackage = 'workpackage';
+    case Decision = 'decision';
+    case Merge = 'merge';
+    case End = 'end';
+}
+
+enum WorkflowNodeStatus: string
+{
+    case Active = 'active';
+    case Completed = 'completed';
+    case Cancelled = 'cancelled';
+}
+
+enum WorkflowTransitionStatus: string
+{
+    case Executed = 'executed';
+}
+

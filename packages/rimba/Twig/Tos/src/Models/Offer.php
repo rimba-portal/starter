@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Tos\Models;
 
-use App\Trees\Copies\Models\Versionable;
 use App\Trees\Organization\Models\OrgTeam;
+use Bites\Versioning\Traits\HasVersions;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 #[Fillable([
     'org_team_id',
@@ -22,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 class Offer extends Model
 {
     use HasFactory;
+    use HasVersions;
 
     /**
      * Get the attributes that should be cast.
@@ -35,11 +35,6 @@ class Offer extends Model
             'org_team_id' => 'integer',
             'attributes' => 'array',
         ];
-    }
-
-    public function versionable(): MorphOne
-    {
-        return $this->morphOne(Versionable::class, 'versionableable');
     }
 
     public function offerCategoryAssignments(): HasMany

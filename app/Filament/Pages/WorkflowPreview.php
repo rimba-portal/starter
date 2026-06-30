@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Filament\Pages;
 
 use App\Trees\Branding\Actions\GetHelpAction;
-use App\Trees\Process\Models\Workflow;
-use App\Trees\Process\Support\WorkflowGraph;
 use BackedEnum;
 use Filament\Pages\Page;
 use Filament\Support\Icons\Heroicon;
+use Repo\App\Process\Models\Workflow;
+use Repo\App\Process\Support\WorkflowGraph;
 
 class WorkflowPreview extends Page
 {

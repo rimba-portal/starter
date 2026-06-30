@@ -1,0 +1,349 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Work\Actions;
+
+use Rimba\Core\Models\Role;
+use Rimba\Core\Models\Staff;
+use Rimba\Tree\Work\Enums\ChecklistStatus;
+use Rimba\Tree\Work\Enums\TaskStatus;
+use Rimba\Tree\Work\Enums\WorkPackageStatus;
+use Rimba\Tree\Work\Events\ChecklistActivated;
+use Rimba\Tree\Work\Events\ChecklistCompleted;
+use Rimba\Tree\Work\Events\TaskCancelled;
+use Rimba\Tree\Work\Events\TaskClaimed;
+use Rimba\Tree\Work\Events\TaskCompleted;
+use Rimba\Tree\Work\Events\TaskReleased;
+use Rimba\Tree\Work\Events\TaskSkipped;
+use Rimba\Tree\Work\Events\WorkPackageCompleted;
+use Rimba\Tree\Work\Events\WorkPackageStarted;
+use Rimba\Tree\Work\Models\Checklist;
+use Rimba\Tree\Work\Models\ChecklistInstance;
+use Rimba\Tree\Work\Models\Task;
+use Rimba\Tree\Work\Models\TaskInstance;
+use Rimba\Tree\Work\Models\WorkPackage;
+use Rimba\Tree\Work\Models\WorkPackageInstance;
+
+/*
+|--------------------------------------------------------------------------
+| BUILDERS
+|--------------------------------------------------------------------------
+*/
+
+namespace Rimba\Tree\Work\Builders;
+
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Rimba\Tree\Work\Enums\ChecklistStatus;
+use Rimba\Tree\Work\Enums\TaskStatus;
+use Rimba\Tree\Work\Enums\WorkPackageStatus;
+
+final class WorkPackageBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->where('active', true);
+    }
+
+    public function inactive(): static
+    {
+        return $this->where('active', false);
+    }
+
+    public function withChecklists(): static
+    {
+        return $this->with('checklists');
+    }
+
+    public function withChecklistCount(): static
+    {
+        return $this->withCount('checklists');
+    }
+
+    public function withInstances(): static
+    {
+        return $this->with('workPackageInstances');
+    }
+}
+
+final class ChecklistBuilder extends Builder
+{
+    public function ordered(): static
+    {
+        return $this->orderBy('sort_order');
+    }
+
+    public function forWorkPackage(
+        int $workPackageId,
+    ): static {
+
+        return $this->where(
+            'work_package_id',
+            $workPackageId,
+        );
+    }
+
+    public function withTasks(): static
+    {
+        return $this->with('tasks');
+    }
+
+    public function withTaskCount(): static
+    {
+        return $this->withCount('tasks');
+    }
+}
+
+final class TaskBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->where('active', true);
+    }
+
+    public function inactive(): static
+    {
+        return $this->where('active', false);
+    }
+
+    public function forChecklist(
+        int $checklistId,
+    ): static {
+
+        return $this->where(
+            'checklist_id',
+            $checklistId,
+        );
+    }
+
+    public function forRole(
+        int $roleId,
+    ): static {
+
+        return $this->where(
+            'role_id',
+            $roleId,
+        );
+    }
+
+    public function withRole(): static
+    {
+        return $this->with('role');
+    }
+}
+
+final class WorkPackageInstanceBuilder extends Builder
+{
+    public function active(): static
+    {
+        return $this->where(
+            'status',
+            WorkPackageStatus::Active,
+        );
+    }
+
+    public function completed(): static
+    {
+        return $this->where(
+            'status',
+            WorkPackageStatus::Completed,
+        );
+    }
+
+    public function cancelled(): static
+    {
+        return $this->where(
+            'status',
+            WorkPackageStatus::Cancelled,
+        );
+    }
+
+    public function startedBetween(
+        Carbon $from,
+        Carbon $to,
+    ): static {
+
+        return $this->whereBetween(
+            'started_at',
+            [$from, $to]
+        );
+    }
+
+    public function completedBetween(
+        Carbon $from,
+        Carbon $to,
+    ): static {
+
+        return $this->whereBetween(
+            'completed_at',
+            [$from, $to]
+        );
+    }
+
+    public function forWorkPackage(
+        int $workPackageId,
+    ): static {
+
+        return $this->where(
+            'work_package_id',
+            $workPackageId,
+        );
+    }
+}
+
+final class ChecklistInstanceBuilder extends Builder
+{
+    public function pending(): static
+    {
+        return $this->where(
+            'status',
+            ChecklistStatus::Pending,
+        );
+    }
+
+    public function completed(): static
+    {
+        return $this->where(
+            'status',
+            ChecklistStatus::Completed,
+        );
+    }
+
+    public function cancelled(): static
+    {
+        return $this->where(
+            'status',
+            ChecklistStatus::Cancelled,
+        );
+    }
+
+    public function forWorkPackageInstance(
+        int $id,
+    ): static {
+
+        return $this->where(
+            'work_package_instance_id',
+            $id,
+        );
+    }
+}
+
+final class TaskInstanceBuilder extends Builder
+{
+    public function queue(): static
+    {
+        return $this->where(
+            'status',
+            TaskStatus::Queue,
+        );
+    }
+
+    public function active(): static
+    {
+        return $this->where(
+            'status',
+            TaskStatus::Active,
+        );
+    }
+
+    public function completed(): static
+    {
+        return $this->where(
+            'status',
+            TaskStatus::Completed,
+        );
+    }
+
+    public function skipped(): static
+    {
+        return $this->where(
+            'status',
+            TaskStatus::Skipped,
+        );
+    }
+
+    public function cancelled(): static
+    {
+        return $this->where(
+            'status',
+            TaskStatus::Cancelled,
+        );
+    }
+
+    public function assigned(): static
+    {
+        return $this->whereNotNull(
+            'assigned_to_id'
+        );
+    }
+
+    public function unassigned(): static
+    {
+        return $this->whereNull(
+            'assigned_to_id'
+        );
+    }
+
+    public function assignedTo(
+        int $staffId,
+    ): static {
+
+        return $this->where(
+            'assigned_to_id',
+            $staffId,
+        );
+    }
+
+    public function completedBy(
+        int $staffId,
+    ): static {
+
+        return $this->where(
+            'completed_by_id',
+            $staffId,
+        );
+    }
+
+    public function claimableByRole(
+        int $roleId,
+    ): static {
+
+        return $this->queue()
+            ->whereHas(
+                'task',
+                fn ($query) => $query->where(
+                    'role_id',
+                    $roleId,
+                )
+            );
+    }
+
+    public function forChecklistInstance(
+        int $id,
+    ): static {
+
+        return $this->where(
+            'checklist_instance_id',
+            $id,
+        );
+    }
+
+    public function forWorkPackageInstance(
+        int $id,
+    ): static {
+
+        return $this->where(
+            'work_package_instance_id',
+            $id,
+        );
+    }
+
+    public function completedToday(): static
+    {
+        return $this->whereDate(
+            'completed_at',
+            today(),
+        );
+    }
+}

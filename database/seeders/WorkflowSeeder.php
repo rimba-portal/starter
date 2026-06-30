@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Trees\Process\Models\Workflow;
-use App\Trees\Process\Models\WorkflowEdge;
-use App\Trees\Process\Models\WorkflowNode;
 use Illuminate\Database\Seeder;
+use Repo\App\Process\Models\Workflow;
+use Repo\App\Process\Models\WorkflowEdge;
+use Repo\App\Process\Models\WorkflowNode;
 
 class WorkflowSeeder extends Seeder
 {

@@ -1,0 +1,77 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Flow\Events;
+
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+use Rimba\Tree\Flow\Models\WorkflowInstance;
+use Rimba\Tree\Flow\Models\WorkflowNodeInstance;
+use Rimba\Tree\Flow\Models\WorkflowTransitionInstance;
+
+/**
+ * ==========================================================================
+ * EVENTS
+ * ==========================================================================
+ */
+
+final class WorkflowStarted
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowInstance $workflowInstance,
+    ) {}
+}
+
+final class WorkflowNodeActivated
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowNodeInstance $nodeInstance,
+    ) {}
+}
+
+final class WorkflowNodeCompleted
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowNodeInstance $nodeInstance,
+    ) {}
+}
+
+final class WorkflowTransitionExecuted
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowTransitionInstance $transitionInstance,
+    ) {}
+}
+
+final class WorkflowCancelled
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowInstance $workflowInstance,
+    ) {}
+}
+
+final class WorkflowCompleted
+{
+    use Dispatchable;
+    use SerializesModels;
+
+    public function __construct(
+        public WorkflowInstance $workflowInstance,
+    ) {}
+}

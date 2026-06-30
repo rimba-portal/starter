@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Admin\Resources\Workflows\Tables;
 
-use App\Trees\Process\Actions\CreateWorkflowFromExisting;
-use App\Trees\Process\Models\Workflow;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -13,6 +11,8 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Repo\App\Process\Actions\CreateWorkflowFromExisting;
+use Repo\App\Process\Models\Workflow;
 
 class WorkflowsTable
 {

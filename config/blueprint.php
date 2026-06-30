@@ -31,7 +31,8 @@ return [
     | within the composer.json file of your Laravel application.
     |
     */
-    'namespace' => 'App',
+    'namespace' => 'Rimba\Tree',
+    // 'namespace' => 'App',
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +63,8 @@ return [
     | Blueprint  to save these generated component under a custom path.
     |
     */
-    'app_path' => 'app',
+    'app_path' => 'packages/Rimba/Tree',
+    // 'app_path' => 'app',
 
     /*
     |--------------------------------------------------------------------------
