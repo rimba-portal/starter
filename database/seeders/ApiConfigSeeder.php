@@ -6,14 +6,14 @@
 
 namespace Database\Seeders;
 
-use Rimba\Twig\Hrm\Models\JobTitle;
 use App\Trees\Agreement\Models\Agreement;
 use App\Trees\Organization\Models\JobPosition;
-use App\Trees\Organization\Models\Staff;
 use App\Trees\Organization\Models\OrgCorp;
 use App\Trees\Organization\Models\OrgUnit;
+use App\Trees\Organization\Models\Staff;
 use App\Trees\Sync\Models\ApiConfig;
 use Illuminate\Database\Seeder;
+use Rimba\Twig\Hrm\Models\JobTitle;
 
 class ApiConfigSeeder extends Seeder
 {
@@ -164,7 +164,7 @@ class ApiConfigSeeder extends Seeder
                                 'do' => [
                                     'query' => 'SELECT id FROM job_titles WHERE uuid = ?',
                                     'bindings' => ['$value'],
-                                    'column' => 'id'
+                                    'column' => 'id',
                                 ],
                             ],
                             [
@@ -173,7 +173,7 @@ class ApiConfigSeeder extends Seeder
                                 'do' => [
                                     'query' => 'SELECT id FROM org_corps WHERE uuid = ?',
                                     'bindings' => ['$value'],
-                                    'column' => 'id'
+                                    'column' => 'id',
                                 ],
                             ],
                         ],
@@ -195,8 +195,8 @@ class ApiConfigSeeder extends Seeder
                                     ['from' => 'loginid',    'into' => 'staff_old_number'],
                                     [
                                         'from' => 'sex',
-                                        'to'   => 'gender',
-                                        'do'   => '@(in_array(strtoupper((string)$value), ["1", "F"], true) ? "F" : "M")',
+                                        'to' => 'gender',
+                                        'do' => '@(in_array(strtoupper((string)$value), ["1", "F"], true) ? "F" : "M")',
                                     ],
 
                                     [
@@ -205,7 +205,7 @@ class ApiConfigSeeder extends Seeder
                                         'do' => [
                                             'query' => 'SELECT id FROM org_corps WHERE uuid = ?',
                                             'bindings' => ['$value'],
-                                            'column' => 'id'
+                                            'column' => 'id',
                                         ],
                                     ],
                                 ],
@@ -233,7 +233,7 @@ class ApiConfigSeeder extends Seeder
                                         'do' => [
                                             'query' => 'SELECT title FROM job_titles WHERE uuid = ?',
                                             'bindings' => ['$value'],
-                                            'column' => 'title'
+                                            'column' => 'title',
                                         ],
                                     ],
                                     [
@@ -242,7 +242,7 @@ class ApiConfigSeeder extends Seeder
                                         'do' => [
                                             'query' => 'SELECT id FROM org_units WHERE uuid = ?',
                                             'bindings' => ['$value'],
-                                            'column' => 'id'
+                                            'column' => 'id',
                                         ],
                                     ],
                                 ],

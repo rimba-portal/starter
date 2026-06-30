@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Trees\Sync\Models;
 
+use App\Trees\Sync\Observers\ApiDataObserver;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Trees\Sync\Observers\ApiDataObserver;
-use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
 #[ObservedBy(ApiDataObserver::class)]
 #[Fillable([
@@ -43,7 +43,8 @@ class ApiData extends Model
     {
         return $this->belongsTo(ApiConfig::class);
     }
-        public function markProcessed(): void
+
+    public function markProcessed(): void
     {
         $this->update([
             'status' => 'processed',

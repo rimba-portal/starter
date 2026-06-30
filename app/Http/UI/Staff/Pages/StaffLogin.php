@@ -1,29 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Staff\Pages;
 
-use App\Models\User;
-use BackedEnum;
-use Filament\Actions\Action;
+use App\Trees\Authentication\Filament\Components\FaceVerification;
+use App\Trees\Organization\Models\Staff;
 use Filament\Actions\Concerns\InteractsWithActions;
-use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Livewire;
+use Filament\Schemas\Components\Wizard;
+use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
 use Filament\Schemas\Schema;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\Facades\Auth;
-use UnitEnum;
-use Filament\Schemas\Components\Wizard;
-use Filament\Schemas\Components\Wizard\Step;
-use App\Trees\Organization\Models\Staff;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\On;
-use Filament\Schemas\Components\Livewire;
-use App\Trees\Authentication\Filament\Components\FaceVerification;
 
 class StaffLogin extends Page implements HasSchemas
 {
@@ -31,10 +25,15 @@ class StaffLogin extends Page implements HasSchemas
     use InteractsWithSchemas;
 
     protected string $view = 'staff.auth.auth-login';
+
     public ?string $staffId = null;
+
     public ?Staff $staff = null;
+
     public bool $faceVerified = false;
+
     public string $pin = '';
+
     public bool $pinVerified = false;
 
     public function form(Schema $schema): Schema
@@ -43,13 +42,13 @@ class StaffLogin extends Page implements HasSchemas
         return $schema
             ->components([
                 Wizard::make([
-                    Wizard\Step::make('Staff ID')
+                    Step::make('Staff ID')
                         ->schema([
                             TextInput::make('staffId')
                                 ->label('Staff ID')
                                 ->required(),
                         ])
-                        ->afterValidation(function () {
+                        ->afterValidation(function (): void {
 
                             logger('startFaceRecognition called');
                             $this->staff = Staff::where('staff_no', '=', $this->staffId, 'and')->first();
@@ -57,13 +56,15 @@ class StaffLogin extends Page implements HasSchemas
                                 'staffId' => $this->staffId,
                                 'staff' => $this->staff,
                             ]);
-                            if (! $this->staff) {
+                            if (! $this->staff instanceof Staff) {
                                 $this->dispatch(
                                     'face-error',
                                     message: 'Staff not found'
                                 );
+
                                 return;
                             }
+
                             $this->startFaceRecognition();
                         }),
 
@@ -71,7 +72,7 @@ class StaffLogin extends Page implements HasSchemas
                         ->schema([
                             FaceVerification::make('faceVerification'),
                         ])
-                        ->afterValidation(function () {
+                        ->afterValidation(function (): void {
 
                             if (! $this->faceVerified) {
 
@@ -80,13 +81,13 @@ class StaffLogin extends Page implements HasSchemas
                                     ->danger()
                                     ->send();
 
-                                throw \Illuminate\Validation\ValidationException::withMessages([
+                                throw ValidationException::withMessages([
                                     'faceVerification' => 'Please verify your face.',
                                 ]);
                             }
                         }),
 
-                    Wizard\Step::make('Pin')
+                    Step::make('Pin')
                         ->schema([
                             TextInput::make('pin')
                                 ->password()
@@ -96,18 +97,17 @@ class StaffLogin extends Page implements HasSchemas
                     //     // Listens for your Livewire dispatch and forces the Alpine wizard forward
                     //     '@face-verification-success.window' => 'next()',
 
-                ])
+                ]),
             ]);
     }
 
-    public function startFaceRecognition()
+    public function startFaceRecognition(): void
     {
         $this->dispatch(
             'start-face-recognition',
-            photo: "/pic/{$this->staffId}"
+            photo: '/pic/'.$this->staffId
         );
     }
-
 
     #[On('faceMatched')]
     public function faceMatched(): void
