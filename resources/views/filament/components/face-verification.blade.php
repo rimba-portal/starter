@@ -10,8 +10,8 @@ $staffId = $getState();
 
         {{-- Reference Image --}}
         <div class="flex flex-col items-center">
-            <span class="text-[9px] font-medium text-gray-400 mt-0.5 truncate max-w-[64px]" x-text="referenceStatus"></span>
-            <span class="text-[9px] font-bold text-primary-600 dark:text-primary-400 mt-0.5 truncate max-w-[64px]" x-text="cameraStatus"></span>
+            <span class="text-[9px] font-medium text-gray-400 mt-0.5 truncate max-w-16" x-text="referenceStatus"></span>
+            <span class="text-[9px] font-bold text-primary-600 dark:text-primary-400 mt-0.5 truncate max-w-16" x-text="cameraStatus"></span>
         </div>
         {{-- Camera Stream --}}
         <div class="flex flex-col items-center">

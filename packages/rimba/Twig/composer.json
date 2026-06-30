@@ -17,12 +17,23 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Rimba\\Twig\\Dms\\DmsServiceProvider",
+                "Rimba\\Twig\\Eam\\EamServiceProvider",
+                "Rimba\\Twig\\Hrm\\HrmServiceProvider",
+                "Rimba\\Twig\\Lcs\\LcsServiceProvider",
+                "Rimba\\Twig\\Lms\\LmsServiceProvider",
+                "Rimba\\Twig\\Tos\\TosServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Rimba\\Twig\\Hrm\\": "Hrm/"
+            "Rimba\\Twig\\Dms\\": "Dms/src",
+            "Rimba\\Twig\\Eam\\": "Eam/src",
+            "Rimba\\Twig\\Hrm\\": "Hrm/src",
+            "Rimba\\Twig\\Lcs\\": "Lcs/src",
+            "Rimba\\Twig\\Lms\\": "Lms/src",
+            "Rimba\\Twig\\Tos\\": "Tos/src"
         }
     },
     "minimum-stability": "dev",

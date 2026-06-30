@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('agreement_types', function (Blueprint $table) {
+        Schema::create('agreement_types', function (Blueprint $table): void {
             $table->id();
             $table->uuid('uuid')->unique();
             $table->string('name');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->json('meta')->nullable();
             $table->timestamps();
         });
-        Schema::create('agreements', function (Blueprint $table) {
+        Schema::create('agreements', function (Blueprint $table): void {
             $table->id();
             $table->uuid('uuid')->unique();
             $table->string('agreement_type');
@@ -46,7 +46,7 @@ return new class extends Migration
             // $table->morphs('contractable');
             $table->timestamps();
         });
-        Schema::create('parties', function (Blueprint $table) {
+        Schema::create('parties', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('agreement_id')->constrained('agreements');
             $table->string('role')->nullable();

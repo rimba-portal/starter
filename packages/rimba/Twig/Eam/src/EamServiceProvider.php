@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Twig\Eam;
+
+use App\Services\BitesServiceProvider;
+use Bites\Attributing\Macros\LockWhenFilledMacro;
+
+class EamServiceProvider extends BitesServiceProvider
+{
+    public function boot(): void
+    {
+        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    }
+}

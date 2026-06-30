@@ -54,7 +54,7 @@
                         autoplay
                         muted
                         playsinline
-                        class="h-[20px] rounded-xl border"></video>
+                        class="h-5 rounded-xl border"></video>
                 </div>
             </div>
             <div id="result" class="mt-4 text-lg font-bold">
