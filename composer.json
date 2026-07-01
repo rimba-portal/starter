@@ -132,26 +132,28 @@
             "find . -type f -exec chmod 664 {} \\;"
         ],
         "fix-acl": [
-            "sudo setfacl -R -m u:nginx:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -d -m u:nginx:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -m u:apache:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -d -m u:apache:rwx ./storage ./bootstrap/cache ./database",
-            "sudo setfacl -m u:nginx:rw ./database/database.sqlite || true",
-            "sudo setfacl -m u:apache:rw ./database/database.sqlite || true",
-            "sudo chcon -Rt httpd_sys_content_t ./ && sudo semanage fcontext -a -t httpd_sys_content_t \"./(/.*)?\",",
-            "sudo chcon -Rt httpd_sys_rw_content_t ./storage ./bootstrap/cache ./database && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./storage(/.*)?\" && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./bootstrap/cache(/.*)?\" && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./database(/.*)?\",",
-            "sudo chcon -Rt httpd_sys_rw_content_t /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database\",",
-            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./storage(/.*)?,",
-            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./bootstrap/cache(/.*)?,",
-            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./database(/.*)?,"
+            "sudo chcon -Rt httpd_sys_content_t /srv/starter",
+            "sudo chcon -Rt httpd_sys_rw_content_t /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database",
+            "sudo setfacl -R -m u:nginx:rwx /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database",
+            "sudo setfacl -R -d -m u:nginx:rwx /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database",
+            "sudo setfacl -R -m u:apache:rwx /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database",
+            "sudo setfacl -R -d -m u:apache:rwx /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database",
+            "sudo setfacl -m u:nginx:rw /srv/starter/database/database.sqlite",
+            "sudo setfacl -m u:apache:rw /srv/starter/database/database.sqlite",
+            "sudo restorecon -Rv /srv/starter",
+            "@php artisan optimize:clear"
         ],
         "rimba:setup": [
             "composer fix-perm",
             "@php -r \"file_exists('composer.lock') && unlink('composer.lock');\"",
-            "composer install",
+            "composer install --no-dev --optimize-autoloader",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php artisan migrate --force --seed",
+            "composer fix-acl",
             "npm install --ignore-scripts",
-            "npm run build"
-        ],
+            "mpm audit fix --force",
+            "npm run build"        ],
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
