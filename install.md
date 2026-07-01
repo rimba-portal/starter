@@ -26,7 +26,9 @@
 > sudo systemctl reload nginx
 
 
-Phase 1: File Setup & Dependency InstallationRun these commands right after cloning your repository into /srv/starter:bash# 1. Set folder ownership so your user can manage files, but nginx can read/write
+Phase 1: File Setup & Dependency InstallationRun these commands right after cloning your repository into /srv/starter:bash
+
+# 1. Set folder ownership so your user can manage files, but nginx can read/write
 sudo chown -R $USER:nginx /srv/starter
 
 # 2. Enter directory and install production-optimized dependencies

@@ -45,6 +45,14 @@
         },
         {
             "type": "path",
+            "url": "packages/bit-es/siapa",
+            "options": {
+                "symlink": true,
+                "canonical": false
+            }
+        },
+        {
+            "type": "path",
             "url": "packages/bit-es/attributing",
             "options": {
                 "symlink": true,
@@ -117,11 +125,33 @@
         ],
         "fix-perm": [
             "echo 'Setting ownership to nginx:rootnginx...'",
-            "chown -R nginx:rootnginx .",
+            "chown -R $USER:rootnginx .",
             "echo 'Setting directory permissions (775)...'",
             "find . -type d -exec chmod 775 {} \\;",
             "echo 'Setting file permissions (664)...'",
             "find . -type f -exec chmod 664 {} \\;"
+        ],
+        "fix-acl": [
+            "sudo setfacl -R -m u:nginx:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -d -m u:nginx:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -m u:apache:rwx ./storage ./bootstrap/cache ./database && sudo setfacl -R -d -m u:apache:rwx ./storage ./bootstrap/cache ./database",
+            "sudo setfacl -m u:nginx:rw ./database/database.sqlite || true",
+            "sudo setfacl -m u:apache:rw ./database/database.sqlite || true",
+            "sudo chcon -Rt httpd_sys_content_t ./ && sudo semanage fcontext -a -t httpd_sys_content_t \"./(/.*)?\",",
+            "sudo chcon -Rt httpd_sys_rw_content_t ./storage ./bootstrap/cache ./database && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./storage(/.*)?\" && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./bootstrap/cache(/.*)?\" && sudo semanage fcontext -a -t httpd_sys_rw_content_t \"./database(/.*)?\",",
+            "sudo chcon -Rt httpd_sys_rw_content_t /srv/starter/storage /srv/starter/bootstrap/cache /srv/starter/database\",",
+            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./storage(/.*)?,",
+            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./bootstrap/cache(/.*)?,",
+            "sudo semanage fcontext -a -t httpd_sys_rw_content_t ./database(/.*)?,"
+        ],
+        "rimba:setup": [
+            "composer fix-perm",
+            "@php -r \"file_exists('composer.lock') && unlink('composer.lock');\"",
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "composer fix-acl",
+            "@php artisan key:generate",
+            "@php artisan migrate --force --seed",
+            "npm install --ignore-scripts",
+            "npm run build"
         ],
         "setup": [
             "composer install",
