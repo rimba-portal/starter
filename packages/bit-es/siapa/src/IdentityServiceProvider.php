@@ -16,7 +16,7 @@ class IdentityServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'bites-identity');
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         $this->publishes([
             __DIR__.'/../config/identity.php' => config_path('identity.php'),
@@ -30,12 +30,12 @@ class IdentityServiceProvider extends ServiceProvider
             \Filament\Facades\Filament::serving(function () {
                 \Filament\Facades\Filament::registerPanelModification(function (Panel $panel) {
                     $panel
-                        ->login(Pages\Auth\CustomLogin::class)
-                        ->registration(Pages\Auth\CustomRegister::class)
-                        ->passwordReset(Pages\Auth\CustomForgotPassword::class)
+                        ->login(Pages\Auth\Login::class)
+                        ->registration(Pages\Auth\Register::class)
+                        ->passwordReset(Pages\Auth\ForgotPassword::class)
                         ->profile(Pages\Profile::class)
                         ->multiFactorAuthentication([
-                            \Filament\MultiFactorAuthentication\AppAuthentication::make()
+                            \Filament\Auth\MultiFactor\App\AppAuthentication::make()
                                 ->brandName(config('app.name'))
                                 ->recoverable(),
                         ])

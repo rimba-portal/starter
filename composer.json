@@ -14,6 +14,7 @@
         "bit-es/attributing": "dev-main",
         "bit-es/google-translate": "^1.0",
         "bit-es/helpfile": "^1.0",
+        "bit-es/siapa": "dev-main",
         "bit-es/versioning": "dev-main",
         "filament/filament": "^5.0",
         "laravel/framework": "^13.0",
@@ -65,7 +66,8 @@
                 "symlink": true,
                 "canonical": false
             }
-        },        {
+        },
+        {
             "type": "path",
             "url": "packages/rimba/Tree",
             "options": {

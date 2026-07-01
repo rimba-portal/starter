@@ -11,7 +11,7 @@ use Filament\Forms\Components\PasswordInput;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 
-class CustomLogin extends BaseLogin
+class Login extends BaseLogin
 {
     protected static string $view = 'bites-identity::auth.login';
     protected ?string $storedFace = null;

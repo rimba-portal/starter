@@ -3,13 +3,14 @@
 namespace Bites\Identity\Traits;
 
 use Bites\Identity\Models\UserAuth;
-use Filament\MultiFactorAuthentication\InteractsWithAppAuthentication;
+use Filament\Auth\MultiFactor\App\Concerns\InteractsWithAppAuthentication;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 trait HasIdentityAuth
 {
     use InteractsWithAppAuthentication;
 
-    public function auth()
+    public function auth() : HasOne
     {
         return $this->hasOne(UserAuth::class);
     }

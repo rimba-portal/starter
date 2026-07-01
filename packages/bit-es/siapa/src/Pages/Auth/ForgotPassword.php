@@ -2,12 +2,12 @@
 
 namespace Bites\Identity\Pages\Auth;
 
-use Filament\Pages\Auth\PasswordReset\RequestPasswordReset as BaseRequest;
+use Filament\Pages\Auth\PasswordReset\RequestPasswordReset;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Validation\ValidationException;
 
-class CustomForgotPassword extends BaseRequest
+class ForgotPassword extends RequestPasswordReset
 {
     public function form(Form $form): Form
     {
