@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rimba\Tree\Flow\Models;
+namespace Rimba\Tree\Flow;
 
 use App\Services\BitesServiceProvider;
 
