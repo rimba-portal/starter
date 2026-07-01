@@ -2,7 +2,7 @@
 
 namespace Bites\Identity\Pages\Auth;
 
-use Filament\Pages\Auth\Register as BaseRegister;
+use Filament\Auth\Pages\Register as BaseRegister;
 
 class Register extends BaseRegister
 {

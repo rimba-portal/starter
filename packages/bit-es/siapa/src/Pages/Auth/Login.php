@@ -2,7 +2,7 @@
 
 namespace Bites\Identity\Pages\Auth;
 
-use Filament\Pages\Auth\Login as BaseLogin;
+use Filament\Auth\Pages\Login as BaseLogin;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Wizard;
 use Filament\Forms\Components\Wizard\Step;

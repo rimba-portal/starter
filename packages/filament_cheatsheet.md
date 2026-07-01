@@ -153,8 +153,8 @@ Used on standalone workspace entry pages. Bypasses navigation sidebars to center
 1. Extend the core login controller class:
    ```php
    // app/Filament/Pages/Auth/CustomLogin.php
-   namespace App\Filament\Pages\Auth;
-   use Filament\Pages\Auth\Login as BaseLogin;
+   namespace App\Filament\Auth\Pages;
+   use Filament\Auth\Pages\Login as BaseLogin;
 
    class CustomLogin extends BaseLogin {
        // Insert custom state adjustments or overrides here

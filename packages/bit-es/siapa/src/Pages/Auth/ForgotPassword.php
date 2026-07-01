@@ -2,7 +2,7 @@
 
 namespace Bites\Identity\Pages\Auth;
 
-use Filament\Pages\Auth\PasswordReset\RequestPasswordReset;
+use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Validation\ValidationException;
