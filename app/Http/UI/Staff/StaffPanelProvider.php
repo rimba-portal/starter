@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Staff;
 
-use App\Http\UI\Auth\Pages\Login;
-use App\Http\UI\Auth\Pages\ResetPassword;
+use App\Http\UI\Auth\Pages\{Login,ResetPassword};
+use Filament\Auth\Pages\{Register, EditProfile};
+use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -30,8 +31,11 @@ class StaffPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         $panel
-            ->login(Login::class)
-            ->passwordReset(ResetPassword::class)
+            ->login(config('bites.ui.auth.login', Login::class))
+            ->registration(config('bites.ui.auth.registration', Register::class))
+            ->passwordReset(config('bites.ui.auth.password_reset', RequestPasswordReset::class))
+            ->profile(config('bites.ui.auth.profile', EditProfile::class))
+
             ->id(config('bites.ui.panels.staff.0', 'staff'))
             ->path(config('bites.ui.panels.staff.1', 'staff'))
             ->colors(['primary' => config('bites.ui.panels.staff.2', Color::Blue)])

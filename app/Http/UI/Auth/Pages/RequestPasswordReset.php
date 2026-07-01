@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 
-class ResetPassword extends BaseResetPassword
+class RequestPasswordReset extends BaseResetPassword
 {
     public ?string $code = null;
 

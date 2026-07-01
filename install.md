@@ -34,7 +34,7 @@ sudo chown -R $USER:nginx /srv/starter
 # 2. Enter directory and install production-optimized dependencies
 cd /srv/starter
 composer install --no-dev --optimize-autoloader
-
+ 
 # 3. Create the environment configuration file
 cp .env.example .env
 php artisan key:generate

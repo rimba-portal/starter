@@ -9,6 +9,12 @@ return [
         'packages' => [
             'app/Filament' => 'App\Filament',
         ],
+        'auth' => [
+            'login' => \Bites\Identity\Pages\Auth::class,
+            'registration' => \Bites\Identity\Pages\Auth\Register::class,
+            'password_reset' => \Bites\Identity\Pages\Auth\RequestPasswordReset::class,
+            'profile' => \Bites\Identity\Pages\EditProfile::class,
+        ],
         'panels' => [
             // panel_id, path, color, brandName, homeUrl
             'admin' => ['admin', 'admin', '#7f174b', 'Administrator Portal', 'filament.staff.pages.dashboard'],
