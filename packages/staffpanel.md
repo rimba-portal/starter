@@ -593,7 +593,7 @@ This framework outlines the core functional scopes and navigational architecture
 | **L – Learning** | Growth & Development | Training courses, professional educational modules, mandatory reading materials, quizzes, and certificates. |
 | **E – Emergency** | Crisis Management | SOS contact numbers, emergency panic button, and direct safety/security incident reporting tools. |
 | **S – Source** | Corporate Directory | The definitive, master registry for Staff profiles, Company Assets, Equipment, Products, Business Processes, and Teams. |
-
+| :--- | :--- | :--- |
 
 ### TACKLES Filament Staff Panel Architecture
 
