@@ -579,3 +579,26 @@ The Staff Panel dashboard provides a consolidated view of:
 - Upcoming events
 
 The dashboard serves as the employee's daily operational workspace and single point of access for organizational knowledge, tasks, services, learning, and responsibilities.
+
+
+### TACKLES Filament Staff Panel Architecture
+
+| NaviGroup (Sidebar Category) | Navigation Item | Type | Filament Component Name / Implementation |
+| :--- | :--- | :--- | :--- |
+| **T – Todo** | Dashboard | Page | `App\Filament\Staff\Pages\Dashboard` |
+| | Task Board | Widget | `App\Filament\Staff\Widgets\KanbanTasksWidget` (Task tracker overview) |
+| | My Action Items | Resource | `App\Filament\Staff\Resources\TodoResource` (Personal CRUD list) |
+| **A – Accountable** | My Custody | Resource | `App\Filament\Staff\Resources\CustodyResource` (Items currently assigned to user) |
+| | My Responsibilities | Page | `App\Filament\Staff\Pages\MyKpis` (Individual performance/KPI ownership tracking) |
+| **C – Catalog** | App Launchpad | Widget | `App\Filament\Staff\Widgets\AppLaunchpadWidget` (Grid of external icons/links) |
+| | Process Library | Resource | `App\Filament\Staff\Resources\ProcessLinkResource` (Active workflow links) |
+| **K – Knowledge** | Company Wiki | Resource | `App\Filament\Staff\Resources\WikiResource` (Knowledge base / markdown articles) |
+| | SOP & Policies | Resource | `App\Filament\Staff\Resources\DocumentResource` (Downloadable master PDF files) |
+| **L – Learning** | Active Courses | Resource | `App\Filament\Staff\Resources\CourseResource` (Assigned training modules) |
+| | My Certificates | Page | `App\Filament\Staff\Pages\Certificates` (Custom view to download earned certs) |
+| **E – Emergency** | SOS Panic Button | Widget | `App\Filament\Staff\Widgets\PanicButtonWidget` (Header widget for immediate broadcast) |
+| | Incident Reporting | Resource | `App\Filament\Staff\Resources\IncidentReportResource` (Log/submit active incidents) |
+| | Emergency Contacts | Page | `App\Filament\Staff\Pages\EmergencyContacts` (Static grid of hotlines) |
+| **S – Source** | Staff Directory | Resource | `App\Filament\Staff\Resources\UserResource` (Read-only directory with global search) |
+| | Company Assets | Resource | `App\Filament\Staff\Resources\AssetResource` (Equipment, products, IT hardware logs) |
+| | Org Chart | Page | `App\Filament\Staff\Pages\OrganizationChart` (Custom livewire view of teams/departments) |
