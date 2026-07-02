@@ -580,6 +580,20 @@ The Staff Panel dashboard provides a consolidated view of:
 
 The dashboard serves as the employee's daily operational workspace and single point of access for organizational knowledge, tasks, services, learning, and responsibilities.
 
+# TACKLES Intranet Framework
+
+This framework outlines the core functional scopes and navigational architecture of the corporate intranet portal.
+
+| Navigation Label | Core Function | Scope & Included Elements |
+| :--- | :--- | :--- |
+| **T – Todo** | Personal Dashboard | Tasks, personal action items, and daily activity/work trackers. |
+| **A – Accountable** | Custody & Governance | Items in custody, asset ownership registries, and specific role responsibilities. |
+| **C – Catalog** | Tool Launchpad | Centralized application links, software portal access, and business process navigation links. |
+| **K – Knowledge** | Single Source of Truth | Central repository for all master company documents, internal wikis, corporate guidelines, and SOPs. |
+| **L – Learning** | Growth & Development | Training courses, professional educational modules, mandatory reading materials, quizzes, and certificates. |
+| **E – Emergency** | Crisis Management | SOS contact numbers, emergency panic button, and direct safety/security incident reporting tools. |
+| **S – Source** | Corporate Directory | The definitive, master registry for Staff profiles, Company Assets, Equipment, Products, Business Processes, and Teams. |
+
 
 ### TACKLES Filament Staff Panel Architecture
 
