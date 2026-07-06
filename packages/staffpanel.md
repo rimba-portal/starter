@@ -579,3 +579,40 @@ The Staff Panel dashboard provides a consolidated view of:
 - Upcoming events
 
 The dashboard serves as the employee's daily operational workspace and single point of access for organizational knowledge, tasks, services, learning, and responsibilities.
+
+# TACKLES Intranet Framework
+
+This framework outlines the core functional scopes and navigational architecture of the corporate intranet portal.
+
+| Navigation Label | Core Function | Scope & Included Elements |
+| :--- | :--- | :--- |
+| **T – Todo** | Personal Dashboard | Tasks, personal action items, and daily activity/work trackers. |
+| **A – Accountable** | Custody & Governance | Items in custody, asset ownership registries, and specific role responsibilities. |
+| **C – Catalog** | Tool Launchpad | Centralized application links, software portal access, and business process navigation links. |
+| **K – Knowledge** | Single Source of Truth | Central repository for all master company documents, internal wikis, corporate guidelines, and SOPs. |
+| **L – Learning** | Growth & Development | Training courses, professional educational modules, mandatory reading materials, quizzes, and certificates. |
+| **E – Emergency** | Crisis Management | SOS contact numbers, emergency panic button, and direct safety/security incident reporting tools. |
+| **S – Source** | Corporate Directory | The definitive, master registry for Staff profiles, Company Assets, Equipment, Products, Business Processes, and Teams. |
+| :--- | :--- | :--- |
+
+### TACKLES Filament Staff Panel Architecture
+
+| NaviGroup (Sidebar Category) | Navigation Item | Type | Filament Component Name / Implementation |
+| :--- | :--- | :--- | :--- |
+| **T – Todo** | Dashboard | Page | `App\Filament\Staff\Pages\Dashboard` |
+| | Task Board | Widget | `App\Filament\Staff\Widgets\KanbanTasksWidget` (Task tracker overview) |
+| | My Action Items | Resource | `App\Filament\Staff\Resources\TodoResource` (Personal CRUD list) |
+| **A – Accountable** | My Custody | Resource | `App\Filament\Staff\Resources\CustodyResource` (Items currently assigned to user) |
+| | My Responsibilities | Page | `App\Filament\Staff\Pages\MyKpis` (Individual performance/KPI ownership tracking) |
+| **C – Catalog** | App Launchpad | Widget | `App\Filament\Staff\Widgets\AppLaunchpadWidget` (Grid of external icons/links) |
+| | Process Library | Resource | `App\Filament\Staff\Resources\ProcessLinkResource` (Active workflow links) |
+| **K – Knowledge** | Company Wiki | Resource | `App\Filament\Staff\Resources\WikiResource` (Knowledge base / markdown articles) |
+| | SOP & Policies | Resource | `App\Filament\Staff\Resources\DocumentResource` (Downloadable master PDF files) |
+| **L – Learning** | Active Courses | Resource | `App\Filament\Staff\Resources\CourseResource` (Assigned training modules) |
+| | My Certificates | Page | `App\Filament\Staff\Pages\Certificates` (Custom view to download earned certs) |
+| **E – Emergency** | SOS Panic Button | Widget | `App\Filament\Staff\Widgets\PanicButtonWidget` (Header widget for immediate broadcast) |
+| | Incident Reporting | Resource | `App\Filament\Staff\Resources\IncidentReportResource` (Log/submit active incidents) |
+| | Emergency Contacts | Page | `App\Filament\Staff\Pages\EmergencyContacts` (Static grid of hotlines) |
+| **S – Source** | Staff Directory | Resource | `App\Filament\Staff\Resources\UserResource` (Read-only directory with global search) |
+| | Company Assets | Resource | `App\Filament\Staff\Resources\AssetResource` (Equipment, products, IT hardware logs) |
+| | Org Chart | Page | `App\Filament\Staff\Pages\OrganizationChart` (Custom livewire view of teams/departments) |

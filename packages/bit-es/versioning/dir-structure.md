@@ -7,59 +7,58 @@ config/
 database/
 ├── migrations/
 │   ├── create_versions_table.php
-│   └── create_version_dependencies_table.php (optional)
+│   └── create_version_links_table.php (optional, replaces dependency graph)
 │
 └── seeders/
-    └── VersionSeeder.php
+    └── VersionStatusSeeder.php
 
 util/
 └── SemanticVersion.php
 
 
 app/Trees/Ver/
-│
+
 ├── Actions/
 │   ├── CreateVersion.php
-│   ├── ReleaseVersion.php
+│   ├── IncrementVersion.php
+│   ├── PublishVersion.php
+│   ├── ApproveVersion.php
 │   ├── ArchiveVersion.php
 │   ├── ChangeVersionStatus.php
 │   ├── GenerateNextVersion.php
-│   ├── VerifyVersionChecksum.php
-│   ├── DeleteVersion.php
-│   └── SyncVersionDependencies.php
+│   ├── ValidateVersionIntegrity.php
+│   └── ResolveContentReference.php
 │
 ├── Builders/
-│   └── VersionBuilder.php
+│   └── VersionQueryBuilder.php
 │
 ├── Events/
 │   ├── VersionCreated.php
-│   ├── VersionReleased.php
+│   ├── VersionApproved.php
+│   ├── VersionPublished.php
 │   ├── VersionArchived.php
-│   ├── VersionDeleted.php
-│   ├── VersionStatusChanged.php
-│   ├── VersionBecameEffective.php
-│   └── VersionExpired.php
+│   ├── VersionSuperseded.php
+│   └── VersionEffective.php
 │
 ├── Http/
-│   │
 │   ├── API/
 │   │   └── Resources/
 │   │       └── VersionResource.php
 │   │
 │   └── UI/
-│       │
 │       ├── Admin/
-│       │   │
 │       │   ├── Resources/
 │       │   │   ├── VersionResource.php
-│       │   │   │
 │       │   │   └── VersionResource/
-│       │   │       │
 │       │   │       ├── Pages/
 │       │   │       │   ├── ListVersions.php
-│       │   │       │   ├── CreateVersion.php
-│       │   │       │   ├── EditVersion.php
-│       │   │       │   └── ViewVersion.php
+│       │   │       │   ├── ViewVersion.php
+│       │   │       │   └── EditVersion.php
+│       │   │       │
+│       │   │       ├── Actions/
+│       │   │       │   ├── CreateVersionAction.php
+│       │   │       │   ├── PublishVersionAction.php
+│       │   │       │   └── CompareVersionAction.php
 │       │   │       │
 │       │   │       └── RelationManagers/
 │       │   │           └── VersionsRelationManager.php
@@ -67,42 +66,33 @@ app/Trees/Ver/
 │       │   ├── Pages/
 │       │   │   ├── VersionDashboard.php
 │       │   │   ├── CurrentVersions.php
-│       │   │   └── ObsoleteVersions.php
+│       │   │   └── SupersededVersions.php
 │       │   │
 │       │   └── Widgets/
-│       │       ├── LatestVersionsWidget.php
-│       │       ├── ReleasedVersionsWidget.php
-│       │       ├── DraftVersionsWidget.php
-│       │       ├── ExpiringVersionsWidget.php
-│       │       └── ObsoleteVersionsWidget.php
+│       │       ├── VersionStatsWidget.php
+│       │       ├── PendingApprovalWidget.php
+│       │       └── ExpiringVersionsWidget.php
 │       │
 │       └── Staff/
-│           │
-│           ├── Resources/
-│           │   └── VersionResource.php
-│           │
 │           ├── Pages/
 │           │   ├── CurrentVersions.php
 │           │   └── VersionViewer.php
 │           │
 │           └── Widgets/
-│               └── CurrentVersionsWidget.php
+│               └── MyAccessibleVersionsWidget.php
 │
 ├── Jobs/
-│   ├── VerifyVersionChecksums.php
-│   ├── ArchiveExpiredVersions.php
-│   ├── UpdateCurrentVersions.php
-│   └── NotifyVersionOwners.php
+│   ├── ExpireVersions.php
+│   ├── SupersedeVersions.php
+│   └── NotifyVersionStakeholders.php
 │
 ├── Listeners/
-│   ├── NotifyVersionReleased.php
-│   ├── NotifyVersionArchived.php
-│   ├── UpdateCurrentVersionPointer.php
-│   └── UpdateDependentVersions.php
+│   ├── OnVersionPublished.php
+│   ├── OnVersionApproved.php
+│   └── UpdateCurrentVersionPointer.php
 │
 ├── Models/
-│   ├── Version.php
-│   └── VersionDependency.php
+│   └── Version.php
 │
 ├── Observers/
 │   └── VersionObserver.php
@@ -111,12 +101,12 @@ app/Trees/Ver/
 │   └── VersionPolicy.php
 │
 ├── Services/
-│   ├── SemanticVersionService.php
+│   ├── VersionLifecycleService.php
 │   ├── VersionResolverService.php
+│   ├── SemanticVersionService.php
 │   ├── VersionComparisonService.php
-│   ├── VersionChecksumService.php
-│   ├── VersionDependencyService.php
-│   └── VersionContentService.php
+│   ├── VersionStorageService.php
+│   └── VersionIntegrityService.php
 │
 ├── Traits/
 │   └── HasVersions.php
@@ -124,7 +114,8 @@ app/Trees/Ver/
 └── Enums/
     ├── VersionStatus.php
     ├── VersionIncrementType.php
-    └── ContentType.php
+    ├── ContentDriverType.php
+    └── VersionEventType.php
 
 
 ```
@@ -136,32 +127,40 @@ versions
 ├── id
 ├── versionable_type
 ├── versionable_id
-├── version
+
+├── revision                (internal sequential ID)
 ├── major
 ├── minor
 ├── patch
-├── status
-├── content_type
-├── content_url
-├── checksum
+
+├── status                  (draft, review, approved, published, superseded, archived)
+
 ├── effective_from
 ├── effective_until
-├── released_at
-├── notes
+
+├── content_driver          (file | url | git | s3 | db)
+├── content_reference
+
+├── change_reason
+├── change_summary
+
+├── checksum (optional, computed not trusted)
+
+├── approved_by
 ├── created_by
-├── updated_by
+
 ├── created_at
 └── updated_at
 
 
 OPTIONAL
 
-version_dependencies
+version_links
 ├── id
 ├── version_id
-├── depends_on_version_id
-├── created_at
-└── updated_at
+├── related_version_id
+├── relation_type (depends_on | supersedes | references | derived_from)
+└── timestamps
 
 
 ```
@@ -172,13 +171,12 @@ MODEL RELATIONSHIPS
 Version
 ├── morphTo(versionable)
 ├── belongsTo(createdBy)
-├── belongsTo(updatedBy)
-├── belongsToMany(dependencies)
-└── belongsToMany(dependents)
+├── belongsTo(approvedBy)
+└── hasMany(links)
 
-VersionDependency
+VersionLink
 ├── belongsTo(version)
-└── belongsTo(dependsOnVersion)
+├── belongsTo(relatedVersion)
 
 
 ```
@@ -189,12 +187,14 @@ TRAIT
 HasVersions
 ├── versions()
 ├── currentVersion()
-├── releasedVersions()
-├── draftVersions()
 ├── latestVersion()
+├── publishedVersions()
+├── draftVersions()
 ├── createVersion()
-├── releaseVersion()
-└── archiveVersion()
+├── publishVersion()
+├── approveVersion()
+├── archiveVersion()
+├── supersedeVersion()
 
 ```
 
@@ -252,12 +252,11 @@ Review
   ↓
 Approved
   ↓
-Released
+Published
   ↓
-Obsolete
+Superseded
   ↓
 Archived
-
 
 ```
 
@@ -279,33 +278,7 @@ Create Version
 
 ```
 
-```text
-COMMON ACTIONS
 
-CreateVersion
-ReleaseVersion
-ArchiveVersion
-ChangeVersionStatus
-GenerateNextVersion
-VerifyVersionChecksum
-DeleteVersion
-SyncVersionDependencies
-
-
-```
-
-```text
-COMMON SERVICES
-
-SemanticVersionService
-VersionResolverService
-VersionComparisonService
-VersionChecksumService
-VersionDependencyService
-VersionContentService
-
-
-```
 
 ```text
 COMMON BUILDER METHODS
@@ -326,22 +299,7 @@ patch($major, $minor, $patch)
 
 ```
 
-```text
-FILAMENT RESOURCE FEATURES
 
-VersionResource
-├── View Version
-├── Create Version
-├── Edit Version
-├── Release Version
-├── Archive Version
-├── Compare Versions
-├── Preview Content URL
-├── Verify Checksum
-└── View Dependencies
-
-
-```
 
 ```text
 DESIGN PRINCIPLE
@@ -373,4 +331,133 @@ Actual content lives in:
 Vms only stores:
 
 content_url
+```
+```php
+<?php
+
+namespace App\Trees\Ver\Http\UI\Admin\Actions;
+
+use Filament\Actions\Action;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Illuminate\Database\Eloquent\Model;
+
+class CreateVersionAction
+{
+    public static function make(): Action
+    {
+        return Action::make('createVersion')
+            ->label('Add Version')
+            ->icon('heroicon-o-plus')
+            ->color('primary')
+            ->slideOver()
+            ->form(self::form())
+            ->action(fn (array $data, Model $record) =>
+                self::handle($record, $data)
+            );
+    }
+
+    protected static function form(): array
+    {
+        return [
+
+            Radio::make('increment_type')
+                ->label('Version Type')
+                ->options([
+                    'major' => 'Major (X.0.0)',
+                    'minor' => 'Minor (0.X.0)',
+                    'patch' => 'Patch (0.0.X)',
+                ])
+                ->required(),
+
+            DatePicker::make('effective_from')
+                ->label('Effective From')
+                ->required(),
+
+            DatePicker::make('effective_until')
+                ->label('Effective Until')
+                ->default(now()->addYear()),
+
+            Radio::make('content_type')
+                ->label('Content Source')
+                ->options([
+                    'file' => 'Upload File',
+                    'url' => 'External URL',
+                ])
+                ->reactive()
+                ->required(),
+
+            FileUpload::make('file')
+                ->label('Upload File')
+                ->visible(fn ($get) => $get('content_type') === 'file')
+                ->directory('versions')
+                ->required(fn ($get) => $get('content_type') === 'file'),
+
+            TextInput::make('url')
+                ->label('Content URL')
+                ->url()
+                ->visible(fn ($get) => $get('content_type') === 'url')
+                ->required(fn ($get) => $get('content_type') === 'url'),
+
+            Textarea::make('change_reason')
+                ->label('Change Reason (ISO Required)')
+                ->required()
+                ->maxLength(1000),
+
+            Textarea::make('change_summary')
+                ->label('Change Summary')
+                ->maxLength(1000),
+        ];
+    }
+
+    protected static function handle(Model $record, array $data): void
+    {
+        $latest = $record->versions()
+            ->latest('revision')
+            ->first();
+
+        // Base version fallback
+        $major = $latest?->major ?? 0;
+        $minor = $latest?->minor ?? 0;
+        $patch = $latest?->patch ?? 0;
+        $revision = ($latest?->revision ?? 0) + 1;
+
+        // Increment logic
+        [$major, $minor, $patch] = match ($data['increment_type']) {
+            'major' => [$major + 1, 0, 0],
+            'minor' => [$major, $minor + 1, 0],
+            'patch' => [$major, $minor, $patch + 1],
+        };
+
+        // Content resolution
+        $contentDriver = $data['content_type'];
+        $contentReference = $contentDriver === 'file'
+            ? $data['file']
+            : $data['url'];
+
+        $record->versions()->create([
+            'revision' => $revision,
+
+            'major' => $major,
+            'minor' => $minor,
+            'patch' => $patch,
+
+            'status' => 'draft',
+
+            'effective_from' => $data['effective_from'],
+            'effective_until' => $data['effective_until'] ?? now()->addYear(),
+
+            'content_driver' => $contentDriver,
+            'content_reference' => $contentReference,
+
+            'change_reason' => $data['change_reason'],
+            'change_summary' => $data['change_summary'] ?? null,
+
+            'created_by' => auth()->id(),
+        ]);
+    }
+}
 ```
