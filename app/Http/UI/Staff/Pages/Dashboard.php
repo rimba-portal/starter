@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Staff\Pages;
 
-use App\Filament\Staff\Widgets;
-use App\Filament\Staff\Widgets\BioDataWidget;
+use App\Http\UI\Staff\Widgets;
 use BackedEnum;
 use Filament\Pages\Dashboard as BaseDashboard;
+use Override;
 use UnitEnum;
 
 class Dashboard extends BaseDashboard
@@ -29,13 +29,17 @@ class Dashboard extends BaseDashboard
         return 4;
     }
 
-    public function getWidgets(): array
+    #[Override]
+    public function getHeaderWidgets(): array
     {
         // Only these widgets appear on the Dashboard
         return [
-            Widgets\StaffInfo::class,
-            Widgets\RolesWidgetMini::class,
-            BioDataWidget::class,
+            // Widgets\StaffInfo::class,
+            \Rimba\Tree\Work\Http\UI\Widgets\UnassignedTasksByRoleWidget::class,
+            \Rimba\Tree\Work\Http\UI\Widgets\MyPendingTasksWidget::class,
+            \Rimba\Tree\Work\Http\UI\Widgets\TaskStatsWidget::class,
+            // Widgets\RolesWidgetMini::class,
+            // BioDataWidget::class,
         ];
     }
 }

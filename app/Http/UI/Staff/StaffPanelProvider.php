@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Staff;
 
-use App\Http\UI\Auth\Pages\{Login,ResetPassword};
-use Filament\Auth\Pages\{Register, EditProfile};
+use App\Http\UI\Auth\Pages\Login;
+use Filament\Auth\Pages\EditProfile;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
+use Filament\Auth\Pages\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -75,7 +76,7 @@ class StaffPanelProvider extends PanelProvider
 
             ])
             ->pages([
-                Dashboard::class,
+                // Dashboard::class,
             ])
             ->widgets([
                 // AccountWidget::class,

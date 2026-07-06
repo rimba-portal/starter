@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        $this->call([WorkflowSeeder::class]);
+        // $this->call([WorkflowSeeder::class]);
         $this->call([JsonSeeder::class]);
         $this->call([ApiConfigSeeder::class]);
+        $this->call([TaskInstanceSeeder::class]);
     }
 }

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\Http\UI\Admin;
 
 use App\Http\UI\Auth\Pages\Login;
-use Filament\Auth\Pages\{Register, EditProfile};
-use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Actions\Action;
+use Filament\Auth\Pages\EditProfile;
+use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
+use Filament\Auth\Pages\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -43,7 +44,7 @@ class AdminPanelProvider extends PanelProvider
             ->path(config('bites.ui.panels.admin.1', 'admin'))
             ->colors(['primary' => config('bites.ui.panels.admin.2', Color::Green)])
             ->brandName(config('bites.ui.panels.admin.3', 'Administration'))
-            ->homeUrl(fn(): string => route(config('bites.ui.panels.admin.4', 'filament.admin.pages.dashboard')))
+            ->homeUrl(fn (): string => route(config('bites.ui.panels.admin.4', 'filament.admin.pages.dashboard')))
 
             ->discoverResources(in: app_path('Http/UI/Admin/Resources'), for: 'App\Http\UI\Admin\Resources')
             ->discoverPages(in: app_path('Http/UI/Admin/Pages'), for: 'App\Http\UI\Admin\Pages')
@@ -54,15 +55,15 @@ class AdminPanelProvider extends PanelProvider
             $panel
                 ->discoverResources(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Resources', $package)),
-                    for: $namespace . '\Http\UI\Admin\Resources',
+                    for: $namespace.'\Http\UI\Admin\Resources',
                 )
                 ->discoverPages(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Pages', $package)),
-                    for: $namespace . '\Http\UI\Admin\Pages',
+                    for: $namespace.'\Http\UI\Admin\Pages',
                 )
                 ->discoverWidgets(
                     in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Widgets', $package)),
-                    for: $namespace . '\Http\UI\Admin\Widgets',
+                    for: $namespace.'\Http\UI\Admin\Widgets',
                 );
         }
 

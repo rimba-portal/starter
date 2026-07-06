@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Identity\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,6 +13,7 @@ class IdentityController extends Controller
     {
         $request->validate(['descriptor' => 'required|array']);
         auth()->user()->auth->update(['face_descriptor' => json_encode($request->descriptor)]);
+
         return response()->json(['success' => true]);
     }
 }

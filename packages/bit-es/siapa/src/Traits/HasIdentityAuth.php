@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Identity\Traits;
 
 use Bites\Identity\Models\UserAuth;
@@ -10,7 +12,7 @@ trait HasIdentityAuth
 {
     use InteractsWithAppAuthentication;
 
-    public function auth() : HasOne
+    public function auth(): HasOne
     {
         return $this->hasOne(UserAuth::class);
     }
@@ -60,7 +62,7 @@ trait HasIdentityAuth
         return $this->auth->face_descriptor;
     }
 
-    public function setFaceDescriptorAttribute($value)
+    public function setFaceDescriptorAttribute($value): void
     {
         $this->auth->update(['face_descriptor' => $value]);
     }

@@ -49,8 +49,8 @@ class Biodata extends Page implements HasActions, HasSchemas
     protected function getHeaderWidgets(): array
     {
         return [
-            Widgets\StaffInfo::class,
-            Widgets\RolesWidgetMini::class,
+            // Widgets\StaffInfo::class,
+            // Widgets\RolesWidgetMini::class,
         ];
     }
 

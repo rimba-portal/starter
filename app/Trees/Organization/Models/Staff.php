@@ -56,11 +56,6 @@ class Staff extends Model
         return $this->hasMany(Request::class);
     }
 
-    public function models(): MorphMany
-    {
-        return $this->morphMany(AuditLog::class, 'modelable');
-    }
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -65,12 +65,12 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('workflow_blueprint_role', function (Blueprint $table) {
+        Schema::create('workflow_blueprint_role', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('workflow_blueprint_id')->constrained('workflow_blueprints')->cascadeOnDelete();
             $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
 
-            $table->unique(['workflow_blueprint_id', 'role_id',], 'workflow_blueprint_role_unique');
+            $table->unique(['workflow_blueprint_id', 'role_id'], 'workflow_blueprint_role_unique');
         });
 
         Schema::enableForeignKeyConstraints();

@@ -28,7 +28,7 @@ class Workflow extends Page
     protected function getHeaderWidgets(): array
     {
         return [
-            RequestWidget::class,
+            // RequestWidget::class,
         ];
     }
 }

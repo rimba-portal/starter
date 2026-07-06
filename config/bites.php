@@ -10,10 +10,10 @@ return [
             'app/Filament' => 'App\Filament',
         ],
         'auth' => [
-            'login' => '\Bites\Identity\Pages\Auth\Login::class',
-            'registration' => '\Bites\Identity\Pages\Auth\Register::class',
-            'password_reset' => '\Bites\Identity\Pages\Auth\RequestPasswordReset::class',
-            'profile' => '\Bites\Identity\Pages\Auth\EditProfile::class',
+            // 'login' => Bites\Identity\Pages\Auth\Login::class,
+            // 'registration' => Bites\Identity\Pages\Auth\Register::class,
+            // 'password_reset' => Bites\Identity\Pages\Auth\ForgotPassword::class,
+            // 'profile' => Bites\Identity\Pages\Profile::class,
         ],
         'panels' => [
             // panel_id, path, color, brandName, homeUrl

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Identity\Pages\Auth;
 
 use Filament\Auth\Pages\Register as BaseRegister;

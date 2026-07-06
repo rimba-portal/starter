@@ -22,7 +22,15 @@ return new class extends Migration
             $table->timestamps();
         });
         // for consumption of assets, equipment, (actual,defined)
-        Schema::create('asset_attributes', function (Blueprint $table): void {
+        Schema::create('place_attributes', function (Blueprint $table): void {
+            $table->id();
+            $table->string('key'); // e.g. 'dimensions', 'type', 'location'
+            $table->text('value')->nullable();
+            $table->morphs('attributable'); // adds adds attributable_id and attributable_type
+            $table->timestamps();
+        });
+        // for consumption of assets, equipment, (actual,defined)
+        Schema::create('thing_attributes', function (Blueprint $table): void {
             $table->id();
             $table->string('key'); // e.g. 'dimensions', 'type', 'location'
             $table->text('value')->nullable();
@@ -38,7 +46,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('asset_attributes');
+        Schema::dropIfExists('thing_attributes');
+        Schema::dropIfExists('place_attributes');
         Schema::dropIfExists('person_attributes');
     }
 };

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Bites\Identity\Http\Controllers\IdentityController;
 use Illuminate\Support\Facades\Route;
 
