@@ -25,7 +25,7 @@ class OrgUnitResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-protected static string|UnitEnum|null $navigationGroup = 'Organizational Items';
+    protected static string|UnitEnum|null $navigationGroup = 'Organizational Items';
 
     protected static ?string $navigationLabel = 'Units';
 

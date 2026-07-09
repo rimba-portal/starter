@@ -99,7 +99,7 @@ abstract class BitesServiceProvider extends ServiceProvider
         if (! app()->resolved(Factory::class)) {
             $this->callAfterResolving(
                 Factory::class,
-                fn(Factory $factory) => $this->addIconSet($factory)
+                fn (Factory $factory) => $this->addIconSet($factory)
             );
 
             return;

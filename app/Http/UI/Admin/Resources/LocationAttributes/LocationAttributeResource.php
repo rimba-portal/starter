@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\LocationAttributes;
 
 use App\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute;
@@ -16,6 +18,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
+
 class LocationAttributeResource extends Resource
 {
     protected static ?string $model = LocationAttribute::class;
@@ -29,10 +32,6 @@ class LocationAttributeResource extends Resource
     protected static ?string $navigationLabel = 'Location Attributes';
 
     protected static ?int $navigationSort = 35;
-
-    protected static ?string $title = 'Location Attributes';
-
-    protected ?string $subheading = 'Attribute for location resources.';
 
     public static function form(Schema $schema): Schema
     {

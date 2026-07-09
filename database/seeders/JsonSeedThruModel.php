@@ -84,7 +84,7 @@ class JsonSeedThruModel extends Seeder
     protected function seedRow(string $modelClass, array $row): Model
     {
         /** @var Model $model */
-        $model = new $modelClass();
+        $model = new $modelClass;
 
         [$attributes, $relations] = $this->splitAttributesAndRelations($model, $row);
 

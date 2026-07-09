@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\PersonAttributes\Pages;
 
 use App\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource;
+use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -14,11 +17,11 @@ class EditPersonAttribute extends EditRecord
     {
         return [
             DeleteAction::make(),
-            \Filament\Actions\Action::make('definition')
+            Action::make('definition')
                 ->tooltip('Definitions for Person Attributes')
                 ->iconButton()
                 ->icon('rimba-design')
-                ->action(fn() => redirect()->route('filament.admin.resources.attribute-definitions.person')),
+                ->action(fn () => redirect()->route('filament.admin.resources.attribute-definitions.person')),
         ];
     }
 }

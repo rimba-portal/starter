@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\LocationAttributes\Pages;
 
 use App\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -14,11 +17,11 @@ class ViewLocationAttribute extends ViewRecord
     {
         return [
             EditAction::make(),
-            \Filament\Actions\Action::make('definition')
+            Action::make('definition')
                 ->tooltip('Definitions for Location Attributes')
                 ->iconButton()
                 ->icon('rimba-design')
-                ->action(fn() => redirect()->route('filament.admin.resources.attribute-definitions.location')),
+                ->action(fn () => redirect()->route('filament.admin.resources.attribute-definitions.location')),
 
         ];
     }

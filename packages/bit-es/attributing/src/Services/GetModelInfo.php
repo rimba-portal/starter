@@ -152,7 +152,7 @@ class GetModelInfo
                     continue;
                 }
 
-                $instance = new $fqcn();
+                $instance = new $fqcn;
 
                 if (! $instance instanceof Model) {
                     continue;
@@ -171,7 +171,7 @@ class GetModelInfo
     protected static function extractClassName(string $contents): ?string
     {
         preg_match('/namespace\s+([^;]+);/', $contents, $namespaceMatch);
-        preg_match('/class\s+([A-Za-z_][A-Za-z0-9_]*)/', $contents, $classMatch);
+        preg_match('/class\s+([A-Za-z_]\w*)/', $contents, $classMatch);
 
         $namespace = $namespaceMatch[1] ?? null;
         $className = $classMatch[1] ?? null;
@@ -180,6 +180,6 @@ class GetModelInfo
             return null;
         }
 
-        return trim($namespace) . '\\' . trim($className);
+        return trim($namespace).'\\'.trim($className);
     }
 }

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Bites\Attributing\Support;
 
-use Bites\Attributing\Http\UI\RelationManagers\PersonAttributesRelationManager;
 use Bites\Attributing\Http\UI\RelationManagers\LocationAttributesRelationManager;
+use Bites\Attributing\Http\UI\RelationManagers\PersonAttributesRelationManager;
 use Bites\Attributing\Http\UI\RelationManagers\ThingAttributesRelationManager;
-use Bites\Attributing\Traits\HasPersonAttributes;
 use Bites\Attributing\Traits\HasLocationAttributes;
+use Bites\Attributing\Traits\HasPersonAttributes;
 use Bites\Attributing\Traits\HasThingAttributes;
 
 final class HasAttributeRelationManagers

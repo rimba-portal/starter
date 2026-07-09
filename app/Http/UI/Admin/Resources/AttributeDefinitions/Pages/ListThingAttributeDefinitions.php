@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\AttributeDefinitions\Pages;
 
 use App\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource;
@@ -11,7 +13,7 @@ use Illuminate\Database\Eloquent\Builder;
 class ListThingAttributeDefinitions extends ListRecords
 {
     protected static string $resource = AttributeDefinitionResource::class;
-    
+
     protected string $family = 'thing';
 
     protected function getHeaderActions(): array
@@ -26,7 +28,7 @@ class ListThingAttributeDefinitions extends ListRecords
         return [
             'all' => Tab::make('All')
                 ->modifyQueryUsing(
-                    fn(Builder $query) => $query->where('family', $this->family)
+                    fn (Builder $query) => $query->where('family', $this->family)
                 ),
             ...$this->getGroupTabs(),
         ];
@@ -36,10 +38,10 @@ class ListThingAttributeDefinitions extends ListRecords
     {
         $tabs = [];
 
-        foreach (config('bites.groups.' . $this->family, []) as $key => $label) {
+        foreach (config('bites.groups.'.$this->family, []) as $key => $label) {
             $tabs[$key] = Tab::make($label)
                 ->modifyQueryUsing(
-                    fn(Builder $query) => $query
+                    fn (Builder $query) => $query
                         ->where('family', $this->family)
                         ->where('group', $key)
                 );

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\AttributeDefinitions\Pages;
 
 use App\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource;
@@ -24,11 +26,11 @@ class ListAttributeDefinitions extends ListRecords
         return [
             'all' => Tab::make('All'),
             'person' => Tab::make('Person')
-                ->modifyQueryUsing(fn(Builder $query) => $query->where('family', 'person')),
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('family', 'person')),
             'thing' => Tab::make('Thing')
-                ->modifyQueryUsing(fn(Builder $query) => $query->where('family', 'thing')),
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('family', 'thing')),
             'location' => Tab::make('Location')
-                ->modifyQueryUsing(fn(Builder $query) => $query->where('family', 'location')),
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('family', 'location')),
         ];
     }
 }

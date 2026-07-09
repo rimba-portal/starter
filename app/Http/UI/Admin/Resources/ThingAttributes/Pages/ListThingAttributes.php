@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\ThingAttributes\Pages;
 
 use App\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
 
 class ListThingAttributes extends ListRecords
 {
@@ -18,11 +21,11 @@ class ListThingAttributes extends ListRecords
     {
         return [
             CreateAction::make(),
-            \Filament\Actions\Action::make('definition')
+            Action::make('definition')
                 ->tooltip('Definitions for Thing Attributes')
                 ->iconButton()
                 ->icon('rimba-design')
-                ->action(fn() => redirect()->route('filament.admin.resources.attribute-definitions.thing')),
+                ->action(fn () => redirect()->route('filament.admin.resources.attribute-definitions.thing')),
 
         ];
     }

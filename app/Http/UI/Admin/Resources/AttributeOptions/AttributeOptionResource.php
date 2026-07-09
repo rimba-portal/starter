@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\AttributeOptions;
 
 use App\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption;
@@ -20,7 +22,7 @@ class AttributeOptionResource extends Resource
     protected static ?string $model = AttributeOption::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    
+
     protected static string|UnitEnum|null $navigationGroup = 'Attributes';
 
     protected static ?string $navigationLabel = 'Options';

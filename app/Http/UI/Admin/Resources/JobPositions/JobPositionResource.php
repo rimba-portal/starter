@@ -24,7 +24,7 @@ class JobPositionResource extends Resource
     protected static ?string $model = JobPosition::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    
+
     protected static string|UnitEnum|null $navigationGroup = 'Personnel';
 
     protected static ?string $navigationLabel = 'Job Positions';

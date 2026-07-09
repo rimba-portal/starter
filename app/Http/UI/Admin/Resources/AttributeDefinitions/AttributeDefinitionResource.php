@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Admin\Resources\AttributeDefinitions;
 
-use App\Http\UI\Admin\Resources\AttributeDefinitions\Pages;
 use App\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm;
 use App\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable;
 use BackedEnum;
@@ -30,7 +31,7 @@ class AttributeDefinitionResource extends Resource
     protected static ?string $title = 'Definitions';
 
     protected ?string $subheading = 'Attribute definitions for resource attributes.';
-        
+
     public static function shouldRegisterNavigation(): bool
     {
         return false;
@@ -52,6 +53,7 @@ class AttributeDefinitionResource extends Resource
             RelationManagers\AttributeOptionsRelationManager::class,
         ];
     }
+
     public static function getPages(): array
     {
         return [
