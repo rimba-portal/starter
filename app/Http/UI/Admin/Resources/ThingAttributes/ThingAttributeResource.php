@@ -29,7 +29,7 @@ class ThingAttributeResource extends Resource
 
     protected static ?string $navigationLabel = 'Thing Attributes';
 
-    protected static ?int $navigationSort = 34;
+    protected static ?int $navigationSort = 44;
 
     public static function form(Schema $schema): Schema
     {

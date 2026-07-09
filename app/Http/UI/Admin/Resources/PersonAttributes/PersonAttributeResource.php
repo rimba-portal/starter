@@ -29,7 +29,7 @@ class PersonAttributeResource extends Resource
 
     protected static ?string $navigationLabel = 'Person Attributes';
 
-    protected static ?int $navigationSort = 33;
+    protected static ?int $navigationSort = 43;
 
     public static function form(Schema $schema): Schema
     {

@@ -27,7 +27,7 @@ class AttributeOptionResource extends Resource
 
     protected static ?string $navigationLabel = 'Options';
 
-    protected static ?int $navigationSort = 32;
+    protected static ?int $navigationSort = 42;
 
     protected static ?string $title = 'Options';
 

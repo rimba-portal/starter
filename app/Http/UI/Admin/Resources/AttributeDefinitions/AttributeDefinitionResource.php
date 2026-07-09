@@ -26,7 +26,7 @@ class AttributeDefinitionResource extends Resource
 
     protected static ?string $navigationLabel = 'Definitions';
 
-    protected static ?int $navigationSort = 31;
+    protected static ?int $navigationSort = 41;
 
     protected static ?string $title = 'Definitions';
 

@@ -31,7 +31,7 @@ class LocationAttributeResource extends Resource
 
     protected static ?string $navigationLabel = 'Location Attributes';
 
-    protected static ?int $navigationSort = 35;
+    protected static ?int $navigationSort = 45;
 
     public static function form(Schema $schema): Schema
     {
