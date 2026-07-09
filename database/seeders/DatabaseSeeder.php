@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // $this->call([WorkflowSeeder::class]);
-        $this->call([JsonSeeder::class]);
+        $this->call([JsonSeedThruModel::class]);
         $this->call([ApiConfigSeeder::class]);
         $this->call([TaskInstanceSeeder::class]);
     }

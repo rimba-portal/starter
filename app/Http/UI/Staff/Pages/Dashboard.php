@@ -8,6 +8,9 @@ use App\Http\UI\Staff\Widgets;
 use BackedEnum;
 use Filament\Pages\Dashboard as BaseDashboard;
 use Override;
+use Rimba\Tree\Work\Http\UI\Widgets\MyPendingTasksWidget;
+use Rimba\Tree\Work\Http\UI\Widgets\TaskStatsWidget;
+use Rimba\Tree\Work\Http\UI\Widgets\UnassignedTasksByRoleWidget;
 use UnitEnum;
 
 class Dashboard extends BaseDashboard
@@ -30,14 +33,14 @@ class Dashboard extends BaseDashboard
     }
 
     #[Override]
-    public function getHeaderWidgets(): array
+    protected function getHeaderWidgets(): array
     {
         // Only these widgets appear on the Dashboard
         return [
             // Widgets\StaffInfo::class,
-            \Rimba\Tree\Work\Http\UI\Widgets\UnassignedTasksByRoleWidget::class,
-            \Rimba\Tree\Work\Http\UI\Widgets\MyPendingTasksWidget::class,
-            \Rimba\Tree\Work\Http\UI\Widgets\TaskStatsWidget::class,
+            UnassignedTasksByRoleWidget::class,
+            MyPendingTasksWidget::class,
+            TaskStatsWidget::class,
             // Widgets\RolesWidgetMini::class,
             // BioDataWidget::class,
         ];

@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Trees\Organization\Models\Staff;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Rimba\Tree\Work\Models\Task;
-use Rimba\Tree\Work\Models\TaskInstance;
 use Rimba\Tree\Work\Models\ChecklistInstance;
-use App\Trees\Organization\Models\Staff;
+use Rimba\Tree\Work\Models\TaskInstance;
 
 class TaskInstanceSeeder extends Seeder
 {
@@ -65,27 +64,27 @@ class TaskInstanceSeeder extends Seeder
 
                     TaskInstance::create([
                         'work_package_instance_id' => $checklistInstance->work_package_instance_id,
-                        'checklist_instance_id'    => $checklistInstance->id,
-                        'task_id'                  => $task->id,
+                        'checklist_instance_id' => $checklistInstance->id,
+                        'task_id' => $task->id,
 
-                        'assigned_to_id'           => $assignedStaff?->id,
-                        'completed_by_id'          => $isCompleted
+                        'assigned_to_id' => $assignedStaff?->id,
+                        'completed_by_id' => $isCompleted
                             ? $assignedStaff?->id
                             : null,
 
-                        'is_completed'             => $isCompleted,
-                        'completed_at'             => $completedAt,
+                        'is_completed' => $isCompleted,
+                        'completed_at' => $completedAt,
 
                         // optional columns if available
-                        'description'             => fake()
+                        'description' => fake()
                             ->randomElement($descriptions),
 
-                        'due_at'                  => $dueDate,
+                        'due_at' => $dueDate,
 
-                        'created_at'              => Carbon::now()
+                        'created_at' => Carbon::now()
                             ->subDays(rand(1, 30)),
 
-                        'updated_at'              => Carbon::now(),
+                        'updated_at' => Carbon::now(),
                     ]);
                 }
             });

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Trees\Organization\Models\Staff;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -40,8 +41,9 @@ class User extends Authenticatable implements FilamentUser
 
         return true;
     }
-        public function staff()
+
+    public function staff()
     {
-        return $this->hasOne(\App\Trees\Organization\Models\Staff::class);
+        return $this->hasOne(Staff::class);
     }
 }

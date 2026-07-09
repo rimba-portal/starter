@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Bites\Identity;
 
-use Filament\Panel;
 use Illuminate\Support\ServiceProvider;
 
 class IdentityServiceProvider extends ServiceProvider

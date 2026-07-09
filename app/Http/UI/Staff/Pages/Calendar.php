@@ -67,9 +67,7 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
 
                 ColorColumn::make('event_type_color')
                     ->label('Event Color')
-                    ->state(function (Event $record): ?string {
-                        return EventType::tryFrom($record->type)?->getColor()[300] ?? null;
-                    }),
+                    ->state(fn (Event $record): ?string => $this->getEventColor($record)),
                 TextColumn::make('starts_at')->date('D M j, Y')->label('Date')->sortable(),
             ])
             ->groups([
@@ -163,6 +161,11 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
             ]);
     }
 
+    protected function getEventColor(Event $event, int $shade = 300): ?string
+    {
+        return EventType::tryFrom($event->type)?->getColor()[$shade] ?? null;
+    }
+
     public function render(): View
     {
         // Returns a LengthAwarePaginator of the *current page* after filters/search/sort
@@ -171,8 +174,9 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
         $public_events = collect($paginator->items())->map(function (Event $event): array {
             return [
                 'title' => $event->title,
-                'start' => optional($event->starts_at)->toDateString(),
-                'color' => $event->color,
+                'start' => $event->starts_at?->toIso8601String(),
+                'end' => $event->ends_at?->toIso8601String(),
+                'color' => $this->getEventColor($event),
                 'allDay' => $event->is_all_day,
             ];
         })->values();
@@ -216,8 +220,10 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
         }
 
         $events = $shiftEvents->concat($public_events)->values();
+        // dd($events->take(3)->toArray());
         $this->events = $events->toJson();
 
+        // dd($this->getTableRecords());
         return parent::render();
     }
 }

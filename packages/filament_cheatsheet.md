@@ -1,3 +1,9 @@
+
+# Filament make resource of specific namespace
+
+php artisan make:filament-resource OrgUnit --generate --model-namespace="App\\Models\\Org"
+
+
 # Filament PHP Architecture & Layout Hierarchy Cheatsheet
 
 A quick reference guide tracking the nested Execution Tree of Filament Panels (v3). It maps background PHP logic controllers to core frontend Blade template components.

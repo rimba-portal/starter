@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Work\Http\UI\Widgets;
 
-use Filament\Tables;
 use Filament\Actions;
+use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +41,7 @@ class MyPendingTasksWidget extends TableWidget
             ->recordActions([
                 Actions\Action::make('open')
                     ->icon('heroicon-o-arrow-top-right-on-square')
-                    ->url(fn (TaskInstance $record) => route(
+                    ->url(fn (TaskInstance $record): string => route(
                         'filament.staff.resources.task-instances.edit',
                         $record
                     )),

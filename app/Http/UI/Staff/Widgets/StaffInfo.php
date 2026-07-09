@@ -13,7 +13,7 @@ use Spatie\Permission\Models\Role;
 
 class StaffInfo extends Widget
 {
-    protected string $view = 'filament.staff.widgets.staff-info';
+    protected string $view = 'staff.widgets.staff-info';
 
     // Control ordering relative to other widgets (same as AccountWidget example)
     protected static ?int $sort = -2;

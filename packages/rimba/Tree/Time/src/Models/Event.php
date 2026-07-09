@@ -19,8 +19,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'type',
     'name',
     'description',
-    'start_at',
-    'end_at',
+    'starts_at',
+    'ends_at',
     'is_blocking',
     'attributes',
 ])]
@@ -37,12 +37,19 @@ class Event extends Model
     {
         return [
             'id' => 'integer',
+
             'org_corp_id' => 'integer',
             'org_unit_id' => 'integer',
             'org_team_id' => 'integer',
-            'start_at' => 'timestamp',
-            'end_at' => 'timestamp',
+
+            'starts_at' => 'datetime',
+            'ends_at' => 'datetime',
+            'start_UTC' => 'datetime',
+            'end_UTC' => 'datetime',
+
+            'is_all_day' => 'boolean',
             'is_blocking' => 'boolean',
+
             'attributes' => 'array',
         ];
     }

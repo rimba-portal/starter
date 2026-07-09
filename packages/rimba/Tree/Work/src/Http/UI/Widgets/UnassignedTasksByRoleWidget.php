@@ -8,7 +8,6 @@ use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Facades\DB;
 use Rimba\Tree\Work\Models\TaskInstance;
-use Spatie\Permission\Models\Role;
 
 class UnassignedTasksByRoleWidget extends StatsOverviewWidget
 {
@@ -42,10 +41,10 @@ class UnassignedTasksByRoleWidget extends StatsOverviewWidget
             ->orderByDesc('total')
             ->get();
 
-        foreach ($counts as $row) {
+        foreach ($counts as $count) {
             $stats[] = Stat::make(
-                str($row->role_name)->headline()->toString(),
-                number_format((int) $row->total),
+                str($count->role_name)->headline()->toString(),
+                number_format((int) $count->total),
             )
                 ->description('Unassigned pending tasks')
                 ->color('warning')
