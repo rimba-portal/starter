@@ -17,12 +17,23 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class JobPositionResource extends Resource
 {
     protected static ?string $model = JobPosition::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|UnitEnum|null $navigationGroup = 'Personnel';
+
+    protected static ?string $navigationLabel = 'Job Positions';
+
+    protected static ?int $navigationSort = 21;
+
+    protected static ?string $title = 'Job Positions';
+
+    protected ?string $subheading = 'Manage job positions within the organization.';
 
     public static function form(Schema $schema): Schema
     {

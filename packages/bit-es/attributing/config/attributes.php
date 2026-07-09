@@ -9,13 +9,13 @@ return [
     'navigation_sort' => 90,
 
     'families' => [
-        'personnel' => 'Personnel',
-        'asset' => 'Asset',
-        'area' => 'Area',
+        'person' => 'Person',
+        'thing' => 'Things',
+        'location' => 'Locations',
     ],
 
     'groups' => [
-        'personnel' => [
+        'person' => [
             'identity' => 'Identity',
             'organization' => 'Organization',
             'skills' => 'Skills',
@@ -25,7 +25,7 @@ return [
             'health' => 'Health',
         ],
 
-        'asset' => [
+        'thing' => [
             'identification' => 'Identification',
             'classification' => 'Classification',
             'technical' => 'Technical',
@@ -34,7 +34,7 @@ return [
             'document' => 'Document',
         ],
 
-        'area' => [
+        'location' => [
             'geography' => 'Geography',
             'enterprise' => 'Enterprise',
             'facility' => 'Facility',

@@ -1,162 +1,185 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Attributing\Services;
 
-use Error;
-use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use ReflectionClass;
-use SplFileInfo;
-use Illuminate\Support\Facades\File;
 
 class GetModelInfo
-
 {
     /**
+     * Return all discovered Eloquent model classes.
+     *
      * @return Collection<int, class-string<Model>>
      */
     public static function all(): Collection
     {
-        return collect()
-            ->merge(self::fromApp())
-            ->merge(self::fromPackages())
+        return collect(self::tableMap())
+            ->values()
             ->unique()
             ->values();
     }
 
     /**
-     * @return Collection<int, class-string<Model>>
+     * Build a table-name to model-class map.
+     *
+     * Example:
+     * [
+     *     'attribute_definitions' => 'Bites\Attributing\Models\AttributeDefinition',
+     *     'attribute_options' => 'Bites\Attributing\Models\AttributeOption',
+     * ]
+     *
+     * @return array<string, class-string<Model>>
      */
-    protected static function fromApp(): Collection
+    public static function tableMap(): array
     {
-        return self::fromDirectory(
-            directory: app_path(),
-            basePath: base_path(),
-            baseNamespace: ''
-        );
+        $results = [];
+
+        foreach (self::scanDirectories() as $directory) {
+            self::scanDirectory($directory, $results);
+        }
+
+        ksort($results);
+
+        return $results;
     }
 
     /**
-     * @return Collection<int, class-string<Model>>
-     */
-    protected static function fromPackages(): Collection
-    {
-        $packageRoot = base_path('packages');
-
-        if (! File::exists($packageRoot)) {
-            return collect();
-        }
-
-        return collect(File::directories($packageRoot))
-            ->flatMap(function (string $vendorDirectory): Collection {
-                return collect(File::directories($vendorDirectory))
-                    ->flatMap(function (string $packageDirectory): Collection {
-                        $srcPath = $packageDirectory . DIRECTORY_SEPARATOR . 'src';
-
-                        if (! File::exists($srcPath)) {
-                            return collect();
-                        }
-
-                        return self::fromDirectory(
-                            directory: $srcPath,
-                            basePath: $srcPath,
-                            baseNamespace: self::guessPackageNamespace($packageDirectory)
-                        );
-                    });
-            });
-    }
-
-    /**
-     * @return Collection<int, class-string<Model>>
-     */
-    protected static function fromDirectory(
-        string $directory,
-        string $basePath,
-        string $baseNamespace
-    ): Collection {
-        if (! File::exists($directory)) {
-            return collect();
-        }
-
-        return collect(File::allFiles($directory))
-            ->filter(fn (SplFileInfo $file): bool => $file->getExtension() === 'php')
-            ->map(fn (SplFileInfo $file): string => self::classFromFile($file, $basePath, $baseNamespace))
-            ->map(function (string $class): ?ReflectionClass {
-                try {
-                    if (! class_exists($class)) {
-                        return null;
-                    }
-
-                    return new ReflectionClass($class);
-                } catch (Exception|Error) {
-                    return null;
-                }
-            })
-            ->filter()
-            ->filter(fn (ReflectionClass $class): bool => $class->isSubclassOf(Model::class))
-            ->filter(fn (ReflectionClass $class): bool => ! $class->isAbstract())
-            ->map(fn (ReflectionClass $class): string => $class->getName())
-            ->values();
-    }
-
-    protected static function classFromFile(
-        SplFileInfo $file,
-        string $basePath,
-        string $baseNamespace
-    ): string {
-        $relativePath = Str::of($file->getRealPath())
-            ->replaceFirst($basePath, '')
-            ->replaceLast('.php', '')
-            ->trim(DIRECTORY_SEPARATOR)
-            ->replace(DIRECTORY_SEPARATOR, '\\')
-            ->toString();
-
-        if ($baseNamespace !== '') {
-            return $baseNamespace . '\\' . $relativePath;
-        }
-
-        return Str::of($relativePath)
-            ->replaceFirst('app\\', app()->getNamespace())
-            ->replaceFirst('App\\', app()->getNamespace())
-            ->toString();
-    }
-
-    protected static function guessPackageNamespace(string $packageDirectory): string
-    {
-        /**
-         * Example:
-         * packages/bites/attributing
-         * becomes:
-         * Bites\Attributing
-         */
-        $segments = explode(DIRECTORY_SEPARATOR, $packageDirectory);
-
-        $package = array_pop($segments);
-        $vendor = array_pop($segments);
-
-        return Str::studly($vendor) . '\\' . Str::studly($package);
-    }
-
-    /**
+     * Find an Eloquent model class by table name.
+     *
      * @return class-string<Model>|null
      */
     public static function findByTable(string $tableName): ?string
     {
-        return self::all()
-            ->first(function (string $modelClass) use ($tableName): bool {
-                try {
-                    /** @var Model $model */
-                    $model = new $modelClass();
+        return self::tableMap()[$tableName] ?? null;
+    }
 
-                    return $model->getTable() === $tableName;
-                } catch (Exception|Error) {
-                    return false;
+    /**
+     * Directories to scan for models.
+     *
+     * @return array<int, string>
+     */
+    protected static function scanDirectories(): array
+    {
+        return array_values(array_filter([
+            app_path(),
+
+            // Local package development path.
+            base_path('packages'),
+
+            // Installed package paths that you care about.
+            base_path('vendor/bit-es'),
+            base_path('vendor/rimba'),
+        ], static fn (string $directory): bool => is_dir($directory)));
+    }
+
+    /**
+     * Scan PHP files recursively and collect table => model mappings.
+     *
+     * @param  array<string, class-string<Model>>  $results
+     */
+    protected static function scanDirectory(string $directory, array &$results): void
+    {
+        if (! is_dir($directory)) {
+            return;
+        }
+
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($directory)
+        );
+
+        foreach ($iterator as $file) {
+            if (! $file->isFile()) {
+                continue;
+            }
+
+            if ($file->getExtension() !== 'php') {
+                continue;
+            }
+
+            $path = $file->getRealPath();
+
+            if (! is_string($path)) {
+                continue;
+            }
+
+            /*
+             * Optional but useful optimization.
+             * Only scan files inside a Models directory.
+             *
+             * Matching examples:
+             * app/Models/User.php
+             * packages/bit-es/attributing/src/Models/AttributeDefinition.php
+             * vendor/bit-es/attributing/src/Models/AttributeDefinition.php
+             */
+            if (! str_contains(str_replace('\\', '/', $path), '/Models/')) {
+                continue;
+            }
+
+            $contents = file_get_contents($path);
+
+            if (! is_string($contents)) {
+                continue;
+            }
+
+            /*
+             * Fast skip.
+             *
+             * This works for:
+             * class AttributeDefinition extends Model
+             *
+             * If later you use:
+             * class Staff extends BaseModel
+             *
+             * then remove this block and let instanceof Model check below decide.
+             */
+            if (! str_contains($contents, 'extends Model')) {
+                continue;
+            }
+
+            $fqcn = self::extractClassName($contents);
+
+            if (! $fqcn) {
+                continue;
+            }
+
+            try {
+                if (! class_exists($fqcn)) {
+                    continue;
                 }
-            });
+
+                $instance = new $fqcn();
+
+                if (! $instance instanceof Model) {
+                    continue;
+                }
+
+                $results[$instance->getTable()] = $fqcn;
+            } catch (\Throwable) {
+                continue;
+            }
+        }
+    }
+
+    /**
+     * Extract the fully qualified class name from PHP file contents.
+     */
+    protected static function extractClassName(string $contents): ?string
+    {
+        preg_match('/namespace\s+([^;]+);/', $contents, $namespaceMatch);
+        preg_match('/class\s+([A-Za-z_][A-Za-z0-9_]*)/', $contents, $classMatch);
+
+        $namespace = $namespaceMatch[1] ?? null;
+        $className = $classMatch[1] ?? null;
+
+        if (! $namespace || ! $className) {
+            return null;
+        }
+
+        return trim($namespace) . '\\' . trim($className);
     }
 }
-

@@ -12,6 +12,10 @@ class ListOrgUnits extends ListRecords
 {
     protected static string $resource = OrgUnitResource::class;
 
+    protected static ?string $title = 'Units';
+
+    protected ?string $subheading = 'Manage organizational units within the organization.';
+    
     protected function getHeaderActions(): array
     {
         return [

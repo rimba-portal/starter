@@ -11,6 +11,7 @@ use App\Http\UI\Admin\Resources\ApiData\Schemas\ApiDataForm;
 use App\Http\UI\Admin\Resources\ApiData\Tables\ApiDataTable;
 use App\Trees\Sync\Models\ApiData;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -21,6 +22,12 @@ class ApiDataResource extends Resource
     protected static ?string $model = ApiData::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|UnitEnum|null $navigationGroup = 'Data Synchronization';
+
+    protected static ?string $navigationLabel = 'Data';
+
+    protected static ?int $navigationSort = 42;
 
     public static function form(Schema $schema): Schema
     {

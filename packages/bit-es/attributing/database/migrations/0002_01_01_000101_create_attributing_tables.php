@@ -57,7 +57,7 @@ return new class extends Migration
             $table->index('key');
         });
         // for consumption of assets, equipment, (actual,defined)
-        Schema::create('place_attributes', function (Blueprint $table): void {
+        Schema::create('location_attributes', function (Blueprint $table): void {
             $table->id();
             $table->string('key'); // e.g. 'dimensions', 'type', 'location'
             $table->text('value')->nullable();
@@ -86,7 +86,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('thing_attributes');
-        Schema::dropIfExists('place_attributes');
+        Schema::dropIfExists('location_attributes');
         Schema::dropIfExists('person_attributes');
         Schema::dropIfExists('attribute_options');
         Schema::dropIfExists('attribute_definitions');

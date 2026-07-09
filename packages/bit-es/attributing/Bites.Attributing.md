@@ -160,13 +160,13 @@ place_attributes
 Model:
 
 ```php
-PlaceAttribute
+LocationAttribute
 ```
 
 Trait:
 
 ```php
-HasPlaceAttributes
+HasLocationAttributes
 ```
 
 ---
@@ -254,7 +254,7 @@ Vehicle
  └─ morphMany(ThingAttribute)
 
 Building
- └─ morphMany(PlaceAttribute)
+ └─ morphMany(LocationAttribute)
 ```
 
 Example:

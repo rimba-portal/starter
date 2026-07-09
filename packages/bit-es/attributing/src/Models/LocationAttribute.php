@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
     'attributable_id',
     'attributable_type',
 ])]
-class PlaceAttribute extends Model
+class LocationAttribute extends Model
 {
     use HasFactory;
 

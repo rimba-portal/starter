@@ -12,6 +12,10 @@ class ListApiData extends ListRecords
 {
     protected static string $resource = ApiDataResource::class;
 
+    protected static ?string $title = 'Data';
+
+    protected ?string $subheading = 'Data Synchronization from external.';
+    
     protected function getHeaderActions(): array
     {
         return [

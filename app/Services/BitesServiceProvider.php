@@ -23,13 +23,21 @@ abstract class BitesServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViewPath();
         $this->registerIconPath();
+
+        $this->registerPackage();
     }
+
+    protected function registerPackage(): void {}
 
     public function boot(): void
     {
         $this->registerViews();
         $this->registerIcons();
+
+        $this->bootPackage();
     }
+
+    protected function bootPackage(): void {}
 
     protected function registerConfig(): void
     {
@@ -91,7 +99,7 @@ abstract class BitesServiceProvider extends ServiceProvider
         if (! app()->resolved(Factory::class)) {
             $this->callAfterResolving(
                 Factory::class,
-                fn (Factory $factory) => $this->addIconSet($factory)
+                fn(Factory $factory) => $this->addIconSet($factory)
             );
 
             return;

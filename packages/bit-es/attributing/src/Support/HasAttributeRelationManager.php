@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Bites\Attributing\Support;
 
 use Bites\Attributing\Http\UI\RelationManagers\PersonAttributesRelationManager;
-use Bites\Attributing\Http\UI\RelationManagers\PlaceAttributesRelationManager;
+use Bites\Attributing\Http\UI\RelationManagers\LocationAttributesRelationManager;
 use Bites\Attributing\Http\UI\RelationManagers\ThingAttributesRelationManager;
 use Bites\Attributing\Traits\HasPersonAttributes;
-use Bites\Attributing\Traits\HasPlaceAttributes;
+use Bites\Attributing\Traits\HasLocationAttributes;
 use Bites\Attributing\Traits\HasThingAttributes;
 
 final class HasAttributeRelationManagers
@@ -30,8 +30,8 @@ final class HasAttributeRelationManagers
             $relations[] = ThingAttributesRelationManager::class;
         }
 
-        if (in_array(HasPlaceAttributes::class, $traits, true)) {
-            $relations[] = PlaceAttributesRelationManager::class;
+        if (in_array(HasLocationAttributes::class, $traits, true)) {
+            $relations[] = LocationAttributesRelationManager::class;
         }
 
         return $relations;

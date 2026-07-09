@@ -1,7 +1,7 @@
 
 # Filament make resource of specific namespace
 
-php artisan make:filament-resource OrgUnit --generate --model-namespace="App\\Models\\Org"
+php artisan make:filament-resource --generate --model-namespace="Bites\\Attributing\\Models" PersonAttribute
 
 
 # Filament PHP Architecture & Layout Hierarchy Cheatsheet

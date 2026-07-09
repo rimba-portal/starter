@@ -11,7 +11,11 @@ use Filament\Resources\Pages\ListRecords;
 class ListOrgCorps extends ListRecords
 {
     protected static string $resource = OrgCorpResource::class;
+ 
+    protected static ?string $title = 'Corporate Entities';
 
+    protected ?string $subheading = 'Manage corporate entities, organizations, and their relationships.';
+ 
     protected function getHeaderActions(): array
     {
         return [

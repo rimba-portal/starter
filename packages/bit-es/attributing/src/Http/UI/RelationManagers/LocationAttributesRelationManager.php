@@ -15,9 +15,9 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class PlaceAttributesRelationManager extends RelationManager
+class LocationAttributesRelationManager extends RelationManager
 {
-    protected static string $relationship = 'placeAttributes';
+    protected static string $relationship = 'LocationAttributes';
 
     protected static ?string $title = 'Place Attributes';
 

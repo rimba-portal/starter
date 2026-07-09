@@ -17,12 +17,19 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class StaffResource extends Resource
 {
     protected static ?string $model = Staff::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = 'Personnel';
+
+    protected static ?string $navigationLabel = 'Staff';
+
+    protected static ?int $navigationSort = 22;
 
     public static function form(Schema $schema): Schema
     {

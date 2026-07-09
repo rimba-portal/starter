@@ -1,6 +1,6 @@
 [
   {
-    "family": "personnel",
+    "family": "person",
     "group": "identity",
     "key": "staff_number",
     "name": "Staff Number",
@@ -15,7 +15,7 @@
     "sort_order": 1
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "identity",
     "key": "employment_type",
     "name": "Employment Type",
@@ -36,7 +36,7 @@
     "sort_order": 2
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "identity",
     "key": "worker_category",
     "name": "Worker Category",
@@ -57,7 +57,7 @@
     "sort_order": 3
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "organization",
     "key": "job_grade",
     "name": "Job Grade",
@@ -72,7 +72,7 @@
     "sort_order": 4
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "organization",
     "key": "job_level",
     "name": "Job Level",
@@ -87,7 +87,7 @@
     "sort_order": 5
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "skills",
     "key": "skill",
     "name": "Skill",
@@ -102,7 +102,7 @@
     "sort_order": 6
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "skills",
     "key": "competency",
     "name": "Competency",
@@ -117,7 +117,7 @@
     "sort_order": 7
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "qualification",
     "key": "certification",
     "name": "Certification",
@@ -132,7 +132,7 @@
     "sort_order": 8
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "qualification",
     "key": "license",
     "name": "License",
@@ -147,7 +147,7 @@
     "sort_order": 9
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "qualification",
     "key": "qualification",
     "name": "Qualification",
@@ -162,7 +162,7 @@
     "sort_order": 10
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "qualification",
     "key": "training",
     "name": "Training",
@@ -177,7 +177,7 @@
     "sort_order": 11
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "security",
     "key": "security_clearance",
     "name": "Security Clearance",
@@ -198,7 +198,7 @@
     "sort_order": 12
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "identity",
     "key": "language",
     "name": "Language",
@@ -219,7 +219,7 @@
     "sort_order": 13
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "identity",
     "key": "nationality",
     "name": "Nationality",
@@ -234,7 +234,7 @@
     "sort_order": 14
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "skills",
     "key": "operator_level",
     "name": "Operator Level",
@@ -249,7 +249,7 @@
     "sort_order": 15
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "skills",
     "key": "auditor_level",
     "name": "Auditor Level",
@@ -264,7 +264,7 @@
     "sort_order": 16
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "skills",
     "key": "maintenance_level",
     "name": "Maintenance Level",
@@ -279,7 +279,7 @@
     "sort_order": 17
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "health",
     "key": "medical_restriction",
     "name": "Medical Restriction",
@@ -294,7 +294,7 @@
     "sort_order": 18
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "health",
     "key": "union_membership",
     "name": "Union Membership",
@@ -313,7 +313,7 @@
     "sort_order": 19
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "organization",
     "key": "shift",
     "name": "Shift",
@@ -335,7 +335,7 @@
     "sort_order": 20
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "authorization",
     "key": "approval_authority",
     "name": "Approval Authority",
@@ -354,7 +354,7 @@
     "sort_order": 21
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "authorization",
     "key": "approval_limit",
     "name": "Approval Limit",
@@ -369,7 +369,7 @@
     "sort_order": 22
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "requirements",
     "key": "required_certification",
     "name": "Required Certification",
@@ -384,7 +384,7 @@
     "sort_order": 23
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "requirements",
     "key": "required_skill",
     "name": "Required Skill",
@@ -399,7 +399,7 @@
     "sort_order": 24
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "requirements",
     "key": "required_training",
     "name": "Required Training",
@@ -414,7 +414,7 @@
     "sort_order": 25
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "requirements",
     "key": "required_language",
     "name": "Required Language",
@@ -429,7 +429,7 @@
     "sort_order": 26
   },
   {
-    "family": "personnel",
+    "family": "person",
     "group": "requirements",
     "key": "required_clearance",
     "name": "Required Clearance",
@@ -451,7 +451,7 @@
   },
 
   {
-    "family": "asset",
+    "family": "thing",
     "group": "classification",
     "key": "manufacturer",
     "name": "Manufacturer",
@@ -466,7 +466,7 @@
     "sort_order": 28
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "classification",
     "key": "brand",
     "name": "Brand",
@@ -481,7 +481,7 @@
     "sort_order": 29
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "classification",
     "key": "model",
     "name": "Model",
@@ -496,7 +496,7 @@
     "sort_order": 30
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "identification",
     "key": "serial_number",
     "name": "Serial Number",
@@ -511,7 +511,7 @@
     "sort_order": 31
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "identification",
     "key": "asset_tag",
     "name": "Asset Tag",
@@ -526,7 +526,7 @@
     "sort_order": 32
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "identification",
     "key": "part_number",
     "name": "Part Number",
@@ -541,7 +541,7 @@
     "sort_order": 33
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "classification",
     "key": "material_type",
     "name": "Material Type",
@@ -556,7 +556,7 @@
     "sort_order": 34
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "classification",
     "key": "product_family",
     "name": "Product Family",
@@ -571,7 +571,7 @@
     "sort_order": 35
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "traceability",
     "key": "batch_number",
     "name": "Batch Number",
@@ -586,7 +586,7 @@
     "sort_order": 36
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "traceability",
     "key": "lot_number",
     "name": "Lot Number",
@@ -601,7 +601,7 @@
     "sort_order": 37
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "document",
     "key": "version",
     "name": "Version",
@@ -616,7 +616,7 @@
     "sort_order": 38
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "technical",
     "key": "capacity",
     "name": "Capacity",
@@ -631,7 +631,7 @@
     "sort_order": 39
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "technical",
     "key": "voltage",
     "name": "Voltage",
@@ -646,7 +646,7 @@
     "sort_order": 40
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "technical",
     "key": "power",
     "name": "Power",
@@ -661,7 +661,7 @@
     "sort_order": 41
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "physical",
     "key": "weight",
     "name": "Weight",
@@ -676,7 +676,7 @@
     "sort_order": 42
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "physical",
     "key": "dimensions",
     "name": "Dimensions",
@@ -691,7 +691,7 @@
     "sort_order": 43
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "lifecycle",
     "key": "warranty_expiry",
     "name": "Warranty Expiry",
@@ -706,7 +706,7 @@
     "sort_order": 44
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "lifecycle",
     "key": "purchase_date",
     "name": "Purchase Date",
@@ -721,7 +721,7 @@
     "sort_order": 45
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "lifecycle",
     "key": "commission_date",
     "name": "Commission Date",
@@ -736,7 +736,7 @@
     "sort_order": 46
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "maintenance",
     "key": "calibration_date",
     "name": "Calibration Date",
@@ -751,7 +751,7 @@
     "sort_order": 47
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "maintenance",
     "key": "maintenance_interval",
     "name": "Maintenance Interval",
@@ -766,7 +766,7 @@
     "sort_order": 48
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "technical",
     "key": "ip_address",
     "name": "IP Address",
@@ -781,7 +781,7 @@
     "sort_order": 49
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "technical",
     "key": "firmware_version",
     "name": "Firmware Version",
@@ -796,7 +796,7 @@
     "sort_order": 50
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "document",
     "key": "revision",
     "name": "Revision",
@@ -811,7 +811,7 @@
     "sort_order": 51
   },
   {
-    "family": "asset",
+    "family": "thing",
     "group": "document",
     "key": "retention_period",
     "name": "Retention Period",
@@ -827,7 +827,7 @@
   },
 
   {
-    "family": "area",
+    "family": "location",
     "group": "geography",
     "key": "country",
     "name": "Country",
@@ -851,7 +851,7 @@
     "sort_order": 53
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "geography",
     "key": "region",
     "name": "Region",
@@ -866,7 +866,7 @@
     "sort_order": 54
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "enterprise",
     "key": "site_code",
     "name": "Site Code",
@@ -881,7 +881,7 @@
     "sort_order": 55
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "enterprise",
     "key": "plant_code",
     "name": "Plant Code",
@@ -896,7 +896,7 @@
     "sort_order": 56
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "enterprise",
     "key": "department",
     "name": "Department",
@@ -911,7 +911,7 @@
     "sort_order": 57
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "enterprise",
     "key": "cost_center",
     "name": "Cost Center",
@@ -926,7 +926,7 @@
     "sort_order": 58
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "facility",
     "key": "building_code",
     "name": "Building Code",
@@ -941,7 +941,7 @@
     "sort_order": 59
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "facility",
     "key": "floor_number",
     "name": "Floor Number",
@@ -956,7 +956,7 @@
     "sort_order": 60
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "facility",
     "key": "room_number",
     "name": "Room Number",
@@ -971,7 +971,7 @@
     "sort_order": 61
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "operations",
     "key": "area_code",
     "name": "Area Code",
@@ -986,7 +986,7 @@
     "sort_order": 62
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "operations",
     "key": "work_center_code",
     "name": "Work Center Code",
@@ -1001,7 +1001,7 @@
     "sort_order": 63
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "operations",
     "key": "work_unit_code",
     "name": "Work Unit Code",
@@ -1016,7 +1016,7 @@
     "sort_order": 64
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "security",
     "key": "security_level",
     "name": "Security Level",
@@ -1037,7 +1037,7 @@
     "sort_order": 65
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "security",
     "key": "access_level",
     "name": "Access Level",
@@ -1058,7 +1058,7 @@
     "sort_order": 66
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "security",
     "key": "restricted_area",
     "name": "Restricted Area",
@@ -1077,7 +1077,7 @@
     "sort_order": 67
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "environment",
     "key": "cleanroom_class",
     "name": "Cleanroom Class",
@@ -1098,7 +1098,7 @@
     "sort_order": 68
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "environment",
     "key": "temperature_range",
     "name": "Temperature Range",
@@ -1113,7 +1113,7 @@
     "sort_order": 69
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "environment",
     "key": "humidity_range",
     "name": "Humidity Range",
@@ -1128,7 +1128,7 @@
     "sort_order": 70
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "geography",
     "key": "latitude",
     "name": "Latitude",
@@ -1143,7 +1143,7 @@
     "sort_order": 71
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "geography",
     "key": "longitude",
     "name": "Longitude",
@@ -1158,7 +1158,7 @@
     "sort_order": 72
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "emergency",
     "key": "emergency_assembly_point",
     "name": "Emergency Assembly Point",
@@ -1173,7 +1173,7 @@
     "sort_order": 73
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "emergency",
     "key": "fire_zone",
     "name": "Fire Zone",
@@ -1188,7 +1188,7 @@
     "sort_order": 74
   },
   {
-    "family": "area",
+    "family": "location",
     "group": "emergency",
     "key": "evacuation_route",
     "name": "Evacuation Route",
