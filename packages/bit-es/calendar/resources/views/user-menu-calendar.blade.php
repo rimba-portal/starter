@@ -3,7 +3,7 @@
 
 {{-- Calendar link in user menu --}}
 <x-filament::dropdown.list.item
-    icon="myicon-s-calendar"
+    icon="heroicon-o-calendar-days"
     wire:click="$dispatch('open-modal', { id: 'calendar-slideover' })"
 >
     {{ __('Calendar') }}
