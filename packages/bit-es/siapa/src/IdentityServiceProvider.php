@@ -8,12 +8,12 @@ use Illuminate\Support\ServiceProvider;
 
 class IdentityServiceProvider extends ServiceProvider
 {
-    public function register(): void
+    public function registerPackage(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/identity.php', 'identity');
     }
 
-    public function boot(): void
+    public function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'bites-identity');

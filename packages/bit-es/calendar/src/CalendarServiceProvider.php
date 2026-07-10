@@ -27,6 +27,5 @@ class CalendarServiceProvider extends BitesServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         app(DiscoverCalendar::class)->execute();
-        // dd(app('view')->getFinder()->getHints());
     }
 }

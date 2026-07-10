@@ -15,15 +15,15 @@ abstract class BitesServiceProvider extends ServiceProvider
      * Example:
      * __DIR__ . '/../config/attributing.php'
      */
-    protected string $configFile = '';
-
+    protected string $configFile = __DIR__.'/../config/bites.php';
+          
     /**
      * Package views path.
      *
      * Example:
      * __DIR__ . '/../resources/views'
      */
-    protected string $viewsPath = '';
+    protected string $viewsPath = __DIR__.'/../resources/views';
 
     /**
      * Package icons path.
@@ -31,7 +31,7 @@ abstract class BitesServiceProvider extends ServiceProvider
      * Example:
      * __DIR__ . '/../resources/svg'
      */
-    protected string $iconsPath = '';
+    protected string $iconsPath = __DIR__.'/../resources/svg';
 
     /**
      * Shared config key.

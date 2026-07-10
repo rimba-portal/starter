@@ -9,7 +9,7 @@ use Rimba\Tree\Time\Actions\DiscoverCalendar;
 
 class TimeServiceProvider extends BitesServiceProvider
 {
-    public function boot(): void
+    public function bootPackage(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'rimba');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');

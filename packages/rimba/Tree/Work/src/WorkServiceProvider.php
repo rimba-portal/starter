@@ -8,7 +8,7 @@ use App\Services\BitesServiceProvider;
 
 class WorkServiceProvider extends BitesServiceProvider
 {
-    public function boot(): void
+    public function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }

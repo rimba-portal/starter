@@ -3,7 +3,11 @@
 declare(strict_types=1);
 
 return [
-
+    'ui' => [
+        'packages' => [
+            'calendar/src' => 'Bites\Calendar',
+        ],
+    ],
     'calendar' => [
 
         'default' => env('SHIFT_PATTERN_DEFAULT', 'WXYZ'),

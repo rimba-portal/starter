@@ -11,7 +11,7 @@ use Filament\Facades\Filament as FacadesFilament;
 
 class VersioningServiceProvider extends BitesServiceProvider
 {
-    public function boot(): void
+    public function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 

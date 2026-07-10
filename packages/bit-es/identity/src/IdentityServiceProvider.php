@@ -9,7 +9,7 @@ use Rimba\Identity\Managers\IdentityManager;
 
 class IdentityServiceProvider extends ServiceProvider
 {
-    public function register(): void
+    public function registerPackage(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/identity.php',
@@ -36,7 +36,7 @@ class IdentityServiceProvider extends ServiceProvider
         );
     }
 
-    public function boot(): void
+    public function bootPackage(): void
     {
         $this->publishes([
             __DIR__.'/../config/identity.php' => config_path('identity.php'),

@@ -1,3 +1,5 @@
+// dd(app('view')->getFinder()->getHints());
+php artisan make:filament-resource --generate --model-namespace="Rimba\Tree\Menu\Models" Menu
 
 # Filament make resource of specific namespace
 

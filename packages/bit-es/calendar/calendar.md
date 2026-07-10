@@ -241,7 +241,7 @@ resources/views/filament/staff/pages/calendar.blade.php
 <div class="space-y-6 p-1">
     {{-- FullCalendar --}}
     <x-filament::section>
-        <div wire:ignore id="calendar" class="min-h-[600px] w-full"></div>
+        <div wire:ignore id="calendar" class="min-h-150 w-full"></div>
     </x-filament::section>
 
     {{-- Events Table --}}
