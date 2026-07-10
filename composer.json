@@ -12,6 +12,7 @@
         "php": "^8.3",
         "bit-es/agreement": "dev-main",
         "bit-es/attributing": "dev-main",
+        "bit-es/calendar": "dev-main",
         "bit-es/google-translate": "^1.0",
         "bit-es/helpfile": "^1.0",
         "bit-es/siapa": "dev-main",
@@ -38,6 +39,14 @@
         {
             "type": "path",
             "url": "packages/bit-es/agreement",
+            "options": {
+                "symlink": true,
+                "canonical": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "packages/bit-es/calendar",
             "options": {
                 "symlink": true,
                 "canonical": false
@@ -153,7 +162,8 @@
             "composer fix-acl",
             "npm install --ignore-scripts",
             "mpm audit fix --force",
-            "npm run build"        ],
+            "npm run build"
+        ],
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",

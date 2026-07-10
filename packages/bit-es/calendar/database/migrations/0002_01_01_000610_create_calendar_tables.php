@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('shifts', function (Blueprint $table) {
+        Schema::create('shifts', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('org_unit_id')->nullable()->constrained();
             $table->foreignId('org_team_id')->nullable()->constrained();
