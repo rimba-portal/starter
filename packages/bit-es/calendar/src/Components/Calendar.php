@@ -37,7 +37,7 @@ class Calendar extends Component implements HasActions, HasForms, HasTable
 
     public $events;
 
-    protected $view = 'filament.staff.pages.calendar';
+    protected $view = 'bites::calendar';
 
     public function table(Table $table): Table
     {

@@ -18,17 +18,15 @@ class CalendarServiceProvider extends BitesServiceProvider
     protected string $iconsPath =
         __DIR__.'/../resources/svg';
 
-    public function register(): void
+    public function registerPackage(): void
     {
         //
     }
 
-    public function boot(): void
+    public function bootPackage(): void
     {
-        parent::boot();
-
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
         app(DiscoverCalendar::class)->execute();
+        // dd(app('view')->getFinder()->getHints());
     }
 }

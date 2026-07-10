@@ -159,12 +159,12 @@
             "dist": {
                 "type": "path",
                 "url": "packages/bit-es/calendar",
-                "reference": "da8f9d57cc8d4878c54db39e3d299a3dcbdf15b4"
+                "reference": "4b3f0f38abce0968e31984654f811997bd4ad505"
             },
             "require": {
                 "filament/filament": "^5.0",
                 "laravel/framework": "^13.0",
-                "php": "^8.3|^8.4"
+                "php": "^8.3"
             },
             "type": "library",
             "extra": {
