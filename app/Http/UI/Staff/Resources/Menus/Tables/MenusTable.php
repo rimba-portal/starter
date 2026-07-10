@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Staff\Resources\Menus\Tables;
 
 use Filament\Support\Enums\TextSize;
@@ -43,7 +45,7 @@ class MenusTable
             ->recordUrl(
                 fn (Model $model): string => $model->internal_link && Route::has($model->internal_link)
                     ? route($model->internal_link)
-                    : ($model->attachableLink()->latest()->value('url') ?? '#')
+                    : ($model->external_link ?? '#')
             )
             ->filters([])
             ->toolbarActions([]);

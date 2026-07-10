@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Events;
 
+use BackedEnum;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Pages\CreateEvent;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Pages\EditEvent;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Pages\ListEvents;
@@ -9,11 +12,9 @@ use Bites\Calendar\Http\UI\Admin\Resources\Events\Pages\ViewEvent;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Schemas\EventForm;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Schemas\EventInfolist;
 use Bites\Calendar\Http\UI\Admin\Resources\Events\Tables\EventsTable;
-use BackedEnum;
 use Bites\Calendar\Models\Event;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 

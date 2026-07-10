@@ -18,12 +18,12 @@ class CalendarServiceProvider extends BitesServiceProvider
     protected string $iconsPath =
         __DIR__.'/../resources/svg';
 
-    public function registerPackage(): void
+    protected function registerPackage(): void
     {
         //
     }
 
-    public function bootPackage(): void
+    protected function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         app(DiscoverCalendar::class)->execute();

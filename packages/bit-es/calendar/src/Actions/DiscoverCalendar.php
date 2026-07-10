@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Bites\Calendar\Actions;
 
+use Filament\Actions\Action;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
-use Illuminate\Contracts\View\Factory;
-use Livewire\Livewire;
-use Bites\Calendar\Actions\GetCalendarAction;
-use Filament\Actions\Action;
 
 class DiscoverCalendar
 {
@@ -17,7 +14,7 @@ class DiscoverCalendar
     {
         FilamentView::registerRenderHook(
             PanelsRenderHook::USER_MENU_BEFORE,
-            fn(): string => Action::make('Calendar')
+            fn (): string => Action::make('Calendar')
                 ->label('Calendar')
                 ->iconButton()
                 ->icon('bites-calendar')

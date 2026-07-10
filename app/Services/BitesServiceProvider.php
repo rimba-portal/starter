@@ -16,7 +16,7 @@ abstract class BitesServiceProvider extends ServiceProvider
      * __DIR__ . '/../config/attributing.php'
      */
     protected string $configFile = __DIR__.'/../config/bites.php';
-          
+
     /**
      * Package views path.
      *

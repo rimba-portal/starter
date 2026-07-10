@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Shifts\Schemas;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TimePicker;
 use Filament\Schemas\Schema;
 

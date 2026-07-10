@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Shifts;
 
+use BackedEnum;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Pages\CreateShift;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Pages\EditShift;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Pages\ListShifts;
@@ -9,11 +12,9 @@ use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Pages\ViewShift;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Schemas\ShiftForm;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Schemas\ShiftInfolist;
 use Bites\Calendar\Http\UI\Admin\Resources\Shifts\Tables\ShiftsTable;
-use BackedEnum;
 use Bites\Calendar\Models\Shift;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 

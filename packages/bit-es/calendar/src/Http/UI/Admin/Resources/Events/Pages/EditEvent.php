@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Events\Pages;
 
 use Bites\Calendar\Http\UI\Admin\Resources\Events\EventResource;

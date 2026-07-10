@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Staff\Resources\Menus\Pages;
 
 use App\Http\UI\Staff\Resources\Menus\MenuResource;
-use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Schemas\Components\Tabs\Tab;
+use Illuminate\Database\Eloquent\Builder;
+use Rimba\Tree\Menu\Models\Menu;
 
 class ListMenus extends ListRecords
 {
@@ -14,10 +18,24 @@ class ListMenus extends ListRecords
 
     protected ?string $subheading = 'Catalog of all company links.';
 
-    protected function getHeaderActions(): array
+    public function getTabs(): array
     {
-        return [
-            CreateAction::make(),
-        ];
+        $categories = Menu::query()
+            ->select('category')
+            ->distinct()
+            ->pluck('category')
+            ->filter() // remove nulls if needed
+            ->toArray();
+
+        $tabs = [];
+
+        $tabs['all'] = Tab::make(); // default tab showing all records
+
+        foreach ($categories as $category) {
+            $tabs[$category] = Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('category', $category));
+        }
+
+        return $tabs;
     }
 }

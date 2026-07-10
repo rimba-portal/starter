@@ -1,16 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\UI\Staff\Resources\Menus;
 
-use App\Http\UI\Staff\Resources\Menus\Pages\CreateMenu;
-use App\Http\UI\Staff\Resources\Menus\Pages\EditMenu;
 use App\Http\UI\Staff\Resources\Menus\Pages\ListMenus;
-use App\Http\UI\Staff\Resources\Menus\Schemas\MenuForm;
 use App\Http\UI\Staff\Resources\Menus\Tables\MenusTable;
 use BackedEnum;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Rimba\Tree\Menu\Models\Menu;
 use UnitEnum;

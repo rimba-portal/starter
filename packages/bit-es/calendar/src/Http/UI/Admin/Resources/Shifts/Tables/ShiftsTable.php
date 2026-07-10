@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Shifts\Tables;
 
 use Filament\Actions\BulkActionGroup;

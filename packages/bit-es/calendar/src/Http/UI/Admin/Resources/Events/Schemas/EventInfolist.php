@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Calendar\Http\UI\Admin\Resources\Events\Schemas;
 
 use Filament\Infolists\Components\IconEntry;

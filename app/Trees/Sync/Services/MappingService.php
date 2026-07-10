@@ -225,7 +225,7 @@ class MappingService
         return $result;
     }
 
-    protected function executeArtisanCommand(string $command, mixed $value)
+    protected function executeArtisanCommand(string $command, mixed $value): ?string
     {
         $command = str_replace('$value', escapeshellarg((string) $value), $command);
         $shell = PHP_BINARY.' artisan '.$command.' 2>&1';

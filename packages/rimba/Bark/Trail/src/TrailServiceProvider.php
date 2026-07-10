@@ -8,7 +8,7 @@ use App\Services\BitesServiceProvider;
 
 class TrailServiceProvider extends BitesServiceProvider
 {
-    public function bootPackage(): void
+    protected function bootPackage(): void
     {
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }

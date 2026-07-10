@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Bites\Calendar\Http\UI\Staff\Pages;
 
 use BackedEnum;
+use Bites\Calendar\Enums\EventType;
+use Bites\Calendar\Models\Event;
+use Bites\Calendar\Services\ShiftPattern;
 use Carbon\Carbon;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
@@ -26,9 +29,6 @@ use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-use Bites\Calendar\Enums\EventType;
-use Bites\Calendar\Models\Event;
-use Bites\Calendar\Services\ShiftPattern;
 use UnitEnum;
 
 class Calendar extends Page implements HasActions, HasForms, HasTable
@@ -57,6 +57,7 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
     {
         return false;
     }
+
     public function table(Table $table): Table
     {
         return $table
@@ -71,22 +72,22 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
 
                 ColorColumn::make('event_type_color')
                     ->label('Event Color')
-                    ->state(fn(Event $record): ?string => $this->getEventColor($record)),
+                    ->state(fn (Event $record): ?string => $this->getEventColor($record)),
                 TextColumn::make('starts_at')->date('D M j, Y')->label('Date')->sortable(),
             ])
             ->groups([
                 // Group by Month/Year from starts_at
                 Group::make('starts_at')
                     ->label('Month')
-                    ->getTitleFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->isoFormat('MMMM • YYYY') ?? 'No Date')
-                    ->getKeyFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
+                    ->getTitleFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->isoFormat('MMMM • YYYY') ?? 'No Date')
+                    ->getKeyFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
                     ->collapsible(),
 
                 Group::make('iso_week')
                     ->label('Week')
-                    ->getTitleFromRecordUsing(fn(Event $record): string => $record->starts_at ? sprintf('%s • %s', $record->starts_at->format('W'), $record->starts_at->format('o')) : 'No Date')
-                    ->getKeyFromRecordUsing(fn(Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
-                    ->orderQueryUsing(fn(Builder $query, string $direction) => $query->orderBy('starts_at', $direction))
+                    ->getTitleFromRecordUsing(fn (Event $record): string => $record->starts_at ? sprintf('%s • %s', $record->starts_at->format('W'), $record->starts_at->format('o')) : 'No Date')
+                    ->getKeyFromRecordUsing(fn (Event $record) => optional($record->starts_at)?->format('Y-m') ?? '0000-00')
+                    ->orderQueryUsing(fn (Builder $query, string $direction) => $query->orderBy('starts_at', $direction))
                     ->collapsible(),
 
             ])
