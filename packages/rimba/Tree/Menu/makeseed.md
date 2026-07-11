@@ -93,12 +93,271 @@ class Version extends Model
 }
 ```
 ```php
+<?php
 
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('menus', function (Blueprint $table): void {
+
+            $table->id();
+
+
+            /*
+             * BPM Category
+             *
+             * Enterprise
+             * People
+             * Market
+             * Supply
+             * Operate
+             * Technology
+             * Knowledge
+             * Source
+             */
+            $table->string('category');
+
+
+            /*
+             * Group
+             *
+             * Example:
+             *
+             * Finance
+             * HR
+             * Production
+             * Documents
+             */
+            $table->string('group')
+                ->nullable();
+
+
+            /*
+             * Display
+             */
+            $table->string('name');
+
+            $table->string('slug')
+                ->unique();
+
+
+            $table->string('icon')
+                ->nullable();
+
+
+            /*
+             * Tree structure
+             *
+             * Category
+             *   |
+             *   Group
+             *       |
+             *       Menu Item
+             */
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('menus')
+                ->nullOnDelete();
+
+
+            /*
+             * Permission checking
+             */
+            $table->string('permission')
+                ->nullable();
+
+
+            /*
+             * Filament panel
+             *
+             * admin
+             * staff
+             */
+            $table->string('panel')
+                ->nullable();
+
+
+            /*
+             * Behaviour
+             */
+            $table->boolean('enabled')
+                ->default(true);
+
+
+            $table->boolean('visible')
+                ->default(true);
+
+
+            $table->boolean('open_new_tab')
+                ->default(false);
+
+
+
+            /*
+             * Ordering
+             */
+            $table->unsignedInteger('sort')
+                ->default(0);
+
+
+
+            $table->timestamps();
+
+
+
+            $table->index('category');
+
+            $table->index('group');
+
+            $table->index('parent_id');
+
+        });
+    }
+
+
+    public function down(): void
+    {
+        Schema::dropIfExists('menus');
+    }
+};
 ```
 ```php
+<?php
 
-```
-```php
+declare(strict_types=1);
 
+
+namespace App\Models;
+
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+
+
+class Menu extends Model
+{
+
+    protected $fillable = [
+
+        'category',
+
+        'group',
+
+        'name',
+
+        'slug',
+
+        'icon',
+
+        'parent_id',
+
+        'permission',
+
+        'panel',
+
+        'enabled',
+
+        'visible',
+
+        'open_new_tab',
+
+        'sort',
+
+    ];
+
+
+
+    protected $casts = [
+
+        'enabled' => 'boolean',
+
+        'visible' => 'boolean',
+
+        'open_new_tab' => 'boolean',
+
+    ];
+
+
+
+    /*
+     |--------------------------------------------------------------------------
+     | Version
+     |--------------------------------------------------------------------------
+     */
+
+
+    public function versions(): MorphMany
+    {
+        return $this->morphMany(
+            Version::class,
+            'versionable'
+        );
+    }
+
+
+
+    public function activeVersion()
+    {
+        return $this->morphOne(
+            Version::class,
+            'versionable'
+        )
+        ->where('status', 'released')
+        ->latestOfMany('released_at');
+    }
+
+
+
+    /*
+     |--------------------------------------------------------------------------
+     | Menu Tree
+     |--------------------------------------------------------------------------
+     */
+
+
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(
+            Menu::class,
+            'parent_id'
+        );
+    }
+
+
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(
+            Menu::class,
+            'parent_id'
+        )
+        ->orderBy('sort');
+    }
+
+
+
+    /*
+     |--------------------------------------------------------------------------
+     | Scope
+     |--------------------------------------------------------------------------
+     */
+
+
+    public function scopeVisible($query)
+    {
+        return $query->where('visible', true)
+            ->where('enabled', true);
+    }
+
+
+}
 ```
-```php
+```text
