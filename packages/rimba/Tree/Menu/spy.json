@@ -1,0 +1,26 @@
+{
+  "menus": [
+    { "category": "Supply", "group": "Supplier Management", "name": "Supplier Registration", "description": "Register new suppliers", "slug": "supply-supplier-registration", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Supply", "group": "Supplier Management", "name": "Supplier Evaluation", "description": "Evaluate supplier performance", "slug": "supply-supplier-evaluation", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Supply", "group": "Supplier Management", "name": "Supplier Performance", "description": "Monitor supplier performance", "slug": "supply-supplier-performance", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "Supply", "group": "Procurement Management", "name": "Purchase Request", "description": "Handle purchase requests", "slug": "supply-procurement-purchase-request", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Supply", "group": "Procurement Management", "name": "Sourcing", "description": "Source products and services", "slug": "supply-procurement-sourcing", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Supply", "group": "Procurement Management", "name": "Purchase Order", "description": "Manage purchase orders", "slug": "supply-procurement-purchase-order", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Supply", "group": "Procurement Management", "name": "Procurement Approval", "description": "Approve procurement requests", "slug": "supply-procurement-approval", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Supply", "group": "Inventory Management", "name": "Inventory Control", "description": "Control inventory levels", "slug": "supply-inventory-control", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Supply", "group": "Inventory Management", "name": "Stock Movement", "description": "Track stock movement", "slug": "supply-inventory-stock-movement", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Supply", "group": "Inventory Management", "name": "Material Management", "description": "Manage materials", "slug": "supply-inventory-material-management", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Supply", "group": "Inventory Management", "name": "Inventory Reporting", "description": "Generate inventory reports", "slug": "supply-inventory-reporting", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Supply", "group": "Warehouse Management", "name": "Receiving", "description": "Receive goods", "slug": "supply-warehouse-receiving", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Supply", "group": "Warehouse Management", "name": "Storage", "description": "Store goods", "slug": "supply-warehouse-storage", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Supply", "group": "Warehouse Management", "name": "Picking", "description": "Pick items for orders", "slug": "supply-warehouse-picking", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Supply", "group": "Warehouse Management", "name": "Dispatch", "description": "Dispatch goods", "slug": "supply-warehouse-dispatch", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Supply", "group": "Logistics Management", "name": "Transportation", "description": "Manage transportation", "slug": "supply-logistics-transportation", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Supply", "group": "Logistics Management", "name": "Shipment", "description": "Handle shipments", "slug": "supply-logistics-shipment", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Supply", "group": "Logistics Management", "name": "Delivery Management", "description": "Manage deliveries", "slug": "supply-logistics-delivery-management", "enabled": true, "visible": true, "sort": 3 }
+  ]
+}
