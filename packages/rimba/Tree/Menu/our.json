@@ -1,0 +1,30 @@
+{
+  "menus": [
+    { "category": "Operate", "group": "Operations Planning", "name": "Capacity Planning", "description": "Plan operational capacity", "slug": "operate-operations-capacity-planning", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Operations Planning", "name": "Scheduling", "description": "Schedule operations", "slug": "operate-operations-scheduling", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Operations Planning", "name": "Resource Planning", "description": "Plan operational resources", "slug": "operate-operations-resource-planning", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "Operate", "group": "Production Management", "name": "Production Planning", "description": "Plan production activities", "slug": "operate-production-planning", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Production Management", "name": "Work Orders", "description": "Manage work orders", "slug": "operate-production-work-orders", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Production Management", "name": "Manufacturing Execution", "description": "Execute manufacturing processes", "slug": "operate-production-manufacturing-execution", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Operate", "group": "Production Management", "name": "Production Monitoring", "description": "Monitor production activities", "slug": "operate-production-monitoring", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Operate", "group": "Quality Management", "name": "Quality Planning", "description": "Plan quality assurance", "slug": "operate-quality-planning", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Quality Management", "name": "Inspection", "description": "Conduct inspections", "slug": "operate-quality-inspection", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Quality Management", "name": "Non-Conformance", "description": "Handle non-conformance issues", "slug": "operate-quality-non-conformance", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Operate", "group": "Quality Management", "name": "CAPA", "description": "Corrective and preventive actions", "slug": "operate-quality-capa", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Operate", "group": "Maintenance Management", "name": "Asset Maintenance", "description": "Maintain assets", "slug": "operate-maintenance-asset-maintenance", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Maintenance Management", "name": "Preventive Maintenance", "description": "Perform preventive maintenance", "slug": "operate-maintenance-preventive-maintenance", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Maintenance Management", "name": "Work Requests", "description": "Manage maintenance work requests", "slug": "operate-maintenance-work-requests", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Operate", "group": "Maintenance Management", "name": "Reliability Management", "description": "Ensure reliability of operations", "slug": "operate-maintenance-reliability-management", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Operate", "group": "Safety Management", "name": "Safety Inspection", "description": "Conduct safety inspections", "slug": "operate-safety-inspection", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Safety Management", "name": "Incident Management", "description": "Manage safety incidents", "slug": "operate-safety-incident-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Safety Management", "name": "Emergency Response", "description": "Handle emergency responses", "slug": "operate-safety-emergency-response", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "Operate", "group": "Process Management", "name": "Workflow", "description": "Manage workflows", "slug": "operate-process-workflow", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Operate", "group": "Process Management", "name": "Standard Processes", "description": "Define standard processes", "slug": "operate-process-standard-processes", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Operate", "group": "Process Management", "name": "Process Improvement", "description": "Improve processes", "slug": "operate-process-improvement", "enabled": true, "visible": true, "sort": 3 }
+  ]
+}
