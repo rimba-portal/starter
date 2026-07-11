@@ -1,0 +1,27 @@
+{
+  "menus": [
+    { "category": "Technology", "group": "Application Management", "name": "Application Catalogue", "description": "Maintain application catalogue", "slug": "technology-application-catalogue", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Technology", "group": "Application Management", "name": "System Access", "description": "Manage system access", "slug": "technology-application-system-access", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Technology", "group": "Application Management", "name": "Application Support", "description": "Provide application support", "slug": "technology-application-support", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "Technology", "group": "Information Management", "name": "Document Management", "description": "Manage documents", "slug": "technology-information-document-management", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Technology", "group": "Information Management", "name": "Records Management", "description": "Manage records", "slug": "technology-information-records-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Technology", "group": "Information Management", "name": "Knowledge Management", "description": "Manage organizational knowledge", "slug": "technology-information-knowledge-management", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Technology", "group": "Information Management", "name": "Data Management", "description": "Manage data", "slug": "technology-information-data-management", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Technology", "group": "IT Service Management", "name": "Incident", "description": "Manage IT incidents", "slug": "technology-itservice-incident", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Technology", "group": "IT Service Management", "name": "Request", "description": "Handle IT service requests", "slug": "technology-itservice-request", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Technology", "group": "IT Service Management", "name": "Problem Management", "description": "Manage IT problems", "slug": "technology-itservice-problem-management", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Technology", "group": "IT Service Management", "name": "Change Management", "description": "Manage IT changes", "slug": "technology-itservice-change-management", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Technology", "group": "Security Management", "name": "Identity Management", "description": "Manage identities", "slug": "technology-security-identity-management", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Technology", "group": "Security Management", "name": "Cybersecurity", "description": "Ensure cybersecurity", "slug": "technology-security-cybersecurity", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Technology", "group": "Security Management", "name": "Access Control", "description": "Control access", "slug": "technology-security-access-control", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Technology", "group": "Security Management", "name": "Security Incident", "description": "Handle security incidents", "slug": "technology-security-incident", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Technology", "group": "Digital Innovation", "name": "AI Services", "description": "Provide AI services", "slug": "technology-digital-ai-services", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Technology", "group": "Digital Innovation", "name": "Automation", "description": "Implement automation", "slug": "technology-digital-automation", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Technology", "group": "Digital Innovation", "name": "Analytics", "description": "Perform analytics", "slug": "technology-digital-analytics", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Technology", "group": "Digital Innovation", "name": "Integration", "description": "Integrate digital systems", "slug": "technology-digital-integration", "enabled": true, "visible": true, "sort": 4 }
+  ]
+}
