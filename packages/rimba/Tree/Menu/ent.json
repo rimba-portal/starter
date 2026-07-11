@@ -1,0 +1,35 @@
+{
+  "menus": [
+    { "category": "Enterprise", "group": "Strategy Management", "name": "Vision & Mission", "description": "Define organizational vision and mission", "slug": "enterprise-strategy-vision-mission", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Enterprise", "group": "Strategy Management", "name": "Strategic Planning", "description": "Plan long-term strategies", "slug": "enterprise-strategy-strategic-planning", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Enterprise", "group": "Strategy Management", "name": "Business Objectives", "description": "Set business objectives", "slug": "enterprise-strategy-business-objectives", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Enterprise", "group": "Strategy Management", "name": "OKR Management", "description": "Manage objectives and key results", "slug": "enterprise-strategy-okr-management", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Enterprise", "group": "Strategy Management", "name": "Strategic Initiatives", "description": "Execute strategic initiatives", "slug": "enterprise-strategy-strategic-initiatives", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Enterprise", "group": "Governance Management", "name": "Corporate Governance", "description": "Corporate governance framework", "slug": "enterprise-governance-corporate-governance", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Enterprise", "group": "Governance Management", "name": "Policy Management", "description": "Manage policies", "slug": "enterprise-governance-policy-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Enterprise", "group": "Governance Management", "name": "Compliance Management", "description": "Ensure compliance", "slug": "enterprise-governance-compliance-management", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Enterprise", "group": "Governance Management", "name": "Risk Management", "description": "Manage risks", "slug": "enterprise-governance-risk-management", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Enterprise", "group": "Governance Management", "name": "Audit Management", "description": "Conduct audits", "slug": "enterprise-governance-audit-management", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Enterprise", "group": "Governance Management", "name": "Ethics Management", "description": "Manage ethics", "slug": "enterprise-governance-ethics-management", "enabled": true, "visible": true, "sort": 6 },
+
+    { "category": "Enterprise", "group": "Financial Management", "name": "Financial Planning", "description": "Plan finances", "slug": "enterprise-financial-financial-planning", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Enterprise", "group": "Financial Management", "name": "Budget Management", "description": "Manage budgets", "slug": "enterprise-financial-budget-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Enterprise", "group": "Financial Management", "name": "Accounting", "description": "Accounting processes", "slug": "enterprise-financial-accounting", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Enterprise", "group": "Financial Management", "name": "Cost Management", "description": "Manage costs", "slug": "enterprise-financial-cost-management", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Enterprise", "group": "Financial Management", "name": "Tax Management", "description": "Manage taxes", "slug": "enterprise-financial-tax-management", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Enterprise", "group": "Financial Management", "name": "Financial Reporting", "description": "Generate financial reports", "slug": "enterprise-financial-financial-reporting", "enabled": true, "visible": true, "sort": 6 },
+
+    { "category": "Enterprise", "group": "Performance Management", "name": "KPI Management", "description": "Track KPIs", "slug": "enterprise-performance-kpi-management", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Enterprise", "group": "Performance Management", "name": "Business Intelligence", "description": "Business intelligence tools", "slug": "enterprise-performance-business-intelligence", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Enterprise", "group": "Performance Management", "name": "Management Reporting", "description": "Management reports", "slug": "enterprise-performance-management-reporting", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Enterprise", "group": "Performance Management", "name": "Continuous Improvement", "description": "Continuous improvement processes", "slug": "enterprise-performance-continuous-improvement", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Enterprise", "group": "Legal Management", "name": "Contracts", "description": "Manage contracts", "slug": "enterprise-legal-contracts", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Enterprise", "group": "Legal Management", "name": "Agreements", "description": "Manage agreements", "slug": "enterprise-legal-agreements", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Enterprise", "group": "Legal Management", "name": "Intellectual Property", "description": "Manage IP", "slug": "enterprise-legal-intellectual-property", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Enterprise", "group": "Legal Management", "name": "Regulatory Affairs", "description": "Handle regulatory affairs", "slug": "enterprise-legal-regulatory-affairs", "enabled": true, "visible": true, "sort": 4 },
+
+    // … FULL EXPANSION CONTINUES for People, Market, Supply, Operate, Technology, Knowledge, Source
+  ]
+}
