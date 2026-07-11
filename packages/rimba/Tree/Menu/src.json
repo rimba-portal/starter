@@ -1,0 +1,47 @@
+{
+  "menus": [
+    { "category": "Source", "group": "Organization", "name": "Companies", "description": "List of companies", "slug": "source-organization-companies", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Organization", "name": "Business Units", "description": "Manage business units", "slug": "source-organization-business-units", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Organization", "name": "Departments", "description": "Manage departments", "slug": "source-organization-departments", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Organization", "name": "Teams", "description": "Manage teams", "slug": "source-organization-teams", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "Organization", "name": "Positions", "description": "Manage positions", "slug": "source-organization-positions", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Source", "group": "Organization", "name": "Organization Chart", "description": "View organization chart", "slug": "source-organization-chart", "enabled": true, "visible": true, "sort": 6 },
+
+    { "category": "Source", "group": "People", "name": "Staff", "description": "List of staff members", "slug": "source-people-staff", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "People", "name": "Contractors", "description": "Manage contractors", "slug": "source-people-contractors", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "People", "name": "Vendors", "description": "Manage vendors", "slug": "source-people-vendors", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "People", "name": "Customers", "description": "List of customers", "slug": "source-people-customers", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "People", "name": "Contacts", "description": "Manage contacts", "slug": "source-people-contacts", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Source", "group": "Products & Services", "name": "Products", "description": "List of products", "slug": "source-products-products", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Products & Services", "name": "Services", "description": "List of services", "slug": "source-products-services", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Products & Services", "name": "Product Families", "description": "Manage product families", "slug": "source-products-families", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Products & Services", "name": "Catalogues", "description": "Product and service catalogues", "slug": "source-products-catalogues", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Source", "group": "Resources", "name": "Assets", "description": "Manage assets", "slug": "source-resources-assets", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Resources", "name": "Equipment", "description": "Manage equipment", "slug": "source-resources-equipment", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Resources", "name": "Materials", "description": "Manage materials", "slug": "source-resources-materials", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Resources", "name": "Tools", "description": "Manage tools", "slug": "source-resources-tools", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "Resources", "name": "Vehicles", "description": "Manage vehicles", "slug": "source-resources-vehicles", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Source", "group": "Resources", "name": "Facilities", "description": "Manage facilities", "slug": "source-resources-facilities", "enabled": true, "visible": true, "sort": 6 },
+
+    { "category": "Source", "group": "Locations", "name": "Sites", "description": "List of sites", "slug": "source-locations-sites", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Locations", "name": "Buildings", "description": "Manage buildings", "slug": "source-locations-buildings", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Locations", "name": "Rooms", "description": "Manage rooms", "slug": "source-locations-rooms", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Locations", "name": "Production Lines", "description": "Manage production lines", "slug": "source-locations-production-lines", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "Locations", "name": "Warehouses", "description": "Manage warehouses", "slug": "source-locations-warehouses", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Source", "group": "Locations", "name": "Storage Areas", "description": "Manage storage areas", "slug": "source-locations-storage-areas", "enabled": true, "visible": true, "sort": 6 },
+
+    { "category": "Source", "group": "Business", "name": "Processes", "description": "Business processes", "slug": "source-business-processes", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Business", "name": "Workflows", "description": "Business workflows", "slug": "source-business-workflows", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Business", "name": "Projects", "description": "Manage projects", "slug": "source-business-projects", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Business", "name": "Agreements", "description": "Business agreements", "slug": "source-business-agreements", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "Business", "name": "Contracts", "description": "Business contracts", "slug": "source-business-contracts", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Source", "group": "Community", "name": "Employee Clubs", "description": "Employee clubs and groups", "slug": "source-community-employee-clubs", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Source", "group": "Community", "name": "Communities of Practice", "description": "Professional communities of practice", "slug": "source-community-communities-of-practice", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Source", "group": "Community", "name": "Interest Groups", "description": "Special interest groups", "slug": "source-community-interest-groups", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Source", "group": "Community", "name": "Forums", "description": "Community forums", "slug": "source-community-forums", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Source", "group": "Community", "name": "Marketplace", "description": "Community marketplace", "slug": "source-community-marketplace", "enabled": true, "visible": true, "sort": 5 }
+  ]
+}
