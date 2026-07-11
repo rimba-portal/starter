@@ -1,0 +1,27 @@
+{
+  "menus": [
+    { "category": "People", "group": "Workforce Planning", "name": "Organization Structure", "description": "Define organization structure", "slug": "people-workforce-organization-structure", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "People", "group": "Workforce Planning", "name": "Workforce Planning", "description": "Plan workforce needs", "slug": "people-workforce-workforce-planning", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "People", "group": "Workforce Planning", "name": "Job Management", "description": "Manage job roles", "slug": "people-workforce-job-management", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "People", "group": "Talent Acquisition", "name": "Recruitment", "description": "Recruit new employees", "slug": "people-talent-recruitment", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "People", "group": "Talent Acquisition", "name": "Candidate Management", "description": "Manage candidates", "slug": "people-talent-candidate-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "People", "group": "Talent Acquisition", "name": "Onboarding", "description": "Onboard new employees", "slug": "people-talent-onboarding", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "People", "group": "Employee Management", "name": "Employee Profile", "description": "Manage employee profiles", "slug": "people-employee-profile", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "People", "group": "Employee Management", "name": "Employee Lifecycle", "description": "Track employee lifecycle", "slug": "people-employee-lifecycle", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "People", "group": "Employee Management", "name": "Attendance", "description": "Track attendance", "slug": "people-employee-attendance", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "People", "group": "Employee Management", "name": "Leave", "description": "Manage employee leave", "slug": "people-employee-leave", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "People", "group": "Employee Management", "name": "Employee Services", "description": "Provide employee services", "slug": "people-employee-services", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "People", "group": "Performance & Development", "name": "Performance Review", "description": "Conduct performance reviews", "slug": "people-performance-review", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "People", "group": "Performance & Development", "name": "Career Development", "description": "Support career development", "slug": "people-career-development", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "People", "group": "Performance & Development", "name": "Competency Management", "description": "Manage competencies", "slug": "people-competency-management", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "People", "group": "Performance & Development", "name": "Succession Planning", "description": "Plan succession", "slug": "people-succession-planning", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "People", "group": "Learning Management", "name": "Training", "description": "Provide training programs", "slug": "people-learning-training", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "People", "group": "Learning Management", "name": "Certification", "description": "Manage certifications", "slug": "people-learning-certification", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "People", "group": "Learning Management", "name": "Compliance Training", "description": "Conduct compliance training", "slug": "people-learning-compliance-training", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "People", "group": "Learning Management", "name": "Skills Management", "description": "Manage skills", "slug": "people-learning-skills-management", "enabled": true, "visible": true, "sort": 4 }
+  ]
+}
