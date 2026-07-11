@@ -1,0 +1,40 @@
+{
+  "menus": [
+    { "category": "Knowledge", "group": "Document Management", "name": "Policies", "description": "Manage organizational policies", "slug": "knowledge-document-policies", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "Document Management", "name": "SOPs", "description": "Standard operating procedures", "slug": "knowledge-document-sops", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "Document Management", "name": "Work Instructions", "description": "Detailed work instructions", "slug": "knowledge-document-work-instructions", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "Document Management", "name": "Manuals", "description": "User and process manuals", "slug": "knowledge-document-manuals", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Knowledge", "group": "Document Management", "name": "Forms", "description": "Organizational forms", "slug": "knowledge-document-forms", "enabled": true, "visible": true, "sort": 5 },
+    { "category": "Knowledge", "group": "Document Management", "name": "Templates", "description": "Document templates", "slug": "knowledge-document-templates", "enabled": true, "visible": true, "sort": 6 },
+    { "category": "Knowledge", "group": "Document Management", "name": "Records", "description": "Maintain records", "slug": "knowledge-document-records", "enabled": true, "visible": true, "sort": 7 },
+
+    { "category": "Knowledge", "group": "Knowledge Base", "name": "FAQs", "description": "Frequently asked questions", "slug": "knowledge-base-faqs", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "Knowledge Base", "name": "Best Practices", "description": "Document best practices", "slug": "knowledge-base-best-practices", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "Knowledge Base", "name": "Lessons Learned", "description": "Capture lessons learned", "slug": "knowledge-base-lessons-learned", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "Knowledge Base", "name": "Troubleshooting", "description": "Troubleshooting guides", "slug": "knowledge-base-troubleshooting", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Knowledge", "group": "Knowledge Base", "name": "Technical Notes", "description": "Technical documentation notes", "slug": "knowledge-base-technical-notes", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Knowledge", "group": "Corporate Communication", "name": "Announcements", "description": "Corporate announcements", "slug": "knowledge-communication-announcements", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "Corporate Communication", "name": "News", "description": "Company news", "slug": "knowledge-communication-news", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "Corporate Communication", "name": "Circulars", "description": "Internal circulars", "slug": "knowledge-communication-circulars", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "Corporate Communication", "name": "Events", "description": "Corporate events", "slug": "knowledge-communication-events", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Knowledge", "group": "Corporate Communication", "name": "Town Hall", "description": "Town hall meetings", "slug": "knowledge-communication-town-hall", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Knowledge", "group": "Standards", "name": "ISO Standards", "description": "ISO compliance standards", "slug": "knowledge-standards-iso", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "Standards", "name": "Engineering Standards", "description": "Engineering standards", "slug": "knowledge-standards-engineering", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "Standards", "name": "Design Standards", "description": "Design standards", "slug": "knowledge-standards-design", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "Standards", "name": "Coding Standards", "description": "Coding standards", "slug": "knowledge-standards-coding", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Knowledge", "group": "Standards", "name": "Operating Standards", "description": "Operating standards", "slug": "knowledge-standards-operating", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Knowledge", "group": "Reports", "name": "Dashboards", "description": "Business dashboards", "slug": "knowledge-reports-dashboards", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "Reports", "name": "KPIs", "description": "Key performance indicators", "slug": "knowledge-reports-kpis", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "Reports", "name": "Operational Reports", "description": "Operational reporting", "slug": "knowledge-reports-operational", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "Reports", "name": "Financial Reports", "description": "Financial reporting", "slug": "knowledge-reports-financial", "enabled": true, "visible": true, "sort": 4 },
+    { "category": "Knowledge", "group": "Reports", "name": "Management Reports", "description": "Management reporting", "slug": "knowledge-reports-management", "enabled": true, "visible": true, "sort": 5 },
+
+    { "category": "Knowledge", "group": "AI Knowledge", "name": "AI Assistant", "description": "AI assistant tools", "slug": "knowledge-ai-assistant", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Knowledge", "group": "AI Knowledge", "name": "Semantic Search", "description": "Semantic search capabilities", "slug": "knowledge-ai-semantic-search", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Knowledge", "group": "AI Knowledge", "name": "Knowledge Chat", "description": "Interactive knowledge chat", "slug": "knowledge-ai-chat", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Knowledge", "group": "AI Knowledge", "name": "Recommendations", "description": "AI-powered recommendations", "slug": "knowledge-ai-recommendations", "enabled": true, "visible": true, "sort": 4 }
+  ]
+}
