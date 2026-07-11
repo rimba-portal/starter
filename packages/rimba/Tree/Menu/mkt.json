@@ -1,0 +1,26 @@
+{
+  "menus": [
+    { "category": "Market", "group": "Customer Management", "name": "Customer Information", "description": "Manage customer data", "slug": "market-customer-information", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Market", "group": "Customer Management", "name": "Customer Relationship", "description": "Manage customer relationships", "slug": "market-customer-relationship", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Market", "group": "Customer Management", "name": "Customer Requests", "description": "Handle customer requests", "slug": "market-customer-requests", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Market", "group": "Customer Management", "name": "Customer Feedback", "description": "Collect customer feedback", "slug": "market-customer-feedback", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Market", "group": "Product Management", "name": "Product Portfolio", "description": "Manage product portfolio", "slug": "market-product-portfolio", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Market", "group": "Product Management", "name": "Product Lifecycle", "description": "Track product lifecycle", "slug": "market-product-lifecycle", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Market", "group": "Product Management", "name": "Product Catalogue", "description": "Maintain product catalogue", "slug": "market-product-catalogue", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Market", "group": "Product Management", "name": "Product Documentation", "description": "Manage product documentation", "slug": "market-product-documentation", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Market", "group": "Service Management", "name": "Service Catalogue", "description": "Maintain service catalogue", "slug": "market-service-catalogue", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Market", "group": "Service Management", "name": "Service Requests", "description": "Handle service requests", "slug": "market-service-requests", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Market", "group": "Service Management", "name": "Service Delivery", "description": "Deliver services", "slug": "market-service-delivery", "enabled": true, "visible": true, "sort": 3 },
+    { "category": "Market", "group": "Service Management", "name": "Service Performance", "description": "Monitor service performance", "slug": "market-service-performance", "enabled": true, "visible": true, "sort": 4 },
+
+    { "category": "Market", "group": "Sales Management", "name": "Sales Planning", "description": "Plan sales activities", "slug": "market-sales-planning", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Market", "group": "Sales Management", "name": "Opportunity Management", "description": "Manage sales opportunities", "slug": "market-sales-opportunity-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Market", "group": "Sales Management", "name": "Sales Reporting", "description": "Generate sales reports", "slug": "market-sales-reporting", "enabled": true, "visible": true, "sort": 3 },
+
+    { "category": "Market", "group": "Partner Management", "name": "Supplier Relationship", "description": "Manage supplier relationships", "slug": "market-partner-supplier-relationship", "enabled": true, "visible": true, "sort": 1 },
+    { "category": "Market", "group": "Partner Management", "name": "Vendor Management", "description": "Manage vendors", "slug": "market-partner-vendor-management", "enabled": true, "visible": true, "sort": 2 },
+    { "category": "Market", "group": "Partner Management", "name": "External Collaboration", "description": "Collaborate with external partners", "slug": "market-partner-external-collaboration", "enabled": true, "visible": true, "sort": 3 }
+  ]
+}
