@@ -18,15 +18,13 @@ return new class extends Migration
             // Display
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('description')->nullable();
 
             $table->string('icon')->nullable();
             $table->string('color')->nullable();
 
             // Navigation hierarchy
-            $table->foreignId('parent_id')
-                ->nullable()
-                ->constrained('menus')
-                ->nullOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('menus')->nullOnDelete();
 
             // Access
             $table->string('permission')->nullable();
@@ -34,8 +32,7 @@ return new class extends Migration
 
             // Behaviour
             $table->boolean('is_visible')->default(true);
-            $table->boolean('is_enabled')->default(true);
-            $table->boolean('open_in_new_tab')->default(false);
+            $table->boolean('is_active')->default(true);
 
             // Ordering
             $table->unsignedInteger('sort')->default(0);

@@ -1,0 +1,30 @@
+# PHP Files Code Dump
+*Generated on: 2026-07-12 12:50:43*
+*Target Folder: `\starter\packages\rimba\Tree\Link`*
+
+---
+
+## File: `src\LinkServiceProvider.php`
+**Absolute Path:** `\starter\packages\rimba\Tree\Link\src\LinkServiceProvider.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Tree\Link;
+
+use App\Services\BitesServiceProvider;
+
+class LinkServiceProvider extends BitesServiceProvider
+{
+    protected function bootPackage(): void
+    {
+        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    }
+}
+
+```
+
+---
+

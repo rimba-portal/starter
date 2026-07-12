@@ -11,13 +11,19 @@ use Illuminate\Database\Eloquent\Model;
 
 #[Fillable([
     'category',
-    'title',
-    'icon',
-    'icon_type',
+    'group',
+    'name',
+    'slug',
     'description',
-    'internal_link',
-    // 'external_link',
+    'icon',
+    'color',
+    'parent_id',
+    'permission',
+    'panel',
+
+    'is_visible',
     'is_active',
+    'sort',
 ])]
 class Menu extends Model
 {

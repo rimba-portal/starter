@@ -27,23 +27,17 @@ class MenuResolver
     {
         return match (ContentType::from($version->content_type)) {
 
-            ContentType::Route =>
-                redirect()->route($version->target),
+            ContentType::Route => redirect()->route($version->target),
 
-            ContentType::Url =>
-                redirect()->away($version->target),
+            ContentType::Url => redirect()->away($version->target),
 
-            ContentType::FilamentPage =>
-                redirect()->route($version->target),
+            ContentType::FilamentPage => redirect()->route($version->target),
 
-            ContentType::FilamentResource =>
-                redirect()->route($version->target),
+            ContentType::FilamentResource => redirect()->route($version->target),
 
-            ContentType::Dashboard =>
-                redirect()->route($version->target),
+            ContentType::Dashboard => redirect()->route($version->target),
 
-            ContentType::Report =>
-                redirect()->route($version->target),
+            ContentType::Report => redirect()->route($version->target),
 
             ContentType::Document,
             ContentType::Folder,
@@ -51,8 +45,7 @@ class MenuResolver
             ContentType::File,
             ContentType::Api,
             ContentType::Video,
-            ContentType::Html =>
-                $version->target,
+            ContentType::Html => $version->target,
 
         };
     }
