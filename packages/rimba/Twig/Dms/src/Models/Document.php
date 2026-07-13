@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Dms\Models;
 
-use App\Trees\FloorPlan\Models\Location;
 use App\Trees\Organization\Models\OrgTeam;
 use App\Trees\Organization\Models\OrgUnit;
+use Bites\FloorPlan\Models\Location;
 use Bites\Versioning\Traits\HasVersions;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

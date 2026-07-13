@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 15:44:15*
+*Generated on: 2026-07-13 16:26:53*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam`*
 
 ---
@@ -38,8 +38,8 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Eam\Models;
 
-use App\Trees\FloorPlan\Models\Location;
 use App\Trees\Organization\Models\OrgTeam;
+use Bites\FloorPlan\Models\Location;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Eam\Models;
 
-use App\Trees\FloorPlan\Models\Location;
 use App\Trees\Organization\Models\OrgTeam;
+use Bites\FloorPlan\Models\Location;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

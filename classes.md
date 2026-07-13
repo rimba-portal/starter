@@ -1,5 +1,5 @@
 # Class Directory Blueprint
-*Generated automatically on 2026-07-13 15:47:22*
+*Generated automatically on 2026-07-13 16:27:04*
 
 ---
 
@@ -2461,7 +2461,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource.php` (Line 17)
 - **Extends:** `Filament\Resources\Resource`
@@ -2510,7 +2510,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\CreateAttributeDefinition`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\CreateAttributeDefinition`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\CreateAttributeDefinition.php` (Line 10)
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -2600,7 +2600,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\EditAttributeDefinition`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\EditAttributeDefinition`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\EditAttributeDefinition.php` (Line 11)
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -2689,7 +2689,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListAttributeDefinitions`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListAttributeDefinitions`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListAttributeDefinitions.php` (Line 13)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -2796,7 +2796,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListLocationAttributeDefinitions`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListLocationAttributeDefinitions`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListLocationAttributeDefinitions.php` (Line 13)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -2904,7 +2904,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListPersonAttributeDefinitions`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListPersonAttributeDefinitions`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListPersonAttributeDefinitions.php` (Line 13)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -3012,7 +3012,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListThingAttributeDefinitions`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListThingAttributeDefinitions`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListThingAttributeDefinitions.php` (Line 13)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -3120,7 +3120,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\RelationManagers\AttributeOptionsRelationManager`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\RelationManagers\AttributeOptionsRelationManager`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\RelationManagers\AttributeOptionsRelationManager.php` (Line 16)
 - **Extends:** `Filament\Resources\RelationManagers\RelationManager` ➔ `Livewire\Component`
@@ -3214,7 +3214,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm.php` (Line 12)
 
@@ -3225,7 +3225,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable.php` (Line 16)
 
@@ -3236,7 +3236,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\AttributeOptionResource`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\AttributeOptionResource`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\AttributeOptionResource.php` (Line 20)
 - **Extends:** `Filament\Resources\Resource`
@@ -3285,7 +3285,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption.php` (Line 10)
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -3375,7 +3375,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\Pages\EditAttributeOption`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\EditAttributeOption`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\EditAttributeOption.php` (Line 11)
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -3464,7 +3464,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\Pages\ListAttributeOptions`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\ListAttributeOptions`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\ListAttributeOptions.php` (Line 11)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -3571,7 +3571,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\Schemas\AttributeOptionForm`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Schemas\AttributeOptionForm`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Schemas\AttributeOptionForm.php` (Line 11)
 
@@ -3582,7 +3582,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\AttributeOptions\Tables\AttributeOptionsTable`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Tables\AttributeOptionsTable`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Tables\AttributeOptionsTable.php` (Line 14)
 
@@ -4046,7 +4046,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource.php` (Line 22)
 - **Extends:** `Filament\Resources\Resource`
@@ -4093,7 +4093,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute.php` (Line 10)
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -4183,7 +4183,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Pages\EditLocationAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\EditLocationAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\EditLocationAttribute.php` (Line 13)
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -4272,7 +4272,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Pages\ListLocationAttributes`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\ListLocationAttributes`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\ListLocationAttributes.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -4379,7 +4379,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Pages\ViewLocationAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\ViewLocationAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\ViewLocationAttribute.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -4464,7 +4464,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeForm`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeForm`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeForm.php` (Line 11)
 
@@ -4475,7 +4475,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeInfolist`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeInfolist`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeInfolist.php` (Line 10)
 
@@ -4486,7 +4486,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\LocationAttributes\Tables\LocationAttributesTable`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Tables\LocationAttributesTable`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Tables\LocationAttributesTable.php` (Line 14)
 
@@ -6560,7 +6560,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\Pages\CreatePersonAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\CreatePersonAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\CreatePersonAttribute.php` (Line 10)
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -6650,7 +6650,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\Pages\EditPersonAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\EditPersonAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\EditPersonAttribute.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -6739,7 +6739,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\Pages\ListPersonAttributes`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\ListPersonAttributes`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\ListPersonAttributes.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -6846,7 +6846,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource.php` (Line 20)
 - **Extends:** `Filament\Resources\Resource`
@@ -6893,7 +6893,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\Schemas\PersonAttributeForm`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Schemas\PersonAttributeForm`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Schemas\PersonAttributeForm.php` (Line 11)
 
@@ -6904,7 +6904,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\PersonAttributes\Tables\PersonAttributesTable`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Tables\PersonAttributesTable`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Tables\PersonAttributesTable.php` (Line 13)
 
@@ -7817,7 +7817,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\Pages\CreateThingAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\CreateThingAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\CreateThingAttribute.php` (Line 10)
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -7907,7 +7907,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\Pages\EditThingAttribute`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\EditThingAttribute`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\EditThingAttribute.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -7996,7 +7996,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\Pages\ListThingAttributes`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\ListThingAttributes`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\ListThingAttributes.php` (Line 12)
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
@@ -8103,7 +8103,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\Schemas\ThingAttributeForm`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Schemas\ThingAttributeForm`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Schemas\ThingAttributeForm.php` (Line 11)
 
@@ -8114,7 +8114,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\Tables\ThingAttributesTable`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Tables\ThingAttributesTable`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Tables\ThingAttributesTable.php` (Line 13)
 
@@ -8125,7 +8125,7 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource`
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource`
 
 - **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource.php` (Line 20)
 - **Extends:** `Filament\Resources\Resource`
@@ -9429,304 +9429,6 @@
 | `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
 | `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
 | `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
-
----
-
-## 📦 Class: `App\Http\UI\Staff\Pages\Location`
-
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Pages\Location.php` (Line 25)
-- **Extends:** `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
-- **Implements:** `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`, `Filament\Forms\Contracts\HasForms`, `Filament\Tables\Contracts\HasTable`
-- **Uses Traits:** `Filament\Actions\Concerns\InteractsWithActions`, `Filament\Forms\Concerns\InteractsWithForms`, `Filament\Tables\Concerns\InteractsWithTable`
-
-### ⚙️ Members
-| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
-| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public` | `locationInfolist()` | `Filament\Schemas\Schema` |
-| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public` | `table()` | `Filament\Tables\Table` |
-| `protected static` | `string` | `$navigationLabel` | ┃ | `public` | `getDefaultTestingSchemaName()` | `string` |
-| `protected static` | `int` | `$navigationSort` | ┃ | `protected` | `onValidationError()` | `void` |
-| `protected static` | `string` | `$title` | ┃ | `public` | `forceRender()` | `void` |
-| `protected` | `string` | `$subheading` | ┃ | `public` | `__get()` | `mixed` |
-| `protected` | `string` | `$view` | ┃ | `public` | `getRules()` | `array` |
-| `public` | `string` | `$scope` | ┃ | `protected` | `getValidationAttributes()` | `array` |
-| `protected static` | `string` | `$layout` | ┃ | `public` | `validate()` | `array` |
-| `protected static` | `string` | `$cluster` | ┃ | `public` | `validateOnly()` | *void/mixed* |
-| `protected static` | `bool` | `$isDiscovered` | ┃ | `protected` | `prepareForValidation()` | `array` |
-| `protected static` | `string` | `$configurationClass` | ┃ | `public` | `bootedInteractsWithActions()` | `void` |
-| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ | `public` | `mountAction()` | `mixed` |
-| `protected static` | `string` | `$navigationParentItem` | ┃ | `public` | `callMountedAction()` | `mixed` |
-| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ | `protected` | `partiallyRenderActionParentSchema()` | `void` |
-| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ | `protected` | `afterActionCalled()` | `void` |
-| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ | `public` | `replaceMountedAction()` | `void` |
-| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ | `public` | `cacheAction()` | `Filament\Actions\Action` |
-| `protected` | `string` | `$heading` | ┃ | `protected` | `mergeCachedActions()` | `void` |
-| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ | `public` | `mountedActionShouldOpenModal()` | `bool` |
-| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ | `public` | `mountedActionHasSchema()` | `bool` |
-| `protected` | `array` | `$extraBodyAttributes` | ┃ | `public` | `mountedActionHasForm()` | `bool` |
-| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ | `public` | `getMountedActions()` | `array` |
-| `public static` | `bool` | `$formActionsAreSticky` | ┃ | `public` | `cacheTraitActions()` | `void` |
-| `public static` | `bool` | `$hasInlineLabels` | ┃ | `public` | `getMountedAction()` | `Filament\Actions\Action` |
-| `protected` | *mixed* | `$__id` | ┃ | `protected` | `cacheMountedActions()` | `array` |
-| `protected` | *mixed* | `$__name` | ┃ | `protected` | `resolveActions()` | `array` |
-| `protected static` | *mixed* | `$macros` | ┃ | `protected` | `resolveAction()` | `Filament\Actions\Action` |
-| `protected` | *mixed* | `$listeners` | ┃ | `protected` | `resolveTableAction()` | `Filament\Actions\Action` |
-| `protected` | *mixed* | `$islands` | ┃ | `protected` | `resolveSchemaComponentAction()` | `Filament\Actions\Action` |
-| `protected` | *mixed* | `$islandsHaveMounted` | ┃ | `public` | `getAction()` | `Filament\Actions\Action` |
-| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ | `public` | `getMountedActionSchemaName()` | `string` |
-| `protected` | *mixed* | `$renderedIslandFragments` | ┃ | `protected` | `getMountedActionSchema()` | `Filament\Schemas\Schema` |
-| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ | `protected` | `getMountedActionForm()` | `Filament\Schemas\Schema` |
-| `protected` | *mixed* | `$withValidatorCallback` | ┃ | `protected` | `getMountedActionSchemaModel()` | `Illuminate\Database\Eloquent\Model / string / null` |
-| `protected` | *mixed* | `$rulesFromOutside` | ┃ | `public` | `unmountAction()` | `void` |
-| `protected` | *mixed* | `$messagesFromOutside` | ┃ | `protected` | `syncActionModals()` | `void` |
-| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ | `public` | `getOriginallyMountedActionIndex()` | `int` |
-| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ | `public` | `mergeMountedActionArguments()` | `void` |
-| `protected` | `array` | `$slots` | ┃ | `public` | `getDefaultActionRecord()` | `Illuminate\Database\Eloquent\Model` |
-| `protected` | `array` | `$htmlAttributes` | ┃ | `public` | `getDefaultActionRecordTitle()` | `string` |
-| `public` | `array` | `$mountedActions` | ┃ | `public` | `getDefaultActionModel()` | `string` |
-| `protected` | `int` | `$originallyMountedActionIndex` | ┃ | `public` | `getDefaultActionModelLabel()` | `string` |
-| `public` | *mixed* | `$defaultAction` | ┃ | `public` | `getDefaultActionUrl()` | `string` |
-| `public` | *mixed* | `$defaultActionArguments` | ┃ | `public` | `getDefaultActionSuccessRedirectUrl()` | `string` |
-| `public` | *mixed* | `$defaultActionContext` | ┃ | `public` | `getDefaultActionFailureRedirectUrl()` | `string` |
-| `public` | *mixed* | `$defaultTableAction` | ┃ | `public` | `getDefaultActionRelationship()` | `Illuminate\Database\Eloquent\Relations\Relation` |
-| `public` | *mixed* | `$defaultTableActionRecord` | ┃ | `public` | `getDefaultActionSchemaResolver()` | `Closure` |
-| `public` | *mixed* | `$defaultTableActionArguments` | ┃ | `public` | `getDefaultActionAuthorizationResponse()` | `Illuminate\Auth\Access\Response` |
-| `protected` | `array` | `$cachedActions` | ┃ | `public` | `getDefaultActionIndividualRecordAuthorizationResponseResolver()` | `Closure` |
-| `protected` | `array` | `$cachedMountedActions` | ┃ | `protected` | `clearRateLimiter()` | *void/mixed* |
-| `protected` | `bool` | `$hasActionsModalRendered` | ┃ | `protected` | `getRateLimitKey()` | *void/mixed* |
-| `public` | `array` | `$componentFileAttachments` | ┃ | `protected` | `hitRateLimiter()` | *void/mixed* |
-| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ | `protected` | `rateLimit()` | *void/mixed* |
-| `protected` | `array` | `$oldSchemaState` | ┃ | `public` | `isCachingSchemas()` | `bool` |
-| `public` | `array` | `$discoveredSchemaNames` | ┃ | `public` | `callSchemaComponentMethod()` | `mixed` |
-| `protected` | `array` | `$cachedSchemas` | ┃ | `public` | `partiallyRenderSchemaComponent()` | `void` |
-| `protected` | `bool` | `$isCachingSchemas` | ┃ | `public` | `getFilamentTranslatableContentDriver()` | `string` |
-| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ | `public` | `makeFilamentTranslatableContentDriver()` | `Filament\Support\Contracts\TranslatableContentDriver` |
-| `protected` | `bool` | `$hasErrorNotifications` | ┃ | `public` | `getActiveSchemaLocale()` | `string` |
-| `protected` | `array` | `$errorNotifications` | ┃ | `public` | `getOldSchemaState()` | `mixed` |
-| `protected static` | `string` | `$slug` | ┃ | `public` | `updatingInteractsWithSchemas()` | `void` |
-| `protected static` | `array / string` | `$routeMiddleware` | ┃ | `public` | `updatedInteractsWithSchemas()` | `void` |
-| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ | `public` | `disableSchemaStateUpdateHooksForTesting()` | `void` |
-| `protected` | `array` | `$cachedSubNavigation` | ┃ | `public` | `enableSchemaStateUpdateHooksForTesting()` | `void` |
-| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ | `public` | `getSchemaComponent()` | `Filament\Schemas\Components\Component / Filament\Actions\Action / Filament\Actions\ActionGroup / null` |
-| `protected` | `array` | `$cachedHeaderActions` | ┃ | `protected` | `cacheSchema()` | `Filament\Schemas\Schema` |
-| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ | `protected` | `makeSchema()` | `Filament\Schemas\Schema` |
-| `protected` | `bool` | `$hasCachedForms` | ┃ | `protected` | `hasCachedSchema()` | `bool` |
-| `protected` | `Filament\Tables\Table` | `$table` | ┃ | `public` | `getSchema()` | `Filament\Schemas\Schema` |
-| `protected` | `bool` | `$hasTableModalRendered` | ┃ | `public` | `getCachedSchemas()` | `array` |
-| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ | `public` | `fillFormDataForTesting()` | `void` |
-| `public` | `bool` | `$isTableLoaded` | ┃ | `protected` | `unsetMissingNumericArrayKeys()` | `void` |
-| `public` | `string` | `$tableGrouping` | ┃ | `public` | `currentlyValidatingSchema()` | `void` |
-| `public` | *mixed* | `$tableRecordsPerPage` | ┃ | `public` | `isFileUploadForSchemaComponent()` | `bool` |
-| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ | `protected` | `getSchemaComponentForFileUpload()` | `Filament\Schemas\Components\Component` |
-| `public` | `bool` | `$isTableReordering` | ┃ | `public` | `_startUpload()` | *void/mixed* |
-| `public` | `array` | `$tableColumnSearches` | ┃ | `public` | `_finishUpload()` | *void/mixed* |
-| `public` | *mixed* | `$tableSearch` | ┃ | `public` | `_uploadErrored()` | *void/mixed* |
-| `public` | `string` | `$tableSort` | ┃ | `public` | `_removeUpload()` | *void/mixed* |
-| `public` | `array` | `$selectedTableRecords` | ┃ | `protected` | `cleanupOldUploads()` | *void/mixed* |
-| `public` | `array` | `$deselectedTableRecords` | ┃ | `protected` | `cacheForm()` | `Filament\Schemas\Schema` |
-| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ | `protected` | `cacheForms()` | `array` |
-| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ | `public` | `getTraitForms()` | `array` |
-| `public` | `array` | `$tableColumns` | ┃ | `protected` | `hasCachedForm()` | `bool` |
-| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ | `public` | `getForm()` | `Filament\Schemas\Schema` |
-| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ | `public` | `getCachedForms()` | `array` |
-| `public` | `array` | `$tableFilters` | ┃ | `protected` | `getForms()` | `array` |
-| `public` | `array` | `$tableDeferredFilters` | ┃ | `public` | `form()` | `Filament\Schemas\Schema` |
-| `protected` | `bool` | `$allowsDuplicates` | ┃ | `protected` | `getFormModel()` | `Illuminate\Database\Eloquent\Model / string / null` |
-| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ | `protected` | `getFormSchema()` | `array` |
-| `public` | *mixed* | `$paginators` | ┃ | `protected` | `getFormContext()` | `string` |
-|   |   |   | ┃ | `protected` | `getFormStatePath()` | `string` |
-|   |   |   | ┃ | `public` | `isCachingForms()` | `bool` |
-|   |   |   | ┃ | `public` | `getActiveFormsLocale()` | `string` |
-|   |   |   | ┃ | `public` | `getOldFormState()` | `mixed` |
-|   |   |   | ┃ | `public` | `callMountedFormComponentAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `mountFormComponentAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `mountedFormComponentActionShouldOpenModal()` | `bool` |
-|   |   |   | ┃ | `public` | `mountedFormComponentActionHasForm()` | `bool` |
-|   |   |   | ┃ | `public` | `getMountedFormComponentAction()` | `Filament\Actions\Action` |
-|   |   |   | ┃ | `public` | `unmountFormComponentAction()` | `void` |
-|   |   |   | ┃ | `public` | `getBaseCachedSchemas()` | `array` |
-|   |   |   | ┃ | `public` | `bootedInteractsWithTable()` | `void` |
-|   |   |   | ┃ | `public` | `mountInteractsWithTable()` | `void` |
-|   |   |   | ┃ | `public` | `getTable()` | `Filament\Tables\Table` |
-|   |   |   | ┃ | `protected` | `makeTable()` | `Filament\Tables\Table` |
-|   |   |   | ┃ | `protected` | `getTableQueryStringIdentifier()` | `string` |
-|   |   |   | ┃ | `public` | `getIdentifiedTableQueryStringPropertyNameFor()` | `string` |
-|   |   |   | ┃ | `public` | `getActiveTableLocale()` | `string` |
-|   |   |   | ┃ | `public` | `resetPage()` | `void` |
-|   |   |   | ┃ | `public` | `setPage()` | `void` |
-|   |   |   | ┃ | `protected` | `getTableQuery()` | `Illuminate\Database\Eloquent\Builder / Illuminate\Database\Eloquent\Relations\Relation / null` |
-|   |   |   | ┃ | `protected` | `normalizeTableFilterValuesFromQueryString()` | `void` |
-|   |   |   | ┃ | `public` | `resetTable()` | `void` |
-|   |   |   | ┃ | `protected` | `isTableStriped()` | `bool` |
-|   |   |   | ┃ | `public` | `isTableLoadingDeferred()` | `bool` |
-|   |   |   | ┃ | `public` | `loadTable()` | `void` |
-|   |   |   | ┃ | `public` | `isTableLoaded()` | `bool` |
-|   |   |   | ┃ | `public` | `getTableGrouping()` | `Filament\Tables\Grouping\Group` |
-|   |   |   | ┃ | `public` | `updatedTableGroupColumn()` | `void` |
-|   |   |   | ┃ | `public` | `getTableGroupingDirection()` | `string` |
-|   |   |   | ┃ | `protected` | `applyGroupingToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `updatedTableRecordsPerPage()` | `void` |
-|   |   |   | ┃ | `protected` | `paginateTableQuery()` | `Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
-|   |   |   | ┃ | `public` | `getTableRecordsPerPage()` | `string / int / null` |
-|   |   |   | ┃ | `public` | `getTablePage()` | `string / int` |
-|   |   |   | ┃ | `public` | `getDefaultTableRecordsPerPageSelectOption()` | `string / int` |
-|   |   |   | ┃ | `public` | `getTablePaginationPageName()` | `string` |
-|   |   |   | ┃ | `public` | `getTablePerPageSessionKey()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableRecordsPerPageSelectOptions()` | `array` |
-|   |   |   | ┃ | `protected` | `isTablePaginationEnabled()` | `bool` |
-|   |   |   | ┃ | `protected` | `getTablePollingInterval()` | `string` |
-|   |   |   | ┃ | `public` | `reorderTable()` | `void` |
-|   |   |   | ┃ | `public` | `toggleTableReordering()` | `void` |
-|   |   |   | ┃ | `public` | `isTableReordering()` | `bool` |
-|   |   |   | ┃ | `protected` | `isTablePaginationEnabledWhileReordering()` | `bool` |
-|   |   |   | ┃ | `protected` | `getTableReorderColumn()` | `string` |
-|   |   |   | ┃ | `public` | `updatedTableSearch()` | `void` |
-|   |   |   | ┃ | `public` | `updatedTableColumnSearches()` | `void` |
-|   |   |   | ┃ | `protected` | `applySearchToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `protected` | `applyColumnSearchesToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `protected` | `extractTableSearchWords()` | `array` |
-|   |   |   | ┃ | `protected` | `applyGlobalSearchToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getTableSearch()` | `string` |
-|   |   |   | ┃ | `public` | `hasTableSearch()` | `bool` |
-|   |   |   | ┃ | `public` | `resetTableSearch()` | `void` |
-|   |   |   | ┃ | `public` | `resetTableColumnSearch()` | `void` |
-|   |   |   | ┃ | `public` | `resetTableColumnSearches()` | `void` |
-|   |   |   | ┃ | `protected` | `getReservedTableColumnSearchKeys()` | `array` |
-|   |   |   | ┃ | `protected` | `fillReservedTableColumnSearchKeys()` | `void` |
-|   |   |   | ┃ | `public` | `getTableSearchIndicator()` | `Filament\Tables\Filters\Indicator` |
-|   |   |   | ┃ | `public` | `getTableColumnSearchIndicators()` | `array` |
-|   |   |   | ┃ | `protected` | `castTableColumnSearches()` | `array` |
-|   |   |   | ┃ | `public` | `getTableColumnSearches()` | `array` |
-|   |   |   | ┃ | `public` | `getTableSearchSessionKey()` | `string` |
-|   |   |   | ┃ | `public` | `getTableColumnSearchesSessionKey()` | `string` |
-|   |   |   | ┃ | `protected` | `shouldPersistTableSearchInSession()` | `bool` |
-|   |   |   | ┃ | `protected` | `shouldPersistTableColumnSearchInSession()` | `bool` |
-|   |   |   | ┃ | `public` | `sortTable()` | `void` |
-|   |   |   | ┃ | `public` | `getTableSortColumn()` | `string` |
-|   |   |   | ┃ | `public` | `getTableSortDirection()` | `string` |
-|   |   |   | ┃ | `public` | `updatedTableSort()` | `void` |
-|   |   |   | ┃ | `public` | `updatedTableSortDirection()` | `void` |
-|   |   |   | ┃ | `protected` | `applySortingToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `protected` | `getDefaultTableSortColumn()` | `string` |
-|   |   |   | ┃ | `protected` | `getDefaultTableSortDirection()` | `string` |
-|   |   |   | ┃ | `public` | `getTableSortSessionKey()` | `string` |
-|   |   |   | ┃ | `protected` | `shouldPersistTableSortInSession()` | `bool` |
-|   |   |   | ┃ | `public` | `shouldRenderTrailingGroupedTableSummary()` | `bool` |
-|   |   |   | ┃ | `public` | `getAllTableSummaryQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getPageTableSummaryQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getTableSummarySelectedState()` | `array` |
-|   |   |   | ┃ | `public` | `callMountedTableAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `mountTableAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `replaceMountedTableAction()` | `void` |
-|   |   |   | ┃ | `public` | `mountedTableActionShouldOpenModal()` | `bool` |
-|   |   |   | ┃ | `public` | `mountedTableActionHasForm()` | `bool` |
-|   |   |   | ┃ | `public` | `getMountedTableAction()` | `Filament\Actions\Action` |
-|   |   |   | ┃ | `public` | `getMountedTableActionForm()` | `Filament\Schemas\Schema` |
-|   |   |   | ┃ | `public` | `getMountedTableActionRecord()` | `Illuminate\Database\Eloquent\Model` |
-|   |   |   | ┃ | `public` | `unmountTableAction()` | `void` |
-|   |   |   | ┃ | `protected` | `getTableActions()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableActionsColumnLabel()` | `string` |
-|   |   |   | ┃ | `public` | `callMountedTableBulkAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `mountTableBulkAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `replaceMountedTableBulkAction()` | `void` |
-|   |   |   | ┃ | `public` | `mountedTableBulkActionShouldOpenModal()` | `bool` |
-|   |   |   | ┃ | `public` | `mountedTableBulkActionHasForm()` | `bool` |
-|   |   |   | ┃ | `public` | `deselectAllTableRecords()` | `void` |
-|   |   |   | ┃ | `public` | `getAllSelectableTableRecordKeys()` | `array` |
-|   |   |   | ┃ | `public` | `getGroupedSelectableTableRecordKeys()` | `array` |
-|   |   |   | ┃ | `public` | `getAllSelectableTableRecordsCount()` | `int` |
-|   |   |   | ┃ | `public` | `getSelectedTableRecords()` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` |
-|   |   |   | ┃ | `public` | `getSelectedTableRecordsQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `protected` | `constrainQueryToSelectableTableRecords()` | `void` |
-|   |   |   | ┃ | `public` | `shouldSelectCurrentPageOnly()` | `bool` |
-|   |   |   | ┃ | `public` | `shouldDeselectAllRecordsWhenTableFiltered()` | `bool` |
-|   |   |   | ┃ | `public` | `getMountedTableBulkAction()` | `Filament\Actions\Action` |
-|   |   |   | ┃ | `public` | `getMountedTableBulkActionForm()` | `Filament\Schemas\Schema` |
-|   |   |   | ┃ | `protected` | `getTableBulkActions()` | `array` |
-|   |   |   | ┃ | `public` | `initTableColumnManager()` | `void` |
-|   |   |   | ┃ | `public` | `getDefaultTableColumnState()` | `array` |
-|   |   |   | ┃ | `public` | `updatedToggledTableColumns()` | `void` |
-|   |   |   | ┃ | `public` | `applyTableColumnManager()` | `void` |
-|   |   |   | ┃ | `public` | `resetTableColumnManager()` | `void` |
-|   |   |   | ┃ | `public` | `isTableColumnToggledHidden()` | `bool` |
-|   |   |   | ┃ | `protected` | `getToggledTableColumnsSessionKey()` | `string` |
-|   |   |   | ┃ | `public` | `getTableColumnsSessionKey()` | `string` |
-|   |   |   | ┃ | `public` | `getHasReorderedTableColumnsSessionKey()` | `string` |
-|   |   |   | ┃ | `protected` | `loadTableColumnsFromSession()` | `array` |
-|   |   |   | ┃ | `protected` | `persistTableColumns()` | `void` |
-|   |   |   | ┃ | `protected` | `persistHasReorderedTableColumns()` | `void` |
-|   |   |   | ┃ | `protected` | `getTableColumnToggleFormColumns()` | `array / int` |
-|   |   |   | ┃ | `protected` | `getTableColumnToggleFormWidth()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableColumnToggleFormMaxHeight()` | `string` |
-|   |   |   | ┃ | `protected` | `mapTableColumnGroupToArray()` | `array` |
-|   |   |   | ┃ | `protected` | `mapTableColumnToArray()` | `array` |
-|   |   |   | ┃ | `protected` | `syncReorderableColumnsFromDefaultTableColumnState()` | `void` |
-|   |   |   | ┃ | `protected` | `updateTableColumns()` | `void` |
-|   |   |   | ┃ | `protected` | `syncStaticColumnsFromTableColumnState()` | `void` |
-|   |   |   | ┃ | `protected` | `syncItemFromDefaultTableColumnState()` | `array` |
-|   |   |   | ┃ | `protected` | `syncItemFromTableColumnState()` | `array` |
-|   |   |   | ┃ | `protected` | `syncGroupFromDefaultTableColumnState()` | `array` |
-|   |   |   | ┃ | `protected` | `syncTableColumnStateItemAttributes()` | `array` |
-|   |   |   | ┃ | `protected` | `getNewDefaultColumnStateItems()` | `array` |
-|   |   |   | ┃ | `protected` | `findMatchingTableColumnStateItem()` | `array` |
-|   |   |   | ┃ | `protected` | `hasReorderableTableColumns()` | `bool` |
-|   |   |   | ┃ | `protected` | `hasReorderedTableColumns()` | `bool` |
-|   |   |   | ┃ | `protected` | `flattenTableColumnStateItems()` | `array` |
-|   |   |   | ┃ | `public` | `callTableColumnAction()` | `mixed` |
-|   |   |   | ┃ | `public` | `updateTableColumnState()` | `mixed` |
-|   |   |   | ┃ | `public` | `callTableColumnMethod()` | `mixed` |
-|   |   |   | ┃ | `protected` | `getTableColumns()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableContent()` | `Illuminate\Contracts\View\View` |
-|   |   |   | ┃ | `protected` | `getTableContentGrid()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableContentFooter()` | `Illuminate\Contracts\View\View` |
-|   |   |   | ┃ | `protected` | `getTableEmptyState()` | `Illuminate\Contracts\View\View` |
-|   |   |   | ┃ | `protected` | `getTableEmptyStateActions()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableEmptyStateDescription()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableEmptyStateHeading()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableEmptyStateIcon()` | `string` |
-|   |   |   | ┃ | `public` | `getTableFiltersForm()` | `Filament\Schemas\Schema` |
-|   |   |   | ┃ | `public` | `updatedTableFilters()` | `void` |
-|   |   |   | ┃ | `protected` | `handleTableFilterUpdates()` | `void` |
-|   |   |   | ┃ | `public` | `removeTableFilter()` | `void` |
-|   |   |   | ┃ | `public` | `removeTableFilters()` | `void` |
-|   |   |   | ┃ | `public` | `resetTableFiltersForm()` | `void` |
-|   |   |   | ┃ | `public` | `applyTableFilters()` | `void` |
-|   |   |   | ┃ | `protected` | `applyFiltersToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getTableFilterState()` | `array` |
-|   |   |   | ┃ | `public` | `getTableFilterFormState()` | `array` |
-|   |   |   | ┃ | `public` | `parseTableFilterName()` | `string` |
-|   |   |   | ┃ | `public` | `getTableFiltersSessionKey()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableFilters()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableFiltersFormWidth()` | `string` |
-|   |   |   | ┃ | `protected` | `getTableFiltersFormMaxHeight()` | `string` |
-|   |   |   | ┃ | `protected` | `shouldPersistTableFiltersInSession()` | `bool` |
-|   |   |   | ┃ | `protected` | `getTableDescription()` | `Illuminate\Contracts\Support\Htmlable / string / null` |
-|   |   |   | ┃ | `protected` | `getTableHeader()` | `Illuminate\Contracts\View\View / Illuminate\Contracts\Support\Htmlable / null` |
-|   |   |   | ┃ | `protected` | `getTableHeaderActions()` | `array` |
-|   |   |   | ┃ | `protected` | `getTableHeading()` | `Illuminate\Contracts\Support\Htmlable / string / null` |
-|   |   |   | ┃ | `protected` | `getTableRecordAction()` | `string` |
-|   |   |   | ┃ | `public` | `getFilteredTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `filterTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getFilteredSortedTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `public` | `getTableQueryForExport()` | `Illuminate\Database\Eloquent\Builder` |
-|   |   |   | ┃ | `protected` | `hydratePivotRelationForTableRecords()` | `Illuminate\Database\Eloquent\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
-|   |   |   | ┃ | `public` | `getTableRecords()` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
-|   |   |   | ┃ | `protected` | `resolveTableRecord()` | `Illuminate\Database\Eloquent\Model / array / null` |
-|   |   |   | ┃ | `public` | `getTableRecord()` | `Illuminate\Database\Eloquent\Model / array / null` |
-|   |   |   | ┃ | `public` | `getTableRecordKey()` | `string` |
-|   |   |   | ┃ | `public` | `getAllTableRecordsCount()` | `int` |
-|   |   |   | ┃ | `public` | `flushCachedTableRecords()` | `void` |
-|   |   |   | ┃ | `public` | `allowsDuplicates()` | `bool` |
-|   |   |   | ┃ | `public` | `getTableRecordTitle()` | `string` |
-|   |   |   | ┃ | `public` | `getTableModelLabel()` | `string` |
-|   |   |   | ┃ | `public` | `getTablePluralModelLabel()` | `string` |
-|   |   |   | ┃ | `public` | `queryStringHandlesPagination()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `getPage()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `previousPage()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `nextPage()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `gotoPage()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `resetLivewirePage()` | *void/mixed* |
-|   |   |   | ┃ | `public` | `setLivewirePage()` | *void/mixed* |
 
 ---
 
@@ -11695,6 +11397,2299 @@
 | `public static` | `array` | `$optimizeCommands` | ┃ |   |   |   |
 | `public static` | `array` | `$optimizeClearCommands` | ┃ |   |   |   |
 | `public static` | `array` | `$reloadCommands` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\AttributeDefinitionResource.php` (Line 17)
+- **Extends:** `Filament\Resources\Resource`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$model` | ┃ | `public static` | `shouldRegisterNavigation()` | `bool` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public static` | `form()` | `Filament\Schemas\Schema` |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ | `public static` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public static` | `getRelations()` | `array` |
+| `protected static` | `string` | `$navigationLabel` | ┃ | `public static` | `getPages()` | `array` |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$parentResource` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isScopedToTenant` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantOwnershipRelationshipName` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantRelationshipName` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchResultsLimit` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGlobalSearchForcedCaseInsensitive` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSplitGlobalSearchTerms` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGloballySearchable` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `bool` | `$hasTitleCaseModelLabel` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordRouteKeyName` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\CreateAttributeDefinition`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\CreateAttributeDefinition.php` (Line 10)
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$record` | ┃ |   |   |   |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `bool` | `$canCreateAnother` | ┃ |   |   |   |
+| `public` | `bool` | `$isCreating` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\EditAttributeDefinition`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\EditAttributeDefinition.php` (Line 11)
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListAttributeDefinitions`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListAttributeDefinitions.php` (Line 13)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `bool` | `$isTableReordering` | ┃ | `public` | `getTabs()` | `array` |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListLocationAttributeDefinitions`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListLocationAttributeDefinitions.php` (Line 13)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected` | `string` | `$family` | ┃ | `public` | `getTabs()` | `array` |
+| `public` | `bool` | `$isTableReordering` | ┃ | `protected` | `getGroupTabs()` | `array` |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListPersonAttributeDefinitions`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListPersonAttributeDefinitions.php` (Line 13)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected` | `string` | `$family` | ┃ | `public` | `getTabs()` | `array` |
+| `public` | `bool` | `$isTableReordering` | ┃ | `protected` | `getGroupTabs()` | `array` |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListThingAttributeDefinitions`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Pages\ListThingAttributeDefinitions.php` (Line 13)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected` | `string` | `$family` | ┃ | `public` | `getTabs()` | `array` |
+| `public` | `bool` | `$isTableReordering` | ┃ | `protected` | `getGroupTabs()` | `array` |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\RelationManagers\AttributeOptionsRelationManager`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\RelationManagers\AttributeOptionsRelationManager.php` (Line 16)
+- **Extends:** `Filament\Resources\RelationManagers\RelationManager` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$relationship` | ┃ | `public` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$ownerRecord` | ┃ |   |   |   |
+| `public` | `string` | `$pageClass` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ |   |   |   |
+| `protected static` | `string` | `$inverseRelationship` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$icon` | ┃ |   |   |   |
+| `protected static` | `Filament\Support\Enums\IconPosition` | `$iconPosition` | ┃ |   |   |   |
+| `protected static` | `string` | `$badge` | ┃ |   |   |   |
+| `protected static` | `string` | `$badgeColor` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$badgeTooltip` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isBadgeDeferred` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isLazy` | ┃ |   |   |   |
+| `protected` | `string` | `$placeholderHeight` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$relatedResource` | ┃ |   |   |   |
+| `protected static` | `string` | `$relationshipTitle` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableReordering` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Schemas\AttributeDefinitionForm.php` (Line 12)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeDefinitions\Tables\AttributeDefinitionsTable.php` (Line 16)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Tables\Table` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\AttributeOptionResource`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\AttributeOptionResource.php` (Line 20)
+- **Extends:** `Filament\Resources\Resource`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$model` | ┃ | `public static` | `shouldRegisterNavigation()` | `bool` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public static` | `form()` | `Filament\Schemas\Schema` |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public static` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `string` | `$navigationLabel` | ┃ | `public static` | `getRelations()` | `array` |
+| `protected static` | `int` | `$navigationSort` | ┃ | `public static` | `getPages()` | `array` |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$parentResource` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isScopedToTenant` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantOwnershipRelationshipName` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantRelationshipName` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchResultsLimit` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGlobalSearchForcedCaseInsensitive` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSplitGlobalSearchTerms` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGloballySearchable` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `bool` | `$hasTitleCaseModelLabel` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordRouteKeyName` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\CreateAttributeOption.php` (Line 10)
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$record` | ┃ |   |   |   |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `bool` | `$canCreateAnother` | ┃ |   |   |   |
+| `public` | `bool` | `$isCreating` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\EditAttributeOption`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\EditAttributeOption.php` (Line 11)
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Pages\ListAttributeOptions`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Pages\ListAttributeOptions.php` (Line 11)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `bool` | `$isTableReordering` | ┃ |   |   |   |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Schemas\AttributeOptionForm`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Schemas\AttributeOptionForm.php` (Line 11)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\AttributeOptions\Tables\AttributeOptionsTable`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\AttributeOptions\Tables\AttributeOptionsTable.php` (Line 14)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Tables\Table` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\LocationAttributeResource.php` (Line 22)
+- **Extends:** `Filament\Resources\Resource`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$model` | ┃ | `public static` | `form()` | `Filament\Schemas\Schema` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public static` | `infolist()` | `Filament\Schemas\Schema` |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ | `public static` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public static` | `getRelations()` | `array` |
+| `protected static` | `string` | `$navigationLabel` | ┃ | `public static` | `getPages()` | `array` |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$parentResource` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isScopedToTenant` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantOwnershipRelationshipName` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantRelationshipName` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchResultsLimit` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGlobalSearchForcedCaseInsensitive` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSplitGlobalSearchTerms` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGloballySearchable` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `bool` | `$hasTitleCaseModelLabel` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordRouteKeyName` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\CreateLocationAttribute.php` (Line 10)
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$record` | ┃ |   |   |   |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `bool` | `$canCreateAnother` | ┃ |   |   |   |
+| `public` | `bool` | `$isCreating` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\EditLocationAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\EditLocationAttribute.php` (Line 13)
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\ListLocationAttributes`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\ListLocationAttributes.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableReordering` | ┃ |   |   |   |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Pages\ViewLocationAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Pages\ViewLocationAttribute.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeForm`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeForm.php` (Line 11)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeInfolist`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Schemas\LocationAttributeInfolist.php` (Line 10)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\LocationAttributes\Tables\LocationAttributesTable`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\LocationAttributes\Tables\LocationAttributesTable.php` (Line 14)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Tables\Table` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\CreatePersonAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\CreatePersonAttribute.php` (Line 10)
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$record` | ┃ |   |   |   |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `bool` | `$canCreateAnother` | ┃ |   |   |   |
+| `public` | `bool` | `$isCreating` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\EditPersonAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\EditPersonAttribute.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Pages\ListPersonAttributes`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Pages\ListPersonAttributes.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableReordering` | ┃ |   |   |   |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\PersonAttributeResource.php` (Line 20)
+- **Extends:** `Filament\Resources\Resource`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$model` | ┃ | `public static` | `form()` | `Filament\Schemas\Schema` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public static` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ | `public static` | `getRelations()` | `array` |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public static` | `getPages()` | `array` |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$parentResource` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isScopedToTenant` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantOwnershipRelationshipName` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantRelationshipName` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchResultsLimit` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGlobalSearchForcedCaseInsensitive` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSplitGlobalSearchTerms` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGloballySearchable` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `bool` | `$hasTitleCaseModelLabel` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordRouteKeyName` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Schemas\PersonAttributeForm`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Schemas\PersonAttributeForm.php` (Line 11)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\PersonAttributes\Tables\PersonAttributesTable`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\PersonAttributes\Tables\PersonAttributesTable.php` (Line 13)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Tables\Table` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\CreateThingAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\CreateThingAttribute.php` (Line 10)
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$record` | ┃ |   |   |   |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `bool` | `$canCreateAnother` | ┃ |   |   |   |
+| `public` | `bool` | `$isCreating` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\EditThingAttribute`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\EditThingAttribute.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Actions\Contracts\HasActions`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Schemas\Contracts\HasSchemas`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `public` | `array` | `$data` | ┃ |   |   |   |
+| `public` | `string` | `$previousUrl` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasDatabaseTransactions` | ┃ |   |   |   |
+| `public` | `string` | `$activeRelationManager` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model / string / int / null` | `$record` | ┃ |   |   |   |
+| `public` | `string` | `$savedDataHash` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasUnsavedDataChangesAlert` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Pages\ListThingAttributes`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Pages\ListThingAttributes.php` (Line 12)
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Tables\Contracts\HasTable`, `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$resource` | ┃ | `protected` | `getHeaderActions()` | `array` |
+| `protected static` | `string` | `$title` | ┃ |   |   |   |
+| `protected` | `string` | `$subheading` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableReordering` | ┃ |   |   |   |
+| `public` | `array` | `$tableFilters` | ┃ |   |   |   |
+| `public` | `string` | `$tableGrouping` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableSearch` | ┃ |   |   |   |
+| `public` | `string` | `$tableSort` | ┃ |   |   |   |
+| `public` | `string` | `$activeTab` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | `string` | `$layout` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ |   |   |   |
+| `protected` | `string` | `$view` | ┃ |   |   |   |
+| `protected` | `string` | `$heading` | ┃ |   |   |   |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ |   |   |   |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ |   |   |   |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ |   |   |   |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ |   |   |   |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__id` | ┃ |   |   |   |
+| `protected` | *mixed* | `$__name` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected` | *mixed* | `$listeners` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islands` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ |   |   |   |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ |   |   |   |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ |   |   |   |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ |   |   |   |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ |   |   |   |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ |   |   |   |
+| `protected` | `array` | `$slots` | ┃ |   |   |   |
+| `protected` | `array` | `$htmlAttributes` | ┃ |   |   |   |
+| `public` | `array` | `$mountedActions` | ┃ |   |   |   |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultActionContext` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableAction` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ |   |   |   |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedActions` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedMountedActions` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ |   |   |   |
+| `public` | `array` | `$componentFileAttachments` | ┃ |   |   |   |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ |   |   |   |
+| `protected` | `array` | `$oldSchemaState` | ┃ |   |   |   |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSchemas` | ┃ |   |   |   |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ |   |   |   |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ |   |   |   |
+| `protected` | `array` | `$errorNotifications` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ |   |   |   |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ |   |   |   |
+| `public` | `Illuminate\Database\Eloquent\Model` | `$parentRecord` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedTabs` | ┃ |   |   |   |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ |   |   |   |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ |   |   |   |
+| `public` | `bool` | `$isTableLoaded` | ┃ |   |   |   |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ |   |   |   |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumnSearches` | ┃ |   |   |   |
+| `public` | `array` | `$selectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$deselectedTableRecords` | ┃ |   |   |   |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ |   |   |   |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ |   |   |   |
+| `public` | `array` | `$tableColumns` | ┃ |   |   |   |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ |   |   |   |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ |   |   |   |
+| `public` | `array` | `$tableDeferredFilters` | ┃ |   |   |   |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ |   |   |   |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ |   |   |   |
+| `public` | *mixed* | `$paginators` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Schemas\ThingAttributeForm`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Schemas\ThingAttributeForm.php` (Line 11)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Schemas\Schema` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\Tables\ThingAttributesTable`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\Tables\ThingAttributesTable.php` (Line 13)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public static` | `configure()` | `Filament\Tables\Table` |
+
+---
+
+## 📦 Class: `Bites\Attributing\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource`
+
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\ThingAttributes\ThingAttributeResource.php` (Line 20)
+- **Extends:** `Filament\Resources\Resource`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `string` | `$model` | ┃ | `public static` | `form()` | `Filament\Schemas\Schema` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public static` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `string` | `$recordTitleAttribute` | ┃ | `public static` | `getRelations()` | `array` |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public static` | `getPages()` | `array` |
+| `protected static` | `string` | `$navigationLabel` | ┃ |   |   |   |
+| `protected static` | `int` | `$navigationSort` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isDiscovered` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$macros` | ┃ |   |   |   |
+| `protected static` | `string` | `$cluster` | ┃ |   |   |   |
+| `protected static` | `string` | `$parentResource` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isScopedToTenant` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantOwnershipRelationshipName` | ┃ |   |   |   |
+| `protected static` | `string` | `$tenantRelationshipName` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldCheckPolicyExistence` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSkipAuthorization` | ┃ |   |   |   |
+| `protected static` | `string` | `$breadcrumb` | ┃ |   |   |   |
+| `protected static` | `string` | `$configurationClass` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchResultsLimit` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGlobalSearchForcedCaseInsensitive` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldSplitGlobalSearchTerms` | ┃ |   |   |   |
+| `protected static` | `bool` | `$isGloballySearchable` | ┃ |   |   |   |
+| `protected static` | `int` | `$globalSearchSort` | ┃ |   |   |   |
+| `protected static` | `string` | `$label` | ┃ |   |   |   |
+| `protected static` | `string` | `$modelLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralLabel` | ┃ |   |   |   |
+| `protected static` | `string` | `$pluralModelLabel` | ┃ |   |   |   |
+| `protected static` | `bool` | `$hasTitleCaseModelLabel` | ┃ |   |   |   |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ |   |   |   |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ |   |   |   |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ |   |   |   |
+| `protected static` | `string` | `$navigationParentItem` | ┃ |   |   |   |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ |   |   |   |
+| `protected static` | `string` | `$slug` | ┃ |   |   |   |
+| `protected static` | `string` | `$recordRouteKeyName` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ |   |   |   |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ |   |   |   |
 
 ---
 
@@ -14760,6 +16755,304 @@
 | `public static` | `array` | `$optimizeCommands` | ┃ |   |   |   |
 | `public static` | `array` | `$optimizeClearCommands` | ┃ |   |   |   |
 | `public static` | `array` | `$reloadCommands` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\FloorPlan\Http\UI\Staff\Pages\FloorPlan`
+
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\src\Http\UI\Staff\Pages\FloorPlan.php` (Line 25)
+- **Extends:** `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
+- **Implements:** `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`, `Filament\Forms\Contracts\HasForms`, `Filament\Tables\Contracts\HasTable`
+- **Uses Traits:** `Filament\Actions\Concerns\InteractsWithActions`, `Filament\Forms\Concerns\InteractsWithForms`, `Filament\Tables\Concerns\InteractsWithTable`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected static` | `UnitEnum / string / null` | `$navigationGroup` | ┃ | `public` | `locationInfolist()` | `Filament\Schemas\Schema` |
+| `protected static` | `BackedEnum / string / null` | `$navigationIcon` | ┃ | `public` | `table()` | `Filament\Tables\Table` |
+| `protected static` | `string` | `$navigationLabel` | ┃ | `public` | `getDefaultTestingSchemaName()` | `string` |
+| `protected static` | `int` | `$navigationSort` | ┃ | `protected` | `onValidationError()` | `void` |
+| `protected static` | `string` | `$title` | ┃ | `public` | `forceRender()` | `void` |
+| `protected` | `string` | `$subheading` | ┃ | `public` | `__get()` | `mixed` |
+| `protected` | `string` | `$view` | ┃ | `public` | `getRules()` | `array` |
+| `public` | `string` | `$scope` | ┃ | `protected` | `getValidationAttributes()` | `array` |
+| `protected static` | `string` | `$layout` | ┃ | `public` | `validate()` | `array` |
+| `protected static` | `string` | `$cluster` | ┃ | `public` | `validateOnly()` | *void/mixed* |
+| `protected static` | `bool` | `$isDiscovered` | ┃ | `protected` | `prepareForValidation()` | `array` |
+| `protected static` | `string` | `$configurationClass` | ┃ | `public` | `bootedInteractsWithActions()` | `void` |
+| `protected static` | `Illuminate\Contracts\Support\Htmlable / string / null` | `$navigationBadgeTooltip` | ┃ | `public` | `mountAction()` | `mixed` |
+| `protected static` | `string` | `$navigationParentItem` | ┃ | `public` | `callMountedAction()` | `mixed` |
+| `protected static` | `BackedEnum / string / null` | `$activeNavigationIcon` | ┃ | `protected` | `partiallyRenderActionParentSchema()` | `void` |
+| `protected static` | `bool` | `$shouldRegisterNavigation` | ┃ | `protected` | `afterActionCalled()` | `void` |
+| `protected` | `array` | `$cachedHeaderWidgetsSchemaComponents` | ┃ | `public` | `replaceMountedAction()` | `void` |
+| `protected` | `array` | `$cachedFooterWidgetsSchemaComponents` | ┃ | `public` | `cacheAction()` | `Filament\Actions\Action` |
+| `protected` | `string` | `$heading` | ┃ | `protected` | `mergeCachedActions()` | `void` |
+| `public static` | `Closure` | `$reportValidationErrorUsing` | ┃ | `public` | `mountedActionShouldOpenModal()` | `bool` |
+| `protected` | `Filament\Support\Enums\Width / string / null` | `$maxContentWidth` | ┃ | `public` | `mountedActionHasSchema()` | `bool` |
+| `protected` | `array` | `$extraBodyAttributes` | ┃ | `public` | `mountedActionHasForm()` | `bool` |
+| `public static` | `Filament\Support\Enums\Alignment / string` | `$formActionsAlignment` | ┃ | `public` | `getMountedActions()` | `array` |
+| `public static` | `bool` | `$formActionsAreSticky` | ┃ | `public` | `cacheTraitActions()` | `void` |
+| `public static` | `bool` | `$hasInlineLabels` | ┃ | `public` | `getMountedAction()` | `Filament\Actions\Action` |
+| `protected` | *mixed* | `$__id` | ┃ | `protected` | `cacheMountedActions()` | `array` |
+| `protected` | *mixed* | `$__name` | ┃ | `protected` | `resolveActions()` | `array` |
+| `protected static` | *mixed* | `$macros` | ┃ | `protected` | `resolveAction()` | `Filament\Actions\Action` |
+| `protected` | *mixed* | `$listeners` | ┃ | `protected` | `resolveTableAction()` | `Filament\Actions\Action` |
+| `protected` | *mixed* | `$islands` | ┃ | `protected` | `resolveSchemaComponentAction()` | `Filament\Actions\Action` |
+| `protected` | *mixed* | `$islandsHaveMounted` | ┃ | `public` | `getAction()` | `Filament\Actions\Action` |
+| `protected` | *mixed* | `$islandIsTopLevelRender` | ┃ | `public` | `getMountedActionSchemaName()` | `string` |
+| `protected` | *mixed* | `$renderedIslandFragments` | ┃ | `protected` | `getMountedActionSchema()` | `Filament\Schemas\Schema` |
+| `protected` | `Livewire\Features\SupportAttributes\AttributeCollection` | `$attributes` | ┃ | `protected` | `getMountedActionForm()` | `Filament\Schemas\Schema` |
+| `protected` | *mixed* | `$withValidatorCallback` | ┃ | `protected` | `getMountedActionSchemaModel()` | `Illuminate\Database\Eloquent\Model / string / null` |
+| `protected` | *mixed* | `$rulesFromOutside` | ┃ | `public` | `unmountAction()` | `void` |
+| `protected` | *mixed* | `$messagesFromOutside` | ┃ | `protected` | `syncActionModals()` | `void` |
+| `protected` | *mixed* | `$validationAttributesFromOutside` | ┃ | `public` | `getOriginallyMountedActionIndex()` | `int` |
+| `protected` | `array` | `$slotsForSkippedChildRenders` | ┃ | `public` | `mergeMountedActionArguments()` | `void` |
+| `protected` | `array` | `$slots` | ┃ | `public` | `getDefaultActionRecord()` | `Illuminate\Database\Eloquent\Model` |
+| `protected` | `array` | `$htmlAttributes` | ┃ | `public` | `getDefaultActionRecordTitle()` | `string` |
+| `public` | `array` | `$mountedActions` | ┃ | `public` | `getDefaultActionModel()` | `string` |
+| `protected` | `int` | `$originallyMountedActionIndex` | ┃ | `public` | `getDefaultActionModelLabel()` | `string` |
+| `public` | *mixed* | `$defaultAction` | ┃ | `public` | `getDefaultActionUrl()` | `string` |
+| `public` | *mixed* | `$defaultActionArguments` | ┃ | `public` | `getDefaultActionSuccessRedirectUrl()` | `string` |
+| `public` | *mixed* | `$defaultActionContext` | ┃ | `public` | `getDefaultActionFailureRedirectUrl()` | `string` |
+| `public` | *mixed* | `$defaultTableAction` | ┃ | `public` | `getDefaultActionRelationship()` | `Illuminate\Database\Eloquent\Relations\Relation` |
+| `public` | *mixed* | `$defaultTableActionRecord` | ┃ | `public` | `getDefaultActionSchemaResolver()` | `Closure` |
+| `public` | *mixed* | `$defaultTableActionArguments` | ┃ | `public` | `getDefaultActionAuthorizationResponse()` | `Illuminate\Auth\Access\Response` |
+| `protected` | `array` | `$cachedActions` | ┃ | `public` | `getDefaultActionIndividualRecordAuthorizationResponseResolver()` | `Closure` |
+| `protected` | `array` | `$cachedMountedActions` | ┃ | `protected` | `clearRateLimiter()` | *void/mixed* |
+| `protected` | `bool` | `$hasActionsModalRendered` | ┃ | `protected` | `getRateLimitKey()` | *void/mixed* |
+| `public` | `array` | `$componentFileAttachments` | ┃ | `protected` | `hitRateLimiter()` | *void/mixed* |
+| `public` | `bool` | `$areSchemaStateUpdateHooksDisabledForTesting` | ┃ | `protected` | `rateLimit()` | *void/mixed* |
+| `protected` | `array` | `$oldSchemaState` | ┃ | `public` | `isCachingSchemas()` | `bool` |
+| `public` | `array` | `$discoveredSchemaNames` | ┃ | `public` | `callSchemaComponentMethod()` | `mixed` |
+| `protected` | `array` | `$cachedSchemas` | ┃ | `public` | `partiallyRenderSchemaComponent()` | `void` |
+| `protected` | `bool` | `$isCachingSchemas` | ┃ | `public` | `getFilamentTranslatableContentDriver()` | `string` |
+| `protected` | `Filament\Schemas\Schema` | `$currentlyValidatingSchema` | ┃ | `public` | `makeFilamentTranslatableContentDriver()` | `Filament\Support\Contracts\TranslatableContentDriver` |
+| `protected` | `bool` | `$hasErrorNotifications` | ┃ | `public` | `getActiveSchemaLocale()` | `string` |
+| `protected` | `array` | `$errorNotifications` | ┃ | `public` | `getOldSchemaState()` | `mixed` |
+| `protected static` | `string` | `$slug` | ┃ | `public` | `updatingInteractsWithSchemas()` | `void` |
+| `protected static` | `array / string` | `$routeMiddleware` | ┃ | `public` | `updatedInteractsWithSchemas()` | `void` |
+| `protected static` | `array / string` | `$withoutRouteMiddleware` | ┃ | `public` | `disableSchemaStateUpdateHooksForTesting()` | `void` |
+| `protected` | `array` | `$cachedSubNavigation` | ┃ | `public` | `enableSchemaStateUpdateHooksForTesting()` | `void` |
+| `protected static` | `Filament\Pages\Enums\SubNavigationPosition` | `$subNavigationPosition` | ┃ | `public` | `getSchemaComponent()` | `Filament\Schemas\Components\Component / Filament\Actions\Action / Filament\Actions\ActionGroup / null` |
+| `protected` | `array` | `$cachedHeaderActions` | ┃ | `protected` | `cacheSchema()` | `Filament\Schemas\Schema` |
+| `protected` | `Filament\Support\Enums\Alignment` | `$headerActionsAlignment` | ┃ | `protected` | `makeSchema()` | `Filament\Schemas\Schema` |
+| `protected` | `bool` | `$hasCachedForms` | ┃ | `protected` | `hasCachedSchema()` | `bool` |
+| `protected` | `Filament\Tables\Table` | `$table` | ┃ | `public` | `getSchema()` | `Filament\Schemas\Schema` |
+| `protected` | `bool` | `$hasTableModalRendered` | ┃ | `public` | `getCachedSchemas()` | `array` |
+| `protected` | `bool` | `$shouldMountInteractsWithTable` | ┃ | `public` | `fillFormDataForTesting()` | `void` |
+| `public` | `bool` | `$isTableLoaded` | ┃ | `protected` | `unsetMissingNumericArrayKeys()` | `void` |
+| `public` | `string` | `$tableGrouping` | ┃ | `public` | `currentlyValidatingSchema()` | `void` |
+| `public` | *mixed* | `$tableRecordsPerPage` | ┃ | `public` | `isFileUploadForSchemaComponent()` | `bool` |
+| `protected` | `string / int / null` | `$defaultTableRecordsPerPageSelectOption` | ┃ | `protected` | `getSchemaComponentForFileUpload()` | `Filament\Schemas\Components\Component` |
+| `public` | `bool` | `$isTableReordering` | ┃ | `public` | `_startUpload()` | *void/mixed* |
+| `public` | `array` | `$tableColumnSearches` | ┃ | `public` | `_finishUpload()` | *void/mixed* |
+| `public` | *mixed* | `$tableSearch` | ┃ | `public` | `_uploadErrored()` | *void/mixed* |
+| `public` | `string` | `$tableSort` | ┃ | `public` | `_removeUpload()` | *void/mixed* |
+| `public` | `array` | `$selectedTableRecords` | ┃ | `protected` | `cleanupOldUploads()` | *void/mixed* |
+| `public` | `array` | `$deselectedTableRecords` | ┃ | `protected` | `cacheForm()` | `Filament\Schemas\Schema` |
+| `public` | `bool` | `$isTrackingDeselectedTableRecords` | ┃ | `protected` | `cacheForms()` | `array` |
+| `protected` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` | `$cachedSelectedTableRecords` | ┃ | `public` | `getTraitForms()` | `array` |
+| `public` | `array` | `$tableColumns` | ┃ | `protected` | `hasCachedForm()` | `bool` |
+| `protected` | `array` | `$cachedDefaultTableColumnState` | ┃ | `public` | `getForm()` | `Filament\Schemas\Schema` |
+| `protected` | `bool` | `$hasReorderableTableColumns` | ┃ | `public` | `getCachedForms()` | `array` |
+| `public` | `array` | `$tableFilters` | ┃ | `protected` | `getForms()` | `array` |
+| `public` | `array` | `$tableDeferredFilters` | ┃ | `public` | `form()` | `Filament\Schemas\Schema` |
+| `protected` | `bool` | `$allowsDuplicates` | ┃ | `protected` | `getFormModel()` | `Illuminate\Database\Eloquent\Model / string / null` |
+| `protected` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator / null` | `$cachedTableRecords` | ┃ | `protected` | `getFormSchema()` | `array` |
+| `public` | *mixed* | `$paginators` | ┃ | `protected` | `getFormContext()` | `string` |
+|   |   |   | ┃ | `protected` | `getFormStatePath()` | `string` |
+|   |   |   | ┃ | `public` | `isCachingForms()` | `bool` |
+|   |   |   | ┃ | `public` | `getActiveFormsLocale()` | `string` |
+|   |   |   | ┃ | `public` | `getOldFormState()` | `mixed` |
+|   |   |   | ┃ | `public` | `callMountedFormComponentAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `mountFormComponentAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `mountedFormComponentActionShouldOpenModal()` | `bool` |
+|   |   |   | ┃ | `public` | `mountedFormComponentActionHasForm()` | `bool` |
+|   |   |   | ┃ | `public` | `getMountedFormComponentAction()` | `Filament\Actions\Action` |
+|   |   |   | ┃ | `public` | `unmountFormComponentAction()` | `void` |
+|   |   |   | ┃ | `public` | `getBaseCachedSchemas()` | `array` |
+|   |   |   | ┃ | `public` | `bootedInteractsWithTable()` | `void` |
+|   |   |   | ┃ | `public` | `mountInteractsWithTable()` | `void` |
+|   |   |   | ┃ | `public` | `getTable()` | `Filament\Tables\Table` |
+|   |   |   | ┃ | `protected` | `makeTable()` | `Filament\Tables\Table` |
+|   |   |   | ┃ | `protected` | `getTableQueryStringIdentifier()` | `string` |
+|   |   |   | ┃ | `public` | `getIdentifiedTableQueryStringPropertyNameFor()` | `string` |
+|   |   |   | ┃ | `public` | `getActiveTableLocale()` | `string` |
+|   |   |   | ┃ | `public` | `resetPage()` | `void` |
+|   |   |   | ┃ | `public` | `setPage()` | `void` |
+|   |   |   | ┃ | `protected` | `getTableQuery()` | `Illuminate\Database\Eloquent\Builder / Illuminate\Database\Eloquent\Relations\Relation / null` |
+|   |   |   | ┃ | `protected` | `normalizeTableFilterValuesFromQueryString()` | `void` |
+|   |   |   | ┃ | `public` | `resetTable()` | `void` |
+|   |   |   | ┃ | `protected` | `isTableStriped()` | `bool` |
+|   |   |   | ┃ | `public` | `isTableLoadingDeferred()` | `bool` |
+|   |   |   | ┃ | `public` | `loadTable()` | `void` |
+|   |   |   | ┃ | `public` | `isTableLoaded()` | `bool` |
+|   |   |   | ┃ | `public` | `getTableGrouping()` | `Filament\Tables\Grouping\Group` |
+|   |   |   | ┃ | `public` | `updatedTableGroupColumn()` | `void` |
+|   |   |   | ┃ | `public` | `getTableGroupingDirection()` | `string` |
+|   |   |   | ┃ | `protected` | `applyGroupingToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `updatedTableRecordsPerPage()` | `void` |
+|   |   |   | ┃ | `protected` | `paginateTableQuery()` | `Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
+|   |   |   | ┃ | `public` | `getTableRecordsPerPage()` | `string / int / null` |
+|   |   |   | ┃ | `public` | `getTablePage()` | `string / int` |
+|   |   |   | ┃ | `public` | `getDefaultTableRecordsPerPageSelectOption()` | `string / int` |
+|   |   |   | ┃ | `public` | `getTablePaginationPageName()` | `string` |
+|   |   |   | ┃ | `public` | `getTablePerPageSessionKey()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableRecordsPerPageSelectOptions()` | `array` |
+|   |   |   | ┃ | `protected` | `isTablePaginationEnabled()` | `bool` |
+|   |   |   | ┃ | `protected` | `getTablePollingInterval()` | `string` |
+|   |   |   | ┃ | `public` | `reorderTable()` | `void` |
+|   |   |   | ┃ | `public` | `toggleTableReordering()` | `void` |
+|   |   |   | ┃ | `public` | `isTableReordering()` | `bool` |
+|   |   |   | ┃ | `protected` | `isTablePaginationEnabledWhileReordering()` | `bool` |
+|   |   |   | ┃ | `protected` | `getTableReorderColumn()` | `string` |
+|   |   |   | ┃ | `public` | `updatedTableSearch()` | `void` |
+|   |   |   | ┃ | `public` | `updatedTableColumnSearches()` | `void` |
+|   |   |   | ┃ | `protected` | `applySearchToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `protected` | `applyColumnSearchesToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `protected` | `extractTableSearchWords()` | `array` |
+|   |   |   | ┃ | `protected` | `applyGlobalSearchToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getTableSearch()` | `string` |
+|   |   |   | ┃ | `public` | `hasTableSearch()` | `bool` |
+|   |   |   | ┃ | `public` | `resetTableSearch()` | `void` |
+|   |   |   | ┃ | `public` | `resetTableColumnSearch()` | `void` |
+|   |   |   | ┃ | `public` | `resetTableColumnSearches()` | `void` |
+|   |   |   | ┃ | `protected` | `getReservedTableColumnSearchKeys()` | `array` |
+|   |   |   | ┃ | `protected` | `fillReservedTableColumnSearchKeys()` | `void` |
+|   |   |   | ┃ | `public` | `getTableSearchIndicator()` | `Filament\Tables\Filters\Indicator` |
+|   |   |   | ┃ | `public` | `getTableColumnSearchIndicators()` | `array` |
+|   |   |   | ┃ | `protected` | `castTableColumnSearches()` | `array` |
+|   |   |   | ┃ | `public` | `getTableColumnSearches()` | `array` |
+|   |   |   | ┃ | `public` | `getTableSearchSessionKey()` | `string` |
+|   |   |   | ┃ | `public` | `getTableColumnSearchesSessionKey()` | `string` |
+|   |   |   | ┃ | `protected` | `shouldPersistTableSearchInSession()` | `bool` |
+|   |   |   | ┃ | `protected` | `shouldPersistTableColumnSearchInSession()` | `bool` |
+|   |   |   | ┃ | `public` | `sortTable()` | `void` |
+|   |   |   | ┃ | `public` | `getTableSortColumn()` | `string` |
+|   |   |   | ┃ | `public` | `getTableSortDirection()` | `string` |
+|   |   |   | ┃ | `public` | `updatedTableSort()` | `void` |
+|   |   |   | ┃ | `public` | `updatedTableSortDirection()` | `void` |
+|   |   |   | ┃ | `protected` | `applySortingToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `protected` | `getDefaultTableSortColumn()` | `string` |
+|   |   |   | ┃ | `protected` | `getDefaultTableSortDirection()` | `string` |
+|   |   |   | ┃ | `public` | `getTableSortSessionKey()` | `string` |
+|   |   |   | ┃ | `protected` | `shouldPersistTableSortInSession()` | `bool` |
+|   |   |   | ┃ | `public` | `shouldRenderTrailingGroupedTableSummary()` | `bool` |
+|   |   |   | ┃ | `public` | `getAllTableSummaryQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getPageTableSummaryQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getTableSummarySelectedState()` | `array` |
+|   |   |   | ┃ | `public` | `callMountedTableAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `mountTableAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `replaceMountedTableAction()` | `void` |
+|   |   |   | ┃ | `public` | `mountedTableActionShouldOpenModal()` | `bool` |
+|   |   |   | ┃ | `public` | `mountedTableActionHasForm()` | `bool` |
+|   |   |   | ┃ | `public` | `getMountedTableAction()` | `Filament\Actions\Action` |
+|   |   |   | ┃ | `public` | `getMountedTableActionForm()` | `Filament\Schemas\Schema` |
+|   |   |   | ┃ | `public` | `getMountedTableActionRecord()` | `Illuminate\Database\Eloquent\Model` |
+|   |   |   | ┃ | `public` | `unmountTableAction()` | `void` |
+|   |   |   | ┃ | `protected` | `getTableActions()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableActionsColumnLabel()` | `string` |
+|   |   |   | ┃ | `public` | `callMountedTableBulkAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `mountTableBulkAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `replaceMountedTableBulkAction()` | `void` |
+|   |   |   | ┃ | `public` | `mountedTableBulkActionShouldOpenModal()` | `bool` |
+|   |   |   | ┃ | `public` | `mountedTableBulkActionHasForm()` | `bool` |
+|   |   |   | ┃ | `public` | `deselectAllTableRecords()` | `void` |
+|   |   |   | ┃ | `public` | `getAllSelectableTableRecordKeys()` | `array` |
+|   |   |   | ┃ | `public` | `getGroupedSelectableTableRecordKeys()` | `array` |
+|   |   |   | ┃ | `public` | `getAllSelectableTableRecordsCount()` | `int` |
+|   |   |   | ┃ | `public` | `getSelectedTableRecords()` | `Illuminate\Database\Eloquent\Collection / Illuminate\Support\Collection / Illuminate\Support\LazyCollection` |
+|   |   |   | ┃ | `public` | `getSelectedTableRecordsQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `protected` | `constrainQueryToSelectableTableRecords()` | `void` |
+|   |   |   | ┃ | `public` | `shouldSelectCurrentPageOnly()` | `bool` |
+|   |   |   | ┃ | `public` | `shouldDeselectAllRecordsWhenTableFiltered()` | `bool` |
+|   |   |   | ┃ | `public` | `getMountedTableBulkAction()` | `Filament\Actions\Action` |
+|   |   |   | ┃ | `public` | `getMountedTableBulkActionForm()` | `Filament\Schemas\Schema` |
+|   |   |   | ┃ | `protected` | `getTableBulkActions()` | `array` |
+|   |   |   | ┃ | `public` | `initTableColumnManager()` | `void` |
+|   |   |   | ┃ | `public` | `getDefaultTableColumnState()` | `array` |
+|   |   |   | ┃ | `public` | `updatedToggledTableColumns()` | `void` |
+|   |   |   | ┃ | `public` | `applyTableColumnManager()` | `void` |
+|   |   |   | ┃ | `public` | `resetTableColumnManager()` | `void` |
+|   |   |   | ┃ | `public` | `isTableColumnToggledHidden()` | `bool` |
+|   |   |   | ┃ | `protected` | `getToggledTableColumnsSessionKey()` | `string` |
+|   |   |   | ┃ | `public` | `getTableColumnsSessionKey()` | `string` |
+|   |   |   | ┃ | `public` | `getHasReorderedTableColumnsSessionKey()` | `string` |
+|   |   |   | ┃ | `protected` | `loadTableColumnsFromSession()` | `array` |
+|   |   |   | ┃ | `protected` | `persistTableColumns()` | `void` |
+|   |   |   | ┃ | `protected` | `persistHasReorderedTableColumns()` | `void` |
+|   |   |   | ┃ | `protected` | `getTableColumnToggleFormColumns()` | `array / int` |
+|   |   |   | ┃ | `protected` | `getTableColumnToggleFormWidth()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableColumnToggleFormMaxHeight()` | `string` |
+|   |   |   | ┃ | `protected` | `mapTableColumnGroupToArray()` | `array` |
+|   |   |   | ┃ | `protected` | `mapTableColumnToArray()` | `array` |
+|   |   |   | ┃ | `protected` | `syncReorderableColumnsFromDefaultTableColumnState()` | `void` |
+|   |   |   | ┃ | `protected` | `updateTableColumns()` | `void` |
+|   |   |   | ┃ | `protected` | `syncStaticColumnsFromTableColumnState()` | `void` |
+|   |   |   | ┃ | `protected` | `syncItemFromDefaultTableColumnState()` | `array` |
+|   |   |   | ┃ | `protected` | `syncItemFromTableColumnState()` | `array` |
+|   |   |   | ┃ | `protected` | `syncGroupFromDefaultTableColumnState()` | `array` |
+|   |   |   | ┃ | `protected` | `syncTableColumnStateItemAttributes()` | `array` |
+|   |   |   | ┃ | `protected` | `getNewDefaultColumnStateItems()` | `array` |
+|   |   |   | ┃ | `protected` | `findMatchingTableColumnStateItem()` | `array` |
+|   |   |   | ┃ | `protected` | `hasReorderableTableColumns()` | `bool` |
+|   |   |   | ┃ | `protected` | `hasReorderedTableColumns()` | `bool` |
+|   |   |   | ┃ | `protected` | `flattenTableColumnStateItems()` | `array` |
+|   |   |   | ┃ | `public` | `callTableColumnAction()` | `mixed` |
+|   |   |   | ┃ | `public` | `updateTableColumnState()` | `mixed` |
+|   |   |   | ┃ | `public` | `callTableColumnMethod()` | `mixed` |
+|   |   |   | ┃ | `protected` | `getTableColumns()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableContent()` | `Illuminate\Contracts\View\View` |
+|   |   |   | ┃ | `protected` | `getTableContentGrid()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableContentFooter()` | `Illuminate\Contracts\View\View` |
+|   |   |   | ┃ | `protected` | `getTableEmptyState()` | `Illuminate\Contracts\View\View` |
+|   |   |   | ┃ | `protected` | `getTableEmptyStateActions()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableEmptyStateDescription()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableEmptyStateHeading()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableEmptyStateIcon()` | `string` |
+|   |   |   | ┃ | `public` | `getTableFiltersForm()` | `Filament\Schemas\Schema` |
+|   |   |   | ┃ | `public` | `updatedTableFilters()` | `void` |
+|   |   |   | ┃ | `protected` | `handleTableFilterUpdates()` | `void` |
+|   |   |   | ┃ | `public` | `removeTableFilter()` | `void` |
+|   |   |   | ┃ | `public` | `removeTableFilters()` | `void` |
+|   |   |   | ┃ | `public` | `resetTableFiltersForm()` | `void` |
+|   |   |   | ┃ | `public` | `applyTableFilters()` | `void` |
+|   |   |   | ┃ | `protected` | `applyFiltersToTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getTableFilterState()` | `array` |
+|   |   |   | ┃ | `public` | `getTableFilterFormState()` | `array` |
+|   |   |   | ┃ | `public` | `parseTableFilterName()` | `string` |
+|   |   |   | ┃ | `public` | `getTableFiltersSessionKey()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableFilters()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableFiltersFormWidth()` | `string` |
+|   |   |   | ┃ | `protected` | `getTableFiltersFormMaxHeight()` | `string` |
+|   |   |   | ┃ | `protected` | `shouldPersistTableFiltersInSession()` | `bool` |
+|   |   |   | ┃ | `protected` | `getTableDescription()` | `Illuminate\Contracts\Support\Htmlable / string / null` |
+|   |   |   | ┃ | `protected` | `getTableHeader()` | `Illuminate\Contracts\View\View / Illuminate\Contracts\Support\Htmlable / null` |
+|   |   |   | ┃ | `protected` | `getTableHeaderActions()` | `array` |
+|   |   |   | ┃ | `protected` | `getTableHeading()` | `Illuminate\Contracts\Support\Htmlable / string / null` |
+|   |   |   | ┃ | `protected` | `getTableRecordAction()` | `string` |
+|   |   |   | ┃ | `public` | `getFilteredTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `filterTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getFilteredSortedTableQuery()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `public` | `getTableQueryForExport()` | `Illuminate\Database\Eloquent\Builder` |
+|   |   |   | ┃ | `protected` | `hydratePivotRelationForTableRecords()` | `Illuminate\Database\Eloquent\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
+|   |   |   | ┃ | `public` | `getTableRecords()` | `Illuminate\Support\Collection / Illuminate\Contracts\Pagination\Paginator / Illuminate\Contracts\Pagination\CursorPaginator` |
+|   |   |   | ┃ | `protected` | `resolveTableRecord()` | `Illuminate\Database\Eloquent\Model / array / null` |
+|   |   |   | ┃ | `public` | `getTableRecord()` | `Illuminate\Database\Eloquent\Model / array / null` |
+|   |   |   | ┃ | `public` | `getTableRecordKey()` | `string` |
+|   |   |   | ┃ | `public` | `getAllTableRecordsCount()` | `int` |
+|   |   |   | ┃ | `public` | `flushCachedTableRecords()` | `void` |
+|   |   |   | ┃ | `public` | `allowsDuplicates()` | `bool` |
+|   |   |   | ┃ | `public` | `getTableRecordTitle()` | `string` |
+|   |   |   | ┃ | `public` | `getTableModelLabel()` | `string` |
+|   |   |   | ┃ | `public` | `getTablePluralModelLabel()` | `string` |
+|   |   |   | ┃ | `public` | `queryStringHandlesPagination()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `getPage()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `previousPage()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `nextPage()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `gotoPage()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `resetLivewirePage()` | *void/mixed* |
+|   |   |   | ┃ | `public` | `setLivewirePage()` | *void/mixed* |
 
 ---
 
