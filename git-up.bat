@@ -27,4 +27,5 @@ php artisan bites:quick-md packages\rimba\Twig\Lcs
 php artisan bites:quick-md packages\rimba\Twig\Lms
 php artisan bites:quick-md packages\rimba\Twig\Tos
 
-php git-up.php
+php artisan bites:class-members
+

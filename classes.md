@@ -1,5 +1,5 @@
 # Class Directory Blueprint
-*Generated automatically on 2026-07-13 09:06:44*
+*Generated automatically on 2026-07-13 15:47:22*
 
 ---
 
@@ -9434,7 +9434,7 @@
 
 ## 📦 Class: `App\Http\UI\Staff\Pages\Location`
 
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Pages\Location.php` (Line 24)
+- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Pages\Location.php` (Line 25)
 - **Extends:** `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`
 - **Implements:** `Filament\Schemas\Contracts\HasSchemas`, `Filament\Schemas\Contracts\HasRenderHookScopes`, `Filament\Actions\Contracts\HasActions`, `Filament\Forms\Contracts\HasForms`, `Filament\Tables\Contracts\HasTable`
 - **Uses Traits:** `Filament\Actions\Concerns\InteractsWithActions`, `Filament\Forms\Concerns\InteractsWithForms`, `Filament\Tables\Concerns\InteractsWithTable`
@@ -10504,172 +10504,6 @@
 | `public` | *mixed* | `$exists` | ┃ | `public static` | `factory()` | *void/mixed* |
 | `public` | *mixed* | `$wasRecentlyCreated` | ┃ | `protected static` | `newFactory()` | *void/mixed* |
 | `protected` | *mixed* | `$escapeWhenCastingToString` | ┃ | `protected static` | `getUseFactoryAttribute()` | *void/mixed* |
-| `protected static` | *mixed* | `$resolver` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$dispatcher` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$booting` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$booted` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$bootedCallbacks` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$traitInitializers` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$globalScopes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$ignoreOnTouch` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventLazyLoading` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldAutomaticallyEagerLoadRelationships` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$lazyLoadingViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventSilentlyDiscardingAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$discardedAttributeViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventAccessingMissingAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$missingAttributeViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$isBroadcasting` | ┃ |   |   |   |
-| `protected static` | `string` | `$builder` | ┃ |   |   |   |
-| `protected static` | `string` | `$collectionClass` | ┃ |   |   |   |
-| `protected static` | `array` | `$isSoftDeletable` | ┃ |   |   |   |
-| `protected static` | `array` | `$isPrunable` | ┃ |   |   |   |
-| `protected static` | `array` | `$isMassPrunable` | ┃ |   |   |   |
-| `protected static` | `array` | `$classAttributes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$attributes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$original` | ┃ |   |   |   |
-| `protected` | *mixed* | `$changes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$previous` | ┃ |   |   |   |
-| `protected` | *mixed* | `$casts` | ┃ |   |   |   |
-| `protected` | *mixed* | `$classCastCache` | ┃ |   |   |   |
-| `protected` | *mixed* | `$attributeCastCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$primitiveCastTypes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$dateFormat` | ┃ |   |   |   |
-| `protected` | *mixed* | `$appends` | ┃ |   |   |   |
-| `public static` | *mixed* | `$snakeAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$mutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$attributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$getAttributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$setAttributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$castTypeCache` | ┃ |   |   |   |
-| `public static` | *mixed* | `$encrypter` | ┃ |   |   |   |
-| `protected` | *mixed* | `$dispatchesEvents` | ┃ |   |   |   |
-| `protected` | *mixed* | `$observables` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relations` | ┃ |   |   |   |
-| `protected` | *mixed* | `$touches` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relationAutoloadCallback` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relationAutoloadContext` | ┃ |   |   |   |
-| `public static` | *mixed* | `$manyMethods` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$relationResolvers` | ┃ |   |   |   |
-| `public` | *mixed* | `$timestamps` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$ignoreTimestampsOn` | ┃ |   |   |   |
-| `public` | *mixed* | `$usesUniqueIds` | ┃ |   |   |   |
-| `protected` | *mixed* | `$hidden` | ┃ |   |   |   |
-| `protected` | *mixed* | `$visible` | ┃ |   |   |   |
-| `protected` | *mixed* | `$fillable` | ┃ |   |   |   |
-| `protected` | *mixed* | `$guarded` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$unguarded` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$guardableColumns` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$recursionCache` | ┃ |   |   |   |
-| `protected static` | `array` | `$resolvedCollectionClasses` | ┃ |   |   |   |
-
----
-
-## 📦 Class: `App\Trees\FloorPlan\Models\Location`
-
-- **Location:** `C:\Users\153582\Herd\starter\app\Trees\FloorPlan\Models\Location.php` (Line 21)
-- **Extends:** `Illuminate\Database\Eloquent\Model`
-- **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`, `Stringable`, `Illuminate\Contracts\Queue\QueueableEntity`, `JsonSerializable`, `Illuminate\Contracts\Support\Jsonable`, `Illuminate\Contracts\Broadcasting\HasBroadcastChannel`, `Illuminate\Contracts\Support\CanBeEscapedWhenCastToString`, `ArrayAccess`, `Illuminate\Contracts\Support\Arrayable`
-- **Uses Traits:** `Illuminate\Database\Eloquent\Factories\HasFactory`
-
-### ⚙️ Members
-| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
-| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| `protected` | *mixed* | `$connection` | ┃ | `protected` | `casts()` | `array` |
-| `protected` | *mixed* | `$table` | ┃ | `public` | `childrens()` | `Illuminate\Database\Eloquent\Relations\HasMany` |
-| `protected` | *mixed* | `$primaryKey` | ┃ | `public` | `locationAssignments()` | `Illuminate\Database\Eloquent\Relations\HasMany` |
-| `protected` | *mixed* | `$keyType` | ┃ | `public` | `parent()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
-| `public` | *mixed* | `$incrementing` | ┃ | `public` | `orgCorp()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
-| `protected` | *mixed* | `$with` | ┃ | `public static` | `factory()` | *void/mixed* |
-| `protected` | *mixed* | `$withCount` | ┃ | `protected static` | `newFactory()` | *void/mixed* |
-| `public` | *mixed* | `$preventsLazyLoading` | ┃ | `protected static` | `getUseFactoryAttribute()` | *void/mixed* |
-| `protected` | *mixed* | `$perPage` | ┃ |   |   |   |
-| `public` | *mixed* | `$exists` | ┃ |   |   |   |
-| `public` | *mixed* | `$wasRecentlyCreated` | ┃ |   |   |   |
-| `protected` | *mixed* | `$escapeWhenCastingToString` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$resolver` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$dispatcher` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$booting` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$booted` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$bootedCallbacks` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$traitInitializers` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$globalScopes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$ignoreOnTouch` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventLazyLoading` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldAutomaticallyEagerLoadRelationships` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$lazyLoadingViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventSilentlyDiscardingAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$discardedAttributeViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$modelsShouldPreventAccessingMissingAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$missingAttributeViolationCallback` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$isBroadcasting` | ┃ |   |   |   |
-| `protected static` | `string` | `$builder` | ┃ |   |   |   |
-| `protected static` | `string` | `$collectionClass` | ┃ |   |   |   |
-| `protected static` | `array` | `$isSoftDeletable` | ┃ |   |   |   |
-| `protected static` | `array` | `$isPrunable` | ┃ |   |   |   |
-| `protected static` | `array` | `$isMassPrunable` | ┃ |   |   |   |
-| `protected static` | `array` | `$classAttributes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$attributes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$original` | ┃ |   |   |   |
-| `protected` | *mixed* | `$changes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$previous` | ┃ |   |   |   |
-| `protected` | *mixed* | `$casts` | ┃ |   |   |   |
-| `protected` | *mixed* | `$classCastCache` | ┃ |   |   |   |
-| `protected` | *mixed* | `$attributeCastCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$primitiveCastTypes` | ┃ |   |   |   |
-| `protected` | *mixed* | `$dateFormat` | ┃ |   |   |   |
-| `protected` | *mixed* | `$appends` | ┃ |   |   |   |
-| `public static` | *mixed* | `$snakeAttributes` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$mutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$attributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$getAttributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$setAttributeMutatorCache` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$castTypeCache` | ┃ |   |   |   |
-| `public static` | *mixed* | `$encrypter` | ┃ |   |   |   |
-| `protected` | *mixed* | `$dispatchesEvents` | ┃ |   |   |   |
-| `protected` | *mixed* | `$observables` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relations` | ┃ |   |   |   |
-| `protected` | *mixed* | `$touches` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relationAutoloadCallback` | ┃ |   |   |   |
-| `protected` | *mixed* | `$relationAutoloadContext` | ┃ |   |   |   |
-| `public static` | *mixed* | `$manyMethods` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$relationResolvers` | ┃ |   |   |   |
-| `public` | *mixed* | `$timestamps` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$ignoreTimestampsOn` | ┃ |   |   |   |
-| `public` | *mixed* | `$usesUniqueIds` | ┃ |   |   |   |
-| `protected` | *mixed* | `$hidden` | ┃ |   |   |   |
-| `protected` | *mixed* | `$visible` | ┃ |   |   |   |
-| `protected` | *mixed* | `$fillable` | ┃ |   |   |   |
-| `protected` | *mixed* | `$guarded` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$unguarded` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$guardableColumns` | ┃ |   |   |   |
-| `protected static` | *mixed* | `$recursionCache` | ┃ |   |   |   |
-| `protected static` | `array` | `$resolvedCollectionClasses` | ┃ |   |   |   |
-
----
-
-## 📦 Class: `App\Trees\FloorPlan\Models\LocationAssignment`
-
-- **Location:** `C:\Users\153582\Herd\starter\app\Trees\FloorPlan\Models\LocationAssignment.php` (Line 20)
-- **Extends:** `Illuminate\Database\Eloquent\Model`
-- **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`, `Stringable`, `Illuminate\Contracts\Queue\QueueableEntity`, `JsonSerializable`, `Illuminate\Contracts\Support\Jsonable`, `Illuminate\Contracts\Broadcasting\HasBroadcastChannel`, `Illuminate\Contracts\Support\CanBeEscapedWhenCastToString`, `ArrayAccess`, `Illuminate\Contracts\Support\Arrayable`
-- **Uses Traits:** `Illuminate\Database\Eloquent\Factories\HasFactory`
-
-### ⚙️ Members
-| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
-| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| `protected` | *mixed* | `$connection` | ┃ | `protected` | `casts()` | `array` |
-| `protected` | *mixed* | `$table` | ┃ | `public` | `assignable()` | `Illuminate\Database\Eloquent\Relations\MorphTo` |
-| `protected` | *mixed* | `$primaryKey` | ┃ | `public` | `location()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
-| `protected` | *mixed* | `$keyType` | ┃ | `public static` | `factory()` | *void/mixed* |
-| `public` | *mixed* | `$incrementing` | ┃ | `protected static` | `newFactory()` | *void/mixed* |
-| `protected` | *mixed* | `$with` | ┃ | `protected static` | `getUseFactoryAttribute()` | *void/mixed* |
-| `protected` | *mixed* | `$withCount` | ┃ |   |   |   |
-| `public` | *mixed* | `$preventsLazyLoading` | ┃ |   |   |   |
-| `protected` | *mixed* | `$perPage` | ┃ |   |   |   |
-| `public` | *mixed* | `$exists` | ┃ |   |   |   |
-| `public` | *mixed* | `$wasRecentlyCreated` | ┃ |   |   |   |
-| `protected` | *mixed* | `$escapeWhenCastingToString` | ┃ |   |   |   |
 | `protected static` | *mixed* | `$resolver` | ┃ |   |   |   |
 | `protected static` | *mixed* | `$dispatcher` | ┃ |   |   |   |
 | `protected static` | *mixed* | `$booting` | ┃ |   |   |   |
@@ -12750,17 +12584,17 @@
 
 ## 📦 Class: `Bites\Base\Console\Commands\GetClassMembers`
 
-- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Console\Commands\GetClassMembers.php` (Line 12)
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Console\Commands\GetClassMembers.php` (Line 18)
 - **Extends:** `Illuminate\Console\Command` ➔ `Symfony\Component\Console\Command\Command`
 - **Implements:** `Symfony\Component\Console\Command\SignalableCommandInterface`
 
 ### ⚙️ Members
 | Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
 | :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| `protected` | *mixed* | `$signature` | ┃ | `public` | `handle()` | *void/mixed* |
-| `protected` | *mixed* | `$description` | ┃ | `protected` | `generateClassMarkdown()` | `string` |
-| `protected` | *mixed* | `$laravel` | ┃ | `protected` | `formatType()` | `string` |
-| `protected` | *mixed* | `$name` | ┃ | `protected` | `extractFullyQualifiedClassName()` | `string` |
+| `protected` | *mixed* | `$laravel` | ┃ | `public` | `handle()` | `int` |
+| `protected` | *mixed* | `$signature` | ┃ | `protected` | `generateClassMarkdown()` | `string` |
+| `protected` | *mixed* | `$name` | ┃ | `protected` | `formatType()` | `string` |
+| `protected` | *mixed* | `$description` | ┃ | `protected` | `extractFullyQualifiedClassName()` | `string` |
 | `protected` | *mixed* | `$help` | ┃ |   |   |   |
 | `protected` | *mixed* | `$hidden` | ┃ |   |   |   |
 | `protected` | *mixed* | `$isolated` | ┃ |   |   |   |
@@ -14888,6 +14722,210 @@
 |   |   |   | ┃ | `public` | `makeEventFor()` | `array` |
 |   |   |   | ┃ | `public` | `eventsForTeamInRange()` | `array` |
 |   |   |   | ┃ | `public` | `hasTeam()` | `bool` |
+
+---
+
+## 📦 Class: `Bites\FloorPlan\Actions\DiscoverFloorPlan`
+
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\src\Actions\DiscoverFloorPlan.php` (Line 11)
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+|   |   |   | ┃ | `public` | `execute()` | `void` |
+
+---
+
+## 📦 Class: `Bites\FloorPlan\FloorPlanServiceProvider`
+
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\src\FloorPlanServiceProvider.php` (Line 10)
+- **Extends:** `App\Services\BitesServiceProvider` ➔ `Illuminate\Support\ServiceProvider`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected` | `string` | `$configFile` | ┃ | `protected` | `registerPackage()` | `void` |
+| `protected` | `string` | `$viewsPath` | ┃ | `protected` | `bootPackage()` | `void` |
+| `protected` | `string` | `$iconsPath` | ┃ |   |   |   |
+| `protected` | `string` | `$configName` | ┃ |   |   |   |
+| `protected` | `string` | `$viewNamespace` | ┃ |   |   |   |
+| `protected` | `string` | `$iconSet` | ┃ |   |   |   |
+| `protected` | `string` | `$iconPrefix` | ┃ |   |   |   |
+| `protected` | *mixed* | `$app` | ┃ |   |   |   |
+| `protected` | *mixed* | `$bootingCallbacks` | ┃ |   |   |   |
+| `protected` | *mixed* | `$bootedCallbacks` | ┃ |   |   |   |
+| `public static` | *mixed* | `$publishes` | ┃ |   |   |   |
+| `public static` | *mixed* | `$publishGroups` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$publishableMigrationPaths` | ┃ |   |   |   |
+| `public static` | `array` | `$optimizeCommands` | ┃ |   |   |   |
+| `public static` | `array` | `$optimizeClearCommands` | ┃ |   |   |   |
+| `public static` | `array` | `$reloadCommands` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\FloorPlan\Models\Location`
+
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\src\Models\Location.php` (Line 23)
+- **Extends:** `Illuminate\Database\Eloquent\Model`
+- **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`, `Stringable`, `Illuminate\Contracts\Queue\QueueableEntity`, `JsonSerializable`, `Illuminate\Contracts\Support\Jsonable`, `Illuminate\Contracts\Broadcasting\HasBroadcastChannel`, `Illuminate\Contracts\Support\CanBeEscapedWhenCastToString`, `ArrayAccess`, `Illuminate\Contracts\Support\Arrayable`
+- **Uses Traits:** `Illuminate\Database\Eloquent\Factories\HasFactory`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected` | *mixed* | `$connection` | ┃ | `protected` | `casts()` | `array` |
+| `protected` | *mixed* | `$table` | ┃ | `public` | `childrens()` | `Illuminate\Database\Eloquent\Relations\HasMany` |
+| `protected` | *mixed* | `$primaryKey` | ┃ | `public` | `locationAssignments()` | `Illuminate\Database\Eloquent\Relations\HasMany` |
+| `protected` | *mixed* | `$keyType` | ┃ | `public` | `parent()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
+| `public` | *mixed* | `$incrementing` | ┃ | `public` | `orgCorp()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
+| `protected` | *mixed* | `$with` | ┃ | `public static` | `factory()` | *void/mixed* |
+| `protected` | *mixed* | `$withCount` | ┃ | `protected static` | `newFactory()` | *void/mixed* |
+| `public` | *mixed* | `$preventsLazyLoading` | ┃ | `protected static` | `getUseFactoryAttribute()` | *void/mixed* |
+| `protected` | *mixed* | `$perPage` | ┃ |   |   |   |
+| `public` | *mixed* | `$exists` | ┃ |   |   |   |
+| `public` | *mixed* | `$wasRecentlyCreated` | ┃ |   |   |   |
+| `protected` | *mixed* | `$escapeWhenCastingToString` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$resolver` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$dispatcher` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$booting` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$booted` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$bootedCallbacks` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$traitInitializers` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$globalScopes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$ignoreOnTouch` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventLazyLoading` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldAutomaticallyEagerLoadRelationships` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$lazyLoadingViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventSilentlyDiscardingAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$discardedAttributeViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventAccessingMissingAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$missingAttributeViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$isBroadcasting` | ┃ |   |   |   |
+| `protected static` | `string` | `$builder` | ┃ |   |   |   |
+| `protected static` | `string` | `$collectionClass` | ┃ |   |   |   |
+| `protected static` | `array` | `$isSoftDeletable` | ┃ |   |   |   |
+| `protected static` | `array` | `$isPrunable` | ┃ |   |   |   |
+| `protected static` | `array` | `$isMassPrunable` | ┃ |   |   |   |
+| `protected static` | `array` | `$classAttributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$original` | ┃ |   |   |   |
+| `protected` | *mixed* | `$changes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$previous` | ┃ |   |   |   |
+| `protected` | *mixed* | `$casts` | ┃ |   |   |   |
+| `protected` | *mixed* | `$classCastCache` | ┃ |   |   |   |
+| `protected` | *mixed* | `$attributeCastCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$primitiveCastTypes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$dateFormat` | ┃ |   |   |   |
+| `protected` | *mixed* | `$appends` | ┃ |   |   |   |
+| `public static` | *mixed* | `$snakeAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$mutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$attributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$getAttributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$setAttributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$castTypeCache` | ┃ |   |   |   |
+| `public static` | *mixed* | `$encrypter` | ┃ |   |   |   |
+| `protected` | *mixed* | `$dispatchesEvents` | ┃ |   |   |   |
+| `protected` | *mixed* | `$observables` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relations` | ┃ |   |   |   |
+| `protected` | *mixed* | `$touches` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relationAutoloadCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relationAutoloadContext` | ┃ |   |   |   |
+| `public static` | *mixed* | `$manyMethods` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$relationResolvers` | ┃ |   |   |   |
+| `public` | *mixed* | `$timestamps` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$ignoreTimestampsOn` | ┃ |   |   |   |
+| `public` | *mixed* | `$usesUniqueIds` | ┃ |   |   |   |
+| `protected` | *mixed* | `$hidden` | ┃ |   |   |   |
+| `protected` | *mixed* | `$visible` | ┃ |   |   |   |
+| `protected` | *mixed* | `$fillable` | ┃ |   |   |   |
+| `protected` | *mixed* | `$guarded` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$unguarded` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$guardableColumns` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$recursionCache` | ┃ |   |   |   |
+| `protected static` | `array` | `$resolvedCollectionClasses` | ┃ |   |   |   |
+
+---
+
+## 📦 Class: `Bites\FloorPlan\Models\LocationAssignment`
+
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\src\Models\LocationAssignment.php` (Line 20)
+- **Extends:** `Illuminate\Database\Eloquent\Model`
+- **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`, `Stringable`, `Illuminate\Contracts\Queue\QueueableEntity`, `JsonSerializable`, `Illuminate\Contracts\Support\Jsonable`, `Illuminate\Contracts\Broadcasting\HasBroadcastChannel`, `Illuminate\Contracts\Support\CanBeEscapedWhenCastToString`, `ArrayAccess`, `Illuminate\Contracts\Support\Arrayable`
+- **Uses Traits:** `Illuminate\Database\Eloquent\Factories\HasFactory`
+
+### ⚙️ Members
+| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |
+| :--- | :--- | :--- | :---: | :--- | :--- | :--- |
+| `protected` | *mixed* | `$connection` | ┃ | `protected` | `casts()` | `array` |
+| `protected` | *mixed* | `$table` | ┃ | `public` | `assignable()` | `Illuminate\Database\Eloquent\Relations\MorphTo` |
+| `protected` | *mixed* | `$primaryKey` | ┃ | `public` | `location()` | `Illuminate\Database\Eloquent\Relations\BelongsTo` |
+| `protected` | *mixed* | `$keyType` | ┃ | `public static` | `factory()` | *void/mixed* |
+| `public` | *mixed* | `$incrementing` | ┃ | `protected static` | `newFactory()` | *void/mixed* |
+| `protected` | *mixed* | `$with` | ┃ | `protected static` | `getUseFactoryAttribute()` | *void/mixed* |
+| `protected` | *mixed* | `$withCount` | ┃ |   |   |   |
+| `public` | *mixed* | `$preventsLazyLoading` | ┃ |   |   |   |
+| `protected` | *mixed* | `$perPage` | ┃ |   |   |   |
+| `public` | *mixed* | `$exists` | ┃ |   |   |   |
+| `public` | *mixed* | `$wasRecentlyCreated` | ┃ |   |   |   |
+| `protected` | *mixed* | `$escapeWhenCastingToString` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$resolver` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$dispatcher` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$booting` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$booted` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$bootedCallbacks` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$traitInitializers` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$globalScopes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$ignoreOnTouch` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventLazyLoading` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldAutomaticallyEagerLoadRelationships` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$lazyLoadingViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventSilentlyDiscardingAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$discardedAttributeViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$modelsShouldPreventAccessingMissingAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$missingAttributeViolationCallback` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$isBroadcasting` | ┃ |   |   |   |
+| `protected static` | `string` | `$builder` | ┃ |   |   |   |
+| `protected static` | `string` | `$collectionClass` | ┃ |   |   |   |
+| `protected static` | `array` | `$isSoftDeletable` | ┃ |   |   |   |
+| `protected static` | `array` | `$isPrunable` | ┃ |   |   |   |
+| `protected static` | `array` | `$isMassPrunable` | ┃ |   |   |   |
+| `protected static` | `array` | `$classAttributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$attributes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$original` | ┃ |   |   |   |
+| `protected` | *mixed* | `$changes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$previous` | ┃ |   |   |   |
+| `protected` | *mixed* | `$casts` | ┃ |   |   |   |
+| `protected` | *mixed* | `$classCastCache` | ┃ |   |   |   |
+| `protected` | *mixed* | `$attributeCastCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$primitiveCastTypes` | ┃ |   |   |   |
+| `protected` | *mixed* | `$dateFormat` | ┃ |   |   |   |
+| `protected` | *mixed* | `$appends` | ┃ |   |   |   |
+| `public static` | *mixed* | `$snakeAttributes` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$mutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$attributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$getAttributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$setAttributeMutatorCache` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$castTypeCache` | ┃ |   |   |   |
+| `public static` | *mixed* | `$encrypter` | ┃ |   |   |   |
+| `protected` | *mixed* | `$dispatchesEvents` | ┃ |   |   |   |
+| `protected` | *mixed* | `$observables` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relations` | ┃ |   |   |   |
+| `protected` | *mixed* | `$touches` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relationAutoloadCallback` | ┃ |   |   |   |
+| `protected` | *mixed* | `$relationAutoloadContext` | ┃ |   |   |   |
+| `public static` | *mixed* | `$manyMethods` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$relationResolvers` | ┃ |   |   |   |
+| `public` | *mixed* | `$timestamps` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$ignoreTimestampsOn` | ┃ |   |   |   |
+| `public` | *mixed* | `$usesUniqueIds` | ┃ |   |   |   |
+| `protected` | *mixed* | `$hidden` | ┃ |   |   |   |
+| `protected` | *mixed* | `$visible` | ┃ |   |   |   |
+| `protected` | *mixed* | `$fillable` | ┃ |   |   |   |
+| `protected` | *mixed* | `$guarded` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$unguarded` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$guardableColumns` | ┃ |   |   |   |
+| `protected static` | *mixed* | `$recursionCache` | ┃ |   |   |   |
+| `protected static` | `array` | `$resolvedCollectionClasses` | ┃ |   |   |   |
 
 ---
 
