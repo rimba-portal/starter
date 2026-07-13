@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:58*
-*Target Folder: `\starter\packages\rimba\Twig\Lms`*
+*Generated on: 2026-07-13 07:38:54*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms`*
 
 ---
 
 ## File: `src\LmsServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\LmsServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\LmsServiceProvider.php`
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class LmsServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\Certificate.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Certificate.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Certificate.php`
 
 ```php
 <?php
@@ -111,7 +111,7 @@ class Certificate extends Model
 ---
 
 ## File: `src\Models\Course.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Course.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Course.php`
 
 ```php
 <?php
@@ -175,7 +175,7 @@ class Course extends Model
 ---
 
 ## File: `src\Models\CourseGroup.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\CourseGroup.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\CourseGroup.php`
 
 ```php
 <?php
@@ -235,7 +235,7 @@ class CourseGroup extends Model
 ---
 
 ## File: `src\Models\CourseGroupAssignment.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\CourseGroupAssignment.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\CourseGroupAssignment.php`
 
 ```php
 <?php
@@ -289,7 +289,7 @@ class CourseGroupAssignment extends Model
 ---
 
 ## File: `src\Models\CourseModule.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\CourseModule.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\CourseModule.php`
 
 ```php
 <?php
@@ -344,7 +344,7 @@ class CourseModule extends Model
 ---
 
 ## File: `src\Models\Evaluation.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Evaluation.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Evaluation.php`
 
 ```php
 <?php
@@ -416,7 +416,7 @@ class Evaluation extends Model
 ---
 
 ## File: `src\Models\Material.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Material.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Material.php`
 
 ```php
 <?php
@@ -475,7 +475,7 @@ class Material extends Model
 ---
 
 ## File: `src\Models\MaterialModule.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\MaterialModule.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\MaterialModule.php`
 
 ```php
 <?php
@@ -530,7 +530,7 @@ class MaterialModule extends Model
 ---
 
 ## File: `src\Models\Module.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Module.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Module.php`
 
 ```php
 <?php
@@ -594,7 +594,7 @@ class Module extends Model
 ---
 
 ## File: `src\Models\Quiz.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\Quiz.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\Quiz.php`
 
 ```php
 <?php
@@ -650,7 +650,7 @@ class Quiz extends Model
 ---
 
 ## File: `src\Models\QuizAttempt.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lms\src\Models\QuizAttempt.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Models\QuizAttempt.php`
 
 ```php
 <?php

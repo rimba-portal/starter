@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:47:22*
-*Target Folder: `\starter\packages\bit-es\agreement`*
+*Generated on: 2026-07-13 07:38:37*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\agreement`*
 
 ---
 
 ## File: `database\migrations\0002_01_01_000602_create_agreements_tables.php`
-**Absolute Path:** `\starter\packages\bit-es\agreement\database\migrations\0002_01_01_000602_create_agreements_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\database\migrations\0002_01_01_000602_create_agreements_tables.php`
 
 ```php
 <?php
@@ -86,7 +86,7 @@ return new class extends Migration
 ---
 
 ## File: `src\AgreementServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\agreement\src\AgreementServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\src\AgreementServiceProvider.php`
 
 ```php
 <?php
@@ -111,7 +111,7 @@ class AgreementServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\Agreement.php`
-**Absolute Path:** `\starter\packages\bit-es\agreement\src\Models\Agreement.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\src\Models\Agreement.php`
 
 ```php
 <?php
@@ -190,7 +190,7 @@ class Agreement extends Model
 ---
 
 ## File: `src\Models\AgreementType.php`
-**Absolute Path:** `\starter\packages\bit-es\agreement\src\Models\AgreementType.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\src\Models\AgreementType.php`
 
 ```php
 <?php
@@ -260,7 +260,7 @@ class AgreementType extends Model
 ---
 
 ## File: `src\Models\Party.php`
-**Absolute Path:** `\starter\packages\bit-es\agreement\src\Models\Party.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\src\Models\Party.php`
 
 ```php
 <?php

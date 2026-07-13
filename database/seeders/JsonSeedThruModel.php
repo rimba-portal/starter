@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use Bites\Attributing\Services\GetModelInfo;
+use Bites\Base\Services\GetModelInfo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Seeder;
@@ -31,7 +31,18 @@ class JsonSeedThruModel extends Seeder
                 continue;
             }
 
-            $tableName = $file->getFilenameWithoutExtension();
+            $jsonContent = File::get($file->getRealPath());
+            $jsonMap = json_decode($jsonContent, true);
+
+            if (empty($jsonMap) || ! is_array($jsonMap)) {
+                $this->command?->warn("Skipping file: '{$file->getFilename()}'. JSON is empty or invalid.");
+
+                continue;
+            }
+
+            // Extract the table name from the 1st layer key
+            $tableName = array_key_first($jsonMap);
+            $data = $jsonMap[$tableName];
 
             if (! Schema::hasTable($tableName)) {
                 $this->command?->warn("Skipping file: '{$file->getFilename()}'. Table '{$tableName}' does not exist.");
@@ -45,19 +56,6 @@ class JsonSeedThruModel extends Seeder
                 $this->command?->warn("Skipping table '{$tableName}'. No Eloquent model found.");
 
                 continue;
-            }
-
-            $jsonContent = File::get($file->getRealPath());
-            $data = json_decode($jsonContent, true);
-
-            if (empty($data)) {
-                $this->command?->warn("Skipping table '{$tableName}': JSON file is empty or invalid.");
-
-                continue;
-            }
-
-            if (isset($data[$tableName])) {
-                $data = $data[$tableName];
             }
 
             if (! $this->isList($data)) {

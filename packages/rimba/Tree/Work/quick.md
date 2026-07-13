@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:10*
-*Target Folder: `\starter\packages\rimba\Tree\Work`*
+*Generated on: 2026-07-13 07:38:47*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work`*
 
 ---
 
 ## File: `database\migrations\0002_01_01_000608_create_tasks_tables.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\database\migrations\0002_01_01_000608_create_tasks_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\database\migrations\0002_01_01_000608_create_tasks_tables.php`
 
 ```php
 <?php
@@ -94,7 +94,7 @@ return new class extends Migration
 ---
 
 ## File: `src\Http\UI\Widgets\MyPendingTasksWidget.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\MyPendingTasksWidget.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\MyPendingTasksWidget.php`
 
 ```php
 <?php
@@ -153,7 +153,7 @@ class MyPendingTasksWidget extends TableWidget
 ---
 
 ## File: `src\Http\UI\Widgets\TaskStatsWidget.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\TaskStatsWidget.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\TaskStatsWidget.php`
 
 ```php
 <?php
@@ -225,7 +225,7 @@ class TaskStatsWidget extends StatsOverviewWidget
 ---
 
 ## File: `src\Http\UI\Widgets\UnassignedTasksByRoleWidget.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\UnassignedTasksByRoleWidget.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Http\UI\Widgets\UnassignedTasksByRoleWidget.php`
 
 ```php
 <?php
@@ -290,7 +290,7 @@ class UnassignedTasksByRoleWidget extends StatsOverviewWidget
 ---
 
 ## File: `src\Models\Checklist.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\Checklist.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\Checklist.php`
 
 ```php
 <?php
@@ -343,7 +343,7 @@ class Checklist extends Model
 ---
 
 ## File: `src\Models\ChecklistInstance.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\ChecklistInstance.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\ChecklistInstance.php`
 
 ```php
 <?php
@@ -400,7 +400,7 @@ class ChecklistInstance extends Model
 ---
 
 ## File: `src\Models\Task.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\Task.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\Task.php`
 
 ```php
 <?php
@@ -455,7 +455,7 @@ class Task extends Model
 ---
 
 ## File: `src\Models\TaskInstance.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\TaskInstance.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\TaskInstance.php`
 
 ```php
 <?php
@@ -532,7 +532,7 @@ class TaskInstance extends Model
 ---
 
 ## File: `src\Models\WorkPackage.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\WorkPackage.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\WorkPackage.php`
 
 ```php
 <?php
@@ -579,7 +579,7 @@ class WorkPackage extends Model
 ---
 
 ## File: `src\Models\WorkPackageInstance.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\Models\WorkPackageInstance.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\Models\WorkPackageInstance.php`
 
 ```php
 <?php
@@ -640,7 +640,7 @@ class WorkPackageInstance extends Model
 ---
 
 ## File: `src\WorkServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Work\src\WorkServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\src\WorkServiceProvider.php`
 
 ```php
 <?php

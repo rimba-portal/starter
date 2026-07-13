@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:48:30*
-*Target Folder: `\starter\packages\bit-es\siapa`*
+*Generated on: 2026-07-13 07:38:33*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\siapa`*
 
 ---
 
 ## File: `config\identity.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\config\identity.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\config\identity.php`
 
 ```php
 <?php
@@ -22,7 +22,7 @@ return [
 ---
 
 ## File: `database\migrations\0002_01_01_000201_create_siapa_tables.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\database\migrations\0002_01_01_000201_create_siapa_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\database\migrations\0002_01_01_000201_create_siapa_tables.php`
 
 ```php
 <?php
@@ -58,7 +58,7 @@ return new class extends Migration
 ---
 
 ## File: `resources\views\auth\login.blade.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\resources\views\auth\login.blade.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\resources\views\auth\login.blade.php`
 
 ```php
 <x-filament-panels::page.simple>
@@ -111,7 +111,7 @@ return new class extends Migration
 ---
 
 ## File: `resources\views\profile.blade.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\resources\views\profile.blade.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\resources\views\profile.blade.php`
 
 ```php
 <x-filament-panels::page>
@@ -180,7 +180,7 @@ return new class extends Migration
 ---
 
 ## File: `routes\web.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\routes\web.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\routes\web.php`
 
 ```php
 <?php
@@ -197,7 +197,7 @@ Route::middleware('web')->post('/profile/save-face', [IdentityController::class,
 ---
 
 ## File: `src\Http\Controllers\IdentityController.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Http\Controllers\IdentityController.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Http\Controllers\IdentityController.php`
 
 ```php
 <?php
@@ -225,7 +225,7 @@ class IdentityController extends Controller
 ---
 
 ## File: `src\Http\Middleware\EnsureSetupIsComplete.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Http\Middleware\EnsureSetupIsComplete.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Http\Middleware\EnsureSetupIsComplete.php`
 
 ```php
 <?php
@@ -268,7 +268,7 @@ class EnsureSetupIsComplete
 ---
 
 ## File: `src\IdentityServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\IdentityServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\IdentityServiceProvider.php`
 
 ```php
 <?php
@@ -308,7 +308,7 @@ class IdentityServiceProvider extends ServiceProvider
 ---
 
 ## File: `src\Models\UserAuth.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Models\UserAuth.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Models\UserAuth.php`
 
 ```php
 <?php
@@ -348,7 +348,7 @@ class UserAuth extends Model
 ---
 
 ## File: `src\Pages\Auth\ForgotPassword.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Pages\Auth\ForgotPassword.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Pages\Auth\ForgotPassword.php`
 
 ```php
 <?php
@@ -384,7 +384,7 @@ class ForgotPassword extends RequestPasswordReset
 ---
 
 ## File: `src\Pages\Auth\Login.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Pages\Auth\Login.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Pages\Auth\Login.php`
 
 ```php
 <?php
@@ -519,7 +519,7 @@ class Login extends BaseLogin
 ---
 
 ## File: `src\Pages\Auth\Register.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Pages\Auth\Register.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Pages\Auth\Register.php`
 
 ```php
 <?php
@@ -543,7 +543,7 @@ class Register extends BaseRegister
 ---
 
 ## File: `src\Pages\Profile.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Pages\Profile.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Pages\Profile.php`
 
 ```php
 <?php
@@ -604,7 +604,7 @@ class Profile extends Page
 ---
 
 ## File: `src\Traits\HasIdentityAuth.php`
-**Absolute Path:** `\starter\packages\bit-es\siapa\src\Traits\HasIdentityAuth.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Traits\HasIdentityAuth.php`
 
 ```php
 <?php

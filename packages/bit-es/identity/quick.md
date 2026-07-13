@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:48:28*
-*Target Folder: `\starter\packages\bit-es\identity`*
+*Generated on: 2026-07-13 07:38:32*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\identity`*
 
 ---
 
 ## File: `config\identity.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\config\identity.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\config\identity.php`
 
 ```php
 <?php
@@ -43,7 +43,7 @@ return [
 ---
 
 ## File: `database\migrations\0002_01_01_000201_create_identity_tables.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\database\migrations\0002_01_01_000201_create_identity_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\database\migrations\0002_01_01_000201_create_identity_tables.php`
 
 ```php
 <?php
@@ -108,7 +108,7 @@ return new class extends Migration
 ---
 
 ## File: `src\Contracts\AuthFactor.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Contracts\AuthFactor.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Contracts\AuthFactor.php`
 
 ```php
 <?php
@@ -134,7 +134,7 @@ interface AuthFactor
 ---
 
 ## File: `src\Factors\FaceFactor.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Factors\FaceFactor.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Factors\FaceFactor.php`
 
 ```php
 <?php
@@ -172,7 +172,7 @@ class FaceFactor implements AuthFactor
 ---
 
 ## File: `src\Factors\PinFactor.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Factors\PinFactor.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Factors\PinFactor.php`
 
 ```php
 <?php
@@ -218,7 +218,7 @@ class PinFactor implements AuthFactor
 ---
 
 ## File: `src\IdentityServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\IdentityServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\IdentityServiceProvider.php`
 
 ```php
 <?php
@@ -276,7 +276,7 @@ class IdentityServiceProvider extends ServiceProvider
 ---
 
 ## File: `src\Managers\IdentityManager.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Managers\IdentityManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Managers\IdentityManager.php`
 
 ```php
 <?php
@@ -320,7 +320,7 @@ class IdentityManager
 ---
 
 ## File: `src\Managers\PipelineManager.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Managers\PipelineManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Managers\PipelineManager.php`
 
 ```php
 <?php
@@ -368,7 +368,7 @@ class PipelineManager
 ---
 
 ## File: `src\Models\IdentityAttempt.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Models\IdentityAttempt.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Models\IdentityAttempt.php`
 
 ```php
 <?php
@@ -403,7 +403,7 @@ class IdentityAttempt extends Model
 ---
 
 ## File: `src\Models\IdentityCredential.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Models\IdentityCredential.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Models\IdentityCredential.php`
 
 ```php
 <?php
@@ -446,7 +446,7 @@ class IdentityCredential extends Model
 ---
 
 ## File: `src\Models\IdentityProfile.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Models\IdentityProfile.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Models\IdentityProfile.php`
 
 ```php
 <?php
@@ -490,7 +490,7 @@ class IdentityProfile extends Model
 ---
 
 ## File: `src\Services\LoginPipeline.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Services\LoginPipeline.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Services\LoginPipeline.php`
 
 ```php
 <?php
@@ -542,7 +542,7 @@ class LoginPipeline
 ---
 
 ## File: `src\Traits\HasIdentityProfile.php`
-**Absolute Path:** `\starter\packages\bit-es\identity\src\Traits\HasIdentityProfile.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\identity\src\Traits\HasIdentityProfile.php`
 
 ```php
 <?php

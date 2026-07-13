@@ -7,17 +7,17 @@ namespace Bites\Identity\Pages\Auth;
 use App\Models\User;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 class ForgotPassword extends RequestPasswordReset
 {
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form->schema([
+        return $schema->components([
             TextInput::make('email')->email()->required()->exists('users')->live(onBlur: true),
             TextInput::make('totp_code')->numeric()->length(6)->required()->visible(fn ($get): bool => filled($get('email')))
                 ->rule(function ($attr, $val, $fail): void {
-                    $user = User::where('email', $this->data['email'])->firstOrFail();
+                    $user = User::where('email', '=', $this->data['email'], 'and')->firstOrFail();
                     if (! $user->verifyTwoFactorCode($val)) {
                         $fail('Invalid TOTP code');
                     }

@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:56*
-*Target Folder: `\starter\packages\rimba\Twig\Lcs`*
+*Generated on: 2026-07-13 07:38:53*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lcs`*
 
 ---
 
 ## File: `src\LcsServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lcs\src\LcsServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lcs\src\LcsServiceProvider.php`
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class LcsServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\ContractConfidentiality.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Lcs\src\Models\ContractConfidentiality.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lcs\src\Models\ContractConfidentiality.php`
 
 ```php
 <?php

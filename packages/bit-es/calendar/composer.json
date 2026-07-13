@@ -1,6 +1,6 @@
 {
     "name": "bit-es/calendar",
-    "description": "Bites Calendar: Event management and scheduling",
+    "description": "Bites Calendar: Interactive calendar management",
     "type": "library",
     "license": "MIT",
     "authors": [

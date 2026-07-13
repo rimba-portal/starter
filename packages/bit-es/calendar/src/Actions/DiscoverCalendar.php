@@ -13,10 +13,11 @@ class DiscoverCalendar
     public function execute(): void
     {
         FilamentView::registerRenderHook(
-            PanelsRenderHook::USER_MENU_BEFORE,
+            PanelsRenderHook::GLOBAL_SEARCH_BEFORE,
             fn (): string => Action::make('Calendar')
                 ->label('Calendar')
                 ->iconButton()
+                ->badge()
                 ->icon('bites-calendar')
                 ->url(route('filament.staff.pages.calendar'))
                 ->toHtml(),

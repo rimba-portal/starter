@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:49:17*
-*Target Folder: `\starter\packages\rimba\Bark\Trail`*
+*Generated on: 2026-07-13 07:38:40*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Trail`*
 
 ---
 
 ## File: `src\Models\AuditLog.php`
-**Absolute Path:** `\starter\packages\rimba\Bark\Trail\src\Models\AuditLog.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Trail\src\Models\AuditLog.php`
 
 ```php
 <?php
@@ -71,7 +71,7 @@ class AuditLog extends Model
 ---
 
 ## File: `src\TrailServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Bark\Trail\src\TrailServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Trail\src\TrailServiceProvider.php`
 
 ```php
 <?php

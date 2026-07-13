@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:49:14*
-*Target Folder: `\starter\packages\rimba\Bark\Branding`*
+*Generated on: 2026-07-13 07:38:38*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Branding`*
 
 ---
 
 ## File: `src\BrandingServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Bark\Branding\src\BrandingServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Branding\src\BrandingServiceProvider.php`
 
 ```php
 <?php

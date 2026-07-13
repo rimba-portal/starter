@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:52*
-*Target Folder: `\starter\packages\rimba\Twig\Dms`*
+*Generated on: 2026-07-13 07:38:48*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms`*
 
 ---
 
 ## File: `src\DmsServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Dms\src\DmsServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\DmsServiceProvider.php`
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class DmsServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\Document.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Dms\src\Models\Document.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\Models\Document.php`
 
 ```php
 <?php
@@ -104,7 +104,7 @@ class Document extends Model
 ---
 
 ## File: `src\Models\DocumentCategory.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Dms\src\Models\DocumentCategory.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\Models\DocumentCategory.php`
 
 ```php
 <?php
@@ -164,7 +164,7 @@ class DocumentCategory extends Model
 ---
 
 ## File: `src\Models\DocumentCategoryAssignment.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Dms\src\Models\DocumentCategoryAssignment.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\Models\DocumentCategoryAssignment.php`
 
 ```php
 <?php

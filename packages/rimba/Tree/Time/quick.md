@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:50:46*
-*Target Folder: `\starter\packages\rimba\Tree\Time`*
+*Generated on: 2026-07-13 07:38:46*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time`*
 
 ---
 
 ## File: `resources\views\calendar.blade.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\resources\views\calendar.blade.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\resources\views\calendar.blade.php`
 
 ```php
 @php
@@ -80,7 +80,7 @@
 ---
 
 ## File: `src\Actions\CalendarSlideoverTrigger.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Actions\CalendarSlideoverTrigger.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Actions\CalendarSlideoverTrigger.php`
 
 ```php
 <?php
@@ -134,7 +134,7 @@ class CalendarSlideoverTrigger extends Component implements HasActions
 ---
 
 ## File: `src\Actions\DiscoverCalendar.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Actions\DiscoverCalendar.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Actions\DiscoverCalendar.php`
 
 ```php
 <?php
@@ -168,7 +168,7 @@ class DiscoverCalendar
 ---
 
 ## File: `src\Actions\ViewCalendar.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Actions\ViewCalendar.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Actions\ViewCalendar.php`
 
 ```php
 <?php
@@ -209,7 +209,7 @@ class GetCalendarAction extends Action
 ---
 
 ## File: `src\Enums\EventType.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Enums\EventType.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Enums\EventType.php`
 
 ```php
 <?php
@@ -366,7 +366,7 @@ enum EventType: string implements HasDescription, HasLabel
 ---
 
 ## File: `src\Models\Event.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Models\Event.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Models\Event.php`
 
 ```php
 <?php
@@ -446,7 +446,7 @@ class Event extends Model
 ---
 
 ## File: `src\Models\Shift.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Models\Shift.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Models\Shift.php`
 
 ```php
 <?php
@@ -519,7 +519,7 @@ class Shift extends Model
 ---
 
 ## File: `src\Services\CalendarService.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Services\CalendarService.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Services\CalendarService.php`
 
 ```php
 <?php
@@ -605,7 +605,7 @@ class CalendarService
 ---
 
 ## File: `src\Support\ShiftPattern.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\Support\ShiftPattern.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\Support\ShiftPattern.php`
 
 ```php
 <?php
@@ -792,7 +792,7 @@ class ShiftPattern
 ---
 
 ## File: `src\TimeServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Tree\Time\src\TimeServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time\src\TimeServiceProvider.php`
 
 ```php
 <?php

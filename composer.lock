@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1e2a5779f99ae9831416ea9ef88fbdd",
+    "content-hash": "8bc2b5c1cadd687de4d72c553e52ade7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -154,12 +154,79 @@
             }
         },
         {
+            "name": "bit-es/base",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/bit-es/base",
+                "reference": "d3a6c944bc999a31df4b2e5c690d27bbaad85af3"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\Base\\BaseServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bites\\Base\\": "src/"
+                }
+            },
+            "scripts": {
+                "bites:make-all-md": [
+                    "@php artisan bites:quick-md packages\\bit-es\\agreement",
+                    "@php artisan bites:quick-md packages\\bit-es\\attributing",
+                    "@php artisan bites:quick-md packages\\bit-es\\calendar",
+                    "@php artisan bites:quick-md packages\\bit-es\\identity",
+                    "@php artisan bites:quick-md packages\\bit-es\\siapa",
+                    "@php artisan bites:quick-md packages\\bit-es\\versioning",
+                    "@php artisan bites:quick-md packages\\bit-es\\workflow",
+                    "@php artisan bites:quick-md packages\\rimba\\Bark\\Branding",
+                    "@php artisan bites:quick-md packages\\rimba\\Bark\\Can",
+                    "@php artisan bites:quick-md packages\\rimba\\Bark\\Trail",
+                    "@php artisan bites:quick-md packages\\rimba\\Bark\\Who",
+                    "@php artisan bites:quick-md packages\\rimba\\Tree\\Flow",
+                    "@php artisan bites:quick-md packages\\rimba\\Tree\\Link",
+                    "@php artisan bites:quick-md packages\\rimba\\Tree\\Menu",
+                    "@php artisan bites:quick-md packages\\rimba\\Tree\\Time",
+                    "@php artisan bites:quick-md packages\\rimba\\Tree\\Work",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Dms",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Eam",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Hrm",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Lcs",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Lms",
+                    "@php artisan bites:quick-md packages\\rimba\\Twig\\Tos"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Base package for use by all Bites and Rimba packages.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "bit-es/calendar",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/bit-es/calendar",
-                "reference": "4b3f0f38abce0968e31984654f811997bd4ad505"
+                "reference": "4af04e99ff051e567fdb7b21c285f87ca6fb5393"
             },
             "require": {
                 "filament/filament": "^5.0",
@@ -188,7 +255,48 @@
                     "email": "bit.ecosystem@gmail.com"
                 }
             ],
-            "description": "Bites Calendar: Event management and scheduling",
+            "description": "Bites Calendar: Interactive calendar management",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "bit-es/floorplan",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/bit-es/floorplan",
+                "reference": "4e4c7c9916ffce78f56c3dc0544143e91911a8d3"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bites\\FloorPlan\\FloorPlanServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bites\\FloorPlan\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BIT Ecosystem",
+                    "email": "bit.ecosystem@gmail.com"
+                }
+            ],
+            "description": "Bites FloorPlan: Interactive floor plan management",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -1914,22 +2022,22 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.14.0",
+            "version": "7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de"
+                "reference": "6b1d2429a2c312474c523aa9017fba0c07b5f4a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/aef242412e13128b5049864867bb49fc37dd39de",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/6b1d2429a2c312474c523aa9017fba0c07b5f4a0",
+                "reference": "6b1d2429a2c312474c523aa9017fba0c07b5f4a0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^2.5.1",
-                "guzzlehttp/psr7": "^2.12.4",
+                "guzzlehttp/psr7": "^2.12.5",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -2022,7 +2130,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.14.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.14.1"
             },
             "funding": [
                 {
@@ -2038,7 +2146,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T22:54:09+00:00"
+            "time": "2026-07-13T01:32:54+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2126,16 +2234,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.12.4",
+            "version": "2.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c"
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9365d578a9fd1552ad6ca9c3cb530708526feb09",
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09",
                 "shasum": ""
             },
             "require": {
@@ -2225,7 +2333,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.12.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.12.5"
             },
             "funding": [
                 {
@@ -2241,7 +2349,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T15:56:20+00:00"
+            "time": "2026-07-13T01:27:20+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
@@ -2807,16 +2915,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.8.2",
+            "version": "2.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "59fb075d2101740c337c7216e3f32b36c204218b"
+                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/59fb075d2101740c337c7216e3f32b36c204218b",
-                "reference": "59fb075d2101740c337c7216e3f32b36c204218b",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/1902f60f984235023acbe03db6ad614a37b3c3e7",
+                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7",
                 "shasum": ""
             },
             "require": {
@@ -2838,8 +2946,8 @@
                 "github/gfm": "0.29.0",
                 "michelf/php-markdown": "^1.4 || ^2.0",
                 "nyholm/psr7": "^1.5",
-                "phpstan/phpstan": "^1.8.2",
-                "phpunit/phpunit": "^9.5.21 || ^10.5.9 || ^11.0.0",
+                "phpstan/phpstan": "^2.0.0",
+                "phpunit/phpunit": "^9.5.21 || ^10.5.9 || ^11.0.0 || ^12.0.0 || ^13.0.0",
                 "scrutinizer/ocular": "^1.8.1",
                 "symfony/finder": "^5.3 | ^6.0 | ^7.0 || ^8.0",
                 "symfony/process": "^5.4 | ^6.0 | ^7.0 || ^8.0",
@@ -2910,7 +3018,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-19T13:16:38+00:00"
+            "time": "2026-07-12T15:29:16+00:00"
         },
         {
             "name": "league/config",
@@ -9981,16 +10089,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.5.5",
+            "version": "2.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "9718a72e7f1aacacbdcb6eeed07a47147bce802e"
+                "reference": "c329e210d17f86d70424f2688e1294495f44c670"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/9718a72e7f1aacacbdcb6eeed07a47147bce802e",
-                "reference": "9718a72e7f1aacacbdcb6eeed07a47147bce802e",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/c329e210d17f86d70424f2688e1294495f44c670",
+                "reference": "c329e210d17f86d70424f2688e1294495f44c670",
                 "shasum": ""
             },
             "require": {
@@ -10029,7 +10137,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.5.5"
+                "source": "https://github.com/rectorphp/rector/tree/2.5.6"
             },
             "funding": [
                 {
@@ -10037,7 +10145,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-09T09:48:44+00:00"
+            "time": "2026-07-12T10:21:06+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -11198,7 +11306,9 @@
     "stability-flags": {
         "bit-es/agreement": 20,
         "bit-es/attributing": 20,
+        "bit-es/base": 20,
         "bit-es/calendar": 20,
+        "bit-es/floorplan": 20,
         "bit-es/siapa": 20,
         "bit-es/versioning": 20,
         "rimba/bark": 20,

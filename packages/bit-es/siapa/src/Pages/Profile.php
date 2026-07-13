@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Profile extends Page
 {
-    protected static string $view = 'bites-identity::profile';
+    // protected static string $view = 'bites-identity::profile';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserCircle;
 

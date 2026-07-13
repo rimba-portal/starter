@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:55*
-*Target Folder: `\starter\packages\rimba\Twig\Hrm`*
+*Generated on: 2026-07-13 07:38:51*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm`*
 
 ---
 
 ## File: `src\HrmServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Hrm\src\HrmServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm\src\HrmServiceProvider.php`
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class HrmServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\Employee.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Hrm\src\Models\Employee.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm\src\Models\Employee.php`
 
 ```php
 <?php
@@ -91,7 +91,7 @@ class Employee extends Model
 ---
 
 ## File: `src\Models\JobTitle.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Hrm\src\Models\JobTitle.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm\src\Models\JobTitle.php`
 
 ```php
 <?php

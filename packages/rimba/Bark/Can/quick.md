@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:49:15*
-*Target Folder: `\starter\packages\rimba\Bark\Can`*
+*Generated on: 2026-07-13 07:38:39*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Can`*
 
 ---
 
 ## File: `src\CanServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Bark\Can\src\CanServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Can\src\CanServiceProvider.php`
 
 ```php
 <?php

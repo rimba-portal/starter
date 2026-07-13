@@ -36,7 +36,7 @@ class Login extends BaseLogin
                     ])
                     ->beforeValidation(function (array $state): void {
                         // FIX: Use $this-> to assign the property to the class instance
-                        $this->resolvedUser = User::where('username', $state['username'])
+                        $this->resolvedUser = User::where('email', '=', $this->data['email'], 'and')
                             ->orWhere('email', $state['username'])
                             ->first();
 

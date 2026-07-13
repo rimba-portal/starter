@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:48:23*
-*Target Folder: `\starter\packages\bit-es\attributing`*
+*Generated on: 2026-07-13 07:38:29*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\attributing`*
 
 ---
 
 ## File: `config\attributes.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\config\attributes.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\config\attributes.php`
 
 ```php
 <?php
@@ -62,7 +62,7 @@ return [
 ---
 
 ## File: `database\migrations\0002_01_01_000101_create_attributing_tables.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\database\migrations\0002_01_01_000101_create_attributing_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\database\migrations\0002_01_01_000101_create_attributing_tables.php`
 
 ```php
 <?php
@@ -165,7 +165,7 @@ return new class extends Migration
 ---
 
 ## File: `src\AttributingServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\AttributingServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\AttributingServiceProvider.php`
 
 ```php
 <?php
@@ -195,7 +195,7 @@ class AttributingServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Http\UI\RelationManagers\LocationAttributesRelationManager.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\LocationAttributesRelationManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\LocationAttributesRelationManager.php`
 
 ```php
 <?php
@@ -287,7 +287,7 @@ class LocationAttributesRelationManager extends RelationManager
 ---
 
 ## File: `src\Http\UI\RelationManagers\PersonAttributesRelationManager.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\PersonAttributesRelationManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\PersonAttributesRelationManager.php`
 
 ```php
 <?php
@@ -379,7 +379,7 @@ class PersonAttributesRelationManager extends RelationManager
 ---
 
 ## File: `src\Http\UI\RelationManagers\ThingAttributesRelationManager.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\ThingAttributesRelationManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Http\UI\RelationManagers\ThingAttributesRelationManager.php`
 
 ```php
 <?php
@@ -471,7 +471,7 @@ class ThingAttributesRelationManager extends RelationManager
 ---
 
 ## File: `src\Macros\LockWhenFilledMacro.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Macros\LockWhenFilledMacro.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Macros\LockWhenFilledMacro.php`
 
 ```php
 <?php
@@ -523,7 +523,7 @@ final class LockWhenFilledMacro
 ---
 
 ## File: `src\Models\AttributeDefinition.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Models\AttributeDefinition.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Models\AttributeDefinition.php`
 
 ```php
 <?php
@@ -574,7 +574,7 @@ class AttributeDefinition extends Model
 ---
 
 ## File: `src\Models\AttributeOption.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Models\AttributeOption.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Models\AttributeOption.php`
 
 ```php
 <?php
@@ -614,7 +614,7 @@ class AttributeOption extends Model
 ---
 
 ## File: `src\Models\LocationAttribute.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Models\LocationAttribute.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Models\LocationAttribute.php`
 
 ```php
 <?php
@@ -648,7 +648,7 @@ class LocationAttribute extends Model
 ---
 
 ## File: `src\Models\PersonAttribute.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Models\PersonAttribute.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Models\PersonAttribute.php`
 
 ```php
 <?php
@@ -689,7 +689,7 @@ class PersonAttribute extends Model
 ---
 
 ## File: `src\Models\ThingAttribute.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Models\ThingAttribute.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Models\ThingAttribute.php`
 
 ```php
 <?php
@@ -722,202 +722,8 @@ class ThingAttribute extends Model
 
 ---
 
-## File: `src\Services\GetModelInfo.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Services\GetModelInfo.php`
-
-```php
-<?php
-
-declare(strict_types=1);
-
-namespace Bites\Attributing\Services;
-
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-
-class GetModelInfo
-{
-    /**
-     * Return all discovered Eloquent model classes.
-     *
-     * @return Collection<int, class-string<Model>>
-     */
-    public static function all(): Collection
-    {
-        return collect(self::tableMap())
-            ->values()
-            ->unique()
-            ->values();
-    }
-
-    /**
-     * Build a table-name to model-class map.
-     *
-     * Example:
-     * [
-     *     'attribute_definitions' => 'Bites\Attributing\Models\AttributeDefinition',
-     *     'attribute_options' => 'Bites\Attributing\Models\AttributeOption',
-     * ]
-     *
-     * @return array<string, class-string<Model>>
-     */
-    public static function tableMap(): array
-    {
-        $results = [];
-
-        foreach (self::scanDirectories() as $directory) {
-            self::scanDirectory($directory, $results);
-        }
-
-        ksort($results);
-
-        return $results;
-    }
-
-    /**
-     * Find an Eloquent model class by table name.
-     *
-     * @return class-string<Model>|null
-     */
-    public static function findByTable(string $tableName): ?string
-    {
-        return self::tableMap()[$tableName] ?? null;
-    }
-
-    /**
-     * Directories to scan for models.
-     *
-     * @return array<int, string>
-     */
-    protected static function scanDirectories(): array
-    {
-        return array_values(array_filter([
-            app_path(),
-
-            // Local package development path.
-            base_path('packages'),
-
-            // Installed package paths that you care about.
-            base_path('vendor/bit-es'),
-            base_path('vendor/rimba'),
-        ], static fn (string $directory): bool => is_dir($directory)));
-    }
-
-    /**
-     * Scan PHP files recursively and collect table => model mappings.
-     *
-     * @param  array<string, class-string<Model>>  $results
-     */
-    protected static function scanDirectory(string $directory, array &$results): void
-    {
-        if (! is_dir($directory)) {
-            return;
-        }
-
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($directory)
-        );
-
-        foreach ($iterator as $file) {
-            if (! $file->isFile()) {
-                continue;
-            }
-
-            if ($file->getExtension() !== 'php') {
-                continue;
-            }
-
-            $path = $file->getRealPath();
-
-            if (! is_string($path)) {
-                continue;
-            }
-
-            /*
-             * Optional but useful optimization.
-             * Only scan files inside a Models directory.
-             *
-             * Matching examples:
-             * app/Models/User.php
-             * packages/bit-es/attributing/src/Models/AttributeDefinition.php
-             * vendor/bit-es/attributing/src/Models/AttributeDefinition.php
-             */
-            if (! str_contains(str_replace('\\', '/', $path), '/Models/')) {
-                continue;
-            }
-
-            $contents = file_get_contents($path);
-
-            if (! is_string($contents)) {
-                continue;
-            }
-
-            /*
-             * Fast skip.
-             *
-             * This works for:
-             * class AttributeDefinition extends Model
-             *
-             * If later you use:
-             * class Staff extends BaseModel
-             *
-             * then remove this block and let instanceof Model check below decide.
-             */
-            if (! str_contains($contents, 'extends Model')) {
-                continue;
-            }
-
-            $fqcn = self::extractClassName($contents);
-
-            if (! $fqcn) {
-                continue;
-            }
-
-            try {
-                if (! class_exists($fqcn)) {
-                    continue;
-                }
-
-                $instance = new $fqcn;
-
-                if (! $instance instanceof Model) {
-                    continue;
-                }
-
-                $results[$instance->getTable()] = $fqcn;
-            } catch (\Throwable) {
-                continue;
-            }
-        }
-    }
-
-    /**
-     * Extract the fully qualified class name from PHP file contents.
-     */
-    protected static function extractClassName(string $contents): ?string
-    {
-        preg_match('/namespace\s+([^;]+);/', $contents, $namespaceMatch);
-        preg_match('/class\s+([A-Za-z_]\w*)/', $contents, $classMatch);
-
-        $namespace = $namespaceMatch[1] ?? null;
-        $className = $classMatch[1] ?? null;
-
-        if (! $namespace || ! $className) {
-            return null;
-        }
-
-        return trim($namespace).'\\'.trim($className);
-    }
-}
-
-```
-
----
-
 ## File: `src\Support\HasAttributeRelationManager.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Support\HasAttributeRelationManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Support\HasAttributeRelationManager.php`
 
 ```php
 <?php
@@ -965,7 +771,7 @@ final class HasAttributeRelationManagers
 ---
 
 ## File: `src\Traits\HasLocationAttributes.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Traits\HasLocationAttributes.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Traits\HasLocationAttributes.php`
 
 ```php
 <?php
@@ -995,7 +801,7 @@ trait HasLocationAttributes
 ---
 
 ## File: `src\Traits\HasPersonAttributes.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Traits\HasPersonAttributes.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Traits\HasPersonAttributes.php`
 
 ```php
 <?php
@@ -1025,7 +831,7 @@ trait HasPersonAttributes
 ---
 
 ## File: `src\Traits\HasThingAttributes.php`
-**Absolute Path:** `\starter\packages\bit-es\attributing\src\Traits\HasThingAttributes.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\src\Traits\HasThingAttributes.php`
 
 ```php
 <?php

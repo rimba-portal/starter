@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:51:53*
-*Target Folder: `\starter\packages\rimba\Twig\Eam`*
+*Generated on: 2026-07-13 07:38:50*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam`*
 
 ---
 
 ## File: `src\EamServiceProvider.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Eam\src\EamServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam\src\EamServiceProvider.php`
 
 ```php
 <?php
@@ -29,7 +29,7 @@ class EamServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Models\Asset.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Eam\src\Models\Asset.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam\src\Models\Asset.php`
 
 ```php
 <?php
@@ -106,7 +106,7 @@ class Asset extends Model
 ---
 
 ## File: `src\Models\AssetAssignment.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Eam\src\Models\AssetAssignment.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam\src\Models\AssetAssignment.php`
 
 ```php
 <?php
@@ -164,7 +164,7 @@ class AssetAssignment extends Model
 ---
 
 ## File: `src\Models\AssetType.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Eam\src\Models\AssetType.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam\src\Models\AssetType.php`
 
 ```php
 <?php
@@ -211,7 +211,7 @@ class AssetType extends Model
 ---
 
 ## File: `src\Models\AssetTypeAssignment.php`
-**Absolute Path:** `\starter\packages\rimba\Twig\Eam\src\Models\AssetTypeAssignment.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam\src\Models\AssetTypeAssignment.php`
 
 ```php
 <?php

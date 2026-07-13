@@ -10,8 +10,8 @@ use App\Trees\Organization\Models\JobPosition;
 use App\Trees\Organization\Models\OrgCorp;
 use App\Trees\Organization\Models\OrgUnit;
 use App\Trees\Organization\Models\Staff;
-use App\Trees\Sync\Models\ApiConfig;
 use Bites\Agreement\Models\Agreement;
+use Bites\Base\Models\ApiConfig;
 use Illuminate\Database\Seeder;
 use Rimba\Twig\Hrm\Models\JobTitle;
 

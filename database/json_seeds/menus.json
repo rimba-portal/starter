@@ -190,5 +190,5 @@
         {"category": "Source", "group": "Community", "name": "Interest Groups", "description": "Special interest groups", "slug": "source-community-interest-groups", "is_active": true, "is_visible": true, "sort": "3", "icon": null, "permission": "community-interest-groups.view"},
         {"category": "Source", "group": "Community", "name": "Forums", "description": "Community forums", "slug": "source-community-forums", "is_active": true, "is_visible": true, "sort": "4", "icon": null, "permission": "community-forums.view"},
         {"category": "Source", "group": "Community", "name": "Marketplace", "description": "Community marketplace", "slug": "source-community-marketplace", "is_active": true, "is_visible": true, "sort": "5", "icon": null, "permission": "community-marketplace.view"}
-        ]   
+    ]   
 }

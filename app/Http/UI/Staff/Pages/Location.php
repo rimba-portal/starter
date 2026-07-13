@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\UI\Staff\Pages;
 
 use BackedEnum;
+use Bites\FloorPlan\Models\Location as LocationModel;
 use Filament\Actions\Action;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
@@ -53,7 +54,8 @@ class Location extends Page implements HasActions, HasForms, HasTable
                     ->columnSpanFull()
                     ->schema([
                         ViewEntry::make('floor_plan')
-                            ->view('filament.infolists.components.floor-plan-view')
+                            // ->view('filament.infolists.components.floor-plan-view')
+                            ->view('bites::floor-plan-view')
                             ->columnSpanFull(),
 
                     ])
@@ -118,7 +120,7 @@ class Location extends Page implements HasActions, HasForms, HasTable
     {
         return $table
             ->query(function () {
-                return \Bites\Organization\Structure\Location::query()
+                return LocationModel::query()
                     ->when($this->scope === 'rooms', fn ($q) => $q->where('type', 'room'))
                     ->when($this->scope === 'stores', fn ($q) => $q->where('type', 'store'))
                     ->when($this->scope === 'inactive', fn ($q) => $q->whereNotNull('ends_at'));
@@ -141,8 +143,8 @@ class Location extends Page implements HasActions, HasForms, HasTable
                     ->action(function (): void {
                         $this->scope = 'all';
                         $this->resetTablePage();
-                    })
-                    ->badge(\Bites\Organization\Structure\Location::count()),
+                    }),
+                    // ->badge(LocationModel::count()),
 
                 Action::make('rooms')
                     ->label('Rooms')
@@ -152,8 +154,8 @@ class Location extends Page implements HasActions, HasForms, HasTable
                     ->action(function (): void {
                         $this->scope = 'rooms';
                         $this->resetTablePage();
-                    })
-                    ->badge(\Bites\Organization\Structure\Location::where('type', 'room')->count()),
+                    }),
+                    // ->badge(LocationModel::where('type', 'room')->count()),
 
                 Action::make('stores')
                     ->label('Stores')
@@ -163,8 +165,8 @@ class Location extends Page implements HasActions, HasForms, HasTable
                     ->action(function (): void {
                         $this->scope = 'stores';
                         $this->resetTablePage();
-                    })
-                    ->badge(\Bites\Organization\Structure\Location::where('type', 'store')->count()),
+                    }),
+                    // ->badge(LocationModel::where('type', 'store')->count()),
 
                 Action::make('inactive')
                     ->label('Inactive')
@@ -174,8 +176,8 @@ class Location extends Page implements HasActions, HasForms, HasTable
                     ->action(function (): void {
                         $this->scope = 'inactive';
                         $this->resetTablePage();
-                    })
-                    ->badge(\Bites\Organization\Structure\Location::whereNotNull('ends_at')->count()),
+                    }),
+                    // ->badge(LocationModel::whereNotNull('ends_at')->count()),
             ]);
     }
 }

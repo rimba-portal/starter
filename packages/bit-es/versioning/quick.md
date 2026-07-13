@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:48:32*
-*Target Folder: `\starter\packages\bit-es\versioning`*
+*Generated on: 2026-07-13 07:38:34*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\versioning`*
 
 ---
 
 ## File: `config\ver.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\config\ver.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\config\ver.php`
 
 ```php
 <?php
@@ -21,7 +21,7 @@ return [
 ---
 
 ## File: `database\migrations\0002_01_01_000102_create_versions_table.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\database\migrations\0002_01_01_000102_create_versions_table.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\database\migrations\0002_01_01_000102_create_versions_table.php`
 
 ```php
 <?php
@@ -72,7 +72,7 @@ return new class extends Migration
 ---
 
 ## File: `src\Actions\CreateVersion.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Actions\CreateVersion.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Actions\CreateVersion.php`
 
 ```php
 <?php
@@ -155,7 +155,7 @@ class CreateVersion
 ---
 
 ## File: `src\Actions\GenerateNextVersion.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Actions\GenerateNextVersion.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Actions\GenerateNextVersion.php`
 
 ```php
 <?php
@@ -193,7 +193,7 @@ class GenerateNextVersion
 ---
 
 ## File: `src\Actions\ReleaseVersion.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Actions\ReleaseVersion.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Actions\ReleaseVersion.php`
 
 ```php
 <?php
@@ -225,7 +225,7 @@ class ReleaseVersion
 ---
 
 ## File: `src\Builders\MakeVersionBuilder.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Builders\MakeVersionBuilder.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Builders\MakeVersionBuilder.php`
 
 ```php
 <?php
@@ -324,7 +324,7 @@ class MakeVersionBuilder
 ---
 
 ## File: `src\Builders\VersionBuilder.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Builders\VersionBuilder.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Builders\VersionBuilder.php`
 
 ```php
 <?php
@@ -429,7 +429,7 @@ class VersionBuilder extends Builder
 ---
 
 ## File: `src\Enums\VersionIncrementType.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Enums\VersionIncrementType.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Enums\VersionIncrementType.php`
 
 ```php
 <?php
@@ -450,7 +450,7 @@ enum VersionIncrementType: string
 ---
 
 ## File: `src\Enums\VersionStatus.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Enums\VersionStatus.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Enums\VersionStatus.php`
 
 ```php
 <?php
@@ -474,7 +474,7 @@ enum VersionStatus: string
 ---
 
 ## File: `src\Http\UI\Admin\Resources\VersionResource.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Http\UI\Admin\Resources\VersionResource.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Http\UI\Admin\Resources\VersionResource.php`
 
 ```php
 <?php
@@ -531,7 +531,7 @@ class VersionResource extends Resource
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Versions\RelationManagers\VersionsRelationManager.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Http\UI\Admin\Resources\Versions\RelationManagers\VersionsRelationManager.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Http\UI\Admin\Resources\Versions\RelationManagers\VersionsRelationManager.php`
 
 ```php
 <?php
@@ -620,7 +620,7 @@ class VersionsRelationManager extends RelationManager
 ---
 
 ## File: `src\Models\Version.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Models\Version.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Models\Version.php`
 
 ```php
 <?php
@@ -677,7 +677,7 @@ class Version extends Model
 ---
 
 ## File: `src\Services\SemanticVersionService.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Services\SemanticVersionService.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Services\SemanticVersionService.php`
 
 ```php
 <?php
@@ -748,7 +748,7 @@ class SemanticVersionService
 ---
 
 ## File: `src\Services\VersionResolverService.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Services\VersionResolverService.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Services\VersionResolverService.php`
 
 ```php
 <?php
@@ -773,7 +773,7 @@ class VersionResolverService
 ---
 
 ## File: `src\Traits\HasVersions.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Traits\HasVersions.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Traits\HasVersions.php`
 
 ```php
 <?php
@@ -816,7 +816,7 @@ trait HasVersions
 ---
 
 ## File: `src\Traits\ResourceHasVersionRelations.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\Traits\ResourceHasVersionRelations.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Traits\ResourceHasVersionRelations.php`
 
 ```php
 <?php
@@ -845,7 +845,7 @@ trait ResourceHasVersionRelations
 ---
 
 ## File: `src\VersioningServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\versioning\src\VersioningServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\VersioningServiceProvider.php`
 
 ```php
 <?php

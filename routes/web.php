@@ -31,3 +31,7 @@ Route::get('/pic/{filename}', function (string $filename) {
     );
 
 })->name('staff.pic');
+
+Route::get('/zoom', function (): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View {
+    return view('zoom-image');
+});

@@ -12,7 +12,9 @@
         "php": "^8.3",
         "bit-es/agreement": "dev-main",
         "bit-es/attributing": "dev-main",
+        "bit-es/base": "dev-main",
         "bit-es/calendar": "dev-main",
+        "bit-es/floorplan": "dev-main",
         "bit-es/google-translate": "^1.0",
         "bit-es/helpfile": "^1.0",
         "bit-es/siapa": "dev-main",
@@ -38,6 +40,14 @@
     "repositories": [
         {
             "type": "path",
+            "url": "packages/bit-es/base",
+            "options": {
+                "symlink": true,
+                "canonical": false
+            }
+        },
+        {
+            "type": "path",
             "url": "packages/bit-es/agreement",
             "options": {
                 "symlink": true,
@@ -47,6 +57,14 @@
         {
             "type": "path",
             "url": "packages/bit-es/calendar",
+            "options": {
+                "symlink": true,
+                "canonical": false
+            }
+        },
+                {
+            "type": "path",
+            "url": "packages/bit-es/floorplan",
             "options": {
                 "symlink": true,
                 "canonical": false

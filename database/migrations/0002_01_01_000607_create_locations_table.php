@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('locations');
-            $table->foreignId('org_corp_id')->nullable()->constrained();
-            $table->enum('type', ['site', 'building', 'area', 'section', 'room', 'zone', 'other'])->nullable();
+            $table->foreignId('org_corp_id')->nullable()->constrained('org_corps');
             $table->string('name');
+            $table->string('type');
+            $table->string('code')->nullable();
+            $table->string('description')->nullable();
             $table->json('attributes')->nullable();
             $table->timestamps();
         });

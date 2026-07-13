@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-12 12:48:26*
-*Target Folder: `\starter\packages\bit-es\calendar`*
+*Generated on: 2026-07-13 07:38:30*
+*Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\calendar`*
 
 ---
 
 ## File: `config\bites.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\config\bites.php`
 
 ```php
 <?php
@@ -131,7 +131,7 @@ return [
 ---
 
 ## File: `database\migrations\0002_01_01_000610_create_calendar_tables.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\database\migrations\0002_01_01_000610_create_calendar_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\database\migrations\0002_01_01_000610_create_calendar_tables.php`
 
 ```php
 <?php
@@ -207,7 +207,7 @@ return new class extends Migration
 ---
 
 ## File: `src\Actions\DiscoverCalendar.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Actions\DiscoverCalendar.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Actions\DiscoverCalendar.php`
 
 ```php
 <?php
@@ -241,7 +241,7 @@ class DiscoverCalendar
 ---
 
 ## File: `src\CalendarServiceProvider.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\CalendarServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\CalendarServiceProvider.php`
 
 ```php
 <?php
@@ -281,7 +281,7 @@ class CalendarServiceProvider extends BitesServiceProvider
 ---
 
 ## File: `src\Components\Calendar.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Components\Calendar.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Components\Calendar.php`
 
 ```php
 <?php
@@ -451,7 +451,7 @@ class Calendar extends Component implements HasActions, HasForms, HasTable
 ---
 
 ## File: `src\Enums\EventType.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Enums\EventType.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Enums\EventType.php`
 
 ```php
 <?php
@@ -608,7 +608,7 @@ enum EventType: string implements HasDescription, HasLabel
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\EventResource.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\EventResource.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\EventResource.php`
 
 ```php
 <?php
@@ -679,7 +679,7 @@ class EventResource extends Resource
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Pages\CreateEvent.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\CreateEvent.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\CreateEvent.php`
 
 ```php
 <?php
@@ -701,7 +701,7 @@ class CreateEvent extends CreateRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Pages\EditEvent.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\EditEvent.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\EditEvent.php`
 
 ```php
 <?php
@@ -733,7 +733,7 @@ class EditEvent extends EditRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Pages\ListEvents.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\ListEvents.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\ListEvents.php`
 
 ```php
 <?php
@@ -763,7 +763,7 @@ class ListEvents extends ListRecords
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Pages\ViewEvent.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\ViewEvent.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Pages\ViewEvent.php`
 
 ```php
 <?php
@@ -793,7 +793,7 @@ class ViewEvent extends ViewRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Schemas\EventForm.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Schemas\EventForm.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Schemas\EventForm.php`
 
 ```php
 <?php
@@ -845,7 +845,7 @@ class EventForm
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Schemas\EventInfolist.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Schemas\EventInfolist.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Schemas\EventInfolist.php`
 
 ```php
 <?php
@@ -909,7 +909,7 @@ class EventInfolist
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Events\Tables\EventsTable.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Tables\EventsTable.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Events\Tables\EventsTable.php`
 
 ```php
 <?php
@@ -990,7 +990,7 @@ class EventsTable
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Pages\CreateShift.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\CreateShift.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\CreateShift.php`
 
 ```php
 <?php
@@ -1012,7 +1012,7 @@ class CreateShift extends CreateRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Pages\EditShift.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\EditShift.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\EditShift.php`
 
 ```php
 <?php
@@ -1044,7 +1044,7 @@ class EditShift extends EditRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Pages\ListShifts.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\ListShifts.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\ListShifts.php`
 
 ```php
 <?php
@@ -1074,7 +1074,7 @@ class ListShifts extends ListRecords
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Pages\ViewShift.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\ViewShift.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Pages\ViewShift.php`
 
 ```php
 <?php
@@ -1104,7 +1104,7 @@ class ViewShift extends ViewRecord
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftForm.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftForm.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftForm.php`
 
 ```php
 <?php
@@ -1154,7 +1154,7 @@ class ShiftForm
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftInfolist.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftInfolist.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Schemas\ShiftInfolist.php`
 
 ```php
 <?php
@@ -1215,7 +1215,7 @@ class ShiftInfolist
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\ShiftResource.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\ShiftResource.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\ShiftResource.php`
 
 ```php
 <?php
@@ -1286,7 +1286,7 @@ class ShiftResource extends Resource
 ---
 
 ## File: `src\Http\UI\Admin\Resources\Shifts\Tables\ShiftsTable.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Tables\ShiftsTable.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Admin\Resources\Shifts\Tables\ShiftsTable.php`
 
 ```php
 <?php
@@ -1359,7 +1359,7 @@ class ShiftsTable
 ---
 
 ## File: `src\Http\UI\Staff\Pages\Calendar.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Http\UI\Staff\Pages\Calendar.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Http\UI\Staff\Pages\Calendar.php`
 
 ```php
 <?php
@@ -1602,7 +1602,7 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
 ---
 
 ## File: `src\Models\Event.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Models\Event.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Models\Event.php`
 
 ```php
 <?php
@@ -1682,7 +1682,7 @@ class Event extends Model
 ---
 
 ## File: `src\Models\Shift.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Models\Shift.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Models\Shift.php`
 
 ```php
 <?php
@@ -1755,7 +1755,7 @@ class Shift extends Model
 ---
 
 ## File: `src\Services\ShiftPattern.php`
-**Absolute Path:** `\starter\packages\bit-es\calendar\src\Services\ShiftPattern.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\calendar\src\Services\ShiftPattern.php`
 
 ```php
 <?php
