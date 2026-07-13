@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 07:38:30*
+*Generated on: 2026-07-13 15:43:57*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\calendar`*
 
 ---
@@ -225,10 +225,11 @@ class DiscoverCalendar
     public function execute(): void
     {
         FilamentView::registerRenderHook(
-            PanelsRenderHook::USER_MENU_BEFORE,
+            PanelsRenderHook::GLOBAL_SEARCH_BEFORE,
             fn (): string => Action::make('Calendar')
                 ->label('Calendar')
                 ->iconButton()
+                ->badge()
                 ->icon('bites-calendar')
                 ->url(route('filament.staff.pages.calendar'))
                 ->toHtml(),

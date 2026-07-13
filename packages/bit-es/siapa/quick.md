@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 07:38:33*
+*Generated on: 2026-07-13 15:43:59*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\siapa`*
 
 ---
@@ -360,17 +360,17 @@ namespace Bites\Identity\Pages\Auth;
 use App\Models\User;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 class ForgotPassword extends RequestPasswordReset
 {
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form->schema([
+        return $schema->components([
             TextInput::make('email')->email()->required()->exists('users')->live(onBlur: true),
             TextInput::make('totp_code')->numeric()->length(6)->required()->visible(fn ($get): bool => filled($get('email')))
                 ->rule(function ($attr, $val, $fail): void {
-                    $user = User::where('email', $this->data['email'])->firstOrFail();
+                    $user = User::where('email', '=', $this->data['email'], 'and')->firstOrFail();
                     if (! $user->verifyTwoFactorCode($val)) {
                         $fail('Invalid TOTP code');
                     }
@@ -425,7 +425,7 @@ class Login extends BaseLogin
                     ])
                     ->beforeValidation(function (array $state): void {
                         // FIX: Use $this-> to assign the property to the class instance
-                        $this->resolvedUser = User::where('username', $state['username'])
+                        $this->resolvedUser = User::where('email', '=', $this->data['email'], 'and')
                             ->orWhere('email', $state['username'])
                             ->first();
 
@@ -561,7 +561,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Profile extends Page
 {
-    protected static string $view = 'bites-identity::profile';
+    // protected static string $view = 'bites-identity::profile';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserCircle;
 
