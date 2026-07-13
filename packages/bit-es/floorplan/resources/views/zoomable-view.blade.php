@@ -37,7 +37,7 @@
             </button>
 
             <span
-                class="text-sm font-medium min-w-[70px] text-center"
+                class="text-sm font-medium min-w-17.5] text-center"
                 x-text="Math.round(zoom * 100) + '%'"></span>
 
             <button
