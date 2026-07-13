@@ -10,13 +10,13 @@ use Bites\FloorPlan\Actions\DiscoverFloorPlan;
 class FloorPlanServiceProvider extends BitesServiceProvider
 {
     protected string $configFile =
-    __DIR__ . '/../config/bites.php';
+        __DIR__.'/../config/bites.php';
 
     protected string $viewsPath =
-    __DIR__ . '/../resources/views';
+        __DIR__.'/../resources/views';
 
     protected string $iconsPath =
-    __DIR__ . '/../resources/svg';
+        __DIR__.'/../resources/svg';
 
     protected function registerPackage(): void
     {
@@ -25,7 +25,7 @@ class FloorPlanServiceProvider extends BitesServiceProvider
 
     protected function bootPackage(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         app(DiscoverFloorPlan::class)->execute();
     }
 }

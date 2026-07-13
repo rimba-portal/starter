@@ -144,7 +144,7 @@ class Location extends Page implements HasActions, HasForms, HasTable
                         $this->scope = 'all';
                         $this->resetTablePage();
                     }),
-                    // ->badge(LocationModel::count()),
+                // ->badge(LocationModel::count()),
 
                 Action::make('rooms')
                     ->label('Rooms')
@@ -155,7 +155,7 @@ class Location extends Page implements HasActions, HasForms, HasTable
                         $this->scope = 'rooms';
                         $this->resetTablePage();
                     }),
-                    // ->badge(LocationModel::where('type', 'room')->count()),
+                // ->badge(LocationModel::where('type', 'room')->count()),
 
                 Action::make('stores')
                     ->label('Stores')
@@ -166,7 +166,7 @@ class Location extends Page implements HasActions, HasForms, HasTable
                         $this->scope = 'stores';
                         $this->resetTablePage();
                     }),
-                    // ->badge(LocationModel::where('type', 'store')->count()),
+                // ->badge(LocationModel::where('type', 'store')->count()),
 
                 Action::make('inactive')
                     ->label('Inactive')
@@ -177,7 +177,7 @@ class Location extends Page implements HasActions, HasForms, HasTable
                         $this->scope = 'inactive';
                         $this->resetTablePage();
                     }),
-                    // ->badge(LocationModel::whereNotNull('ends_at')->count()),
+                // ->badge(LocationModel::whereNotNull('ends_at')->count()),
             ]);
     }
 }

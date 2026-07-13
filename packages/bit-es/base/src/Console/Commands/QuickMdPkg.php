@@ -63,7 +63,7 @@ class QuickMdPkg extends Command
                 continue;
             }
 
-            ++$processedCount;
+            $processedCount++;
             $relativePath = $file->getRelativePathname();
 
             // 1. Output content live to the command console window

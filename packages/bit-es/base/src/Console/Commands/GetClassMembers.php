@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace Bites\Base\Console\Commands;
 
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use ReflectionClass;
+use ReflectionIntersectionType;
 use ReflectionNamedType;
 use ReflectionUnionType;
-use ReflectionIntersectionType;
 
-#[\Illuminate\Console\Attributes\Description('Inspect all PHP classes in app/ and packages/ and overwrite a compact classes.md file')]
-#[\Illuminate\Console\Attributes\Signature('bites:class-members')]
+#[Description('Inspect all PHP classes in app/ and packages/ and overwrite a compact classes.md file')]
+#[Signature('bites:class-members')]
 class GetClassMembers extends Command
 {
     public function handle(): int
@@ -21,7 +23,7 @@ class GetClassMembers extends Command
         $outputPath = base_path('classes.md');
 
         $markdownContent = "# Class Directory Blueprint\n";
-        $markdownContent .= "*Generated automatically on " . now()->toDateTimeString() . "*\n\n";
+        $markdownContent .= '*Generated automatically on '.now()->toDateTimeString()."*\n\n";
         $markdownContent .= "---\n\n";
 
         $classCount = 0;
@@ -29,8 +31,9 @@ class GetClassMembers extends Command
         foreach ($targetFolders as $targetFolder) {
             $fullPath = base_path($targetFolder);
 
-            if (!File::isDirectory($fullPath)) {
+            if (! File::isDirectory($fullPath)) {
                 $this->warn(sprintf('Directory [%s] not found. Skipping...', $targetFolder));
+
                 continue;
             }
 
@@ -44,12 +47,12 @@ class GetClassMembers extends Command
 
                 $className = $this->extractFullyQualifiedClassName($file->getRealPath());
 
-                if (!$className || (!class_exists($className) && !interface_exists($className) && !trait_exists($className))) {
+                if (! $className || (! class_exists($className) && ! interface_exists($className) && ! trait_exists($className))) {
                     continue;
                 }
 
                 $markdownContent .= $this->generateClassMarkdown($className);
-                ++$classCount;
+                $classCount++;
             }
         }
 
@@ -65,47 +68,47 @@ class GetClassMembers extends Command
         try {
             $reflectionClass = new ReflectionClass($className);
             $md = "## 📦 Class: `{$className}`\n\n";
-            
+
             // 1. Structural Overview Metadata
-            $relativePath = str_replace(base_path() . '/', '', $reflectionClass->getFileName());
+            $relativePath = str_replace(base_path().'/', '', $reflectionClass->getFileName());
             $md .= "- **Location:** `{$relativePath}` (Line {$reflectionClass->getStartLine()})\n";
 
             $lineage = [];
             $currentReflection = $reflectionClass;
             while ($parent = $currentReflection->getParentClass()) {
-                $lineage[] = "`" . $parent->getName() . "`";
+                $lineage[] = '`'.$parent->getName().'`';
                 $currentReflection = $parent;
             }
-            
+
             if ($lineage !== []) {
-                $md .= "- **Extends:** " . implode(' ➔ ', $lineage) . "\n";
+                $md .= '- **Extends:** '.implode(' ➔ ', $lineage)."\n";
             }
 
             $interfaces = $reflectionClass->getInterfaceNames();
-            if (!empty($interfaces)) {
-                $formattedInterfaces = array_map(fn(string $i): string => sprintf('`%s`', $i), $interfaces);
-                $md .= "- **Implements:** " . implode(', ', $formattedInterfaces) . "\n";
+            if (! empty($interfaces)) {
+                $formattedInterfaces = array_map(fn (string $i): string => sprintf('`%s`', $i), $interfaces);
+                $md .= '- **Implements:** '.implode(', ', $formattedInterfaces)."\n";
             }
 
             $traits = array_keys($reflectionClass->getTraits());
             if ($traits !== []) {
-                $formattedTraits = array_map(fn(string $t): string => sprintf('`%s`', $t), $traits);
-                $md .= "- **Uses Traits:** " . implode(', ', $formattedTraits) . "\n";
+                $formattedTraits = array_map(fn (string $t): string => sprintf('`%s`', $t), $traits);
+                $md .= '- **Uses Traits:** '.implode(', ', $formattedTraits)."\n";
             }
 
             // 2. DocBlocks
             $docComment = $reflectionClass->getDocComment();
             if ($docComment) {
-                $md .= "\n### 📄 Documentation\n```php\n" . trim($docComment) . "\n```\n";
+                $md .= "\n### 📄 Documentation\n```php\n".trim($docComment)."\n```\n";
             }
 
             // 3. Extract and filter members
             $properties = $reflectionClass->getProperties();
             $allMethods = $reflectionClass->getMethods();
-            $methods = array_values(array_filter($allMethods, fn(\ReflectionMethod $m): bool => $m->getDeclaringClass()->getName() === $className));
+            $methods = array_values(array_filter($allMethods, fn (\ReflectionMethod $m): bool => $m->getDeclaringClass()->getName() === $className));
 
             $md .= "\n### ⚙️ Members\n";
-            
+
             if (empty($properties) && $methods === []) {
                 $md .= "*No defined properties or local methods.*\n";
             } else {
@@ -115,7 +118,7 @@ class GetClassMembers extends Command
 
                 $maxRows = max(count($properties), count($methods));
 
-                for ($i = 0; $i < $maxRows; ++$i) {
+                for ($i = 0; $i < $maxRows; $i++) {
                     $pModifiers = ' ';
                     $pType = ' ';
                     $pName = ' ';
@@ -125,16 +128,16 @@ class GetClassMembers extends Command
                     // Properties side compilation
                     if (isset($properties[$i])) {
                         $prop = $properties[$i];
-                        $pModifiers = "`" . (implode(' ', \Reflection::getModifierNames($prop->getModifiers())) ?: 'public') . "`";
-                        $pType = $prop->hasType() ? "`" . $this->formatType($prop->getType()) . "`" : '*mixed*';
+                        $pModifiers = '`'.(implode(' ', \Reflection::getModifierNames($prop->getModifiers())) ?: 'public').'`';
+                        $pType = $prop->hasType() ? '`'.$this->formatType($prop->getType()).'`' : '*mixed*';
                         $pName = sprintf('`$%s`', $prop->getName());
                     }
 
                     // Methods side compilation
                     if (isset($methods[$i])) {
                         $method = $methods[$i];
-                        $mModifiers = "`" . (implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public') . "`";
-                        $mReturnType = $method->hasReturnType() ? "`" . $this->formatType($method->getReturnType()) . "`" : '*void/mixed*';
+                        $mModifiers = '`'.(implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public').'`';
+                        $mReturnType = $method->hasReturnType() ? '`'.$this->formatType($method->getReturnType()).'`' : '*void/mixed*';
                         $mName = sprintf('`%s()`', $method->getName());
                     }
 
@@ -142,7 +145,8 @@ class GetClassMembers extends Command
                     $md .= "| {$pModifiers} | {$pType} | {$pName} | ┃ | {$mModifiers} | {$mName} | {$mReturnType} |\n";
                 }
             }
-            return $md . "\n---\n\n";
+
+            return $md."\n---\n\n";
 
         } catch (\Exception $exception) {
             return "## ❌ Error: `{$className}`\n*Failed to run reflection engine: {$exception->getMessage()}*\n\n---\n\n";
@@ -154,32 +158,33 @@ class GetClassMembers extends Command
      */
     protected function formatType($type): string
     {
-        if (!$type) {
+        if (! $type) {
             return 'mixed';
         }
 
         // Use forward slashes instead of pipe characters so the Markdown parser doesn't break columns
-        if ($type instanceof \ReflectionUnionType) {
-            $types = array_map(function (\ReflectionIntersectionType|\ReflectionNamedType $t) {
+        if ($type instanceof ReflectionUnionType) {
+            $types = array_map(function (ReflectionIntersectionType|ReflectionNamedType $t) {
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
+
             return implode(' / ', $types);
         }
 
-        if ($type instanceof \ReflectionIntersectionType) {
+        if ($type instanceof ReflectionIntersectionType) {
             $types = array_map(function (\ReflectionType $t) {
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
+
             return implode(' & ', $types);
         }
 
-        if ($type instanceof \ReflectionNamedType) {
+        if ($type instanceof ReflectionNamedType) {
             return $type->getName();
         }
 
         return method_exists($type, 'getName') ? $type->getName() : (string) $type;
     }
-
 
     protected function extractFullyQualifiedClassName(string $filePath): ?string
     {
@@ -195,6 +200,6 @@ class GetClassMembers extends Command
             $class = trim($matches[1]);
         }
 
-        return $class !== '' && $class !== '0' ? ($namespace !== '' && $namespace !== '0' ? $namespace . '\\' . $class : $class) : null;
+        return $class !== '' && $class !== '0' ? ($namespace !== '' && $namespace !== '0' ? $namespace.'\\'.$class : $class) : null;
     }
 }

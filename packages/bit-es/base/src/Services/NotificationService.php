@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Bites\Base\Services;
 
-use Bites\Base\Actions\SendNotification;
 use App\Models\User;
+use Bites\Base\Actions\SendNotification;
 
 class NotificationService
 {
