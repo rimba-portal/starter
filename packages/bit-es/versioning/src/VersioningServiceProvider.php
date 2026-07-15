@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bites\Versioning;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\RelationManagers\VersionsRelationManager;
 use Bites\Versioning\Traits\HasVersions;
 use Filament\Facades\Filament as FacadesFilament;

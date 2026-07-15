@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:35*
+*Generated on: 2026-07-14 16:20:40*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\floorplan`*
 
 ---
@@ -19,6 +19,64 @@ return [
         ],
     ],
 ];
+
+```
+
+---
+
+## File: `database\migrations\0002_01_01_000607_create_locations_table.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\floorplan\database\migrations\0002_01_01_000607_create_locations_table.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('locations', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('parent_id')->nullable()->constrained('locations');
+            $table->foreignId('org_corp_id')->nullable()->constrained('org_corps');
+            $table->string('name');
+            $table->string('type');
+            $table->string('code')->nullable();
+            $table->string('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('location_assignments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('location_id')->constrained();
+            $table->enum('type', ['primary', 'secondary', 'temporary'])->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->json('attributes')->nullable();
+            $table->morphs('assignable');
+            $table->timestamps();
+        });
+
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('location_assignments');
+        Schema::dropIfExists('locations');
+    }
+};
 
 ```
 
@@ -257,7 +315,7 @@ class DiscoverFloorPlan
                 ->iconButton()
                 ->badge()
                 ->icon('bites-location')
-                ->url(route('filament.staff.pages.location'))
+                ->url(route('filament.staff.pages.floor-plan'))
                 ->toHtml(),
         );
     }
@@ -277,7 +335,7 @@ declare(strict_types=1);
 
 namespace Bites\FloorPlan;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Bites\FloorPlan\Actions\DiscoverFloorPlan;
 
 class FloorPlanServiceProvider extends BitesServiceProvider
@@ -356,6 +414,11 @@ class FloorPlan extends Page implements HasActions, HasForms, HasTable
     protected string $view = 'staff.pages.location';
 
     public ?string $scope = 'all';
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 
     public function locationInfolist(Schema $schema): Schema
     {

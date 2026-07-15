@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:50*
+*Generated on: 2026-07-14 16:20:56*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Tree\Time`*
 
 ---
@@ -801,7 +801,7 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Time;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Rimba\Tree\Time\Actions\DiscoverCalendar;
 
 class TimeServiceProvider extends BitesServiceProvider

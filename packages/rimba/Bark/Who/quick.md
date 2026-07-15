@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:45*
+*Generated on: 2026-07-14 16:20:50*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who`*
 
 ---
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Rimba\Bark\Who;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class WhoServiceProvider extends BitesServiceProvider
 {

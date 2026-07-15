@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:52*
+*Generated on: 2026-07-14 16:21:00*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms`*
 
 ---
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Dms;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class DmsServiceProvider extends BitesServiceProvider
 {

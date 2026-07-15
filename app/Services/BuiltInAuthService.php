@@ -20,8 +20,8 @@ class BuiltInAuthService implements AuthContract
         $isEmail = filter_var($login, FILTER_VALIDATE_EMAIL);
 
         $user = $isEmail
-            ? User::where('email', $login)->first()
-            : User::where('name', $login)->first();
+            ? User::where('email', '=', $login, true)->first()
+            : User::where('name', '=', $login, true)->first();
 
         if (! $user) {
             return 'not_found';

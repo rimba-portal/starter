@@ -2,7 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "rimba/starter",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework 13, Filament 5 Spatie Laravel Permission 7 and Laravel Modules.",
+    "description": "Rimba Enterprise Portal Starter Kit",
     "keywords": [
         "laravel",
         "framework"

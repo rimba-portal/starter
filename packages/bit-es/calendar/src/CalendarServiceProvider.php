@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bites\Calendar;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Bites\Calendar\Actions\DiscoverCalendar;
 
 class CalendarServiceProvider extends BitesServiceProvider

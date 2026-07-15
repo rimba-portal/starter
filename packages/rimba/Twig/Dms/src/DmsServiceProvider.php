@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Dms;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class DmsServiceProvider extends BitesServiceProvider
 {

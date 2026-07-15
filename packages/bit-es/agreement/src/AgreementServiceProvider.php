@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bites\Agreement;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class AgreementServiceProvider extends BitesServiceProvider
 {

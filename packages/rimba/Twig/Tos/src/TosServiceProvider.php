@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Tos;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class TosServiceProvider extends BitesServiceProvider
 {

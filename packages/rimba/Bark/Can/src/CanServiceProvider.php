@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rimba\Bark\Can;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class CanServiceProvider extends BitesServiceProvider
 {

@@ -19,7 +19,7 @@ class DiscoverFloorPlan
                 ->iconButton()
                 ->badge()
                 ->icon('bites-location')
-                ->url(route('filament.staff.pages.location'))
+                ->url(route('filament.staff.pages.floor-plan'))
                 ->toHtml(),
         );
     }

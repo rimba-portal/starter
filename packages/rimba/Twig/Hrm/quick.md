@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:54*
+*Generated on: 2026-07-14 16:21:02*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm`*
 
 ---
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Hrm;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class HrmServiceProvider extends BitesServiceProvider
 {

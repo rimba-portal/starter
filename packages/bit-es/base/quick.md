@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:30*
+*Generated on: 2026-07-14 16:20:35*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\base`*
 
 ---
@@ -881,6 +881,604 @@ interface DataFetcher
 
 ---
 
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs;
+
+use BackedEnum;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages\CreateApiConfig;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages\EditApiConfig;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages\ListApiConfigs;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages\ViewApiConfig;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigForm;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigInfolist;
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Tables\ApiConfigsTable;
+use Bites\Base\Models\ApiConfig;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+use UnitEnum;
+
+class ApiConfigResource extends Resource
+{
+    protected static ?string $model = ApiConfig::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?string $recordTitleAttribute = 'name';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Data Synchronization';
+
+    protected static ?string $navigationLabel = 'Configurations';
+
+    protected static ?int $navigationSort = 41;
+
+    public static function form(Schema $schema): Schema
+    {
+        return ApiConfigForm::configure($schema);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return ApiConfigInfolist::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return ApiConfigsTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListApiConfigs::route('/'),
+            'create' => CreateApiConfig::route('/create'),
+            'view' => ViewApiConfig::route('/{record}'),
+            'edit' => EditApiConfig::route('/{record}/edit'),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Pages\CreateApiConfig.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Pages\CreateApiConfig.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateApiConfig extends CreateRecord
+{
+    protected static string $resource = ApiConfigResource::class;
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Pages\EditApiConfig.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Pages\EditApiConfig.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditApiConfig extends EditRecord
+{
+    protected static string $resource = ApiConfigResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            ViewAction::make(),
+            DeleteAction::make(),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Pages\ListApiConfigs.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Pages\ListApiConfigs.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
+
+class ListApiConfigs extends ListRecords
+{
+    protected static string $resource = ApiConfigResource::class;
+
+    protected static ?string $title = 'Configurations';
+
+    protected ?string $subheading = 'Configuration settings for data synchronization from external sources.';
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Pages\ViewApiConfig.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Pages\ViewApiConfig.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiConfigs\ApiConfigResource;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
+
+class ViewApiConfig extends ViewRecord
+{
+    protected static string $resource = ApiConfigResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            EditAction::make(),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigForm.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigForm.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Schemas;
+
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Schema;
+
+class ApiConfigForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('name')
+                    ->required(),
+                TextInput::make('source_type')
+                    ->required(),
+                Textarea::make('source_config')
+                    ->required()
+                    ->columnSpanFull(),
+                TextInput::make('data_path'),
+                Textarea::make('depends_on')
+                    ->columnSpanFull(),
+                Textarea::make('mapping')
+                    ->required()
+                    ->columnSpanFull(),
+                Toggle::make('active')
+                    ->required(),
+            ]);
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigInfolist.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Schemas\ApiConfigInfolist.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Schemas;
+
+use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
+
+class ApiConfigInfolist
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextEntry::make('name'),
+                TextEntry::make('source_type'),
+                TextEntry::make('source_config')
+                    ->columnSpanFull(),
+                TextEntry::make('data_path')
+                    ->placeholder('-'),
+                TextEntry::make('depends_on')
+                    ->placeholder('-')
+                    ->columnSpanFull(),
+                TextEntry::make('mapping')
+                    ->columnSpanFull(),
+                IconEntry::make('active')
+                    ->boolean(),
+                TextEntry::make('created_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('updated_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+            ]);
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiConfigs\Tables\ApiConfigsTable.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiConfigs\Tables\ApiConfigsTable.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiConfigs\Tables;
+
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+
+class ApiConfigsTable
+{
+    public static function configure(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('source_type')
+                    ->searchable(),
+                TextColumn::make('data_path')
+                    ->searchable(),
+                IconColumn::make('active')
+                    ->boolean(),
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->filters([
+                //
+            ])
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\ApiDataResource.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\ApiDataResource.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData;
+
+use BackedEnum;
+use Bites\Base\Http\UI\Admin\Resources\ApiData\Pages\CreateApiData;
+use Bites\Base\Http\UI\Admin\Resources\ApiData\Pages\EditApiData;
+use Bites\Base\Http\UI\Admin\Resources\ApiData\Pages\ListApiData;
+use Bites\Base\Http\UI\Admin\Resources\ApiData\Schemas\ApiDataForm;
+use Bites\Base\Http\UI\Admin\Resources\ApiData\Tables\ApiDataTable;
+use Bites\Base\Models\ApiData;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+use UnitEnum;
+
+class ApiDataResource extends Resource
+{
+    protected static ?string $model = ApiData::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = 'Data Synchronization';
+
+    protected static ?string $navigationLabel = 'Data';
+
+    protected static ?int $navigationSort = 42;
+
+    public static function form(Schema $schema): Schema
+    {
+        return ApiDataForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return ApiDataTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListApiData::route('/'),
+            'create' => CreateApiData::route('/create'),
+            'edit' => EditApiData::route('/{record}/edit'),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\Pages\CreateApiData.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\Pages\CreateApiData.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiData\ApiDataResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateApiData extends CreateRecord
+{
+    protected static string $resource = ApiDataResource::class;
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\Pages\EditApiData.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\Pages\EditApiData.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiData\ApiDataResource;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditApiData extends EditRecord
+{
+    protected static string $resource = ApiDataResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            DeleteAction::make(),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\Pages\ListApiData.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\Pages\ListApiData.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData\Pages;
+
+use Bites\Base\Http\UI\Admin\Resources\ApiData\ApiDataResource;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
+
+class ListApiData extends ListRecords
+{
+    protected static string $resource = ApiDataResource::class;
+
+    protected static ?string $title = 'Data';
+
+    protected ?string $subheading = 'Data Synchronization from external.';
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+        ];
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\Schemas\ApiDataForm.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\Schemas\ApiDataForm.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData\Schemas;
+
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+
+class ApiDataForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                Select::make('api_config_id')
+                    ->relationship('apiConfig', 'name')
+                    ->required(),
+                TextInput::make('fingerprint'),
+                Textarea::make('payload')
+                    ->required()
+                    ->columnSpanFull(),
+                TextInput::make('status')
+                    ->required()
+                    ->default('pending'),
+                DateTimePicker::make('processed_at'),
+                Textarea::make('error')
+                    ->columnSpanFull(),
+            ]);
+    }
+}
+
+```
+
+---
+
+## File: `src\Http\UI\Admin\Resources\ApiData\Tables\ApiDataTable.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Http\UI\Admin\Resources\ApiData\Tables\ApiDataTable.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Http\UI\Admin\Resources\ApiData\Tables;
+
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+
+class ApiDataTable
+{
+    public static function configure(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('apiConfig.name')
+                    ->searchable(),
+                TextColumn::make('fingerprint')
+                    ->searchable(),
+                TextColumn::make('status')
+                    ->searchable(),
+                TextColumn::make('processed_at')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->filters([
+                //
+            ])
+            ->recordActions([
+                EditAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+}
+
+```
+
+---
+
 ## File: `src\Jobs\ProcessApiDataJob.php`
 **Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Jobs\ProcessApiDataJob.php`
 
@@ -1088,6 +1686,286 @@ class ApiDataObserver
 
         // ✅ Sync processing fallback
         app(ProcessingService::class)->process($data);
+    }
+}
+
+```
+
+---
+
+## File: `src\Services\BitesServiceProvider.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Services\BitesServiceProvider.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Services;
+
+use BladeUI\Icons\Factory;
+use Illuminate\Support\ServiceProvider;
+
+abstract class BitesServiceProvider extends ServiceProvider
+{
+    /**
+     * Package config file.
+     *
+     * Example:
+     * __DIR__ . '/../config/attributing.php'
+     */
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
+    /**
+     * Package views path.
+     *
+     * Example:
+     * __DIR__ . '/../resources/views'
+     */
+    protected string $viewsPath = __DIR__.'/../resources/views';
+
+    /**
+     * Package icons path.
+     *
+     * Example:
+     * __DIR__ . '/../resources/svg'
+     */
+    protected string $iconsPath = __DIR__.'/../resources/svg';
+
+    /**
+     * Shared config key.
+     *
+     * All package configs will merge into:
+     * config('bites')
+     */
+    protected string $configName = 'bites';
+
+    /**
+     * Shared view namespace.
+     *
+     * All package views are loaded as:
+     * view('bites::...')
+     */
+    protected string $viewNamespace = 'bites';
+
+    /**
+     * Shared Blade icon set name.
+     *
+     * All package icons are used as:
+     * <x-bites-... />
+     */
+    protected string $iconSet = 'bites';
+
+    /**
+     * Shared Blade icon prefix.
+     */
+    protected string $iconPrefix = 'bites';
+
+    public function register(): void
+    {
+        $this->registerConfig();
+        $this->registerViewPath();
+        $this->registerIconPath();
+
+        $this->registerPackage();
+    }
+
+    public function boot(): void
+    {
+        $this->registerViews();
+        $this->registerIcons();
+
+        $this->bootPackage();
+    }
+
+    /**
+     * Override this in child providers for package-specific bindings.
+     */
+    protected function registerPackage(): void
+    {
+        //
+    }
+
+    /**
+     * Override this in child providers for package-specific boot logic.
+     */
+    protected function bootPackage(): void
+    {
+        //
+    }
+
+    protected function registerConfig(): void
+    {
+        if (
+            $this->configFile === ''
+            || ! file_exists($this->configFile)
+        ) {
+            return;
+        }
+
+        $packageConfig = require $this->configFile;
+
+        if (! is_array($packageConfig)) {
+            return;
+        }
+
+        config([
+            $this->configName => array_replace_recursive(
+                config($this->configName, []),
+                $packageConfig,
+            ),
+        ]);
+    }
+
+    protected function registerViewPath(): void
+    {
+        if (
+            $this->viewsPath === ''
+            || ! is_dir($this->viewsPath)
+        ) {
+            return;
+        }
+
+        app()->instance(
+            'bites.views',
+            $this->appendUniquePath(
+                $this->getViewPaths(),
+                $this->viewsPath,
+            )
+        );
+    }
+
+    protected function registerIconPath(): void
+    {
+        if (
+            $this->iconsPath === ''
+            || ! is_dir($this->iconsPath)
+        ) {
+            return;
+        }
+
+        app()->instance(
+            'bites.icons',
+            $this->appendUniquePath(
+                $this->getIconPaths(),
+                $this->iconsPath,
+            )
+        );
+    }
+
+    protected function registerViews(): void
+    {
+        if (app()->bound('bites.views.registered')) {
+            return;
+        }
+
+        app()->instance('bites.views.registered', true);
+
+        foreach ($this->getViewPaths() as $path) {
+            $this->loadViewsFrom($path, $this->viewNamespace);
+        }
+    }
+
+    protected function registerIcons(): void
+    {
+        if ($this->getIconPaths() === []) {
+            return;
+        }
+
+        $this->callAfterResolving(
+            Factory::class,
+            function (Factory $factory): void {
+                $this->addIconSet($factory);
+            }
+        );
+    }
+
+    protected function addIconSet(Factory $factory): void
+    {
+        if (app()->bound('bites.icons.registered')) {
+            return;
+        }
+
+        app()->instance('bites.icons.registered', true);
+
+        $factory->add($this->iconSet, [
+            'paths' => $this->getIconPaths(),
+            'prefix' => $this->iconPrefix,
+        ]);
+    }
+
+    protected function getViewPaths(): array
+    {
+        if (! app()->bound('bites.views')) {
+            return [];
+        }
+
+        return app('bites.views');
+    }
+
+    protected function getIconPaths(): array
+    {
+        if (! app()->bound('bites.icons')) {
+            return [];
+        }
+
+        return app('bites.icons');
+    }
+
+    protected function appendUniquePath(array $paths, string $path): array
+    {
+        $paths[] = $path;
+
+        return array_values(array_unique($paths));
+    }
+}
+
+```
+
+---
+
+## File: `src\Services\ExpressionService.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Services\ExpressionService.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Services;
+
+class ExpressionService
+{
+    public function evaluate(array $expression, array $data): bool
+    {
+        $field = $expression['field'] ?? null;
+        $operator = $expression['operator'] ?? '=';
+        $value = $expression['value'] ?? null;
+
+        $actual = data_get($data, $field);
+
+        return match ($operator) {
+            '=' => $actual == $value,
+            '!=' => $actual != $value,
+            '>' => $actual > $value,
+            '<' => $actual < $value,
+            '>=' => $actual >= $value,
+            '<=' => $actual <= $value,
+            'in' => in_array($actual, (array) $value),
+            default => false,
+        };
+    }
+
+    // 🚀 future-ready: AND/OR groups
+    public function evaluateGroup(array $conditions, array $data, string $logic = 'AND'): bool
+    {
+        $results = array_map(fn (array $condition): bool => $this->evaluate($condition, $data),
+            $conditions
+        );
+
+        return $logic === 'OR'
+            ? in_array(true, $results)
+            : ! in_array(false, $results);
     }
 }
 

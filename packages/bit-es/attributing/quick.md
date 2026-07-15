@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:32*
+*Generated on: 2026-07-14 16:20:37*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\attributing`*
 
 ---
@@ -174,8 +174,8 @@ declare(strict_types=1);
 
 namespace Bites\Attributing;
 
-use App\Services\BitesServiceProvider;
 use Bites\Attributing\Macros\LockWhenFilledMacro;
+use Bites\Base\Services\BitesServiceProvider;
 
 class AttributingServiceProvider extends BitesServiceProvider
 {

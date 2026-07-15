@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Menu;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class MenuServiceProvider extends BitesServiceProvider
 {

@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:53*
+*Generated on: 2026-07-14 16:21:01*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Eam`*
 
 ---
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Eam;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class EamServiceProvider extends BitesServiceProvider
 {

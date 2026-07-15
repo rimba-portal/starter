@@ -44,6 +44,11 @@ class FloorPlan extends Page implements HasActions, HasForms, HasTable
 
     public ?string $scope = 'all';
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
     public function locationInfolist(Schema $schema): Schema
     {
         return $schema

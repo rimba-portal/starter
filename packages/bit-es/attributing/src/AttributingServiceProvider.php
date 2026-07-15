@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Bites\Attributing;
 
-use App\Services\BitesServiceProvider;
 use Bites\Attributing\Macros\LockWhenFilledMacro;
+use Bites\Base\Services\BitesServiceProvider;
 
 class AttributingServiceProvider extends BitesServiceProvider
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Bites\FloorPlan;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Bites\FloorPlan\Actions\DiscoverFloorPlan;
 
 class FloorPlanServiceProvider extends BitesServiceProvider

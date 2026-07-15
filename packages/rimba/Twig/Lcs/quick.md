@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:56*
+*Generated on: 2026-07-14 16:21:04*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lcs`*
 
 ---
@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Lcs;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class LcsServiceProvider extends BitesServiceProvider
 {

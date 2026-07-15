@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:46*
+*Generated on: 2026-07-14 16:20:52*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Tree\Flow`*
 
 ---
@@ -115,7 +115,7 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Flow;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class FlowServiceProvider extends BitesServiceProvider
 {

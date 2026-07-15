@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Time;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 use Rimba\Tree\Time\Actions\DiscoverCalendar;
 
 class TimeServiceProvider extends BitesServiceProvider

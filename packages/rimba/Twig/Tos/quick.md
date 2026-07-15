@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-13 16:26:58*
+*Generated on: 2026-07-14 16:21:07*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Tos`*
 
 ---
@@ -301,7 +301,7 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Tos;
 
-use App\Services\BitesServiceProvider;
+use Bites\Base\Services\BitesServiceProvider;
 
 class TosServiceProvider extends BitesServiceProvider
 {

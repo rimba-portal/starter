@@ -49,7 +49,7 @@ class Calendar extends Page implements HasActions, HasForms, HasTable
 
     protected ?string $subheading = 'Calendar view of workdays, holidays and events.';
 
-    protected string $view = 'staff.pages.calendar';
+    protected string $view = 'bites.calendar';
 
     public $events;
 
