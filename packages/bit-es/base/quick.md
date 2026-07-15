@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-14 16:20:35*
+*Generated on: 2026-07-15 16:26:56*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\base`*
 
 ---
@@ -534,6 +534,8 @@ class GetClassMembers extends Command
 
         $markdownContent = "# Class Directory Blueprint\n";
         $markdownContent .= '*Generated automatically on '.now()->toDateTimeString()."*\n\n";
+        $markdownContent .= "'<span style='color:#9CDCFE'> 𝔁 : property </span>  \n";
+        $markdownContent .= "'<span style='color:#DCDCAA'> λ : class method  </span>  \n";
         $markdownContent .= "---\n\n";
 
         $classCount = 0;
@@ -577,11 +579,11 @@ class GetClassMembers extends Command
     {
         try {
             $reflectionClass = new ReflectionClass($className);
-            $md = "## 📦 Class: `{$className}`\n\n";
+            $md = "## 📦 Class: `{$className}`\n";
 
             // 1. Structural Overview Metadata
             $relativePath = str_replace(base_path().'/', '', $reflectionClass->getFileName());
-            $md .= "- **Location:** `{$relativePath}` (Line {$reflectionClass->getStartLine()})\n";
+            $md .= "- **Location:** `{$relativePath}` (Line {$reflectionClass->getStartLine()})  \n";
 
             $lineage = [];
             $currentReflection = $reflectionClass;
@@ -591,25 +593,25 @@ class GetClassMembers extends Command
             }
 
             if ($lineage !== []) {
-                $md .= '- **Extends:** '.implode(' ➔ ', $lineage)."\n";
+                $md .= '- **Extends:** '.implode(' ➔ ', $lineage)."  \n";
             }
 
             $interfaces = $reflectionClass->getInterfaceNames();
             if (! empty($interfaces)) {
                 $formattedInterfaces = array_map(fn (string $i): string => sprintf('`%s`', $i), $interfaces);
-                $md .= '- **Implements:** '.implode(', ', $formattedInterfaces)."\n";
+                $md .= '- **Implements:** '.implode(",  \n", $formattedInterfaces)."  \n";
             }
 
             $traits = array_keys($reflectionClass->getTraits());
             if ($traits !== []) {
                 $formattedTraits = array_map(fn (string $t): string => sprintf('`%s`', $t), $traits);
-                $md .= '- **Uses Traits:** '.implode(', ', $formattedTraits)."\n";
+                $md .= '- **Uses Traits:** '.implode(', ', $formattedTraits)."  \n";
             }
 
             // 2. DocBlocks
             $docComment = $reflectionClass->getDocComment();
             if ($docComment) {
-                $md .= "\n### 📄 Documentation\n```php\n".trim($docComment)."\n```\n";
+                // $md .= "\n### 📄 Documentation\n```php\n".trim(\$docComment)."\n```\n";
             }
 
             // 3. Extract and filter members
@@ -617,54 +619,38 @@ class GetClassMembers extends Command
             $allMethods = $reflectionClass->getMethods();
             $methods = array_values(array_filter($allMethods, fn (\ReflectionMethod $m): bool => $m->getDeclaringClass()->getName() === $className));
 
-            $md .= "\n### ⚙️ Members\n";
-
-            if (empty($properties) && $methods === []) {
-                $md .= "*No defined properties or local methods.*\n";
+            // Compact Line-by-Line Properties List
+            // $md .= "\n### ⚙️ Properties\n";
+            if (empty($properties)) {
+                // $md .= "*No defined properties.*\n";
             } else {
-                // Single unified 7-column table layout
-                $md .= "| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |\n";
-                $md .= "| :--- | :--- | :--- | :---: | :--- | :--- | :--- |\n";
+                foreach ($properties as $property) {
+                    $modifiers = implode(' ', \Reflection::getModifierNames($property->getModifiers())) ?: 'public';
+                    $type = $property->hasType() ? $this->formatType($property->getType()) : 'mixed';
+                    $md .= sprintf("𝔁 %s %s <span style='color:#9CDCFE'>$%s</span>  \n", $modifiers, $type, $property->getName());
+                }
+            }
 
-                $maxRows = max(count($properties), count($methods));
-
-                for ($i = 0; $i < $maxRows; $i++) {
-                    $pModifiers = ' ';
-                    $pType = ' ';
-                    $pName = ' ';
-                    $mModifiers = ' ';
-                    $mName = ' ';
-                    $mReturnType = ' ';
-                    // Properties side compilation
-                    if (isset($properties[$i])) {
-                        $prop = $properties[$i];
-                        $pModifiers = '`'.(implode(' ', \Reflection::getModifierNames($prop->getModifiers())) ?: 'public').'`';
-                        $pType = $prop->hasType() ? '`'.$this->formatType($prop->getType()).'`' : '*mixed*';
-                        $pName = sprintf('`$%s`', $prop->getName());
-                    }
-
-                    // Methods side compilation
-                    if (isset($methods[$i])) {
-                        $method = $methods[$i];
-                        $mModifiers = '`'.(implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public').'`';
-                        $mReturnType = $method->hasReturnType() ? '`'.$this->formatType($method->getReturnType()).'`' : '*void/mixed*';
-                        $mName = sprintf('`%s()`', $method->getName());
-                    }
-
-                    // Output clean 7-column markdown string format
-                    $md .= "| {$pModifiers} | {$pType} | {$pName} | ┃ | {$mModifiers} | {$mName} | {$mReturnType} |\n";
+            // Compact Line-by-Line Methods List
+            // $md .= "\n### 🛠️ Methods\n";
+            if ($methods === []) {
+                // $md .= "*No local methods.*\n";
+            } else {
+                foreach ($methods as $method) {
+                    $modifiers = implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public';
+                    $returnType = $method->hasReturnType() ? $this->formatType($method->getReturnType()) : 'void/mixed';
+                    $md .= sprintf("λ %s <span style='color:#DCDCAA'>$%s</span> : %s  \n", $modifiers, $method->getName(), $returnType);
                 }
             }
 
             return $md."\n---\n\n";
-
         } catch (\Exception $exception) {
             return "## ❌ Error: `{$className}`\n*Failed to run reflection engine: {$exception->getMessage()}*\n\n---\n\n";
         }
     }
 
     /**
-     * Safely parse basic, union, and intersection types to strings using safe markdown division characters.
+     * Safely parse basic, union, and intersection types to strings.
      */
     protected function formatType($type): string
     {
@@ -672,13 +658,12 @@ class GetClassMembers extends Command
             return 'mixed';
         }
 
-        // Use forward slashes instead of pipe characters so the Markdown parser doesn't break columns
         if ($type instanceof ReflectionUnionType) {
             $types = array_map(function (ReflectionIntersectionType|ReflectionNamedType $t) {
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
 
-            return implode(' / ', $types);
+            return implode('|', $types);
         }
 
         if ($type instanceof ReflectionIntersectionType) {
@@ -686,7 +671,7 @@ class GetClassMembers extends Command
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
 
-            return implode(' & ', $types);
+            return implode('&', $types);
         }
 
         if ($type instanceof ReflectionNamedType) {
@@ -751,6 +736,455 @@ class ListModelsCommand extends Command
         }
 
         return self::SUCCESS;
+    }
+}
+
+```
+
+---
+
+## File: `src\Console\Commands\MakeClassesBlueprint.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\base\src\Console\Commands\MakeClassesBlueprint.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Bites\Base\Console\Commands;
+
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
+use SplFileInfo;
+
+#[Description('Generate compact PHP class blueprint for AI / Copilot context')]
+#[Signature('bites:blue-print')]
+class MakeClassesBlueprint extends Command
+{
+    protected array $targetFolders = [
+        'app',
+        'packages',
+    ];
+
+    protected string $outputFile = 'classes.md';
+
+    public function handle(): int
+    {
+        $outputPath = base_path($this->outputFile);
+
+        $content = "# PHP Class Blueprint\n";
+        $content .= '*Generated automatically on '.now()->toDateTimeString()."*\n\n";
+
+        $content .= "## Legend\n\n";
+        $content .= "- `namespace` = Namespace\n";
+        $content .= "- `#` = PHP Attribute\n";
+        $content .= "- `class` = Class declaration\n";
+        $content .= "- `interface` = Interface declaration\n";
+        $content .= "- `trait` = Trait declaration\n";
+        $content .= "- `enum` = Enum declaration\n";
+        $content .= "- `&` = Trait use\n";
+        $content .= "- `=` = Constant\n";
+        $content .= "- `@+` = Public property\n";
+        $content .= "- `@*` = Protected property\n";
+        $content .= "- `@-` = Private property\n";
+        $content .= "- `\$+` = Public method\n";
+        $content .= "- `\$*` = Protected method\n";
+        $content .= "- `\$-` = Private method\n\n";
+        $content .= "---\n\n";
+
+        $fileCount = 0;
+
+        foreach ($this->targetFolders as $targetFolder) {
+            $fullPath = base_path($targetFolder);
+
+            if (! File::isDirectory($fullPath)) {
+                $this->warn(sprintf('Directory [%s] not found. Skipping...', $targetFolder));
+
+                continue;
+            }
+
+            $this->info(sprintf('Scanning [%s]...', $targetFolder));
+
+            foreach (File::allFiles($fullPath) as $file) {
+                if ($file->getExtension() !== 'php') {
+                    continue;
+                }
+
+                $blueprint = $this->generateFileBlueprint($file);
+
+                if ($blueprint === null) {
+                    continue;
+                }
+
+                $content .= $blueprint;
+                $content .= "\n---\n\n";
+
+                $fileCount++;
+            }
+        }
+
+        File::put($outputPath, $content);
+
+        $this->components->info(sprintf(
+            'Success! Generated blueprint for %d PHP files at [%s]',
+            $fileCount,
+            $outputPath
+        ));
+
+        return Command::SUCCESS;
+    }
+
+    protected function generateFileBlueprint(SplFileInfo $file): ?string
+    {
+        $path = $file->getRealPath();
+
+        if (! is_string($path)) {
+            return null;
+        }
+
+        $source = file_get_contents($path);
+
+        if (! is_string($source) || trim($source) === '') {
+            return null;
+        }
+
+        $source = $this->normalizeNewLines($source);
+
+        $namespace = $this->extractNamespaceLine($source);
+        $classLike = $this->extractClassLikeLine($source);
+
+        if ($namespace === null && $classLike === null) {
+            return null;
+        }
+
+        $relativePath = str_replace(base_path().DIRECTORY_SEPARATOR, '', $path);
+        $relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
+
+        $classAttributes = $this->extractAttributesBeforeClass($source);
+        $body = $this->extractClassBody($source);
+
+        $traits = $body === null ? [] : $this->extractTraitUses($body);
+        $constants = $body === null ? [] : $this->extractConstants($body);
+        $properties = $body === null ? [] : $this->extractProperties($body);
+        $methods = $body === null ? [] : $this->extractMethods($body);
+
+        $md = "[file] {$relativePath}\n\n";
+
+        if ($namespace !== null) {
+            $md .= $namespace."\n";
+        }
+
+        foreach ($classAttributes as $attribute) {
+            $md .= '# '.$attribute."\n";
+        }
+
+        if ($classAttributes !== []) {
+            $md .= "\n";
+        }
+
+        if ($classLike !== null) {
+            $md .= $classLike."\n";
+        }
+
+        foreach ($traits as $trait) {
+            $md .= '& '.$trait;
+        }
+
+        if ($traits !== []) {
+            $md .= "\n";
+        }
+
+        foreach ($constants as $constant) {
+            foreach ($constant['attributes'] as $attribute) {
+                $md .= '# '.$attribute."\n";
+            }
+
+            $md .= '= '.$constant['line']."\n";
+        }
+
+        if ($constants !== []) {
+            $md .= "\n";
+        }
+
+        foreach ($properties as $property) {
+            foreach ($property['attributes'] as $attribute) {
+                $md .= '# '.$attribute."\n";
+            }
+
+            $md .= $property['line']."\n";
+        }
+
+        if ($properties !== []) {
+            $md .= "\n";
+        }
+
+        foreach ($methods as $method) {
+            foreach ($method['attributes'] as $attribute) {
+                $md .= '# '.$attribute."\n";
+            }
+
+            $md .= $method['line']."\n";
+        }
+
+        return rtrim($md)."\n";
+    }
+
+    protected function extractNamespaceLine(string $source): ?string
+    {
+        if (preg_match('/^\s*namespace\s+[^;]+;/m', $source, $matches) !== 1) {
+            return null;
+        }
+
+        return trim($matches[0]);
+    }
+
+    protected function extractClassLikeLine(string $source): ?string
+    {
+        $lines = explode("\n", $source);
+        $count = count($lines);
+
+        for ($i = 0; $i < $count; $i++) {
+            $line = trim($lines[$i]);
+
+            if ($line === '') {
+                continue;
+            }
+
+            if (str_starts_with($line, '#[')) {
+                continue;
+            }
+
+            if (
+                preg_match(
+                    '/^(?:(?:abstract|final|readonly)\s+)*(class|interface|trait|enum)\s+/i',
+                    $line
+                ) !== 1
+            ) {
+                continue;
+            }
+
+            $declaration = $line;
+
+            while (
+                ! str_contains($declaration, '{')
+                && ! str_ends_with(trim($declaration), ';')
+                && $i + 1 < $count
+            ) {
+                $i++;
+                $declaration .= ' '.trim($lines[$i]);
+            }
+
+            $declaration = preg_replace('/\s*\{.*$/', '', $declaration);
+            $declaration = rtrim((string) $declaration, ';');
+
+            return $this->normalizeSpaces($declaration);
+        }
+
+        return null;
+    }
+
+    protected function extractAttributesBeforeClass(string $source): array
+    {
+        $lines = explode("\n", $source);
+        $attributes = [];
+
+        $buffer = '';
+        $insideAttribute = false;
+
+        foreach ($lines as $line) {
+            $trimmed = trim($line);
+
+            if (
+                preg_match(
+                    '/^(?:(?:abstract|final|readonly)\s+)*(class|interface|trait|enum)\s+/i',
+                    $trimmed
+                ) === 1
+            ) {
+                break;
+            }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $insideAttribute = true;
+                $buffer = $trimmed;
+
+                if ($this->attributeIsClosed($buffer)) {
+                    $attributes[] = $this->normalizeSpaces($buffer);
+                    $buffer = '';
+                    $insideAttribute = false;
+                }
+
+                continue;
+            }
+
+            if ($insideAttribute) {
+                $buffer .= ' '.$trimmed;
+
+                if ($this->attributeIsClosed($buffer)) {
+                    $attributes[] = $this->normalizeSpaces($buffer);
+                    $buffer = '';
+                    $insideAttribute = false;
+                }
+            }
+        }
+
+        return array_values(array_unique($attributes));
+    }
+
+    protected function extractClassBody(string $source): ?string
+    {
+        if (preg_match('/\b(class|interface|trait|enum)\s+[A-Za-z_][A-Za-z0-9_]*.*\{/i', $source, $matches, PREG_OFFSET_CAPTURE)) {
+            $startPos = $matches[0][1] + strlen($matches[0][0]) - 1;
+            $length = strlen($source);
+            $braceCount = 0;
+            $bodyStart = $startPos + 1;
+
+            for ($i = $startPos; $i < $length; $i++) {
+                if ($source[$i] === '{') {
+                    $braceCount++;
+                } elseif ($source[$i] === '}') {
+                    $braceCount--;
+                    if ($braceCount === 0) {
+                        return substr($source, $bodyStart, $i - $bodyStart);
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    protected function extractTraitUses(string $body): array
+    {
+        $traits = [];
+        if (preg_match_all('/^\s*use\s+([^;]+);/m', $body, $matches)) {
+            foreach ($matches[1] as $match) {
+                foreach (explode(',', $match) as $trait) {
+                    $traits[] = $this->normalizeSpaces(trim($trait));
+                }
+            }
+        }
+
+        return $traits;
+    }
+
+    protected function extractConstants(string $body): array
+    {
+        $constants = [];
+        $lines = explode("\n", $body);
+        $currentAttributes = [];
+
+        foreach ($lines as $line) {
+            $trimmed = trim($line);
+            if ($trimmed === '') {
+                continue;
+            }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
+                continue;
+            }
+
+            if (preg_match('/^(?:public|protected|private)?\s*const\s+([A-Z_][A-Z0-9_]*)\s*=/i', $trimmed, $matches)) {
+                $cleanLine = preg_replace('/;.*$/', '', $trimmed);
+                $constants[] = [
+                    'attributes' => $currentAttributes,
+                    'line' => $this->normalizeSpaces($cleanLine),
+                ];
+                $currentAttributes = [];
+            }
+        }
+
+        return $constants;
+    }
+
+    protected function extractProperties(string $body): array
+    {
+        $properties = [];
+        $lines = explode("\n", $body);
+        $currentAttributes = [];
+        foreach ($lines as $line) {
+            $trimmed = trim($line);
+            if ($trimmed === '') {
+                continue;
+            }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
+                continue;
+            }
+
+            // Exclude functions and constants
+            if (str_contains($trimmed, 'function') || str_contains($trimmed, 'const')) {
+                continue;
+            }
+
+            if (preg_match('/^(public|protected|private|\b)\s*(?:readonly\s+)?(?:[\w\|]+)?\s*($[\w]+)/i', $trimmed, $matches)) {
+                $visibility = $matches[1] ?: 'public';
+                $prefix = match ($visibility) {
+                    'protected' => '@*',
+                    'private' => '@-',
+                    default => '@+',
+                };
+                $cleanLine = preg_replace('/;.*$/', '', $trimmed);
+                $properties[] = ['attributes' => $currentAttributes, 'line' => $prefix.' '.$this->normalizeSpaces($cleanLine)];
+                $currentAttributes = [];
+            }
+        }
+
+        return $properties;
+    }
+
+    protected function extractMethods(string $body): array
+    {
+        $methods = [];
+        $lines = explode("\n", $body);
+        $currentAttributes = [];
+        foreach ($lines as $line) {
+            $trimmed = trim($line);
+            if ($trimmed === '') {
+                continue;
+            }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
+                continue;
+            }
+
+            if (preg_match('/^(?:(public|protected|private)\s+)?(?:static\s+)?function\s+([\w_]+)\s*\((.*)\)/i', $trimmed, $matches)) {
+                $visibility = $matches[1] ?: 'public';
+                $prefix = match ($visibility) {
+                    'protected' => '$*',
+                    'private' => '$-',
+                    default => '$+',
+                };
+                $cleanLine = preg_replace('/\s*{.*$/', '', $trimmed);
+                $cleanLine = rtrim($cleanLine, ';');
+                $methods[] = ['attributes' => $currentAttributes, 'line' => $prefix.' '.$this->normalizeSpaces($cleanLine)];
+                $currentAttributes = [];
+            }
+        }
+
+        return $methods;
+    }
+
+    protected function normalizeNewLines(string $str): string
+    {
+        return str_replace(["\r\n", "\r"], "\n", $str);
+    }
+
+    protected function normalizeSpaces(string $str): string
+    {
+        return trim((string) preg_replace('/\s+/', ' ', $str));
+    }
+
+    protected function attributeIsClosed(string $str): bool
+    {
+        return str_ends_with($str, ']');
     }
 }
 

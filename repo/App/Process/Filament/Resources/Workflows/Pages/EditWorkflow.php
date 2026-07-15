@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows\Pages;
+namespace Repo\App\Process\Filament\Resources\Workflows\Pages;
 
-use App\Filament\Resources\Workflows\WorkflowResource;
 use App\Trees\Branding\Actions\GetHelpAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
+use Repo\App\Process\Filament\Resources\Workflows\WorkflowResource;
 
 class EditWorkflow extends EditRecord
 {

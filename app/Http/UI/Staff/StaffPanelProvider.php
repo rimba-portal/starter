@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\UI\Staff;
 
-use App\Http\UI\Auth\Pages\Login;
+// use App\Http\UI\Auth\Pages\Login;
 use Filament\Auth\Pages\EditProfile;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Auth\Pages\Register;
@@ -26,13 +26,15 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Rimba\Bark\Who\Http\UI\Auth\LoginWizard as Login;
 
 class StaffPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         $panel
-            ->login(config('bites.ui.auth.login', Login::class))
+            ->login(Login::class)
+            // ->login(config('bites.ui.auth.login', Login::class))
             ->registration(config('bites.ui.auth.registration', Register::class))
             ->passwordReset(config('bites.ui.auth.password_reset', RequestPasswordReset::class))
             ->profile(config('bites.ui.auth.profile', EditProfile::class))

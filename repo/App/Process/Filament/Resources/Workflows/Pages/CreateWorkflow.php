@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows\Pages;
+namespace Repo\App\Process\Filament\Resources\Workflows\Pages;
 
-use App\Filament\Resources\Workflows\WorkflowResource;
 use Filament\Resources\Pages\CreateRecord;
+use Repo\App\Process\Filament\Resources\Workflows\WorkflowResource;
 
 class CreateWorkflow extends CreateRecord
 {

@@ -24,6 +24,8 @@ class GetClassMembers extends Command
 
         $markdownContent = "# Class Directory Blueprint\n";
         $markdownContent .= '*Generated automatically on '.now()->toDateTimeString()."*\n\n";
+        $markdownContent .= "'<span style='color:#9CDCFE'> 𝔁 : property </span>  \n";
+        $markdownContent .= "'<span style='color:#DCDCAA'> λ : class method  </span>  \n";
         $markdownContent .= "---\n\n";
 
         $classCount = 0;
@@ -67,11 +69,11 @@ class GetClassMembers extends Command
     {
         try {
             $reflectionClass = new ReflectionClass($className);
-            $md = "## 📦 Class: `{$className}`\n\n";
+            $md = "## 📦 Class: `{$className}`\n";
 
             // 1. Structural Overview Metadata
             $relativePath = str_replace(base_path().'/', '', $reflectionClass->getFileName());
-            $md .= "- **Location:** `{$relativePath}` (Line {$reflectionClass->getStartLine()})\n";
+            $md .= "- **Location:** `{$relativePath}` (Line {$reflectionClass->getStartLine()})  \n";
 
             $lineage = [];
             $currentReflection = $reflectionClass;
@@ -81,25 +83,25 @@ class GetClassMembers extends Command
             }
 
             if ($lineage !== []) {
-                $md .= '- **Extends:** '.implode(' ➔ ', $lineage)."\n";
+                $md .= '- **Extends:** '.implode(' ➔ ', $lineage)."  \n";
             }
 
             $interfaces = $reflectionClass->getInterfaceNames();
             if (! empty($interfaces)) {
                 $formattedInterfaces = array_map(fn (string $i): string => sprintf('`%s`', $i), $interfaces);
-                $md .= '- **Implements:** '.implode(', ', $formattedInterfaces)."\n";
+                $md .= '- **Implements:** '.implode(",  \n", $formattedInterfaces)."  \n";
             }
 
             $traits = array_keys($reflectionClass->getTraits());
             if ($traits !== []) {
                 $formattedTraits = array_map(fn (string $t): string => sprintf('`%s`', $t), $traits);
-                $md .= '- **Uses Traits:** '.implode(', ', $formattedTraits)."\n";
+                $md .= '- **Uses Traits:** '.implode(', ', $formattedTraits)."  \n";
             }
 
             // 2. DocBlocks
             $docComment = $reflectionClass->getDocComment();
             if ($docComment) {
-                $md .= "\n### 📄 Documentation\n```php\n".trim($docComment)."\n```\n";
+                // $md .= "\n### 📄 Documentation\n```php\n".trim(\$docComment)."\n```\n";
             }
 
             // 3. Extract and filter members
@@ -107,54 +109,38 @@ class GetClassMembers extends Command
             $allMethods = $reflectionClass->getMethods();
             $methods = array_values(array_filter($allMethods, fn (\ReflectionMethod $m): bool => $m->getDeclaringClass()->getName() === $className));
 
-            $md .= "\n### ⚙️ Members\n";
-
-            if (empty($properties) && $methods === []) {
-                $md .= "*No defined properties or local methods.*\n";
+            // Compact Line-by-Line Properties List
+            // $md .= "\n### ⚙️ Properties\n";
+            if (empty($properties)) {
+                // $md .= "*No defined properties.*\n";
             } else {
-                // Single unified 7-column table layout
-                $md .= "| Modifier | Type | Property Name | ┃ | Modifier | Method Name | Return Type |\n";
-                $md .= "| :--- | :--- | :--- | :---: | :--- | :--- | :--- |\n";
+                foreach ($properties as $property) {
+                    $modifiers = implode(' ', \Reflection::getModifierNames($property->getModifiers())) ?: 'public';
+                    $type = $property->hasType() ? $this->formatType($property->getType()) : 'mixed';
+                    $md .= sprintf("𝔁 %s %s <span style='color:#9CDCFE'>$%s</span>  \n", $modifiers, $type, $property->getName());
+                }
+            }
 
-                $maxRows = max(count($properties), count($methods));
-
-                for ($i = 0; $i < $maxRows; $i++) {
-                    $pModifiers = ' ';
-                    $pType = ' ';
-                    $pName = ' ';
-                    $mModifiers = ' ';
-                    $mName = ' ';
-                    $mReturnType = ' ';
-                    // Properties side compilation
-                    if (isset($properties[$i])) {
-                        $prop = $properties[$i];
-                        $pModifiers = '`'.(implode(' ', \Reflection::getModifierNames($prop->getModifiers())) ?: 'public').'`';
-                        $pType = $prop->hasType() ? '`'.$this->formatType($prop->getType()).'`' : '*mixed*';
-                        $pName = sprintf('`$%s`', $prop->getName());
-                    }
-
-                    // Methods side compilation
-                    if (isset($methods[$i])) {
-                        $method = $methods[$i];
-                        $mModifiers = '`'.(implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public').'`';
-                        $mReturnType = $method->hasReturnType() ? '`'.$this->formatType($method->getReturnType()).'`' : '*void/mixed*';
-                        $mName = sprintf('`%s()`', $method->getName());
-                    }
-
-                    // Output clean 7-column markdown string format
-                    $md .= "| {$pModifiers} | {$pType} | {$pName} | ┃ | {$mModifiers} | {$mName} | {$mReturnType} |\n";
+            // Compact Line-by-Line Methods List
+            // $md .= "\n### 🛠️ Methods\n";
+            if ($methods === []) {
+                // $md .= "*No local methods.*\n";
+            } else {
+                foreach ($methods as $method) {
+                    $modifiers = implode(' ', \Reflection::getModifierNames($method->getModifiers())) ?: 'public';
+                    $returnType = $method->hasReturnType() ? $this->formatType($method->getReturnType()) : 'void/mixed';
+                    $md .= sprintf("λ %s <span style='color:#DCDCAA'>$%s</span> : %s  \n", $modifiers, $method->getName(), $returnType);
                 }
             }
 
             return $md."\n---\n\n";
-
         } catch (\Exception $exception) {
             return "## ❌ Error: `{$className}`\n*Failed to run reflection engine: {$exception->getMessage()}*\n\n---\n\n";
         }
     }
 
     /**
-     * Safely parse basic, union, and intersection types to strings using safe markdown division characters.
+     * Safely parse basic, union, and intersection types to strings.
      */
     protected function formatType($type): string
     {
@@ -162,13 +148,12 @@ class GetClassMembers extends Command
             return 'mixed';
         }
 
-        // Use forward slashes instead of pipe characters so the Markdown parser doesn't break columns
         if ($type instanceof ReflectionUnionType) {
             $types = array_map(function (ReflectionIntersectionType|ReflectionNamedType $t) {
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
 
-            return implode(' / ', $types);
+            return implode('|', $types);
         }
 
         if ($type instanceof ReflectionIntersectionType) {
@@ -176,7 +161,7 @@ class GetClassMembers extends Command
                 return method_exists($t, 'getName') ? $t->getName() : (string) $t;
             }, $type->getTypes());
 
-            return implode(' & ', $types);
+            return implode('&', $types);
         }
 
         if ($type instanceof ReflectionNamedType) {

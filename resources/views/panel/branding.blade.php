@@ -35,7 +35,7 @@
             position: fixed;
             left: 275px;
             bottom: 25px;
-            color: #80B5F2;
+            color: var(--primary-600); 
             font-family: Arial, sans-serif;
             font-size: 3em;
             font-weight: bold;

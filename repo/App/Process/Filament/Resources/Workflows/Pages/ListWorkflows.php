@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows\Pages;
+namespace Repo\App\Process\Filament\Resources\Workflows\Pages;
 
-use App\Filament\Resources\Workflows\WorkflowResource;
 use Bites\GoogleTranslate\Actions\dumpbe;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Repo\App\Process\Filament\Resources\Workflows\WorkflowResource;
 
 class ListWorkflows extends ListRecords
 {

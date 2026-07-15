@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-14 16:20:40*
+*Generated on: 2026-07-15 16:27:02*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\floorplan`*
 
 ---
@@ -43,7 +43,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('locations');
             $table->foreignId('org_corp_id')->nullable()->constrained('org_corps');
@@ -54,7 +54,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('location_assignments', function (Blueprint $table) {
+        Schema::create('location_assignments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('location_id')->constrained();
             $table->enum('type', ['primary', 'secondary', 'temporary'])->nullable();

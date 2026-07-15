@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows;
+namespace Repo\App\Process\Filament\Resources\Workflows;
 
-use App\Filament\Resources\Workflows\Pages\CreateWorkflow;
-use App\Filament\Resources\Workflows\Pages\EditWorkflow;
-use App\Filament\Resources\Workflows\Pages\ListWorkflows;
-use App\Filament\Resources\Workflows\Pages\ViewWorkflow;
-use App\Filament\Resources\Workflows\RelationManagers\EdgesRelationManager;
-use App\Filament\Resources\Workflows\RelationManagers\NodesRelationManager;
-use App\Filament\Resources\Workflows\Schemas\WorkflowForm;
-use App\Filament\Resources\Workflows\Schemas\WorkflowInfolist;
-use App\Filament\Resources\Workflows\Tables\WorkflowsTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Repo\App\Process\Filament\Resources\Workflows\Pages\CreateWorkflow;
+use Repo\App\Process\Filament\Resources\Workflows\Pages\EditWorkflow;
+use Repo\App\Process\Filament\Resources\Workflows\Pages\ListWorkflows;
+use Repo\App\Process\Filament\Resources\Workflows\Pages\ViewWorkflow;
+use Repo\App\Process\Filament\Resources\Workflows\RelationManagers\EdgesRelationManager;
+use Repo\App\Process\Filament\Resources\Workflows\RelationManagers\NodesRelationManager;
+use Repo\App\Process\Filament\Resources\Workflows\Schemas\WorkflowForm;
+use Repo\App\Process\Filament\Resources\Workflows\Schemas\WorkflowInfolist;
+use Repo\App\Process\Filament\Resources\Workflows\Tables\WorkflowsTable;
 use Repo\App\Process\Models\Workflow;
 
 class WorkflowResource extends Resource

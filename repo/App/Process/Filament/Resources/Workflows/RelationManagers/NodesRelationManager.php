@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows\RelationManagers;
+namespace Repo\App\Process\Filament\Resources\Workflows\RelationManagers;
 
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
@@ -12,54 +12,56 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\DissociateAction;
 use Filament\Actions\DissociateBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class EdgesRelationManager extends RelationManager
+class NodesRelationManager extends RelationManager
 {
-    protected static string $relationship = 'edges';
+    protected static string $relationship = 'nodes';
 
     public function form(Schema $schema): Schema
     {
         return $schema
             ->components([
-                Forms\Components\Select::make('from_node_id')
-                    ->relationship('fromNode', 'name')
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+
+                Select::make('type')
+                    ->options([
+                        'start' => 'Start',
+                        'process' => 'Process',
+                        'decision' => 'Decision',
+                        'end' => 'End',
+                    ])
                     ->required(),
 
-                Forms\Components\Select::make('to_node_id')
-                    ->relationship('toNode', 'name')
-                    ->required(),
+                Select::make('assignment.type')
+                    ->label('Assignment Type')
+                    ->options([
+                        'job_position' => 'Job Position',
+                        'staff' => 'Staff',
+                        'dynamic' => 'Dynamic',
+                    ]),
 
-                Forms\Components\TextInput::make('label'),
-
-                Grid::make(3)->schema([
-                    Forms\Components\TextInput::make('condition.field'),
-                    Forms\Components\Select::make('condition.operator')
-                        ->options([
-                            '=' => '=',
-                            '!=' => '!=',
-                            '>' => '>',
-                            '<' => '<',
-                        ]),
-                    Forms\Components\TextInput::make('condition.value'),
-                ]),
-
+                TextInput::make('assignment.value')
+                    ->label('Assignment Value'),
             ]);
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('label')
+            ->recordTitleAttribute('name')
             ->columns([
-                TextColumn::make('fromNode.name')->label('From'),
-                TextColumn::make('toNode.name')->label('To'),
-                TextColumn::make('label'),
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('type')
+                    ->searchable(),
             ])
             ->filters([
                 //
@@ -83,7 +85,11 @@ class EdgesRelationManager extends RelationManager
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $data['condition'] = $data['condition'] ?? null;
+        $data['config'] = [
+            'assignment' => $data['assignment'] ?? null,
+        ];
+
+        unset($data['assignment']);
 
         return $data;
     }

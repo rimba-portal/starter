@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\Workflows\Tables;
+namespace Repo\App\Process\Filament\Resources\Workflows\Tables;
 
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;

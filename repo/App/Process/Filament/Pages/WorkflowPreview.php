@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Pages;
+namespace Repo\App\Process\Filament\Pages;
 
 use App\Trees\Branding\Actions\GetHelpAction;
 use BackedEnum;

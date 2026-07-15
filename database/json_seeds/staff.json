@@ -1,0 +1,8 @@
+{
+    "staff": [
+        { "user_id": null, "type": "FTE", "status": "active", "name": "System Administrator", "staff_no": "EMP0001", "attributes": { "department": "IT", "grade": "M1", "location": "HQ"}},
+        { "user_id": 1, "type": "FTE", "status": "active", "name": "Ahmad Faros Othman", "staff_no": "153582", "attributes": { "department": "Digital Factory", "grade": "M3", "location": "Penang"}},
+        { "user_id": null, "type": "FTE", "status": "active", "name": "Nurul Aisyah", "staff_no": "EMP0003", "attributes": { "department": "HR", "grade": "E2", "location": "Kulim"}},
+        { "user_id": null, "type": "FTC", "status": "active", "name": "John Tan", "staff_no": "CON0001", "attributes": { "department": "Maintenance", "grade": "C1", "location": "Penang"}}
+    ]
+}

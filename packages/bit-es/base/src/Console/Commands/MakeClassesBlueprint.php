@@ -26,7 +26,7 @@ class MakeClassesBlueprint extends Command
         $outputPath = base_path($this->outputFile);
 
         $content = "# PHP Class Blueprint\n";
-        $content .= '*Generated automatically on ' . now()->toDateTimeString() . "*\n\n";
+        $content .= '*Generated automatically on '.now()->toDateTimeString()."*\n\n";
 
         $content .= "## Legend\n\n";
         $content .= "- `namespace` = Namespace\n";
@@ -110,7 +110,7 @@ class MakeClassesBlueprint extends Command
             return null;
         }
 
-        $relativePath = str_replace(base_path() . DIRECTORY_SEPARATOR, '', $path);
+        $relativePath = str_replace(base_path().DIRECTORY_SEPARATOR, '', $path);
         $relativePath = str_replace(DIRECTORY_SEPARATOR, '/', $relativePath);
 
         $classAttributes = $this->extractAttributesBeforeClass($source);
@@ -124,11 +124,11 @@ class MakeClassesBlueprint extends Command
         $md = "[file] {$relativePath}\n\n";
 
         if ($namespace !== null) {
-            $md .= $namespace . "\n\n";
+            $md .= $namespace."\n";
         }
 
         foreach ($classAttributes as $attribute) {
-            $md .= '# ' . $attribute . "\n";
+            $md .= '# '.$attribute."\n";
         }
 
         if ($classAttributes !== []) {
@@ -136,11 +136,11 @@ class MakeClassesBlueprint extends Command
         }
 
         if ($classLike !== null) {
-            $md .= $classLike . "\n\n";
+            $md .= $classLike."\n";
         }
 
         foreach ($traits as $trait) {
-            $md .= '& ' . $trait . "\n";
+            $md .= '& '.$trait;
         }
 
         if ($traits !== []) {
@@ -149,10 +149,10 @@ class MakeClassesBlueprint extends Command
 
         foreach ($constants as $constant) {
             foreach ($constant['attributes'] as $attribute) {
-                $md .= '# ' . $attribute . "\n";
+                $md .= '# '.$attribute."\n";
             }
 
-            $md .= '= ' . $constant['line'] . "\n";
+            $md .= '= '.$constant['line']."\n";
         }
 
         if ($constants !== []) {
@@ -161,10 +161,10 @@ class MakeClassesBlueprint extends Command
 
         foreach ($properties as $property) {
             foreach ($property['attributes'] as $attribute) {
-                $md .= '# ' . $attribute . "\n";
+                $md .= '# '.$attribute."\n";
             }
 
-            $md .= $property['line'] . "\n";
+            $md .= $property['line']."\n";
         }
 
         if ($properties !== []) {
@@ -173,13 +173,13 @@ class MakeClassesBlueprint extends Command
 
         foreach ($methods as $method) {
             foreach ($method['attributes'] as $attribute) {
-                $md .= '# ' . $attribute . "\n";
+                $md .= '# '.$attribute."\n";
             }
 
-            $md .= $method['line'] . "\n";
+            $md .= $method['line']."\n";
         }
 
-        return rtrim($md) . "\n";
+        return rtrim($md)."\n";
     }
 
     protected function extractNamespaceLine(string $source): ?string
@@ -224,7 +224,7 @@ class MakeClassesBlueprint extends Command
                 && $i + 1 < $count
             ) {
                 $i++;
-                $declaration .= ' ' . trim($lines[$i]);
+                $declaration .= ' '.trim($lines[$i]);
             }
 
             $declaration = preg_replace('/\s*\{.*$/', '', $declaration);
@@ -270,7 +270,7 @@ class MakeClassesBlueprint extends Command
             }
 
             if ($insideAttribute) {
-                $buffer .= ' ' . $trimmed;
+                $buffer .= ' '.$trimmed;
 
                 if ($this->attributeIsClosed($buffer)) {
                     $attributes[] = $this->normalizeSpaces($buffer);
@@ -302,6 +302,7 @@ class MakeClassesBlueprint extends Command
                 }
             }
         }
+
         return null;
     }
 
@@ -315,6 +316,7 @@ class MakeClassesBlueprint extends Command
                 }
             }
         }
+
         return $traits;
     }
 
@@ -326,10 +328,13 @@ class MakeClassesBlueprint extends Command
 
         foreach ($lines as $line) {
             $trimmed = trim($line);
-            if ($trimmed === '') continue;
+            if ($trimmed === '') {
+                continue;
+            }
 
             if (str_starts_with($trimmed, '#[')) {
                 $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
                 continue;
             }
 
@@ -337,13 +342,15 @@ class MakeClassesBlueprint extends Command
                 $cleanLine = preg_replace('/;.*$/', '', $trimmed);
                 $constants[] = [
                     'attributes' => $currentAttributes,
-                    'line' => $this->normalizeSpaces($cleanLine)
+                    'line' => $this->normalizeSpaces($cleanLine),
                 ];
                 $currentAttributes = [];
             }
         }
+
         return $constants;
     }
+
     protected function extractProperties(string $body): array
     {
         $properties = [];
@@ -351,15 +358,21 @@ class MakeClassesBlueprint extends Command
         $currentAttributes = [];
         foreach ($lines as $line) {
             $trimmed = trim($line);
-            if ($trimmed === '') continue;
-            if (str_starts_with($trimmed, '#[')) {
-                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+            if ($trimmed === '') {
                 continue;
             }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
+                continue;
+            }
+
             // Exclude functions and constants
             if (str_contains($trimmed, 'function') || str_contains($trimmed, 'const')) {
                 continue;
             }
+
             if (preg_match('/^(public|protected|private|\b)\s*(?:readonly\s+)?(?:[\w\|]+)?\s*($[\w]+)/i', $trimmed, $matches)) {
                 $visibility = $matches[1] ?: 'public';
                 $prefix = match ($visibility) {
@@ -368,12 +381,14 @@ class MakeClassesBlueprint extends Command
                     default => '@+',
                 };
                 $cleanLine = preg_replace('/;.*$/', '', $trimmed);
-                $properties[] = ['attributes' => $currentAttributes, 'line' => $prefix . ' ' . $this->normalizeSpaces($cleanLine)];
+                $properties[] = ['attributes' => $currentAttributes, 'line' => $prefix.' '.$this->normalizeSpaces($cleanLine)];
                 $currentAttributes = [];
             }
         }
+
         return $properties;
     }
+
     protected function extractMethods(string $body): array
     {
         $methods = [];
@@ -381,11 +396,16 @@ class MakeClassesBlueprint extends Command
         $currentAttributes = [];
         foreach ($lines as $line) {
             $trimmed = trim($line);
-            if ($trimmed === '') continue;
-            if (str_starts_with($trimmed, '#[')) {
-                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+            if ($trimmed === '') {
                 continue;
             }
+
+            if (str_starts_with($trimmed, '#[')) {
+                $currentAttributes[] = $this->normalizeSpaces($trimmed);
+
+                continue;
+            }
+
             if (preg_match('/^(?:(public|protected|private)\s+)?(?:static\s+)?function\s+([\w_]+)\s*\((.*)\)/i', $trimmed, $matches)) {
                 $visibility = $matches[1] ?: 'public';
                 $prefix = match ($visibility) {
@@ -395,20 +415,24 @@ class MakeClassesBlueprint extends Command
                 };
                 $cleanLine = preg_replace('/\s*{.*$/', '', $trimmed);
                 $cleanLine = rtrim($cleanLine, ';');
-                $methods[] = ['attributes' => $currentAttributes, 'line' => $prefix . ' ' . $this->normalizeSpaces($cleanLine)];
+                $methods[] = ['attributes' => $currentAttributes, 'line' => $prefix.' '.$this->normalizeSpaces($cleanLine)];
                 $currentAttributes = [];
             }
         }
+
         return $methods;
     }
+
     protected function normalizeNewLines(string $str): string
     {
         return str_replace(["\r\n", "\r"], "\n", $str);
     }
+
     protected function normalizeSpaces(string $str): string
     {
         return trim((string) preg_replace('/\s+/', ' ', $str));
     }
+
     protected function attributeIsClosed(string $str): bool
     {
         return str_ends_with($str, ']');
