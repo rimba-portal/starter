@@ -48,9 +48,8 @@ class LoginWizard extends BaseLogin
                             TextInput::make('staff_no')
                                 ->readOnly(),
                             FaceAuth::make('face')
-                                ->staffNo(fn ($livewire) => $livewire->data['staff_no'] ?? null)
+                                ->staffNo(fn($livewire) => $livewire->data['staff_no'] ?? null)
                                 ->live(),
-
                         ]),
                 ])
                     ->skippable(false)

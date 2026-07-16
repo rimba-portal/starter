@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (): Factory|View {
-    return view('welcome');
+    return view('rimba');
 });
+Route::get('/face', function () {
+    return view('face');
+})->name('face');
 
 Route::get('/pic/{filename}', function (string $filename) {
 
