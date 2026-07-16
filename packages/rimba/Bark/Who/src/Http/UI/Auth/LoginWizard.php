@@ -8,6 +8,7 @@ use App\Models\User;
 use Filament\Auth\Http\Responses\Contracts\LoginResponse;
 use Filament\Auth\Pages\Login as BaseLogin;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Schemas\Components\Wizard;
 use Filament\Schemas\Schema;
 use Filament\Support\Exceptions\Halt;
@@ -17,7 +18,6 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Validation\ValidationException;
 use Rimba\Bark\Who\Components\FaceAuth;
 use Rimba\Bark\Who\Components\Webcam;
-use Filament\Infolists\Components\ImageEntry;
 
 class LoginWizard extends BaseLogin
 {
@@ -56,16 +56,16 @@ class LoginWizard extends BaseLogin
                                 ->imageHeight(40)
                                 ->circular(),
                             FaceAuth::make('face')
-                                ->staffNo(fn($livewire) => $livewire->data['staff_no'] ?? null)
+                                ->staffNo(fn ($livewire) => $livewire->data['staff_no'] ?? null)
                                 ->live(),
                         ]),
                 ])
                     ->skippable(false),
-                    // ->submitAction(new HtmlString('
-                    //     <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
-                    //         Sign in
-                    //     </button>
-                    // ')),
+                // ->submitAction(new HtmlString('
+                //     <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
+                //         Sign in
+                //     </button>
+                // ')),
             ])
             ->statePath('data');
     }
@@ -83,6 +83,7 @@ class LoginWizard extends BaseLogin
                 'data.email' => 'Invalid credentials.',
             ]);
         }
+
         Auth::login(
             $user,
             (bool) ($data['remember'] ?? false),
@@ -163,6 +164,7 @@ class LoginWizard extends BaseLogin
             filament()->getPanel('lobby')->getUrl()
         );
     }
+
     protected function redirectToStaffPanel(): void
     {
         session()->regenerate();
@@ -170,6 +172,7 @@ class LoginWizard extends BaseLogin
             filament()->getPanel('staff')->getUrl()
         );
     }
+
     protected function sendOtpToUser(User $user): void
     {
         /*
@@ -198,6 +201,7 @@ class LoginWizard extends BaseLogin
 
         return $otp === '123456';
     }
+
     public function faceMatched(): void
     {
         $this->redirectToStaffPanel();

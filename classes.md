@@ -452,8 +452,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\MenuResource`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\MenuResource.php` (Line 20)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\MenuResource`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\MenuResource.php` (Line 20)  
 - **Extends:** `Filament\Resources\Resource`  
 𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
 𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
@@ -498,8 +498,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\Pages\CreateMenu`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\Pages\CreateMenu.php` (Line 10)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\CreateMenu`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\CreateMenu.php` (Line 10)  
 - **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
 - **Implements:** `Filament\Actions\Contracts\HasActions`,  
 `Filament\Schemas\Contracts\HasRenderHookScopes`,  
@@ -585,8 +585,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\Pages\EditMenu`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\Pages\EditMenu.php` (Line 11)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\EditMenu`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\EditMenu.php` (Line 11)  
 - **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
 - **Implements:** `Filament\Actions\Contracts\HasActions`,  
 `Filament\Schemas\Contracts\HasRenderHookScopes`,  
@@ -672,8 +672,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\Pages\ListMenus`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\Pages\ListMenus.php` (Line 11)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\ListMenus`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\ListMenus.php` (Line 11)  
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
 - **Implements:** `Filament\Tables\Contracts\HasTable`,  
 `Filament\Schemas\Contracts\HasSchemas`,  
@@ -778,14 +778,14 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\Schemas\MenuForm`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\Schemas\MenuForm.php` (Line 12)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Schemas\MenuForm`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Schemas\MenuForm.php` (Line 12)  
 λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
 
 ---
 
-## 📦 Class: `App\Http\UI\Admin\Resources\Menus\Tables\MenusTable`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Admin\Resources\Menus\Tables\MenusTable.php` (Line 14)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Tables\MenusTable`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Tables\MenusTable.php` (Line 14)  
 λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
 
 ---
@@ -4463,8 +4463,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Staff\Resources\Menus\MenuResource`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Resources\Menus\MenuResource.php` (Line 15)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\MenuResource`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\MenuResource.php` (Line 15)  
 - **Extends:** `Filament\Resources\Resource`  
 𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
 𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
@@ -4508,8 +4508,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Staff\Resources\Menus\Pages\ListMenus`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Resources\Menus\Pages\ListMenus.php` (Line 13)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages\ListMenus`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages\ListMenus.php` (Line 13)  
 - **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
 - **Implements:** `Filament\Tables\Contracts\HasTable`,  
 `Filament\Schemas\Contracts\HasSchemas`,  
@@ -4614,8 +4614,8 @@
 
 ---
 
-## 📦 Class: `App\Http\UI\Staff\Resources\Menus\Tables\MenusTable`
-- **Location:** `C:\Users\153582\Herd\starter\app\Http\UI\Staff\Resources\Menus\Tables\MenusTable.php` (Line 16)  
+## 📦 Class: `Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables\MenusTable`
+- **Location:** `C:\Users\153582\Herd\starter\Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables\MenusTable.php` (Line 16)  
 λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
 
 ---

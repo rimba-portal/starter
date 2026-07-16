@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Http\UI\Staff\Resources\Menus;
+namespace Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus;
 
-use App\Http\UI\Staff\Resources\Menus\Pages\ListMenus;
-use App\Http\UI\Staff\Resources\Menus\Tables\MenusTable;
+use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages\ListMenus;
+use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables\MenusTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;

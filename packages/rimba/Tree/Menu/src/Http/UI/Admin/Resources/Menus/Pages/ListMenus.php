@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types=1);
+namespace Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages;
 
-namespace App\Http\UI\Staff\Resources\Menus\Pages;
-
-use App\Http\UI\Staff\Resources\Menus\MenuResource;
+use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\MenuResource;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
 use Illuminate\Database\Eloquent\Builder;

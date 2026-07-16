@@ -8,7 +8,7 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class CanServiceProvider extends BitesServiceProvider
 {
-    protected string $configFile = __DIR__ . '/../config/bites.php';
+    protected string $configFile = __DIR__.'/../config/bites.php';
 
     protected function bootPackage(): void
     {

@@ -7,9 +7,37 @@ namespace Bites\Versioning\Enums;
 enum VersionStatus: string
 {
     case Draft = 'draft';
+
     case Review = 'review';
-    case Approved = 'approved';
+
     case Released = 'released';
-    case Obsolete = 'obsolete';
+
+    case Deprecated = 'deprecated';
+
     case Archived = 'archived';
+
+    public function label(): string
+    {
+        return ucfirst($this->value);
+    }
+
+    public function color(): string
+    {
+        return match ($this) {
+            self::Draft => 'gray',
+            self::Review => 'warning',
+            self::Released => 'success',
+            self::Deprecated => 'danger',
+            self::Archived => 'gray',
+        };
+    }
+
+    public static function options(): array
+    {
+        return collect(self::cases())
+            ->mapWithKeys(fn (self $case): array => [
+                $case->value => $case->label(),
+            ])
+            ->all();
+    }
 }

@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'is_admin',
     'is_staff',
     'last_login',
-    'last_face_auth'
+    'last_face_auth',
 ])]
 #[Table(name: 'user_auth')]
 class UserAuth extends Model

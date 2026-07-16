@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Trees\Organization\Models\Staff;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -13,7 +14,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Http;
-use Filament\Models\Contracts\HasAvatar;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
@@ -48,7 +48,8 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     {
         return $this->hasOne(Staff::class);
     }
-        public function getFilamentAvatarUrl(): ?string
+
+    public function getFilamentAvatarUrl(): ?string
     {
         $number = $this->staff?->staff_no;
 
@@ -74,5 +75,4 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
         return $default;
     }
-
 }

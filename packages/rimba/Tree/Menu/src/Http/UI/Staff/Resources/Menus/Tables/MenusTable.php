@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\UI\Staff\Resources\Menus\Tables;
+namespace Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables;
 
 use Filament\Support\Enums\TextSize;
 use Filament\Tables\Columns\ImageColumn;
@@ -27,8 +27,8 @@ class MenusTable
                         ->grow(false)
                         ->defaultImageUrl('https://raw.githubusercontent.com/bit-ecosystem/bites/refs/heads/main/menu/business-idea.svg'), // to chanage to Str::kebab($record->title)
                     Stack::make([
-                        TextColumn::make('title')
-                            ->label('Title')
+                        TextColumn::make('name')
+                            ->label('Name')
                             // ->searchable()
                             ->color('primary'),
                         TextColumn::make('description')
