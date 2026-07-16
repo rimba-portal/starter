@@ -2,29 +2,19 @@
     $staffNo = $getStaffNo();
 @endphp
 
-<x-dynamic-component
-    :component="$getFieldWrapperView()"
-    :field="$field"
->
-    <div
-        x-data="faceVerificationComponent({
-            staffNo: @js($staffNo),
-            matchThreshold: 0.5,
-        })"
-        class="space-y-3 rounded-lg border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-800 dark:bg-gray-900/40"
-    >
+<x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
+    <div x-data="faceVerificationComponent({
+        staffNo: @js($staffNo),
+        matchThreshold: 0.5,
+    })"
+        class="space-y-3 rounded-lg border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-800 dark:bg-gray-900/40">
         {{-- Debug / Status --}}
         <div class="flex items-center justify-between gap-3">
             <div class="flex flex-col">
-                <span
-                    class="text-[10px] font-medium text-gray-500 dark:text-gray-400"
-                    x-text="referenceStatus"
-                ></span>
+                <span class="text-[10px] font-medium text-gray-500 dark:text-gray-400" x-text="referenceStatus"></span>
 
-                <span
-                    class="text-[10px] font-semibold text-primary-600 dark:text-primary-400"
-                    x-text="cameraStatus"
-                ></span>
+                <span class="text-[10px] font-semibold text-primary-600 dark:text-primary-400"
+                    x-text="cameraStatus"></span>
             </div>
 
             <div class="text-[10px] font-semibold text-danger-600 dark:text-danger-400">
@@ -41,13 +31,10 @@
                     ID
                 </div>
 
-                <div class="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-inner dark:border-gray-700 dark:bg-gray-800">
-                    <img
-                        id="referenceImage"
-                        x-ref="referenceImage"
-                        class="h-full w-full object-cover"
-                        alt="Reference image"
-                    >
+                <div
+                    class="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-inner dark:border-gray-700 dark:bg-gray-800">
+                    <img id="referenceImage" x-ref="referenceImage" class="h-full w-full object-cover"
+                        alt="Reference image">
                 </div>
             </div>
 
@@ -57,33 +44,24 @@
                     Camera
                 </div>
 
-                <div class="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 bg-black shadow-inner dark:border-gray-700">
-                    <video
-                        x-ref="video"
-                        autoplay
-                        muted
-                        playsinline
-                        class="h-full w-full scale-x-[-1] object-cover"
-                    ></video>
+                <div
+                    class="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 bg-black shadow-inner dark:border-gray-700">
+                    <video x-ref="video" autoplay muted playsinline
+                        class="h-full w-full scale-x-[-1] object-cover"></video>
                 </div>
             </div>
 
             {{-- Result --}}
-            <div class="min-w-24 flex-1 rounded-lg border border-gray-200 bg-white p-2 text-xs dark:border-gray-800 dark:bg-gray-950">
+            <div
+                class="min-w-24 flex-1 rounded-lg border border-gray-200 bg-white p-2 text-xs dark:border-gray-800 dark:bg-gray-950">
                 <div class="font-medium text-gray-500 dark:text-gray-400">
                     Result
                 </div>
 
-                <div
-                    class="mt-1 font-semibold text-gray-950 dark:text-white"
-                    x-text="resultText"
-                ></div>
+                <div class="mt-1 font-semibold text-gray-950 dark:text-white" x-text="resultText"></div>
 
-                <div
-                    class="mt-1 font-mono text-[10px] text-gray-500 dark:text-gray-400"
-                    x-show="distanceText"
-                    x-text="distanceText"
-                ></div>
+                <div class="mt-1 font-mono text-[10px] text-gray-500 dark:text-gray-400" x-show="distanceText"
+                    x-text="distanceText"></div>
             </div>
         </div>
     </div>
