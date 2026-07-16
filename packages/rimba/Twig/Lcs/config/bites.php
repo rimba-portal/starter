@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'ui' => [
         'packages' => [
-            'bit-es/floorplan/src' => 'Bites\FloorPlan',
+            'rimba/Twig/Lcs/src' => 'Rimba\Twig\Lcs',
         ],
     ],
 ];

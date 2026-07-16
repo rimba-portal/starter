@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'ui' => [
         'packages' => [
-            'bit-es/floorplan/src' => 'Bites\FloorPlan',
+            'rimba/Tree/Link/src' => 'Rimba\Tree\Link',
         ],
     ],
 ];

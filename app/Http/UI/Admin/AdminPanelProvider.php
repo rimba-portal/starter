@@ -54,15 +54,15 @@ class AdminPanelProvider extends PanelProvider
         foreach ($packages as $package => $namespace) {
             $panel
                 ->discoverResources(
-                    in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Resources', $package)),
+                    in: base_path(sprintf('vendor/%s/Http/UI/Admin/Resources', $package)),
                     for: $namespace.'\Http\UI\Admin\Resources',
                 )
                 ->discoverPages(
-                    in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Pages', $package)),
+                    in: base_path(sprintf('vendor/%s/Http/UI/Admin/Pages', $package)),
                     for: $namespace.'\Http\UI\Admin\Pages',
                 )
                 ->discoverWidgets(
-                    in: base_path(sprintf('vendor/bit-es/%s/Http/UI/Admin/Widgets', $package)),
+                    in: base_path(sprintf('vendor/%s/Http/UI/Admin/Widgets', $package)),
                     for: $namespace.'\Http\UI\Admin\Widgets',
                 );
         }

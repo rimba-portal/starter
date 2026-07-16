@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'ui' => [
         'packages' => [
-            'calendar/src' => 'Bites\Calendar',
+            'bit-es/calendar/src' => 'Bites\Calendar',
         ],
     ],
     'calendar' => [

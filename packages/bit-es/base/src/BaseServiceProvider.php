@@ -10,6 +10,8 @@ use ReflectionClass;
 
 class BaseServiceProvider extends ServiceProvider
 {
+    protected string $configFile = __DIR__ . '/../config/bites.php';
+
     public function register(): void
     {
         //
@@ -17,7 +19,7 @@ class BaseServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         if ($this->app->runningInConsole()) {
             $this->registerCommandsFromDirectory();
@@ -29,7 +31,7 @@ class BaseServiceProvider extends ServiceProvider
      */
     protected function registerCommandsFromDirectory()
     {
-        $commandDir = __DIR__.'/Console/Commands';
+        $commandDir = __DIR__ . '/Console/Commands';
         // Ensure the folder exists before scanning
         if (! is_dir($commandDir)) {
             return;
@@ -38,11 +40,11 @@ class BaseServiceProvider extends ServiceProvider
         $commands = [];
 
         // Loop through all PHP files in your package's command directory
-        foreach (glob($commandDir.'/*.php') as $file) {
+        foreach (glob($commandDir . '/*.php') as $file) {
             $className = basename($file, '.php');
 
             // Reconstruct the exact fully qualified namespace
-            $class = 'Bites\\Base\\Console\\Commands\\'.$className;
+            $class = 'Bites\\Base\\Console\\Commands\\' . $className;
 
             // Check that the class exists and actually extends Laravel's base Command
             if (class_exists($class) && is_subclass_of($class, Command::class)) {

@@ -11,9 +11,11 @@ use Filament\Facades\Filament as FacadesFilament;
 
 class VersioningServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__ . '/../config/bites.php';
+
     protected function bootPackage(): void
     {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         // Intercept the Filament execution pipeline safely before panels render
         FacadesFilament::serving(function (): void {

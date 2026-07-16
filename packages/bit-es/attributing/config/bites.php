@@ -3,6 +3,11 @@
 declare(strict_types=1);
 
 return [
+    'ui' => [
+        'packages' => [
+            'bit-es/attributing/src' => 'Bites\Attributing',
+        ],
+    ],
 
     'navigation_group' => 'Settings',
 
