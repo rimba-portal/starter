@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Face Recognition Test</title>
-       <script defer src= 'https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js'></script>
+    <script defer src='https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js'></script>
     <style>
         body {
             font-family: Arial;
@@ -47,11 +47,19 @@
     <div class="container">
         <div>
             <h4>Reference Image</h4>
-            <img id="referenceImage" width="300">
+            <img id="referenceImage" height="250">
         </div>
         <div>
             <h4>Webcam</h4>
-            <video id="video" width="300" height="225" autoplay muted playsinline></video>
+
+            <div style="position: relative; display: inline-block;">
+                <video id="video" width="300" height="250" autoplay muted playsinline>
+                </video>
+
+                <canvas id="overlay" width="300" height="250"
+                    style=" position:absolute; top:0; left:0; pointer-events:none; ">
+                </canvas>
+            </div>
         </div>
     </div>
 
@@ -101,6 +109,9 @@
         window.addEventListener('load', async () => {
 
             const video = document.getElementById('video');
+            const canvas = document.getElementById('overlay');
+            const ctx = canvas.getContext('2d');
+
             resultText = document.getElementById('result');
             referenceImage = document.getElementById('referenceImage');
 
@@ -127,21 +138,53 @@
                     .withFaceDescriptor();
 
                 if (detection) {
-                    const distance = faceapi.euclideanDistance(referenceDescriptor, detection.descriptor);
 
-                    resultText.innerText = `${distance < 0.5 ? '✅ Match' : '❌ Not Match'} | Distance: ${distance.toFixed(4)}`;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    // stop when strong match
-                    if (distance <= 0.5) {
+                    const resized = faceapi.resizeResults(
+                        detection, {
+                            width: video.width,
+                            height: video.height,
+                        }
+                    );
+
+                    // Draw face box
+                    // faceapi.draw.drawDetections(canvas, resized);
+
+                    // Draw landmarks
+                    faceapi.draw.drawFaceLandmarks(canvas, resized);
+
+                    const distance = faceapi.euclideanDistance(
+                        referenceDescriptor,
+                        detection.descriptor
+                    );
+
+                    const box = resized.detection.box;
+
+                    ctx.fillStyle = 'lime';
+                    ctx.font = '14px Arial';
+
+                    ctx.fillText(
+                        `D=${distance.toFixed(3)}`,
+                        box.x,
+                        Math.max(15, box.y - 5)
+                    );
+
+                    resultText.innerText =
+                        `${distance < 0.45 ? '✅ Match' : '❌ Not Match'} | Distance: ${distance.toFixed(4)}`;
+
+                    if (distance <= 0.45) {
                         resultText.innerText += ' ✅ STOPPED';
                         stopCamera(video);
                         return;
                     }
 
                 } else {
+
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
                     resultText.innerText = 'No face';
                 }
-
                 requestAnimationFrame(detectLoop);
             }
 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('requests', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('requester_id')->constrained('staff');
             $table->foreignId('workflow_instance_id')->nullable()->constrained();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('request_types', function (Blueprint $table) {
+        Schema::create('request_types', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('workflow_id')->nullable()->constrained();
             $table->string('name');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('org_team_id')->constrained();
             $table->string('code')->unique();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('course_groups', function (Blueprint $table) {
+        Schema::create('course_groups', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('course_groups');
             $table->string('name');
@@ -31,14 +31,14 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('course_group_assignments', function (Blueprint $table) {
+        Schema::create('course_group_assignments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('course_id')->constrained();
             $table->foreignId('course_group_id')->constrained();
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('modules', function (Blueprint $table) {
+        Schema::create('modules', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
@@ -47,7 +47,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('course_modules', function (Blueprint $table) {
+        Schema::create('course_modules', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('course_id')->constrained();
             $table->foreignId('module_id')->constrained();
@@ -55,7 +55,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('materials', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('org_team_id')->nullable()->constrained();
             $table->enum('type', ['document', 'video', 'link', 'other'])->nullable();
@@ -64,7 +64,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('material_modules', function (Blueprint $table) {
+        Schema::create('material_modules', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('material_id')->constrained();
             $table->foreignId('module_id')->constrained();
@@ -72,7 +72,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('quizzes', function (Blueprint $table) {
+        Schema::create('quizzes', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('module_id')->constrained();
             $table->string('name');
@@ -81,7 +81,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('quiz_attempts', function (Blueprint $table) {
+        Schema::create('quiz_attempts', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('quiz_id')->constrained();
             $table->foreignId('staff_id')->constrained();
@@ -91,7 +91,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('evaluations', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('module_id')->nullable()->constrained();
             $table->foreignId('staff_id')->constrained();
@@ -101,7 +101,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('certificates', function (Blueprint $table) {
+        Schema::create('certificates', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('module_id')->constrained();
             $table->foreignId('staff_id')->constrained();

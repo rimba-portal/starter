@@ -17,15 +17,15 @@ class Dashboard extends BaseDashboard
 {
     protected static string|UnitEnum|null $navigationGroup = 'ToDo';
 
-    protected static string|BackedEnum|null $navigationIcon = 'rimba-s-target';
+    protected static string|BackedEnum|null $navigationIcon = 'rimba-s-task';
 
-    protected static ?string $navigationLabel = 'Target';
+    protected static ?string $navigationLabel = 'Task';
 
     protected static ?int $navigationSort = 13;
 
-    protected static ?string $title = 'Target';
+    protected static ?string $title = 'Task';
 
-    protected ?string $subheading = 'Target settings and progress overview for your work.';
+    protected ?string $subheading = 'Task to get done by you or your teams.';
 
     public function getColumns(): int|array
     {

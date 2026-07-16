@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('assets', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('org_team_id')->constrained();
             $table->foreignId('location_id')->nullable()->constrained();
@@ -28,21 +28,21 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('asset_types', function (Blueprint $table) {
+        Schema::create('asset_types', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('asset_type_assignments', function (Blueprint $table) {
+        Schema::create('asset_type_assignments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('asset_id')->constrained();
             $table->foreignId('asset_type_id')->constrained();
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('asset_assignments', function (Blueprint $table) {
+        Schema::create('asset_assignments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('asset_id')->constrained();
             $table->enum('type', ['primary', 'secondary', 'temporary'])->nullable();

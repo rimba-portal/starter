@@ -17,6 +17,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Validation\ValidationException;
 use Rimba\Bark\Who\Components\FaceAuth;
 use Rimba\Bark\Who\Components\Webcam;
+use Filament\Infolists\Components\ImageEntry;
 
 class LoginWizard extends BaseLogin
 {
@@ -32,7 +33,8 @@ class LoginWizard extends BaseLogin
         return $schema
             ->components([
                 Wizard::make([
-                    Wizard\Step::make('ID & Pin')
+                    Wizard\Step::make('Password')
+                        ->icon('bites-password')
                         ->afterValidation(function (): void {
                             $this->validatePasswordFactor();
                         })
@@ -40,24 +42,30 @@ class LoginWizard extends BaseLogin
                             $this->getEmailFormComponent(),
                             $this->getPasswordFormComponent(),
                             $this->getRememberFormComponent(),
-                            Webcam::make('captured_image'),
+                            // Webcam::make('captured_image'),
                         ]),
 
                     Wizard\Step::make('Face ID')
+                        ->icon('bites-face-scan')
                         ->schema([
                             TextInput::make('staff_no')
-                                ->readOnly(),
+                                ->hidden(),
+                            ImageEntry::make('header_image')
+                                ->hiddenLabel()
+                                ->defaultImageUrl(url('/pic/153582'))
+                                ->imageHeight(40)
+                                ->circular(),
                             FaceAuth::make('face')
                                 ->staffNo(fn($livewire) => $livewire->data['staff_no'] ?? null)
                                 ->live(),
                         ]),
                 ])
-                    ->skippable(false)
-                    ->submitAction(new HtmlString('
-                        <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
-                            Sign in
-                        </button>
-                    ')),
+                    ->skippable(false),
+                    // ->submitAction(new HtmlString('
+                    //     <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
+                    //         Sign in
+                    //     </button>
+                    // ')),
             ])
             ->statePath('data');
     }
@@ -75,7 +83,10 @@ class LoginWizard extends BaseLogin
                 'data.email' => 'Invalid credentials.',
             ]);
         }
-
+        Auth::login(
+            $user,
+            (bool) ($data['remember'] ?? false),
+        );
         /*
          * If user has no staff record or no staff number:
          * - login immediately
@@ -83,15 +94,7 @@ class LoginWizard extends BaseLogin
          * - stop wizard from proceeding to Step 2
          */
         if (! $user->staff || blank($user->staff->staff_no)) {
-            Auth::login(
-                $user,
-                (bool) ($data['remember'] ?? false),
-            );
-
-            session()->regenerate();
-
             $this->redirectToUserPanel();
-
             throw new Halt;
         }
 
@@ -155,11 +158,18 @@ class LoginWizard extends BaseLogin
 
     protected function redirectToUserPanel(): void
     {
+        session()->regenerate();
         $this->redirect(
-            filament()->getPanel('user')->getUrl()
+            filament()->getPanel('lobby')->getUrl()
         );
     }
-
+    protected function redirectToStaffPanel(): void
+    {
+        session()->regenerate();
+        $this->redirect(
+            filament()->getPanel('staff')->getUrl()
+        );
+    }
     protected function sendOtpToUser(User $user): void
     {
         /*
@@ -187,5 +197,9 @@ class LoginWizard extends BaseLogin
          */
 
         return $otp === '123456';
+    }
+    public function faceMatched(): void
+    {
+        $this->redirectToStaffPanel();
     }
 }

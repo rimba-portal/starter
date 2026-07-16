@@ -16,6 +16,10 @@ return new class extends Migration
             $table->timestamp('two_factor_confirmed_at')->nullable();
             $table->text('face_descriptor')->nullable();
             $table->boolean('setup_completed')->default(false);
+            $table->boolean('is_staff')->default(false);
+            $table->boolean('is_admin')->default(false);
+            $table->timestamp('last_login')->nullable();
+            $table->timestamp('last_face_auth')->nullable();
             $table->timestamps();
         });
     }

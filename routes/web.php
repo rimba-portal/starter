@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (): Factory|View {
     return view('rimba');
 });
-Route::get('/face', function () {
-    return view('face');
+Route::get('/face', function (): Factory|View {
+    return view('fac-auth');
 })->name('face');
 
 Route::get('/pic/{filename}', function (string $filename) {

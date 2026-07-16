@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('offers', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('org_team_id')->constrained();
             $table->string('name');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('offer_categories', function (Blueprint $table) {
+        Schema::create('offer_categories', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('offer_categories');
             $table->string('name');
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('offer_category_assignments', function (Blueprint $table) {
+        Schema::create('offer_category_assignments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('offer_id')->constrained();
             $table->foreignId('offer_category_id')->constrained();

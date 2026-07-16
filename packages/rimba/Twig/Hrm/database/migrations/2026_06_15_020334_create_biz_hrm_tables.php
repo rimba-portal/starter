@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('staff_id')->constrained();
             $table->foreignId('org_corp_id')->constrained();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->json('attributes')->nullable();
             $table->timestamps();
         });
-        Schema::create('job_titles', function (Blueprint $table) {
+        Schema::create('job_titles', function (Blueprint $table): void {
             $table->id();
             $table->string('title');
             $table->string('jobgrade')->nullable();

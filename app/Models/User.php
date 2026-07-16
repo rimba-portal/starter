@@ -12,10 +12,12 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Http;
+use Filament\Models\Contracts\HasAvatar;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     use HasFactory;
     use Notifiable;
@@ -46,4 +48,31 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasOne(Staff::class);
     }
+        public function getFilamentAvatarUrl(): ?string
+    {
+        $number = $this->staff?->staff_no;
+
+        // Always have a safe default
+        $default = asset('images/unknown_user.png');
+
+        if (! $number) {
+            return $default;
+        }
+
+        $url = sprintf('http://10.40.3.41:8080/%s.jpg', $number);
+
+        try {
+            // Lightweight check without downloading the file body
+            $response = Http::timeout(1.5)->head($url);
+
+            if ($response->ok()) {
+                return $url;
+            }
+        } catch (\Throwable $throwable) {
+            // Swallow network/timeout errors and fall back
+        }
+
+        return $default;
+    }
+
 }

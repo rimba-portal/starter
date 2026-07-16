@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('contract_confidentialities', function (Blueprint $table) {
+        Schema::create('contract_confidentialities', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('contract_id')->constrained()->unique();
             $table->string('payload');

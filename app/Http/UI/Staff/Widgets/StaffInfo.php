@@ -47,7 +47,7 @@ class StaffInfo extends Widget
         // Eager-load staff with org unit (active only) and job position
         $user = User::with([
             'staff.orgUnit' => fn ($q) => $q->where('status', 'active'),
-            'staff.jobPosition',
+            'staff.jobContract',
         ])->find($user->getKey());
         // dd($user);
         // dd($user?->staff?->jobPosition?->superior_id);

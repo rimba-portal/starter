@@ -8,11 +8,13 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class WhoServiceProvider extends BitesServiceProvider
 {
-    protected string $viewsPath = __DIR__.'/../resources/views';
+    protected string $viewsPath = __DIR__ . '/../resources/views';
+    
+    protected string $iconsPath = __DIR__ . '/../resources/svg';
 
     protected function bootPackage(): void
     {
         // dd(app('view')->getFinder()->getHints());
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
