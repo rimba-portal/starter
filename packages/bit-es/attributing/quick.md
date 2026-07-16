@@ -1,11 +1,11 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:26:58*
+*Generated on: 2026-07-16 16:30:47*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\attributing`*
 
 ---
 
-## File: `config\attributes.php`
-**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\config\attributes.php`
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\attributing\config\bites.php`
 
 ```php
 <?php
@@ -13,6 +13,11 @@
 declare(strict_types=1);
 
 return [
+    'ui' => [
+        'packages' => [
+            'bit-es/attributing/src' => 'Bites\Attributing',
+        ],
+    ],
 
     'navigation_group' => 'Settings',
 
@@ -179,7 +184,7 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class AttributingServiceProvider extends BitesServiceProvider
 {
-    protected string $configFile = __DIR__.'/../config/attributes.php';
+    protected string $configFile = __DIR__.'/../config/bites.php';
 
     protected function bootPackage(): void
     {

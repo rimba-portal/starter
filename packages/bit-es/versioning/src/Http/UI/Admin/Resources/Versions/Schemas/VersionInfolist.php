@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Versioning\Http\UI\Admin\Resources\Versions\Schemas;
 
 use Filament\Infolists\Components\TextEntry;

@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:02*
+*Generated on: 2026-07-16 16:30:51*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\floorplan`*
 
 ---
@@ -15,7 +15,7 @@ declare(strict_types=1);
 return [
     'ui' => [
         'packages' => [
-            'floorplan/src' => 'Bites\FloorPlan',
+            'bit-es/floorplan/src' => 'Bites\FloorPlan',
         ],
     ],
 ];
@@ -340,14 +340,11 @@ use Bites\FloorPlan\Actions\DiscoverFloorPlan;
 
 class FloorPlanServiceProvider extends BitesServiceProvider
 {
-    protected string $configFile =
-        __DIR__.'/../config/bites.php';
+    protected string $configFile = __DIR__.'/../config/bites.php';
 
-    protected string $viewsPath =
-        __DIR__.'/../resources/views';
+    protected string $viewsPath = __DIR__.'/../resources/views';
 
-    protected string $iconsPath =
-        __DIR__.'/../resources/svg';
+    protected string $iconsPath = __DIR__.'/../resources/svg';
 
     protected function registerPackage(): void
     {

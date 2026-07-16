@@ -1,6 +1,26 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:25*
+*Generated on: 2026-07-16 16:31:14*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Tree\Work\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'rimba/Tree/Work/src' => 'Rimba\Tree\Work',
+        ],
+    ],
+];
+
+```
 
 ---
 
@@ -653,6 +673,8 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class WorkServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');

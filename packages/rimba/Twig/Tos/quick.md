@@ -1,6 +1,144 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:35*
+*Generated on: 2026-07-16 16:31:27*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Tos`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Tos\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'rimba/Twig/Tos/src' => 'Rimba\Twig\Tos',
+        ],
+    ],
+];
+
+```
+
+---
+
+## File: `database\migrations\0002_01_01_000612_create_requests_table.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Tos\database\migrations\0002_01_01_000612_create_requests_table.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('requests', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('requester_id')->constrained('staff');
+            $table->foreignId('workflow_instance_id')->nullable()->constrained();
+            $table->enum('status', ['submitted', 'in_review', 'approved', 'rejected', 'in_progress', 'completed', 'closed'])->default('submitted');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('request_type')->nullable();
+            $table->json('attributes')->nullable();
+            $table->morphs('ref');
+            $table->timestamps();
+        });
+
+        Schema::create('request_types', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('workflow_id')->nullable()->constrained();
+            $table->string('name');
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('request_types');
+        Schema::dropIfExists('requests');
+    }
+};
+
+```
+
+---
+
+## File: `database\migrations\0002_01_01_000613_create_offers_table.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Tos\database\migrations\0002_01_01_000613_create_offers_table.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('offers', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('org_team_id')->constrained();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('offer_categories', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('parent_id')->nullable()->constrained('offer_categories');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('offer_category_assignments', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('offer_id')->constrained();
+            $table->foreignId('offer_category_id')->constrained();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('offer_category_assignments');
+        Schema::dropIfExists('offer_categories');
+        Schema::dropIfExists('offers');
+    }
+};
+
+```
 
 ---
 
@@ -305,9 +443,11 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class TosServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected function bootPackage(): void
     {
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
 

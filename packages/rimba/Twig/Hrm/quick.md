@@ -1,6 +1,84 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:30*
+*Generated on: 2026-07-16 16:31:20*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'rimba/Twig/Hrm/src' => 'Rimba\Twig\Hrm',
+        ],
+    ],
+];
+
+```
+
+---
+
+## File: `database\migrations\2026_06_15_020334_create_biz_hrm_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Hrm\database\migrations\2026_06_15_020334_create_biz_hrm_tables.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('employees', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('staff_id')->constrained();
+            $table->foreignId('org_corp_id')->constrained();
+            $table->enum('status', ['active', 'resigned', 'terminated', 'retired'])->default('active');
+            $table->string('employee_no')->nullable();
+            $table->date('hire_date')->nullable();
+            $table->date('termination_date')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('job_titles', function (Blueprint $table): void {
+            $table->id();
+            $table->string('title');
+            $table->string('jobgrade')->nullable();
+            $table->uuid('uuid')->unique();
+            $table->text('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->string('masco_code')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('job_titles');
+        Schema::dropIfExists('employees');
+    }
+};
+
+```
 
 ---
 
@@ -18,9 +96,11 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class HrmServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected function bootPackage(): void
     {
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
 

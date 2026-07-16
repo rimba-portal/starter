@@ -1,6 +1,89 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:27*
+*Generated on: 2026-07-16 16:31:16*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'rimba/Twig/Dms/src' => 'Rimba\Twig\Dms',
+        ],
+    ],
+];
+
+```
+
+---
+
+## File: `database\migrations\2026_06_15_020335_create_biz_dms_table.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\database\migrations\2026_06_15_020335_create_biz_dms_table.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('documents', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('org_team_id')->constrained();
+            $table->foreignId('org_unit_id')->nullable()->constrained();
+            $table->foreignId('location_id')->nullable()->constrained();
+            $table->enum('type', ['sop', 'work_instruction', 'policy', 'drawing', 'contract', 'other'])->nullable();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('document_categories', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('parent_id')->nullable()->constrained('document_categories');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('document_category_assignments', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('document_id')->constrained();
+            $table->foreignId('document_category_id')->constrained();
+            $table->json('attributes')->nullable();
+            $table->timestamps();
+        });
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('document_category_assignments');
+        Schema::dropIfExists('offer_category_assignments');
+        Schema::dropIfExists('documents');
+    }
+};
+
+```
 
 ---
 
@@ -18,9 +101,11 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class DmsServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected function bootPackage(): void
     {
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
 

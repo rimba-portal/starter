@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages;
 
-use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\MenuResource;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
 use Illuminate\Database\Eloquent\Builder;
+use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\MenuResource;
 use Rimba\Tree\Menu\Models\Menu;
 
 class ListMenus extends ListRecords

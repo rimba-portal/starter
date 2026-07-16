@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Schemas;
 
 use Filament\Infolists\Components\IconEntry;

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages;
 
-use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\MenuResource;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
 use Illuminate\Database\Eloquent\Builder;
-use Rimba\Tree\Menu\Models\Menu;
 use Rimba\Tree\Menu\Enums\MenuCategory;
+use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\MenuResource;
+use Rimba\Tree\Menu\Models\Menu;
 
 class ListMenus extends ListRecords
 {
@@ -18,7 +18,6 @@ class ListMenus extends ListRecords
     protected static ?string $title = 'Menu';
 
     protected ?string $subheading = 'Catalog of all company links.';
-
 
     public function getTabs(): array
     {
@@ -29,7 +28,7 @@ class ListMenus extends ListRecords
         foreach (MenuCategory::cases() as $category) {
             $tabs[$category->value] = Tab::make($category->label())
                 ->icon($category->icon())
-                ->modifyQueryUsing(fn($query) => $query->where(
+                ->modifyQueryUsing(fn ($query) => $query->where(
                     'category',
                     $category->value,
                 ));
@@ -37,6 +36,7 @@ class ListMenus extends ListRecords
 
         return $tabs;
     }
+
     // public function getTabs(): array
     // {
     //     $categories = Menu::query()

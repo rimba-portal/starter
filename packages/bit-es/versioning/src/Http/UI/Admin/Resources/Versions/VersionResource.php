@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bites\Versioning\Http\UI\Admin\Resources\Versions;
 
+use BackedEnum;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Pages\CreateVersion;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Pages\EditVersion;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Pages\ListVersions;
@@ -9,7 +12,6 @@ use Bites\Versioning\Http\UI\Admin\Resources\Versions\Pages\ViewVersion;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Schemas\VersionForm;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Schemas\VersionInfolist;
 use Bites\Versioning\Http\UI\Admin\Resources\Versions\Tables\VersionsTable;
-use BackedEnum;
 use Bites\Versioning\Models\Version;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

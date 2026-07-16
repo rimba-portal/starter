@@ -1,6 +1,26 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:06*
+*Generated on: 2026-07-16 16:30:53*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\siapa`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'bit-es/siapa/src' => 'Bites\Identity',
+        ],
+    ],
+];
+
+```
 
 ---
 
@@ -16,42 +36,6 @@ return [
     'auto_register' => true,
     'face_match_threshold' => 0.6, // Lower = stricter match
 ];
-
-```
-
----
-
-## File: `database\migrations\0002_01_01_000201_create_siapa_tables.php`
-**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\database\migrations\0002_01_01_000201_create_siapa_tables.php`
-
-```php
-<?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration
-{
-    public function up(): void
-    {
-        Schema::create('user_auth', function (Blueprint $table): void {
-            $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->unique();
-            $table->text('two_factor_secret')->nullable();
-            $table->text('two_factor_recovery_codes')->nullable();
-            $table->timestamp('two_factor_confirmed_at')->nullable();
-            $table->text('face_descriptor')->nullable();
-            $table->boolean('setup_completed')->default(false);
-            $table->timestamps();
-        });
-    }
-
-    public function down(): void
-    {
-        Schema::dropIfExists('user_auth');
-    }
-};
 
 ```
 
@@ -281,6 +265,8 @@ use Illuminate\Support\ServiceProvider;
 
 class IdentityServiceProvider extends ServiceProvider
 {
+    // protected string $configFile = __DIR__ . '/../config/bites.php';
+
     public function registerPackage(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/identity.php', 'identity');
@@ -299,47 +285,6 @@ class IdentityServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/assets/models' => public_path('models'),
         ], 'assets');
-
-    }
-}
-
-```
-
----
-
-## File: `src\Models\UserAuth.php`
-**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\siapa\src\Models\UserAuth.php`
-
-```php
-<?php
-
-declare(strict_types=1);
-
-namespace Bites\Identity\Models;
-
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Attributes\Table;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-#[Fillable([
-    'two_factor_secret', 'two_factor_recovery_codes',
-    'two_factor_confirmed_at', 'face_descriptor', 'setup_completed',
-])]
-#[Table(name: 'user_auth')]
-class UserAuth extends Model
-{
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(config('auth.providers.users.model'));
-    }
-
-    protected function casts(): array
-    {
-        return [
-            'two_factor_confirmed_at' => 'datetime',
-            'setup_completed' => 'boolean',
-        ];
     }
 }
 

@@ -1,7 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus;
 
+use BackedEnum;
+use Bites\Versioning\Traits\ResourceHasVersionRelations;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\CreateMenu;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\EditMenu;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\ListMenus;
@@ -9,13 +17,7 @@ use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Pages\ViewMenu;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Schemas\MenuForm;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Schemas\MenuInfolist;
 use Rimba\Tree\Menu\Http\UI\Admin\Resources\Menus\Tables\MenusTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Tree\Menu\Models\Menu;
-use Bites\Versioning\Traits\ResourceHasVersionRelations;
 
 class MenuResource extends Resource
 {

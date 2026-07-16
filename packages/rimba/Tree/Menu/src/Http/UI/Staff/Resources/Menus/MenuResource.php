@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus;
 
-use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages\ListMenus;
-use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables\MenusTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
+use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Pages\ListMenus;
+use Rimba\Tree\Menu\Http\UI\Staff\Resources\Menus\Tables\MenusTable;
 use Rimba\Tree\Menu\Models\Menu;
 use UnitEnum;
 

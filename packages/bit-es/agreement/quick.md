@@ -1,6 +1,26 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:09*
+*Generated on: 2026-07-16 16:30:56*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\agreement`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\bit-es\agreement\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'bit-es/agreement/src' => 'Bites\Agreement',
+        ],
+    ],
+];
+
+```
 
 ---
 
@@ -99,10 +119,11 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class AgreementServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected function bootPackage(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
     }
 }
 

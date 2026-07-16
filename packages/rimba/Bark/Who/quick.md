@@ -1,6 +1,66 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-15 16:27:17*
+*Generated on: 2026-07-16 16:31:04*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who`*
+
+---
+
+## File: `config\bites.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\config\bites.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'ui' => [
+        'packages' => [
+            'rimba/Bark/Who/src' => 'Rimba\Bark\Who',
+        ],
+    ],
+];
+
+```
+
+---
+
+## File: `database\migrations\0002_01_01_000201_create_siapa_tables.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\database\migrations\0002_01_01_000201_create_siapa_tables.php`
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('user_auth', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->unique();
+            $table->text('two_factor_secret')->nullable();
+            $table->text('two_factor_recovery_codes')->nullable();
+            $table->timestamp('two_factor_confirmed_at')->nullable();
+            $table->text('face_descriptor')->nullable();
+            $table->boolean('setup_completed')->default(false);
+            $table->boolean('is_staff')->default(false);
+            $table->boolean('is_admin')->default(false);
+            $table->timestamp('last_login')->nullable();
+            $table->timestamp('last_face_auth')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('user_auth');
+    }
+};
+
+```
 
 ---
 
@@ -10,90 +70,177 @@
 ```php
 @php
     $staffNo = $getStaffNo();
+    $matchThreshold= 0.5
 @endphp
 
 <x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
-    <div x-data="faceVerificationComponent()"
-        class="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-800 dark:bg-gray-900/40">
-        {{-- Status --}}
-        <div class="flex flex-col">
-            <span class="text-[10px] font-medium text-gray-500" x-text="referenceStatus"></span>
+    <div x-data="faceVerificationComponent({
+        staffNo: @js($staffNo),
+        matchThreshold: @js($matchThreshold),
+    })"
+        class="rounded-lg border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-800 dark:bg-gray-900/40">
+        {{-- Reference Avatar --}}
+        <img id="referenceImage" x-ref="referenceImage" hidden alt="Reference Image">
+        <div class="flex items-center gap-4">
 
-            <span class="text-[10px] font-semibold text-primary-600 dark:text-primary-400" x-text="cameraStatus"></span>
-        </div>
-        <div class="text-danger">
-            STAFF: {{ $getStaffNo() }}
-        </div>
-        {{-- Camera --}}
-        <div class="relative">
+
+            {{-- Camera --}}
             <div
                 class="h-24 w-24 overflow-hidden rounded-lg border border-gray-200 bg-black shadow-inner dark:border-gray-700">
-                <video x-ref="video" autoplay muted playsinline
-                    class="h-full w-full scale-x-[-1] object-cover"></video>
+                <video x-ref="video" autoplay muted playsinline class="h-full w-full scale-x-[-1] object-cover"></video>
             </div>
 
-            {{-- Reference Image --}}
-            <div
-                class="absolute -bottom-1 -right-1 h-10 w-10 overflow-hidden rounded border-2 border-white bg-gray-100 shadow dark:bg-gray-800">
-                <template x-if="photoSrc">
-                    <img id="referenceImage">
+            {{-- Information --}}
+            <div class="flex-1 text-sm">
+                <div class="font-medium text-gray-500 dark:text-gray-400">
+                    Staff:
+                    <span class="font-semibold text-gray-900 dark:text-white" x-text="staffNo || 'N/A'"></span>
+                </div>
 
-                <template x-if="! photoSrc">
-                    <div class="flex h-full items-center justify-center text-[8px] text-gray-400">
-                        No ID
-                    </div>
-                </template>
+                <div class="mt-1 font-semibold"
+                    :class="isMatched
+                        ?
+                        'text-success-600' :
+                        'text-gray-900 dark:text-white'"
+                    x-text="resultText"></div>
             </div>
+
         </div>
     </div>
 </x-dynamic-component>
 
 @once
     <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
     <script>
         window.faceModelsReady ??= (async () => {
-            await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
-            await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
-            await faceapi.nets.faceRecognitionNet.loadFromUri('/models');
+            const MODEL_URL = '/models';
+            await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
+            await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+            await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
         })();
 
         document.addEventListener('alpine:init', () => {
-            Alpine.data('faceVerificationComponent', () => ({
-                photoSrc: null,
-                targetDescriptor: null,
+            Alpine.data('faceVerificationComponent', (config = {}) => ({
+                staffNo: config.staffNo ?? null,
+                matchThreshold: config.matchThreshold ?? 0.5,
+
+                referenceDescriptor: null,
+                videoStream: null,
+                isMatched: false,
+                isDetecting: false,
+
                 referenceStatus: 'Awaiting ID',
                 cameraStatus: 'Offline',
-                stream: null,
+                resultText: 'Waiting',
+                distanceText: null,
 
                 async init() {
+                    await this.$nextTick();
+
                     await this.startCamera();
                     await window.faceModelsReady;
 
-                    this.referenceStatus = 'Ready';
+                    this.referenceStatus = 'Models Ready';
 
+                    if (this.staffNo) {
+                        await this.loadReferenceImage(this.staffNo);
+                    }
+
+                    this.watchStaffNo();
+                },
+
+                watchStaffNo() {
                     this.$watch(
-                        () => this.$wire.data.staff_no,
+                        () => this.$wire?.data?.staff_no,
                         async (staffNo) => {
                             if (!staffNo) {
                                 return;
                             }
 
-                            this.photoSrc = `/pic/${staffNo}`;
-                            this.referenceStatus = 'Loading ID...';
+                            if (staffNo === this.staffNo && this.referenceDescriptor) {
+                                return;
+                            }
 
-                            await this.$nextTick();
-                            await this.loadReferenceDescriptor();
+                            this.staffNo = staffNo;
+
+                            await this.loadReferenceImage(staffNo);
                         }
                     );
                 },
 
+                async loadReferenceImage(staffNo) {
+                    const image = this.$refs.referenceImage;
+
+                    if (!image) {
+                        this.referenceStatus = 'Image Element Missing ❌';
+                        return;
+                    }
+
+                    this.referenceDescriptor = null;
+                    this.isMatched = false;
+                    this.distanceText = null;
+                    this.resultText = 'Loading ID';
+                    this.referenceStatus = 'Loading ID...';
+
+                    image.onload = async () => {
+                        await this.loadReferenceDescriptor();
+                    };
+
+                    image.onerror = () => {
+                        this.referenceStatus = 'Image Load Failed ❌';
+                        this.resultText = 'No ID Image';
+                    };
+
+                    image.src = `/pic/${staffNo}`;
+                },
+
+                async loadReferenceDescriptor() {
+                    const image = this.$refs.referenceImage;
+
+                    if (!image) {
+                        this.referenceStatus = 'Image Element Missing ❌';
+                        return;
+                    }
+
+                    if (!image.complete || image.naturalWidth === 0) {
+                        this.referenceStatus = 'Image Not Ready ❌';
+                        return;
+                    }
+
+                    const detection = await faceapi
+                        .detectSingleFace(
+                            image,
+                            new faceapi.TinyFaceDetectorOptions()
+                        )
+                        .withFaceLandmarks()
+                        .withFaceDescriptor();
+
+                    if (!detection) {
+                        this.referenceStatus = 'No Face In ID ❌';
+                        this.resultText = 'No Reference Face';
+                        return;
+                    }
+
+                    this.referenceDescriptor = detection.descriptor;
+                    this.referenceStatus = 'Reference Ready ✅';
+                    this.resultText = 'Scanning';
+
+                    this.startDetectionLoop();
+                },
+
                 async startCamera() {
+                    const video = this.$refs.video;
+
+                    if (!video) {
+                        this.cameraStatus = 'Video Missing ❌';
+                        return;
+                    }
+
                     this.cameraStatus = 'Starting...';
 
-                    await this.$nextTick();
-
                     try {
-                        this.stream = await navigator.mediaDevices.getUserMedia({
+                        this.videoStream = await navigator.mediaDevices.getUserMedia({
                             video: {
                                 width: 160,
                                 height: 160,
@@ -101,50 +248,37 @@
                             },
                         });
 
-                        this.$refs.video.srcObject = this.stream;
-                        await this.$refs.video.play();
+                        video.srcObject = this.videoStream;
+
+                        await video.play();
 
                         this.cameraStatus = 'Live';
                     } catch (error) {
                         console.error(error);
+
                         this.cameraStatus = 'Blocked ❌';
+                        this.resultText = 'Camera Blocked';
                     }
                 },
 
-                async loadReferenceDescriptor() {
-                    const img = this.$refs.refImage;
-
-                    if (!img) {
+                startDetectionLoop() {
+                    if (this.isDetecting) {
                         return;
                     }
 
-                    if (!img.complete) {
-                        await new Promise(resolve => {
-                            img.onload = resolve;
-                        });
-                    }
-
-                    const detection = await faceapi
-                        .detectSingleFace(
-                            img,
-                            new faceapi.TinyFaceDetectorOptions()
-                        )
-                        .withFaceLandmarks()
-                        .withFaceDescriptor();
-
-                    if (!detection) {
-                        this.referenceStatus = 'No Face ❌';
-                        return;
-                    }
-
-                    this.targetDescriptor = detection.descriptor;
-                    this.referenceStatus = 'Reference Ready ✅';
+                    this.isDetecting = true;
 
                     this.detectLoop();
                 },
 
                 async detectLoop() {
-                    if (!this.targetDescriptor || !this.$refs.video) {
+                    if (this.isMatched) {
+                        this.isDetecting = false;
+                        return;
+                    }
+
+                    if (!this.referenceDescriptor || !this.$refs.video) {
+                        requestAnimationFrame(() => this.detectLoop());
                         return;
                     }
 
@@ -156,30 +290,58 @@
                         .withFaceLandmarks()
                         .withFaceDescriptor();
 
-                    if (detection) {
-                        const distance = faceapi.euclideanDistance(
-                            this.targetDescriptor,
-                            detection.descriptor
-                        );
-                        console.log('img src', img.src);
-
-                        console.log('img size', img.naturalWidth, img.naturalHeight);
-                        if (distance <= 0.55) {
-                            this.cameraStatus = 'Match ✅';
-
-                            this.stream?.getTracks().forEach(track => track.stop());
-
-                            this.$wire.faceMatched();
-
-                            return;
-                        }
-
-                        this.cameraStatus = `Dist: ${distance.toFixed(2)}`;
-                    } else {
+                    if (!detection) {
                         this.cameraStatus = 'Scanning...';
+                        this.resultText = 'No Face';
+
+                        requestAnimationFrame(() => this.detectLoop());
+                        return;
                     }
 
+                    const distance = faceapi.euclideanDistance(
+                        this.referenceDescriptor,
+                        detection.descriptor
+                    );
+
+                    this.distanceText = `Distance: ${distance.toFixed(4)}`;
+
+                    if (distance <= this.matchThreshold) {
+                        this.isMatched = true;
+                        this.cameraStatus = 'Match ✅';
+                        this.resultText = 'Matched';
+
+                        this.stopCamera();
+
+                        if (this.$wire?.faceMatched) {
+                            this.$wire.faceMatched();
+                        }
+
+                        return;
+                    }
+
+                    this.cameraStatus = 'Not Match';
+                    this.resultText = 'Scanning';
+
                     requestAnimationFrame(() => this.detectLoop());
+                },
+
+                stopCamera() {
+                    if (!this.videoStream) {
+                        return;
+                    }
+
+                    this.videoStream.getTracks().forEach((track) => {
+                        track.stop();
+                    });
+
+                    this.videoStream = null;
+
+                    if (this.$refs.video) {
+                        this.$refs.video.pause();
+                        this.$refs.video.srcObject = null;
+                    }
+
+                    this.cameraStatus = 'Stopped';
                 },
             }));
         });
@@ -362,6 +524,7 @@ use App\Models\User;
 use Filament\Auth\Http\Responses\Contracts\LoginResponse;
 use Filament\Auth\Pages\Login as BaseLogin;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Schemas\Components\Wizard;
 use Filament\Schemas\Schema;
 use Filament\Support\Exceptions\Halt;
@@ -386,7 +549,8 @@ class LoginWizard extends BaseLogin
         return $schema
             ->components([
                 Wizard::make([
-                    Wizard\Step::make('ID & Pin')
+                    Wizard\Step::make('Password')
+                        ->icon('bites-password')
                         ->afterValidation(function (): void {
                             $this->validatePasswordFactor();
                         })
@@ -394,25 +558,30 @@ class LoginWizard extends BaseLogin
                             $this->getEmailFormComponent(),
                             $this->getPasswordFormComponent(),
                             $this->getRememberFormComponent(),
-                            Webcam::make('captured_image'),
+                            // Webcam::make('captured_image'),
                         ]),
 
                     Wizard\Step::make('Face ID')
+                        ->icon('bites-face-scan')
                         ->schema([
                             TextInput::make('staff_no')
-                                ->readOnly(),
+                                ->hidden(),
+                            ImageEntry::make('header_image')
+                                ->hiddenLabel()
+                                ->defaultImageUrl(url('/pic/153582'))
+                                ->imageHeight(40)
+                                ->circular(),
                             FaceAuth::make('face')
                                 ->staffNo(fn ($livewire) => $livewire->data['staff_no'] ?? null)
                                 ->live(),
-
                         ]),
                 ])
-                    ->skippable(false)
-                    ->submitAction(new HtmlString('
-                        <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
-                            Sign in
-                        </button>
-                    ')),
+                    ->skippable(false),
+                // ->submitAction(new HtmlString('
+                //     <button type="submit" class="fi-btn fi-btn-size-md fi-color-primary">
+                //         Sign in
+                //     </button>
+                // ')),
             ])
             ->statePath('data');
     }
@@ -431,6 +600,10 @@ class LoginWizard extends BaseLogin
             ]);
         }
 
+        Auth::login(
+            $user,
+            (bool) ($data['remember'] ?? false),
+        );
         /*
          * If user has no staff record or no staff number:
          * - login immediately
@@ -438,15 +611,7 @@ class LoginWizard extends BaseLogin
          * - stop wizard from proceeding to Step 2
          */
         if (! $user->staff || blank($user->staff->staff_no)) {
-            Auth::login(
-                $user,
-                (bool) ($data['remember'] ?? false),
-            );
-
-            session()->regenerate();
-
             $this->redirectToUserPanel();
-
             throw new Halt;
         }
 
@@ -510,8 +675,17 @@ class LoginWizard extends BaseLogin
 
     protected function redirectToUserPanel(): void
     {
+        session()->regenerate();
         $this->redirect(
-            filament()->getPanel('user')->getUrl()
+            filament()->getPanel('lobby')->getUrl()
+        );
+    }
+
+    protected function redirectToStaffPanel(): void
+    {
+        session()->regenerate();
+        $this->redirect(
+            filament()->getPanel('staff')->getUrl()
         );
     }
 
@@ -543,6 +717,62 @@ class LoginWizard extends BaseLogin
 
         return $otp === '123456';
     }
+
+    public function faceMatched(): void
+    {
+        $this->redirectToStaffPanel();
+    }
+}
+
+```
+
+---
+
+## File: `src\Models\UserAuth.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\src\Models\UserAuth.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Rimba\Bark\Who\Models;
+
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+#[Fillable([
+    'two_factor_secret',
+    'two_factor_recovery_codes',
+    'two_factor_confirmed_at',
+    'face_descriptor',
+    'setup_completed',
+    'is_admin',
+    'is_staff',
+    'last_login',
+    'last_face_auth',
+])]
+#[Table(name: 'user_auth')]
+class UserAuth extends Model
+{
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(config('auth.providers.users.model'));
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'two_factor_confirmed_at' => 'datetime',
+            'last_login' => 'datetime',
+            'last_face_auth' => 'datetime',
+            'setup_completed' => 'boolean',
+            'is_admin' => 'boolean',
+            'is_staff' => 'boolean',
+        ];
+    }
 }
 
 ```
@@ -563,12 +793,16 @@ use Bites\Base\Services\BitesServiceProvider;
 
 class WhoServiceProvider extends BitesServiceProvider
 {
+    protected string $configFile = __DIR__.'/../config/bites.php';
+
     protected string $viewsPath = __DIR__.'/../resources/views';
+
+    protected string $iconsPath = __DIR__.'/../resources/svg';
 
     protected function bootPackage(): void
     {
         // dd(app('view')->getFinder()->getHints());
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
 
