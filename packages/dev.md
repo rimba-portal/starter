@@ -2,52 +2,58 @@
 
 ##  Foundation
 
-### Organization Tree
+### Organization Package
 Defines entities, hierarchy, teams, positions, and staff structure.
 
-### Authorization Tree
+### Authorization Package
 Access control layer combining roles, permissions, and policies (RBAC + ABAC).
 
-### FloorPlan Tree
+### FloorPlan Package
 Models physical spaces (buildings, rooms, zones) for location-aware operations.
 
-### Branding Tree
+### Branding Package
 Manages identity and UI customization (logos, themes, multi-tenant branding).
 
-### Calendar Tree
+### Calendar Package
 Handles time structures like holidays, shifts, rosters, and events.
 
 ## Execution Engine
 
-### Process Tree
+### Flow Package
 Workflow engine that defines process flows, transitions, and automation logic.
 
-### Todo Tree
+### Work Package
 Execution layer for tasks, assignments, checklists, and work tracking.
 
-### Catalog Tree
+### Menu Package
 Defines requestable services and offerings with forms and fulfillment entry points.
 
 ## Cross-Cutting / Infrastructure
 
-### Agreement Tree
+### Agreement Package
 Lightweight representation of agreements (contracts, SLAs, MOUs) linking parties, assets, or services.
 
-### AuditTrail Tree
+### Trail Package
 System-wide activity log tracking actions, changes, and events for traceability and accountability.
 
-### Copies Tree
+### Versioning Package
 Supports duplication, snapshotting, and controlled replication of records or content.
 
-### Sync Tree
+### Sync Package
 Integration layer for external systems (LDAP, APIs, imports/exports).
 
 
 ## Directory Reference Map
 
 ```text
-app/Trees/<Tree name>/
-└── Trees/<Tree name>/                           # any backend use utility classes
+packages/                           # Add on packages
+    └── Tree/                       # Foundation Modules
+    └── Twig/                       # Business Modules
+    └── Bark/                       # Platform Modules
+    └── Seed/                       # Content Marketplace if any
+
+each packages....  
+    └── src/                  
       ├── Actions/                  # Single business workflow classes (The "What")
       ├── Builders/                 # Custom database query scopes (The "Where")
       ├── Events/                   # Plain data structures reporting past system mutations
@@ -64,11 +70,9 @@ app/Trees/<Tree name>/
       ├── Observers/                # Automated low-level lifecycle DB hooks
       ├── Policies/                 # Authorization checks guarding Models and Filament Resources
       └── Services/                 # Wrapper layer for third-party tools and complex algorithms
-config/                         # configuration files
-database/                       # database migrations
-resources/
-packages/                           # Add on packages
-    └── Tree/                       # Business Modules
-    └── Root/                       # Platform Modules
-    └── Seed/                       # Content Marketplace if any
+    
+    ├─── config/                    # configuration files
+    ├─── database/                  # database migrations
+    └─── resources/                 # blade views, svgs, etc.
+
 ```
