@@ -1,7 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses;
 
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\CreateCourse;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\EditCourse;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\ListCourses;
@@ -9,14 +16,8 @@ use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\ViewCourse;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Schemas\CourseForm;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Schemas\CourseInfolist;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Tables\CoursesTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Twig\Lms\Models\Course;
 use UnitEnum;
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\RelationManagers\CourseModulesRelationManager;
 
 class CourseResource extends Resource
 {
@@ -50,7 +51,7 @@ class CourseResource extends Resource
     public static function getRelations(): array
     {
         return [
-            CourseModulesRelationManager::class,
+            RelationManagers\CourseModulesRelationManager::class,
         ];
     }
 

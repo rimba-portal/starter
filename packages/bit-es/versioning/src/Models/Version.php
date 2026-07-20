@@ -46,18 +46,20 @@ class Version extends Model
             'released_at' => 'datetime',
         ];
     }
+
     protected static function booted(): void
     {
-        static::creating(function (Version $version) {
+        static::creating(function (Version $version): void {
             dump('iscreating');
             // 1. If a user is logged in, use their rich identifier string
             if ($user = Auth::user()) {
                 $version->upload_by = $user->getUploadIdentifier();
+
                 return;
             }
 
             // 2. Fallback check: If already manually defined in the seeder, keep it
-            if (!empty($version->upload_by)) {
+            if (! empty($version->upload_by)) {
                 return;
             }
 

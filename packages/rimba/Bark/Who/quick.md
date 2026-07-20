@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-16 16:31:04*
+*Generated on: 2026-07-20 15:37:52*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who`*
 
 ---
@@ -352,6 +352,250 @@ return new class extends Migration
 
 ---
 
+## File: `resources\views\faced.blade.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\resources\views\faced.blade.php`
+
+```php
+@php
+
+$config = $getConfiguration();
+
+@endphp
+
+
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
+    :field="$field"
+>
+
+
+<div
+
+    x-data="faceVerification(@js($config))"
+
+    x-init="init()"
+
+    class="
+        rounded-lg
+        border
+        bg-gray-50
+        p-4
+    "
+
+>
+
+
+{{-- ========================================================= --}}
+{{-- Camera                                                   --}}
+{{-- ========================================================= --}}
+
+
+<video
+
+    x-ref="video"
+
+    autoplay
+
+    muted
+
+    playsinline
+
+    class="
+        h-32
+        w-32
+        rounded-lg
+        bg-black
+        object-cover
+    "
+
+></video>
+
+
+
+{{-- ========================================================= --}}
+{{-- Status                                                   --}}
+{{-- ========================================================= --}}
+
+
+<div class="mt-3 text-sm">
+
+    <span x-text="status"></span>
+
+</div>
+
+
+
+</div>
+
+
+</x-dynamic-component>
+
+
+
+@once
+
+
+<style>
+
+.face-success {
+
+    border-color: green;
+
+}
+
+
+</style>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+
+
+<script>
+
+
+document.addEventListener(
+    'alpine:init',
+    () => {
+
+
+        Alpine.data(
+            'faceVerification',
+            (config)=>({
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Config
+                |--------------------------------------------------------------------------
+                */
+
+
+                config,
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | State
+                |--------------------------------------------------------------------------
+                */
+
+
+                status:'Waiting',
+
+                stream:null,
+
+                matched:false,
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Init
+                |--------------------------------------------------------------------------
+                */
+
+
+                async init()
+                {
+
+                    console.log(
+                        'Face Verification',
+                        this.config
+                    );
+
+
+                    if(
+                        this.config.autoStart
+                    ){
+
+                        await this.startCamera();
+
+                    }
+
+                },
+
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Camera
+                |--------------------------------------------------------------------------
+                */
+
+
+                async startCamera()
+                {
+
+                    try {
+
+
+                        this.stream =
+                            await navigator
+                            .mediaDevices
+                            .getUserMedia({
+
+                                video:true
+
+                            });
+
+
+
+                        this.$refs.video.srcObject =
+                            this.stream;
+
+
+                        this.status =
+                            'Camera Ready';
+
+
+                    }
+
+                    catch(error)
+                    {
+
+                        this.status =
+                            'Camera Error';
+
+                    }
+
+
+                },
+
+
+
+                stopCamera()
+                {
+
+                    this.stream
+                    ?.getTracks()
+                    .forEach(
+                        track=>track.stop()
+                    );
+
+
+                }
+
+
+
+            })
+
+        );
+
+
+    }
+
+);
+
+
+</script>
+
+
+@endonce
+```
+
+---
+
 ## File: `resources\views\webcam.blade.php`
 **Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\resources\views\webcam.blade.php`
 
@@ -481,6 +725,112 @@ class FaceAuth extends Field
     public function getStaffNo(): ?string
     {
         return $this->evaluate($this->staffNo);
+    }
+}
+
+```
+
+---
+
+## File: `src\Components\Faced.php`
+**Absolute Path:** `C:\Users\153582\Herd\starter\packages\rimba\Bark\Who\src\Components\Faced.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Filament\Forms\Components;
+
+use Closure;
+use Filament\Forms\Components\Field;
+
+class FaceVerification extends Field
+{
+    protected string $view = 'filament.forms.components.face-verification';
+
+    protected array $configuration = [];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Configuration Helper
+    |--------------------------------------------------------------------------
+    */
+
+    protected function setConfig(
+        string $key,
+        mixed $value
+    ): static {
+
+        $this->configuration[$key] = $value;
+
+        return $this;
+    }
+
+    public function getConfiguration(): array
+    {
+        return $this->evaluate($this->configuration);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fluent API
+    |--------------------------------------------------------------------------
+    */
+
+    public function staffNumber(
+        string|Closure $value
+    ): static {
+
+        return $this->setConfig(
+            'staffNumber',
+            $value
+        );
+
+    }
+
+    public function threshold(
+        float $value = 0.5
+    ): static {
+
+        return $this->setConfig(
+            'threshold',
+            $value
+        );
+
+    }
+
+    public function camera(
+        array $value
+    ): static {
+
+        return $this->setConfig(
+            'camera',
+            $value
+        );
+
+    }
+
+    public function autoStart(
+        bool $value = true
+    ): static {
+
+        return $this->setConfig(
+            'autoStart',
+            $value
+        );
+
+    }
+
+    public function onMatched(
+        string $event
+    ): static {
+
+        return $this->setConfig(
+            'event',
+            $event
+        );
+
     }
 }
 

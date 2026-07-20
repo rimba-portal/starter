@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Forms\Components;
 
 use Closure;
@@ -9,9 +11,7 @@ class FaceVerification extends Field
 {
     protected string $view = 'filament.forms.components.face-verification';
 
-
     protected array $configuration = [];
-
 
     /*
     |--------------------------------------------------------------------------
@@ -29,19 +29,16 @@ class FaceVerification extends Field
         return $this;
     }
 
-
     public function getConfiguration(): array
     {
         return $this->evaluate($this->configuration);
     }
-
 
     /*
     |--------------------------------------------------------------------------
     | Fluent API
     |--------------------------------------------------------------------------
     */
-
 
     public function staffNumber(
         string|Closure $value
@@ -54,7 +51,6 @@ class FaceVerification extends Field
 
     }
 
-
     public function threshold(
         float $value = 0.5
     ): static {
@@ -65,7 +61,6 @@ class FaceVerification extends Field
         );
 
     }
-
 
     public function camera(
         array $value
@@ -78,7 +73,6 @@ class FaceVerification extends Field
 
     }
 
-
     public function autoStart(
         bool $value = true
     ): static {
@@ -89,7 +83,6 @@ class FaceVerification extends Field
         );
 
     }
-
 
     public function onMatched(
         string $event

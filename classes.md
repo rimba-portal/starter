@@ -1,5 +1,5 @@
 # Class Directory Blueprint
-*Generated automatically on 2026-07-16 16:31:37*
+*Generated automatically on 2026-07-20 15:39:40*
 
 '<span style='color:#9CDCFE'> 𝔁 : property </span>  
 '<span style='color:#DCDCAA'> λ : class method  </span>  
@@ -4239,6 +4239,7 @@
 λ public <span style='color:#DCDCAA'>$canAccessPanel</span> : bool  
 λ public <span style='color:#DCDCAA'>$staff</span> : void/mixed  
 λ public <span style='color:#DCDCAA'>$getFilamentAvatarUrl</span> : string  
+λ public <span style='color:#DCDCAA'>$getActor</span> : string  
 λ public static <span style='color:#DCDCAA'>$factory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$newFactory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$getUseFactoryAttribute</span> : void/mixed  
@@ -14191,7 +14192,7 @@
 ---
 
 ## 📦 Class: `Bites\Versioning\Models\Version`
-- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Models\Version.php` (Line 28)  
+- **Location:** `C:\Users\153582\Herd\starter\packages\bit-es\versioning\src\Models\Version.php` (Line 29)  
 - **Extends:** `Illuminate\Database\Eloquent\Model`  
 - **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`,  
 `Stringable`,  
@@ -14275,6 +14276,7 @@
 λ public <span style='color:#DCDCAA'>$newEloquentBuilder</span> : Bites\Versioning\Builders\VersionBuilder  
 λ public <span style='color:#DCDCAA'>$versionable</span> : Illuminate\Database\Eloquent\Relations\MorphTo  
 λ protected <span style='color:#DCDCAA'>$casts</span> : array  
+λ protected static <span style='color:#DCDCAA'>$booted</span> : void  
 
 ---
 
@@ -17175,7 +17177,7 @@
 ---
 
 ## 📦 Class: `Rimba\Twig\Dms\Models\Document`
-- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\Models\Document.php` (Line 26)  
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Dms\src\Models\Document.php` (Line 23)  
 - **Extends:** `Illuminate\Database\Eloquent\Model`  
 - **Implements:** `Illuminate\Contracts\Routing\UrlRoutable`,  
 `Stringable`,  
@@ -17186,7 +17188,7 @@
 `Illuminate\Contracts\Support\CanBeEscapedWhenCastToString`,  
 `ArrayAccess`,  
 `Illuminate\Contracts\Support\Arrayable`  
-- **Uses Traits:** `Illuminate\Database\Eloquent\Factories\HasFactory`, `Bites\Versioning\Traits\HasVersions`  
+- **Uses Traits:** `Bites\Versioning\Traits\HasVersions`, `Illuminate\Database\Eloquent\SoftDeletes`  
 𝔁 protected mixed <span style='color:#9CDCFE'>$connection</span>  
 𝔁 protected mixed <span style='color:#9CDCFE'>$table</span>  
 𝔁 protected mixed <span style='color:#9CDCFE'>$primaryKey</span>  
@@ -17257,17 +17259,33 @@
 𝔁 protected static mixed <span style='color:#9CDCFE'>$guardableColumns</span>  
 𝔁 protected static mixed <span style='color:#9CDCFE'>$recursionCache</span>  
 𝔁 protected static array <span style='color:#9CDCFE'>$resolvedCollectionClasses</span>  
-λ protected <span style='color:#DCDCAA'>$casts</span> : array  
-λ public <span style='color:#DCDCAA'>$documentCategoryAssignments</span> : Illuminate\Database\Eloquent\Relations\HasMany  
+𝔁 protected mixed <span style='color:#9CDCFE'>$forceDeleting</span>  
+λ public <span style='color:#DCDCAA'>$parent</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
+λ public <span style='color:#DCDCAA'>$children</span> : Illuminate\Database\Eloquent\Relations\HasMany  
 λ public <span style='color:#DCDCAA'>$orgTeam</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
-λ public <span style='color:#DCDCAA'>$orgUnit</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
-λ public <span style='color:#DCDCAA'>$location</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
-λ public static <span style='color:#DCDCAA'>$factory</span> : void/mixed  
-λ protected static <span style='color:#DCDCAA'>$newFactory</span> : void/mixed  
-λ protected static <span style='color:#DCDCAA'>$getUseFactoryAttribute</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$author</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
+λ protected <span style='color:#DCDCAA'>$casts</span> : array  
+λ public <span style='color:#DCDCAA'>$forceDelete</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$forceDestroy</span> : void/mixed  
+λ protected <span style='color:#DCDCAA'>$performDeleteOnModel</span> : void/mixed  
 λ public <span style='color:#DCDCAA'>$versions</span> : Illuminate\Database\Eloquent\Relations\MorphMany  
 λ public <span style='color:#DCDCAA'>$currentVersion</span> : Bites\Versioning\Models\Version  
 λ public <span style='color:#DCDCAA'>$latestVersion</span> : Bites\Versioning\Models\Version  
+λ public static <span style='color:#DCDCAA'>$bootSoftDeletes</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$initializeSoftDeletes</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$forceDeleteQuietly</span> : void/mixed  
+λ protected <span style='color:#DCDCAA'>$runSoftDelete</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$restore</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$restoreQuietly</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$trashed</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$softDeleted</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$restoring</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$restored</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$forceDeleting</span> : void/mixed  
+λ public static <span style='color:#DCDCAA'>$forceDeleted</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$isForceDeleting</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$getDeletedAtColumn</span> : void/mixed  
+λ public <span style='color:#DCDCAA'>$getQualifiedDeletedAtColumn</span> : void/mixed  
 
 ---
 
@@ -18167,6 +18185,3284 @@
 
 ---
 
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\CertificateResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\CertificateResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\CreateCertificate`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Pages\CreateCertificate.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\EditCertificate`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Pages\EditCertificate.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\ListCertificates`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Pages\ListCertificates.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\ViewCertificate`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Pages\ViewCertificate.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Schemas\CertificateForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Schemas\CertificateForm.php` (Line 13)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Schemas\CertificateInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Schemas\CertificateInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Tables\CertificatesTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Certificates\Tables\CertificatesTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\CourseResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\CourseResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\CreateCourse`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Pages\CreateCourse.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\EditCourse`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Pages\EditCourse.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\ListCourses`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Pages\ListCourses.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages\ViewCourse`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Pages\ViewCourse.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\RelationManagers\CourseModulesRelationManager`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\RelationManagers\CourseModulesRelationManager.php` (Line 18)  
+- **Extends:** `Filament\Resources\RelationManagers\RelationManager` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationship</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$ownerRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$pageClass</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$inverseRelationship</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$icon</span>  
+𝔁 protected static Filament\Support\Enums\IconPosition <span style='color:#9CDCFE'>$iconPosition</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badge</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badgeColor</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$badgeTooltip</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isBadgeDeferred</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isLazy</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$placeholderHeight</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relatedResource</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationshipTitle</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+λ public <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Schemas\CourseForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Schemas\CourseForm.php` (Line 13)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Schemas\CourseInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Schemas\CourseInfolist.php` (Line 11)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Tables\CoursesTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Courses\Tables\CoursesTable.php` (Line 15)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\EvaluationResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\EvaluationResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Pages\CreateEvaluation`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Pages\CreateEvaluation.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Pages\EditEvaluation`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Pages\EditEvaluation.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Pages\ListEvaluations`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Pages\ListEvaluations.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Pages\ViewEvaluation`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Pages\ViewEvaluation.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Schemas\EvaluationForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Schemas\EvaluationForm.php` (Line 13)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Schemas\EvaluationInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Schemas\EvaluationInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Tables\EvaluationsTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Evaluations\Tables\EvaluationsTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\MaterialResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\MaterialResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\CreateMaterial`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Pages\CreateMaterial.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\EditMaterial`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Pages\EditMaterial.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\ListMaterials`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Pages\ListMaterials.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\ViewMaterial`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Pages\ViewMaterial.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Schemas\MaterialForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Schemas\MaterialForm.php` (Line 12)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Schemas\MaterialInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Schemas\MaterialInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Tables\MaterialsTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Materials\Tables\MaterialsTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\ModuleResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\ModuleResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Pages\CreateModule`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Pages\CreateModule.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Pages\EditModule`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Pages\EditModule.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Pages\ListModules`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Pages\ListModules.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Pages\ViewModule`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Pages\ViewModule.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\RelationManagers\MaterialsRelationManager`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\RelationManagers\MaterialsRelationManager.php` (Line 18)  
+- **Extends:** `Filament\Resources\RelationManagers\RelationManager` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationship</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$ownerRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$pageClass</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$inverseRelationship</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$icon</span>  
+𝔁 protected static Filament\Support\Enums\IconPosition <span style='color:#9CDCFE'>$iconPosition</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badge</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badgeColor</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$badgeTooltip</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isBadgeDeferred</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isLazy</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$placeholderHeight</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relatedResource</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationshipTitle</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+λ public <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\RelationManagers\QuizRelationManager`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\RelationManagers\QuizRelationManager.php` (Line 18)  
+- **Extends:** `Filament\Resources\RelationManagers\RelationManager` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationship</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$ownerRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$pageClass</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$inverseRelationship</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$icon</span>  
+𝔁 protected static Filament\Support\Enums\IconPosition <span style='color:#9CDCFE'>$iconPosition</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badge</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$badgeColor</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$badgeTooltip</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isBadgeDeferred</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isLazy</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$placeholderHeight</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relatedResource</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$relationshipTitle</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+λ public <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Schemas\ModuleForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Schemas\ModuleForm.php` (Line 11)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Schemas\ModuleInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Schemas\ModuleInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Tables\ModulesTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Modules\Tables\ModulesTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\CreateQuizAttempt`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Pages\CreateQuizAttempt.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\EditQuizAttempt`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Pages\EditQuizAttempt.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\ListQuizAttempts`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Pages\ListQuizAttempts.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\ViewQuizAttempt`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Pages\ViewQuizAttempt.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\QuizAttemptResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\QuizAttemptResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptForm.php` (Line 13)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Tables\QuizAttemptsTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\QuizAttempts\Tables\QuizAttemptsTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\CreateQuiz`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Pages\CreateQuiz.php` (Line 10)  
+- **Extends:** `Filament\Resources\Pages\CreateRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$record</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$canCreateAnother</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isCreating</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\EditQuiz`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Pages\EditQuiz.php` (Line 12)  
+- **Extends:** `Filament\Resources\Pages\EditRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 public string <span style='color:#9CDCFE'>$previousUrl</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasDatabaseTransactions</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+𝔁 public string <span style='color:#9CDCFE'>$savedDataHash</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasUnsavedDataChangesAlert</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\ListQuizzes`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Pages\ListQuizzes.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ListRecords` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Tables\Contracts\HasTable`,  
+`Filament\Schemas\Contracts\HasSchemas`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Actions\Contracts\HasActions`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableReordering</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableFilters</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableGrouping</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableSearch</span>  
+𝔁 public string <span style='color:#9CDCFE'>$tableSort</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeTab</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedTabs</span>  
+𝔁 protected Filament\Tables\Table <span style='color:#9CDCFE'>$table</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasTableModalRendered</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$shouldMountInteractsWithTable</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTableLoaded</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$tableRecordsPerPage</span>  
+𝔁 protected string|int|null <span style='color:#9CDCFE'>$defaultTableRecordsPerPageSelectOption</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumnSearches</span>  
+𝔁 public array <span style='color:#9CDCFE'>$selectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$deselectedTableRecords</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$isTrackingDeselectedTableRecords</span>  
+𝔁 protected Illuminate\Database\Eloquent\Collection|Illuminate\Support\Collection|Illuminate\Support\LazyCollection <span style='color:#9CDCFE'>$cachedSelectedTableRecords</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableColumns</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedDefaultTableColumnState</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasReorderableTableColumns</span>  
+𝔁 public array <span style='color:#9CDCFE'>$tableDeferredFilters</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$allowsDuplicates</span>  
+𝔁 protected Illuminate\Support\Collection|Illuminate\Contracts\Pagination\Paginator|Illuminate\Contracts\Pagination\CursorPaginator|null <span style='color:#9CDCFE'>$cachedTableRecords</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$paginators</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\ViewQuiz`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Pages\ViewQuiz.php` (Line 11)  
+- **Extends:** `Filament\Resources\Pages\ViewRecord` ➔ `Filament\Resources\Pages\Page` ➔ `Filament\Pages\Page` ➔ `Filament\Pages\BasePage` ➔ `Livewire\Component`  
+- **Implements:** `Filament\Actions\Contracts\HasActions`,  
+`Filament\Schemas\Contracts\HasRenderHookScopes`,  
+`Filament\Schemas\Contracts\HasSchemas`  
+𝔁 protected static string <span style='color:#9CDCFE'>$resource</span>  
+𝔁 public array <span style='color:#9CDCFE'>$data</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$layout</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderWidgetsSchemaComponents</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedFooterWidgetsSchemaComponents</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$view</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$title</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$heading</span>  
+𝔁 protected string <span style='color:#9CDCFE'>$subheading</span>  
+𝔁 public static Closure <span style='color:#9CDCFE'>$reportValidationErrorUsing</span>  
+𝔁 protected Filament\Support\Enums\Width|string|null <span style='color:#9CDCFE'>$maxContentWidth</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$extraBodyAttributes</span>  
+𝔁 public static Filament\Support\Enums\Alignment|string <span style='color:#9CDCFE'>$formActionsAlignment</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$formActionsAreSticky</span>  
+𝔁 public static bool <span style='color:#9CDCFE'>$hasInlineLabels</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__id</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$__name</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$listeners</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islands</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandsHaveMounted</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$islandIsTopLevelRender</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$renderedIslandFragments</span>  
+𝔁 protected Livewire\Features\SupportAttributes\AttributeCollection <span style='color:#9CDCFE'>$attributes</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$withValidatorCallback</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$rulesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$messagesFromOutside</span>  
+𝔁 protected mixed <span style='color:#9CDCFE'>$validationAttributesFromOutside</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slotsForSkippedChildRenders</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$slots</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$htmlAttributes</span>  
+𝔁 public array <span style='color:#9CDCFE'>$mountedActions</span>  
+𝔁 protected int <span style='color:#9CDCFE'>$originallyMountedActionIndex</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionArguments</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultActionContext</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableAction</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionRecord</span>  
+𝔁 public mixed <span style='color:#9CDCFE'>$defaultTableActionArguments</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedActions</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedMountedActions</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasActionsModalRendered</span>  
+𝔁 public array <span style='color:#9CDCFE'>$componentFileAttachments</span>  
+𝔁 public bool <span style='color:#9CDCFE'>$areSchemaStateUpdateHooksDisabledForTesting</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$oldSchemaState</span>  
+𝔁 public array <span style='color:#9CDCFE'>$discoveredSchemaNames</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSchemas</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$isCachingSchemas</span>  
+𝔁 protected Filament\Schemas\Schema <span style='color:#9CDCFE'>$currentlyValidatingSchema</span>  
+𝔁 protected bool <span style='color:#9CDCFE'>$hasErrorNotifications</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$errorNotifications</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedSubNavigation</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected array <span style='color:#9CDCFE'>$cachedHeaderActions</span>  
+𝔁 protected Filament\Support\Enums\Alignment <span style='color:#9CDCFE'>$headerActionsAlignment</span>  
+𝔁 public Illuminate\Database\Eloquent\Model <span style='color:#9CDCFE'>$parentRecord</span>  
+𝔁 public string <span style='color:#9CDCFE'>$activeRelationManager</span>  
+𝔁 public Illuminate\Database\Eloquent\Model|string|int|null <span style='color:#9CDCFE'>$record</span>  
+λ protected <span style='color:#DCDCAA'>$getHeaderActions</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\QuizResource`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\QuizResource.php` (Line 22)  
+- **Extends:** `Filament\Resources\Resource`  
+𝔁 protected static string <span style='color:#9CDCFE'>$model</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$navigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordTitleAttribute</span>  
+𝔁 protected static UnitEnum|string|null <span style='color:#9CDCFE'>$navigationGroup</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationLabel</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$navigationSort</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isDiscovered</span>  
+𝔁 protected static mixed <span style='color:#9CDCFE'>$macros</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$cluster</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$parentResource</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isScopedToTenant</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantOwnershipRelationshipName</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$tenantRelationshipName</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldCheckPolicyExistence</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSkipAuthorization</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$breadcrumb</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$configurationClass</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchResultsLimit</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGlobalSearchForcedCaseInsensitive</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldSplitGlobalSearchTerms</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$isGloballySearchable</span>  
+𝔁 protected static int <span style='color:#9CDCFE'>$globalSearchSort</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$label</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$modelLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralLabel</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$pluralModelLabel</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$hasTitleCaseModelLabel</span>  
+𝔁 protected static Filament\Pages\Enums\SubNavigationPosition <span style='color:#9CDCFE'>$subNavigationPosition</span>  
+𝔁 protected static bool <span style='color:#9CDCFE'>$shouldRegisterNavigation</span>  
+𝔁 protected static Illuminate\Contracts\Support\Htmlable|string|null <span style='color:#9CDCFE'>$navigationBadgeTooltip</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$navigationParentItem</span>  
+𝔁 protected static BackedEnum|string|null <span style='color:#9CDCFE'>$activeNavigationIcon</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$slug</span>  
+𝔁 protected static string <span style='color:#9CDCFE'>$recordRouteKeyName</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$routeMiddleware</span>  
+𝔁 protected static array|string <span style='color:#9CDCFE'>$withoutRouteMiddleware</span>  
+λ public static <span style='color:#DCDCAA'>$form</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$infolist</span> : Filament\Schemas\Schema  
+λ public static <span style='color:#DCDCAA'>$table</span> : Filament\Tables\Table  
+λ public static <span style='color:#DCDCAA'>$getRelations</span> : array  
+λ public static <span style='color:#DCDCAA'>$getPages</span> : array  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Schemas\QuizForm`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Schemas\QuizForm.php` (Line 12)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Schemas\QuizInfolist`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Schemas\QuizInfolist.php` (Line 10)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Schemas\Schema  
+
+---
+
+## 📦 Class: `Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Tables\QuizzesTable`
+- **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\Http\UI\Admin\Resources\Quizzes\Tables\QuizzesTable.php` (Line 14)  
+λ public static <span style='color:#DCDCAA'>$configure</span> : Filament\Tables\Table  
+
+---
+
 ## 📦 Class: `Rimba\Twig\Lms\LmsServiceProvider`
 - **Location:** `C:\Users\153582\Herd\starter\packages\rimba\Twig\Lms\src\LmsServiceProvider.php` (Line 9)  
 - **Extends:** `Bites\Base\Services\BitesServiceProvider` ➔ `Illuminate\Support\ServiceProvider`  
@@ -18649,6 +21945,7 @@
 λ protected <span style='color:#DCDCAA'>$casts</span> : array  
 λ public <span style='color:#DCDCAA'>$course</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
 λ public <span style='color:#DCDCAA'>$module</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
+λ public static <span style='color:#DCDCAA'>$seedMappings</span> : array  
 λ public static <span style='color:#DCDCAA'>$factory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$newFactory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$getUseFactoryAttribute</span> : void/mixed  
@@ -19116,6 +22413,7 @@
 λ protected <span style='color:#DCDCAA'>$casts</span> : array  
 λ public <span style='color:#DCDCAA'>$quizAttempts</span> : Illuminate\Database\Eloquent\Relations\HasMany  
 λ public <span style='color:#DCDCAA'>$module</span> : Illuminate\Database\Eloquent\Relations\BelongsTo  
+λ public static <span style='color:#DCDCAA'>$seedMappings</span> : array  
 λ public static <span style='color:#DCDCAA'>$factory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$newFactory</span> : void/mixed  
 λ protected static <span style='color:#DCDCAA'>$getUseFactoryAttribute</span> : void/mixed  

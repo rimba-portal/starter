@@ -1,5 +1,5 @@
 # PHP Files Code Dump
-*Generated on: 2026-07-16 16:30:54*
+*Generated on: 2026-07-20 15:37:40*
 *Target Folder: `C:\Users\153582\Herd\starter\packages\bit-es\versioning`*
 
 ---
@@ -75,6 +75,7 @@ return new class extends Migration
             $table->timestamp('effective_until')->nullable();
             $table->timestamp('released_at')->nullable();
 
+            $table->string('upload_by')->default('system');
             $table->text('notes')->nullable();
 
             $table->timestamps();
@@ -1052,6 +1053,7 @@ use Bites\Versioning\Builders\VersionBuilder;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\Auth;
 
 #[Fillable([
     'versionable_type',
@@ -1088,6 +1090,27 @@ class Version extends Model
             'effective_until' => 'datetime',
             'released_at' => 'datetime',
         ];
+    }
+
+    protected static function booted(): void
+    {
+        static::creating(function (Version $version): void {
+            dump('iscreating');
+            // 1. If a user is logged in, use their rich identifier string
+            if ($user = Auth::user()) {
+                $version->upload_by = $user->getUploadIdentifier();
+
+                return;
+            }
+
+            // 2. Fallback check: If already manually defined in the seeder, keep it
+            if (! empty($version->upload_by)) {
+                return;
+            }
+
+            // 3. Absolute fallback for system/seeder automation
+            $version->upload_by = 'System';
+        });
     }
 }
 

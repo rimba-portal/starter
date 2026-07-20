@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\RelationManagers;
+namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\RelationManagers;
 
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
@@ -13,11 +13,11 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Rimba\Twig\Lms\Models\Module;
+use Rimba\Twig\Lms\Models\Quiz;
 
-class CourseModulesRelationManager extends RelationManager
+class QuizRelationManager extends RelationManager
 {
-    protected static string $relationship = 'courseModules';
+    protected static string $relationship = 'quizzes';
 
     public function form(Schema $schema): Schema
     {
@@ -26,7 +26,7 @@ class CourseModulesRelationManager extends RelationManager
                 Select::make('module_id')
                     ->label('Module')
                     ->options(
-                        Module::query()
+                        Quiz::query()
                             ->orderBy('name')
                             ->pluck('name', 'id')
                     )
@@ -43,12 +43,12 @@ class CourseModulesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                TextColumn::make('sequence')
-                    ->sortable(),
-
                 TextColumn::make('module.name')
-                    ->label('Module')
-                    ->searchable()
+                    ->searchable(),
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('pass_score')
+                    ->numeric()
                     ->sortable(),
             ])
             ->headerActions([

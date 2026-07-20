@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\QuizResource;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\QuizResource;
 
 class ViewQuiz extends ViewRecord
 {

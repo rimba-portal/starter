@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\ModuleResource;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\ModuleResource;
 
 class ViewModule extends ViewRecord
 {

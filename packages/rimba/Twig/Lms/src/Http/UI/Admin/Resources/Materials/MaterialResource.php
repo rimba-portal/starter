@@ -1,7 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials;
 
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\CreateMaterial;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\EditMaterial;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\ListMaterials;
@@ -9,11 +16,6 @@ use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Pages\ViewMaterial;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Schemas\MaterialForm;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Schemas\MaterialInfolist;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Materials\Tables\MaterialsTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Twig\Lms\Models\Material;
 use UnitEnum;
 
@@ -24,7 +26,7 @@ class MaterialResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'name';
-    
+
     protected static string|UnitEnum|null $navigationGroup = 'Learning';
 
     protected static ?string $navigationLabel = 'Materials';

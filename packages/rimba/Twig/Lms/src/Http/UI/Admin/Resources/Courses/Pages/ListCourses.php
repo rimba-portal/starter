@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\CourseResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Courses\CourseResource;
 
 class ListCourses extends ListRecords
 {

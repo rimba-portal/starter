@@ -44,10 +44,11 @@ class Quiz extends Model
     {
         return $this->belongsTo(Module::class);
     }
-     public static function seedMappings(): array
+
+    public static function seedMappings(): array
     {
         return [
-            'module_code' => fn(string $value) => [
+            'module_code' => fn (string $value): array => [
                 'module_id' => Module::query()
                     ->where('code', $value)
                     ->firstOrFail()

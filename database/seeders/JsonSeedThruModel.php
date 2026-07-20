@@ -89,7 +89,7 @@ class JsonSeedThruModel extends Seeder
         [$attributes, $relations] = $this->splitAttributesAndRelations($model, $row);
 
         $attributes = $this->resolveSeedMappings($model, $attributes);
-        
+
         $uniqueBy = $this->guessUniqueBy($attributes);
 
         if ($uniqueBy === []) {
@@ -184,6 +184,7 @@ class JsonSeedThruModel extends Seeder
     {
         return array_keys($array) === range(0, count($array) - 1);
     }
+
     protected function resolveSeedMappings(
         Model $model,
         array $attributes

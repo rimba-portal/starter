@@ -48,14 +48,14 @@ class CourseModule extends Model
     public static function seedMappings(): array
     {
         return [
-            'course_code' => fn (string $value) => [
+            'course_code' => fn (string $value): array => [
                 'course_id' => Course::query()
                     ->where('code', $value)
                     ->firstOrFail()
                     ->id,
             ],
 
-            'module_code' => fn (string $value) => [
+            'module_code' => fn (string $value): array => [
                 'module_id' => Module::query()
                     ->where('code', $value)
                     ->firstOrFail()

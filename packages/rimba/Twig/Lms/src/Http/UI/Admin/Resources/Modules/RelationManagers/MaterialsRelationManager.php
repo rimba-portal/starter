@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Modules\RelationManagers;
 
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Actions\CreateAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
 use Rimba\Twig\Lms\Models\Material;
 
 class MaterialsRelationManager extends RelationManager
@@ -42,10 +43,10 @@ class MaterialsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('sequence')
+                TextColumn::make('sequence')
                     ->sortable(),
 
-                \Filament\Tables\Columns\TextColumn::make('material.name')
+                TextColumn::make('material.name')
                     ->label('Module')
                     ->searchable()
                     ->sortable(),

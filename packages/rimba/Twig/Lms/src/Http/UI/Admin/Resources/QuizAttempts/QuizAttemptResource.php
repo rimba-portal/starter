@@ -1,7 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts;
 
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\CreateQuizAttempt;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\EditQuizAttempt;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\ListQuizAttempts;
@@ -9,11 +16,6 @@ use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Pages\ViewQuizAttempt;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptForm;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Schemas\QuizAttemptInfolist;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\QuizAttempts\Tables\QuizAttemptsTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Twig\Lms\Models\QuizAttempt;
 use UnitEnum;
 
@@ -22,7 +24,7 @@ class QuizAttemptResource extends Resource
     protected static ?string $model = QuizAttempt::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    
+
     protected static string|UnitEnum|null $navigationGroup = 'Learning';
 
     protected static ?string $navigationLabel = 'Attempts';

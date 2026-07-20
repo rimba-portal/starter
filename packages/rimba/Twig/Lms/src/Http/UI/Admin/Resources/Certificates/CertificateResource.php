@@ -1,7 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates;
 
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\CreateCertificate;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\EditCertificate;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\ListCertificates;
@@ -9,11 +16,6 @@ use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages\ViewCertificate;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Schemas\CertificateForm;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Schemas\CertificateInfolist;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Tables\CertificatesTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Twig\Lms\Models\Certificate;
 use UnitEnum;
 
@@ -22,7 +24,7 @@ class CertificateResource extends Resource
     protected static ?string $model = Certificate::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    
+
     protected static string|UnitEnum|null $navigationGroup = 'Learning';
 
     protected static ?string $navigationLabel = 'Certificates';

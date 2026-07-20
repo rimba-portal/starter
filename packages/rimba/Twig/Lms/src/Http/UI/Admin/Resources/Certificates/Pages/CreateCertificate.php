@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\CertificateResource;
 use Filament\Resources\Pages\CreateRecord;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\CertificateResource;
 
 class CreateCertificate extends CreateRecord
 {

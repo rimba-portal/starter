@@ -75,6 +75,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
         return $default;
     }
+
     // Add this method inside your existing App\Models\User class
 
     public function getActor(): string
@@ -92,12 +93,12 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
             // Adjust 'job_title' or 'position' to match your actual Staff table column
             if ($this->staff->job_title) {
-                $parts[] = "as {$this->staff->job_title}";
+                $parts[] = 'as '.$this->staff->job_title;
             }
 
-            if (!empty($parts)) {
+            if ($parts !== []) {
                 // Combines into: " [staff_no as job_title]" or " [staff_no]" or " [as job_title]"
-                $identifier .= ' [' . implode(' ', $parts) . ']';
+                $identifier .= ' ['.implode(' ', $parts).']';
             }
         }
 

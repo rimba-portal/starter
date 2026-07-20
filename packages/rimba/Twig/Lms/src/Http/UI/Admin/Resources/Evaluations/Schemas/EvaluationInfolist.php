@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Evaluations\Schemas;
 
 use Filament\Infolists\Components\TextEntry;

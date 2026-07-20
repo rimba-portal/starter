@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\CertificateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Certificates\CertificateResource;
 
 class ListCertificates extends ListRecords
 {

@@ -1,7 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes;
 
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\CreateQuiz;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\EditQuiz;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\ListQuizzes;
@@ -9,11 +16,6 @@ use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages\ViewQuiz;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Schemas\QuizForm;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Schemas\QuizInfolist;
 use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Tables\QuizzesTable;
-use BackedEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
 use Rimba\Twig\Lms\Models\Quiz;
 use UnitEnum;
 

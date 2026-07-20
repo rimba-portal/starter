@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\Pages;
 
-use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\QuizResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Rimba\Twig\Lms\Http\UI\Admin\Resources\Quizzes\QuizResource;
 
 class ListQuizzes extends ListRecords
 {
