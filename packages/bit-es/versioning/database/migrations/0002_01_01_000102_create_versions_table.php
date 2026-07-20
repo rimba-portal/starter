@@ -29,6 +29,7 @@ return new class extends Migration
             $table->timestamp('effective_until')->nullable();
             $table->timestamp('released_at')->nullable();
 
+            $table->string('upload_by')->default('system');
             $table->text('notes')->nullable();
 
             $table->timestamps();

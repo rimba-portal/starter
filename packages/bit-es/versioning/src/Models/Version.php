@@ -8,6 +8,7 @@ use Bites\Versioning\Builders\VersionBuilder;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\Auth;
 
 #[Fillable([
     'versionable_type',
@@ -44,5 +45,24 @@ class Version extends Model
             'effective_until' => 'datetime',
             'released_at' => 'datetime',
         ];
+    }
+    protected static function booted(): void
+    {
+        static::creating(function (Version $version) {
+            dump('iscreating');
+            // 1. If a user is logged in, use their rich identifier string
+            if ($user = Auth::user()) {
+                $version->upload_by = $user->getUploadIdentifier();
+                return;
+            }
+
+            // 2. Fallback check: If already manually defined in the seeder, keep it
+            if (!empty($version->upload_by)) {
+                return;
+            }
+
+            // 3. Absolute fallback for system/seeder automation
+            $version->upload_by = 'System';
+        });
     }
 }

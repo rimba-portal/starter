@@ -41,35 +41,37 @@ class JsonSeedThruModel extends Seeder
             }
 
             // Extract the table name from the 1st layer key
-            $tableName = array_key_first($jsonMap);
-            $data = $jsonMap[$tableName];
+            foreach ($jsonMap as $tableName => $data) {
 
-            if (! Schema::hasTable($tableName)) {
-                $this->command?->warn("Skipping file: '{$file->getFilename()}'. Table '{$tableName}' does not exist.");
+                if (! Schema::hasTable($tableName)) {
+                    $this->command?->warn(
+                        "Skipping table '{$tableName}'. Table does not exist."
+                    );
 
-                continue;
-            }
-
-            $modelClass = GetModelInfo::findByTable($tableName);
-
-            if (! $modelClass) {
-                $this->command?->warn("Skipping table '{$tableName}'. No Eloquent model found.");
-
-                continue;
-            }
-
-            if (! $this->isList($data)) {
-                $data = [$data];
-            }
-
-            $this->command?->info("Model seeding table '{$tableName}' using {$modelClass}...");
-
-            foreach ($data as $row) {
-                if (! is_array($row)) {
                     continue;
                 }
 
-                $this->seedRow($modelClass, $row);
+                $modelClass = GetModelInfo::findByTable($tableName);
+
+                if (! $modelClass) {
+                    $this->command?->warn(
+                        "Skipping table '{$tableName}'. No model found."
+                    );
+
+                    continue;
+                }
+
+                if (! $this->isList($data)) {
+                    $data = [$data];
+                }
+
+                $this->command?->info(
+                    "Model seeding table '{$tableName}' using {$modelClass}..."
+                );
+
+                foreach ($data as $row) {
+                    $this->seedRow($modelClass, $row);
+                }
             }
         }
 
@@ -86,6 +88,8 @@ class JsonSeedThruModel extends Seeder
 
         [$attributes, $relations] = $this->splitAttributesAndRelations($model, $row);
 
+        $attributes = $this->resolveSeedMappings($model, $attributes);
+        
         $uniqueBy = $this->guessUniqueBy($attributes);
 
         if ($uniqueBy === []) {
@@ -179,5 +183,33 @@ class JsonSeedThruModel extends Seeder
     protected function isList(array $array): bool
     {
         return array_keys($array) === range(0, count($array) - 1);
+    }
+    protected function resolveSeedMappings(
+        Model $model,
+        array $attributes
+    ): array {
+        if (! method_exists($model, 'seedMappings')) {
+            return $attributes;
+        }
+
+        $mappings = $model::seedMappings();
+
+        foreach ($mappings as $key => $resolver) {
+
+            if (! array_key_exists($key, $attributes)) {
+                continue;
+            }
+
+            $value = $attributes[$key];
+
+            unset($attributes[$key]);
+
+            $attributes = array_merge(
+                $attributes,
+                $resolver($value)
+            );
+        }
+
+        return $attributes;
     }
 }

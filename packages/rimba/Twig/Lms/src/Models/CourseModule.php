@@ -30,6 +30,7 @@ class CourseModule extends Model
             'id' => 'integer',
             'course_id' => 'integer',
             'module_id' => 'integer',
+            'sequence' => 'integer',
             'attributes' => 'array',
         ];
     }
@@ -42,5 +43,24 @@ class CourseModule extends Model
     public function module(): BelongsTo
     {
         return $this->belongsTo(Module::class);
+    }
+
+    public static function seedMappings(): array
+    {
+        return [
+            'course_code' => fn (string $value) => [
+                'course_id' => Course::query()
+                    ->where('code', $value)
+                    ->firstOrFail()
+                    ->id,
+            ],
+
+            'module_code' => fn (string $value) => [
+                'module_id' => Module::query()
+                    ->where('code', $value)
+                    ->firstOrFail()
+                    ->id,
+            ],
+        ];
     }
 }

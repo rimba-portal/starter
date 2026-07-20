@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('courses', function (Blueprint $table): void {
             $table->id();
-            $table->foreignId('org_team_id')->constrained();
+            $table->foreignId('org_team_id')->nullable()->constrained('org_teams');
             $table->string('code')->unique();
             $table->string('title');
             $table->text('description')->nullable();
@@ -41,6 +41,7 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
+            $table->string('code')->unique();
             $table->text('description')->nullable();
             $table->integer('duration_minutes')->nullable();
             $table->integer('validity_days')->nullable();

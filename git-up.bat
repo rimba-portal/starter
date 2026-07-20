@@ -5,7 +5,6 @@ php artisan bites:quick-md packages\bit-es\base
 php artisan bites:quick-md packages\bit-es\attributing
 php artisan bites:quick-md packages\bit-es\calendar
 php artisan bites:quick-md packages\bit-es\floorplan
-php artisan bites:quick-md packages\bit-es\identity
 php artisan bites:quick-md packages\bit-es\siapa
 php artisan bites:quick-md packages\bit-es\versioning
 php artisan bites:quick-md packages\bit-es\agreement
