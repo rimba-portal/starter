@@ -80,7 +80,7 @@
                 "reference": "697e0caed535ab3169d594c316e5cee43c1a1fce"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -120,7 +120,7 @@
                 "reference": "3b31e3559b310336c39624cd54f4145006a4c05f"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -227,7 +227,7 @@
                 "reference": "16ce4b2562c2238fe909d886b8016e3146fdce05"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -267,7 +267,7 @@
                 "reference": "277ffcd10f6ca5941d54b2fde21d1c81e0ee9b5a"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -446,7 +446,7 @@
                 "reference": "07420bdfb9bf1dc4d7b9ae73870c9169a55753b9"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -5360,7 +5360,7 @@
                 "reference": "e8ee8da06b329620329c4c274568eff86279b677"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -5404,7 +5404,7 @@
                 "reference": "f46e754dab85e4cb2d91c5749e273ab737609400"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
@@ -5452,7 +5452,7 @@
                 "reference": "7cbc39df137214b52ab12c8613eac0c06cb22808"
             },
             "require": {
-                "bit-es/base": "dev-main",
+                "bit-es/base": "^1.0",
                 "php": "^8.3"
             },
             "type": "library",
