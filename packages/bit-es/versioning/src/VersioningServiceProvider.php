@@ -18,21 +18,21 @@ class VersioningServiceProvider extends BitesServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         // Intercept the Filament execution pipeline safely before panels render
-        FacadesFilament::serving(function (): void {
-            foreach (FacadesFilament::getPanels() as $panel) {
-                foreach ($panel->getResources() as $resourceClass) {
-                    $model = $resourceClass::getModel();
+        // FacadesFilament::serving(function (): void {
+        //     foreach (FacadesFilament::getPanels() as $panel) {
+        //         foreach ($panel->getResources() as $resourceClass) {
+        //             $model = $resourceClass::getModel();
 
-                    // Check if the underlying Eloquent model uses your Rimba Tree / Bites trait
-                    if (in_array(HasVersions::class, class_uses_recursive($model))) {
-                        // dd($resourceClass::getRelations());
-                        // Safely inject your relation manager using Filament's internal pipeline hook
-                        // $resourceClass::appendRelationManagers([
-                        // VersionsRelationManager::class,
-                        // ]);
-                    }
-                }
-            }
-        });
+        //             // Check if the underlying Eloquent model uses your Rimba Tree / Bites trait
+        //             if (in_array(HasVersions::class, class_uses_recursive($model))) {
+        //                 // dd($resourceClass::getRelations());
+        //                 // Safely inject your relation manager using Filament's internal pipeline hook
+        //                 // $resourceClass::appendRelationManagers([
+        //                 // VersionsRelationManager::class,
+        //                 // ]);
+        //             }
+        //         }
+        //     }
+        // });
     }
 }

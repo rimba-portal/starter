@@ -14,11 +14,11 @@ class DiscoverBranding
     {
         FilamentView::registerRenderHook(
             PanelsRenderHook::AUTH_LOGIN_FORM_AFTER,
-            fn (): Factory|\Illuminate\Contracts\View\View => view('panel.branding')
+            fn() => view('panel.branding')
         );
         FilamentView::registerRenderHook(
             PanelsRenderHook::AUTH_REGISTER_FORM_AFTER,
-            fn (): Factory|\Illuminate\Contracts\View\View => view('panel.branding')
+            fn() => view('panel.branding')
         );
     }
 }
