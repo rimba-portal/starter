@@ -27,13 +27,13 @@
     @media screen and (min-height: 878px) and (min-width: 1024px) {
         main {
             position: absolute;
-            left: 100px;
+            right: 70px;
             top: 50px;
         }
 
         #slogan {
             position: fixed;
-            right: 50px;
+            left: 100px;
             bottom: 25px;
             color: var(--primary-600); 
             font-family: Arial, sans-serif;
